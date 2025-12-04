@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application JEE</title>
+    <link rel="stylesheet" href="/rts/css/jee/jee.css">
+</head>
+
+<body>
+  
+
+    <div class="main-container">
+        <div class="quiz-container">
+            <div class="question-header">
+                <h2>Rust Test 32</h2>
+                <div class="timer"> <span id="timer"></span> </div>
+            </div>
+
+            <select id="languageSelect" onchange="changeLanguage()" class="language-select">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+            </select>
+
+            <p id="questionCounter"></p>
+            <div id="question"></div>
+            <ul class="options" id="options"></ul>
+
+            <div class="buttons">
+                <button class="btn" onclick="prevQuestion()">Previous</button>
+                <button class="btn btn-next" onclick="nextQuestion()">Next</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="status-indicator">
+                    <p class="answered"><span></span> Answered</p>
+                    <p class="not-attempted"><span></span> Not Attempted</p>
+                    <p class="marked"><span></span> Marked</p>
+                    <p class="visited"><span></span> Visited</p>
+                    <div class="circles-container" id="circleContainer"></div>
+                    <button class="btn submit-btn" onclick="submitQuiz()">Submit Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/RTS/public/js/Rust/32-test.js"></script>
+</body>
+
+</html>

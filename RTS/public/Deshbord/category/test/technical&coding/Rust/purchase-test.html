@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RID Bharat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+ <link rel="stylesheet" href="/RTS/public/css/purchase.css">
+</head>
+
+<body>
+    <!-- Header/Navbar -->
+    <header class="main-header">
+        <!-- Top Info Bar -->
+        <div class="header-info">
+            <div class="info-text">
+                <p><span>RID (Research Innovation & Discovery) by TWSKAA Welfare Foundation</span></p>
+                <p><strong>Helpline:</strong> <span>+91-8307 87323</span></p>
+                <p><strong>Email:</strong> <span>supportrid5@gmail.com</span></p>
+            </div>
+            <div class="header-links">
+                <a href="#">Main Content</a>
+                <a href="#">+A</a>
+                <a href="#">A</a>
+                <a href="#">A-</a>
+                <a href="#">Feedback</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Fixed Logo - Using a placeholder logo -->
+                <img src="/RTS/public/Deshbord/category/test/technical&coding/img/final_logo copy.svg" alt="RID Bharat Logo">
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" placeholder="Search Anything...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <!-- Certificate and Profile Buttons -->
+                <div class="nav-buttons">
+                    <a href="#" class="btn"><i class="fas fa-award"></i> Certificate</a>
+                    <a href="#" class="btn"><i class="fas fa-user"></i> Profile</a>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="main-nav">
+            <li><a href="/RTS/public/Deshbord.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
+            <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+
+            <li>
+                <a href="#"><i class="fas fa-building"></i> Center <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fas fa-rocket"></i> Skill Center</a></li>
+                    <li><a href="#"><i class="fas fa-flask"></i> WIT Center</a></li>
+                    <li><a href="#"><i class="fas fa-microscope"></i> RID Center</a></li>
+                </ul>
+            </li>
+            <li><a href="/project_rid/public/contact/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Sidebar -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+    <aside class="sidebar">
+        <h2 class="mainu">Main Menu</h2>
+        <ul class="menu">
+            <li><i class="fas fa-home home-icon"></i><a href="/RTS/public/Deshbord.html">Home</a></li>
+            <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
+            <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a></li>
+            <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My Purchase</a></li>
+            <li><i class="fas fa-comment-dots feedback-icon"></i><a href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
+            <li><i class="fas fa-dollar-sign refund-icon"></i><a href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
+            <li><i class="fas fa-shield-alt privacy-icon"></i><a href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
+            <li><i class="fas fa-file-contract terms-icon"></i><a href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
+            <li><i class="fas fa-star-half-alt rate-icon"></i><a href="#">Rate Us</a></li>
+            <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="#">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Purchase Section -->
+   <div class="content-container">
+        <div class="header-banner" role="banner">
+            <div class="test-card" aria-label="Course Information Card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070" alt="HTML Course">
+                <h3>Addition</h3>
+                <p>Level: <span>Beginner</span></p>
+                <p>Price: <span class="price">$12</span></p>
+                <button class="buy-button" aria-label="Buy HTML Course">Buy now</button>
+            </div>
+        </div>
+      
+        <main>
+            
+            <div class="course-details">
+                <div class="detail-item">
+                    Validity: 3 months
+                </div>
+                <div class="detail-item">
+                    Language: English
+                </div>
+            </div>
+            
+            <div class="divider" aria-hidden="true"></div>
+            
+            <section class="description-section" aria-labelledby="description-title">
+                <h2 class="section-title" id="description-title">Description</h2>
+                <div class="description-box">
+                    <p>
+                        Reading is an essential skill that helps improve our knowledge, language, and imagination. It allows us
+                        to explore different worlds, understand diverse perspectives, and learn new ideas. When we read, we not
+                        only learn facts but also improve our vocabulary and comprehension skills. <br> <br>
+
+                        Books, newspapers, and articles offer a wide range of information, from history and science to current
+                        events. Reading regularly helps us stay informed and aware of what is happening around the world. It
+                        also enhances our critical thinking skills because we learn to analyze and evaluate the information
+                        presented. <br> <br>
+
+                        In addition, reading is a great way to relax and reduce stress. It provides an escape from daily
+                        routines and offers a peaceful break. Whether it's a novel, a magazine, or even a blog post, reading can
+                        be both entertaining and educational.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="description-section" aria-labelledby="tests-title">
+                <h2 class="section-title" id="tests-title">ALL TEST's</h2>
+                <div class="test-grid">
+                    <!-- Test Item 1 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  1</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/1-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 2 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  2</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                          
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/2-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 3 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 3</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/3-test.html">
+                            
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 4 -->
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 4</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/4-test.html">
+                            
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 5 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 5</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                                <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/5-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  6</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/6-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  7</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/7-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <!-- Test Item 8 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 8</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                                <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/8-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 9</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                                <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/9-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  10</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/10-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  11</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/11-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  12</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/12-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  13</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/13-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  14</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/14-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  15</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/15-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  16</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/16-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  17</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/17-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  18</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/18-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  19</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/19-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  20</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/20-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  21</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/21-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  22</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/22-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  23</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/23-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  24</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/24-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  25</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/25-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  26</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/26-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  27</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/27-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  28</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/technical&coding/Rust/28-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  29</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/29-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  30</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/30-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  31</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/31-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  32</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/32-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  33</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/33-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  34</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/34-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  35</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/35-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  36</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/36-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  37</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/37-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  38</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/38-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  39</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/39-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  40</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/40-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            let isMenuOpen = false;
+
+            function toggleMobileMenu() {
+                isMenuOpen = !isMenuOpen;
+                
+                navMenu.classList.toggle('active', isMenuOpen);
+                
+                const icon = menuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars', !isMenuOpen);
+                icon.classList.toggle('fa-times', isMenuOpen);
+                
+                document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            }
+
+            function closeMobileMenu() {
+                if (!isMenuOpen) return;
+                isMenuOpen = false;
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                document.body.style.overflow = '';
+            }
+
+            // Theme Toggle
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                const icon = themeToggle.querySelector('i');
+                if (document.body.classList.contains('dark-mode')) {
+                    icon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    icon.classList.replace('fa-sun', 'fa-moon');
+                }
+            });
+
+            // Event Listeners
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            document.addEventListener('click', function(e) {
+                if (isMenuOpen && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isMenuOpen) {
+                    closeMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    closeMobileMenu();
+                }
+            });
+        });
+
+        // Sidebar Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+            document.body.classList.toggle('no-scroll');
+        }
+
+        // Close sidebar when clicking on a link (for mobile)
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 992) {
+                    document.querySelector('.sidebar').classList.remove('open');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        });
+
+        // Close sidebar when clicking outside (for mobile)
+        document.addEventListener('click', function (event) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleBtn = document.querySelector('.sidebar-toggle');
+
+            if (window.innerWidth <= 992 &&
+                !sidebar.contains(event.target) &&
+                event.target !== toggleBtn &&
+                !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+
+        // Add hover effect to test cards
+        const testItems = document.querySelectorAll('.test-item');
+        testItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>
