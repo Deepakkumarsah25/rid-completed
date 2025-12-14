@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Application JEE</title>
-    <link rel="stylesheet" href="/rts/css/jee/jee.css">
+    <title>Chemistry TEST</title>
+   <link rel="stylesheet" href="/RTS/public/css/jee/jee.css">
 </head>
-
 <body>
-  
-
     <div class="main-container">
         <div class="quiz-container">
             <div class="question-header">
-                <h2>NEET Test 1</h2>
+                <h2> Test 14</h2>
                 <div class="timer"> <span id="timer"></span> </div>
             </div>
-
             <select id="languageSelect" onchange="changeLanguage()" class="language-select">
                 <option value="en">English</option>
                 <option value="hi">हिंदी</option>
             </select>
-
             <p id="questionCounter"></p>
             <div id="question"></div>
             <ul class="options" id="options"></ul>
@@ -31,8 +25,9 @@
                 <button class="btn" onclick="prevQuestion()">Previous</button>
                 <button class="btn btn-next" onclick="nextQuestion()">Next</button>
             </div>
+            <button class="btn btn-service" onclick="backToTestService()">Back to Test Service</button>
         </div>
-
+        
         <div class="sidebar">
             <div class="sidebar-content">
                 <div class="status-indicator">
@@ -46,8 +41,16 @@
             </div>
         </div>
     </div>
-
-    <script src="/RTS/public/Deshbord/category/test/neet/subjects/chemistry/Testseries/chemistryTest14.js"></script>
+    
+    <script>
+      
+        function backToTestService() {
+            alert('Redirecting to Test Service...');
+            // In a real implementation, this would redirect to the test service page
+            window.location.href = '/RTS/public/Deshbord/category/test/neet/subjects/chemistry/chemistry.html';
+        }
+      
+    </script>
+ <script src="/RTS/public/Deshbord/category/test/neet/subjects/chemistry/Testseries/chemistryTest14.js"></script>
 </body>
-
 </html>

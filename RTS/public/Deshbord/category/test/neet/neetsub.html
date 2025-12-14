@@ -7,14 +7,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
-  <link rel="stylesheet" href="/RTS/public/css/navbar.css">
-  <link rel="stylesheet" href="/RTS/public/css/footer.css">
-
-  <!-- <style>
-    
-</style> -->
-
+<link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+<link rel="stylesheet" href="/RTS/public/css/footer.css">
 </head>
 
 <body>
@@ -42,6 +36,11 @@
         <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
       </div>
 
+      <!-- Menu Toggle Button for Mobile -->
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
       <div class="nav-menu" id="navMenu">
         <!-- Search Box -->
         <div class="search-box">
@@ -51,7 +50,6 @@
 
         <!-- Certificate and Profile Buttons -->
         <div class="nav-buttons">
-          <!-- <a href="#" class="btn"><i class="fas fa-award" ></i> Certificate</a> -->
           <a href="/Certificate-Verification/verify.html" class="btn">
             <i class="fas fa-award"></i> Certificate
           </a>
@@ -62,8 +60,8 @@
         <!-- Mobile Navigation -->
         <ul class="mobile-nav" id="mobileNav">
           <!-- Mobile Search Box -->
-          <div class="search-box">
-            <input type="text" placeholder="Search Anything..." id="searchInput">
+          <div class="mobile-search-box">
+            <input type="text" placeholder="Search Anything..." id="mobileSearchInput">
             <i class="fas fa-search"></i>
           </div>
 
@@ -120,70 +118,68 @@
           href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
       <li><i class="fas fa-file-contract terms-icon"></i><a
           href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
-      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="#">Rate Us</a></li>
+      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a>
+      </li>
       <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="#">Logout</a></li>
     </ul>
   </aside><br>
 
-  <!-- Banner Section -->
-  <div class="banner-main">
-    <div class="banner-track">
-      <!-- Each slide now has a data-link attribute -->
-      <div class="banner-slide" data-link="https://example.com/course1">
-        <img src="/RTS/public/images/banner/1.jpg" alt="Course 1" class="banner-image" loading="lazy">
-      </div>
-      <div class="banner-slide" data-link="https://example.com/course2">
-        <img src="/RTS/public/images/banner/2.jpg" alt="Course 2" class="banner-image" loading="lazy">
-      </div>
-      <div class="banner-slide" data-link="https://example.com/course3">
-        <img src="/RTS/public/images/banner/3.jpg" alt="Course 3" class="banner-image" loading="lazy">
-      </div>
-      <div class="banner-slide" data-link="https://example.com/course4">
-        <img src="/RTS/public/images/banner/4.jpg" alt="Course 4" class="banner-image" loading="lazy">
-      </div>
-    </div>
-
-    <div class="banner-nav">
-      <button class="banner-arrow prev-arrow">❮</button>
-      <button class="banner-arrow next-arrow">❯</button>
-    </div>
-
-    <div class="banner-dots">
-      <button class="banner-dot active"></button>
-      <button class="banner-dot"></button>
-      <button class="banner-dot"></button>
-      <button class="banner-dot"></button>
-    </div>
-  </div>
-
   <main>
+    <!-- Mobile Search Container - NEW -->
+    <div class="mobile-search-container">
+      <div class="search-box">
+        <input type="text" placeholder="Search Anything..." id="mainMobileSearchInput">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
 
-    <div class="content">
+    <section class="courses">
+      <div class="courses">
+        <div class="course-card">
+          <img src="/rts/images/dashbord/neet.jpg" alt="Course Image">
+           <div class="course-content">
+           <h3>Physics:</h3>
+            <div class="marquee">
+              <p>Beginner Basicss</span></p>
+            </div>
+            <div class="btn-container">
+              <a href="/rts/Deshbord/category/test/neet/subjects/Physics/physics.html" class="btn btn-light">Open Now</a>
+            </div>
+          </div>
+        </div>
 
-      <section class="courses">
         <div class="course-card">
           <img src="/rts/images/dashbord/neet.jpg" alt="Course Image">
-          <h3>Physics:</h3>
-          <p>Beginner Basic</p>
-          <p>7:37</p>
-          <a href="/rts/Deshbord/category/test/neet/subjects/Physics/physics.html" class="btn btn-light">More
-            Details</a>
+          <div class="course-content">
+            <h3>Chemistry</h3>
+            <div class="marquee">
+              <p>Beginner Basicss</span></p>
+            </div>
+            <div class="btn-container">
+              <a href="/rts/Deshbord/category/test/neet/subjects/chemistry/chemistry.html" class="btn btn-light">Open Now</a>
+            </div>
+          </div>
         </div>
+
         <div class="course-card">
-          <img src="/rts/images/dashbord/neet.jpg" alt="Course Image">
-          <h3>Chemistry</h3>
-          <p>Beginner Basic</p>
-          <p>7:37</p>
-          <a href="/rts/Deshbord/category/test/neet/subjects/chemistry/chemistry.html" class="btn btn-light">More Details</a>
+         <img src="/rts/images/dashbord/neet.jpg" alt="Course Image">
+          <div class="course-content">
+            <h3>Biology</h3>
+            <div class="marquee">
+              <p>Beginner Basicss</span></p>
+            </div>
+            <div class="btn-container">
+               <a href="/rts/Deshbord/category/test/neet/subjects/bio/bio.html" class="btn btn-light">Open Now</a>
+            </div>
+          </div>
         </div>
-        <div class="course-card">
-          <img src="/rts/images/dashbord/neet.jpg" alt="Course Image">
-          <h3>Biology</h3>
-          <p>Beginner Basic</p>
-          <p>7:37</p>
-          <a href="/rts/Deshbord/category/test/neet/subjects/bio/bio.html" class="btn btn-light">More Details</a>
-        </div>
-      </section>
+
+
+       
+
+       
+      </div>
+    </section>
   </main>
 
   <!----------------------------------------------------------Footer parts in desbord---------------------------------------------------------------->
@@ -199,8 +195,8 @@
           <a href="mailto:ridorg.in@gmail.com">
             <i class="fas fa-envelope"></i> ridorg.in@gmail.com | Email
           </a>
-          <a href="tel:+919892782728">
-            <i class="fas fa-phone"></i> +91 9892782728 | Mobile
+          <a href="tel:+91 9202707903">
+            <i class="fas fa-phone"></i> +91 9202707903 | Mobile
           </a>
         </div>
       </div>
@@ -275,106 +271,84 @@
   <!-- JavaScript Files -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const bannerTrack = document.querySelector('.banner-track');
-      const slides = document.querySelectorAll('.banner-slide');
-      const dots = document.querySelectorAll('.banner-dot');
-      const prevArrow = document.querySelector('.prev-arrow');
-      const nextArrow = document.querySelector('.next-arrow');
+      // Sidebar toggle functionality
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
+      const sidebar = document.querySelector('.sidebar');
 
-      let currentIndex = 0;
-      const slideCount = slides.length;
-      let slideInterval;
-      const intervalTime = 3000;
-
-      // Initialize slider
-      function initBanner() {
-        updateBannerPosition();
-        setupEventListeners();
-        startAutoSlide();
-      }
-
-      // Update banner position
-      function updateBannerPosition() {
-        const slideWidth = slides[0].clientWidth;
-        bannerTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
+      if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
         });
       }
 
-      // Go to specific slide
-      function goToSlide(index) {
-        currentIndex = (index < 0) ? slideCount - 1 :
-          (index >= slideCount) ? 0 : index;
-        updateBannerPosition();
-        resetInterval();
-      }
+      // Navbar toggle functionality
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.getElementById('navMenu');
+      const mobileNav = document.getElementById('mobileNav');
 
-      // Handle click on slide
-      function handleSlideClick() {
-        const link = slides[currentIndex].getAttribute('data-link');
-        if (link) {
-          window.location.href = link;
-        }
-      }
-
-      // Event listeners
-      function setupEventListeners() {
-        // Navigation arrows
-        prevArrow.addEventListener('click', (e) => {
-          e.stopPropagation();
-          goToSlide(currentIndex - 1);
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          mobileNav.classList.toggle('active');
         });
+      }
 
-        nextArrow.addEventListener('click', (e) => {
-          e.stopPropagation();
-          goToSlide(currentIndex + 1);
+      // Close mobile nav when a link is clicked
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          mobileNav.classList.remove('active');
         });
+      });
 
-        // Dot navigation
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', (e) => {
-            e.stopPropagation();
-            goToSlide(index);
-          });
+      // Close sidebar when a link is clicked (on mobile)
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 992) {
+            sidebar.classList.remove('open');
+          }
         });
-
-        // Click on slide
-        bannerTrack.addEventListener('click', handleSlideClick);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
-          if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
-        });
-
-        // Pause on hover
-        const banner = document.querySelector('.banner-main');
-        banner.addEventListener('mouseenter', pauseSlider);
-        banner.addEventListener('mouseleave', startAutoSlide);
-      }
-
-      // Auto slide functions
-      function startAutoSlide() {
-        slideInterval = setInterval(() => goToSlide(currentIndex + 1), intervalTime);
-      }
-
-      function pauseSlider() {
-        clearInterval(slideInterval);
-      }
-
-      function resetInterval() {
-        pauseSlider();
-        startAutoSlide();
-      }
-
-      initBanner();
+      });
     });
+
+    // ==========================
+  // SEARCH BAR FUNCTIONALITY
+  // ==========================
+
+  const searchInput = document.getElementById("searchInput");
+  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+  const courseCards = document.querySelectorAll(".course-card");
+
+  function filterCourses(value) {
+    value = value.toLowerCase().trim();
+
+    courseCards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // Desktop Search
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
+  // Mobile Search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
   </script>
-  <script src="/RTS/public/js/main.js"></script>
-  <script src="/RTS/public/js/search-course.js"></script>
-  <script src="/RTS/public/js/Deshbord.js"></script>
 </body>
 
 </html>
