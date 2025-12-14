@@ -1,0 +1,1323 @@
+const questions = [
+    {
+        "num": 1,
+        "question_en": "What is the process by which plants make their own food?",
+        "question_hi": "पौधे अपना भोजन बनाने की प्रक्रिया क्या है?",
+        "options_en": ["Respiration", "Transpiration", "Photosynthesis", "Fermentation"],
+        "options_hi": ["श्वसन", "वाष्पोत्सर्जन", "प्रकाश संश्लेषण", "किण्वन"],
+        "answer_en": "Photosynthesis",
+        "answer_hi": "प्रकाश संश्लेषण",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 2,
+        "question_en": "What is the main component of air?",
+        "question_hi": "वायु का मुख्य घटक क्या है?",
+        "options_en": ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"],
+        "options_hi": ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "आर्गन"],
+        "answer_en": "Nitrogen",
+        "answer_hi": "नाइट्रोजन",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 3,
+        "question_en": "Which metal is the best conductor of electricity?",
+        "question_hi": "कौन सी धातु विद्युत की सबसे अच्छी सुचालक है?",
+        "options_en": ["Copper", "Silver", "Gold", "Aluminum"],
+        "options_hi": ["तांबा", "चाँदी", "सोना", "एल्युमीनियम"],
+        "answer_en": "Silver",
+        "answer_hi": "चाँदी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 4,
+        "question_en": "What is the SI unit of time?",
+        "question_hi": "समय की SI इकाई क्या है?",
+        "options_en": ["Minute", "Hour", "Second", "Day"],
+        "options_hi": ["मिनट", "घंटा", "सेकंड", "दिन"],
+        "answer_en": "Second",
+        "answer_hi": "सेकंड",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 5,
+        "question_en": "Which gland is known as the master gland?",
+        "question_hi": "किस ग्रंथि को मास्टर ग्रंथि कहा जाता है?",
+        "options_en": ["Thyroid", "Pituitary", "Adrenal", "Pancreas"],
+        "options_hi": ["थायरॉयड", "पिट्यूटरी", "अधिवृक्क", "अग्न्याशय"],
+        "answer_en": "Pituitary",
+        "answer_hi": "पिट्यूटरी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 6,
+        "question_en": "What is the chemical name of common salt?",
+        "question_hi": "साधारण नमक का रासायनिक नाम क्या है?",
+        "options_en": ["Sodium chloride", "Sodium nitrate", "Potassium chloride", "Calcium chloride"],
+        "options_hi": ["सोडियम क्लोराइड", "सोडियम नाइट्रेट", "पोटैशियम क्लोराइड", "कैल्शियम क्लोराइड"],
+        "answer_en": "Sodium chloride",
+        "answer_hi": "सोडियम क्लोराइड",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 7,
+        "question_en": "Which vitamin is essential for good eyesight?",
+        "question_hi": "अच्छी दृष्टि के लिए कौन सा विटामिन आवश्यक है?",
+        "options_en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin A",
+        "answer_hi": "विटामिन ए",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 8,
+        "question_en": "What is the SI unit of mass?",
+        "question_hi": "द्रव्यमान की SI इकाई क्या है?",
+        "options_en": ["Gram", "Kilogram", "Pound", "Ounce"],
+        "options_hi": ["ग्राम", "किलोग्राम", "पाउंड", "औंस"],
+        "answer_en": "Kilogram",
+        "answer_hi": "किलोग्राम",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 9,
+        "question_en": "Which non-metal is liquid at room temperature?",
+        "question_hi": "कौन सा अधातु कमरे के तापमान पर तरल होता है?",
+        "options_en": ["Bromine", "Iodine", "Chlorine", "Fluorine"],
+        "options_hi": ["ब्रोमीन", "आयोडीन", "क्लोरीन", "फ्लोरीन"],
+        "answer_en": "Bromine",
+        "answer_hi": "ब्रोमीन",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 10,
+        "question_en": "What is the chemical formula of hydrochloric acid?",
+        "question_hi": "हाइड्रोक्लोरिक अम्ल का रासायनिक सूत्र क्या है?",
+        "options_en": ["HCl", "H₂SO₄", "HNO₃", "H₃PO₄"],
+        "options_hi": ["HCl", "H₂SO₄", "HNO₃", "H₃PO₄"],
+        "answer_en": "HCl",
+        "answer_hi": "HCl",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 11,
+        "question_en": "Which part of a plant absorbs water and minerals?",
+        "question_hi": "पौधे का कौन सा भाग पानी और खनिज अवशोषित करता है?",
+        "options_en": ["Leaves", "Stem", "Roots", "Flowers"],
+        "options_hi": ["पत्तियाँ", "तना", "जड़ें", "फूल"],
+        "answer_en": "Roots",
+        "answer_hi": "जड़ें",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 12,
+        "question_en": "What is the hardest substance in the human body?",
+        "question_hi": "मानव शरीर में सबसे कठोर पदार्थ क्या है?",
+        "options_en": ["Bone", "Tooth enamel", "Cartilage", "Nail"],
+        "options_hi": ["हड्डी", "दांत का इनेमल", "उपास्थि", "नाखून"],
+        "answer_en": "Tooth enamel",
+        "answer_hi": "दांत का इनेमल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 13,
+        "question_en": "Which gas is essential for respiration?",
+        "question_hi": "श्वसन के लिए कौन सी गैस आवश्यक है?",
+        "options_en": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+        "options_hi": ["कार्बन डाइऑक्साइड", "ऑक्सीजन", "नाइट्रोजन", "हाइड्रोजन"],
+        "answer_en": "Oxygen",
+        "answer_hi": "ऑक्सीजन",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 14,
+        "question_en": "What is the freezing point of water in Celsius?",
+        "question_hi": "पानी का हिमांक सेल्सियस में क्या है?",
+        "options_en": ["0°C", "10°C", "-10°C", "100°C"],
+        "options_hi": ["0°C", "10°C", "-10°C", "100°C"],
+        "answer_en": "0°C",
+        "answer_hi": "0°C",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 15,
+        "question_en": "Which planet is known as the Morning Star?",
+        "question_hi": "किस ग्रह को सुबह का तारा कहा जाता है?",
+        "options_en": ["Mars", "Venus", "Mercury", "Jupiter"],
+        "options_hi": ["मंगल", "शुक्र", "बुध", "बृहस्पति"],
+        "answer_en": "Venus",
+        "answer_hi": "शुक्र",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 16,
+        "question_en": "What is the chemical symbol for copper?",
+        "question_hi": "तांबे का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Cu", "Co", "Cp", "Cr"],
+        "options_hi": ["Cu", "Co", "Cp", "Cr"],
+        "answer_en": "Cu",
+        "answer_hi": "Cu",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 17,
+        "question_en": "Which vitamin deficiency causes beriberi?",
+        "question_hi": "किस विटामिन की कमी से बेरीबेरी होता है?",
+        "options_en": ["Vitamin A", "Vitamin B1", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी1", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin B1",
+        "answer_hi": "विटामिन बी1",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 18,
+        "question_en": "What is the unit of acceleration?",
+        "question_hi": "त्वरण की इकाई क्या है?",
+        "options_en": ["m/s", "m/s²", "N/s", "kg/m"],
+        "options_hi": ["m/s", "m/s²", "N/s", "kg/m"],
+        "answer_en": "m/s²",
+        "answer_hi": "m/s²",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 19,
+        "question_en": "Which acid is present in vinegar?",
+        "question_hi": "सिरका में कौन सा अम्ल मौजूद होता है?",
+        "options_en": ["Acetic acid", "Citric acid", "Lactic acid", "Tartaric acid"],
+        "options_hi": ["एसिटिक अम्ल", "साइट्रिक अम्ल", "लैक्टिक अम्ल", "टार्टरिक अम्ल"],
+        "answer_en": "Acetic acid",
+        "answer_hi": "एसिटिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 20,
+        "question_en": "What is the chemical formula of oxygen gas?",
+        "question_hi": "ऑक्सीजन गैस का रासायनिक सूत्र क्या है?",
+        "options_en": ["O", "O₂", "O₃", "O₄"],
+        "options_hi": ["O", "O₂", "O₃", "O₄"],
+        "answer_en": "O₂",
+        "answer_hi": "O₂",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 21,
+        "question_en": "Which planet is known for its spectacular rings?",
+        "question_hi": "किस ग्रह को उसके शानदार छल्लों के लिए जाना जाता है?",
+        "options_en": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+        "options_hi": ["बृहस्पति", "शनि", "युरेनस", "नेपच्यून"],
+        "answer_en": "Saturn",
+        "answer_hi": "शनि",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 22,
+        "question_en": "What is the chemical symbol for zinc?",
+        "question_hi": "जस्ता का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Zi", "Zn", "Zc", "Zr"],
+        "options_hi": ["Zi", "Zn", "Zc", "Zr"],
+        "answer_en": "Zn",
+        "answer_hi": "Zn",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 23,
+        "question_en": "Which vitamin is also known as ascorbic acid?",
+        "question_hi": "किस विटामिन को एस्कॉर्बिक अम्ल भी कहा जाता है?",
+        "options_en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin C",
+        "answer_hi": "विटामिन सी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 24,
+        "question_en": "What is the unit of volume?",
+        "question_hi": "आयतन की इकाई क्या है?",
+        "options_en": ["Liter", "Kilogram", "Meter", "Second"],
+        "options_hi": ["लीटर", "किलोग्राम", "मीटर", "सेकंड"],
+        "answer_en": "Liter",
+        "answer_hi": "लीटर",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 25,
+        "question_en": "Which acid is found in lemons?",
+        "question_hi": "नींबू में कौन सा अम्ल पाया जाता है?",
+        "options_en": ["Citric acid", "Acetic acid", "Lactic acid", "Tartaric acid"],
+        "options_hi": ["साइट्रिक अम्ल", "एसिटिक अम्ल", "लैक्टिक अम्ल", "टार्टरिक अम्ल"],
+        "answer_en": "Citric acid",
+        "answer_hi": "साइट्रिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 26,
+        "question_en": "What is the chemical formula of hydrogen gas?",
+        "question_hi": "हाइड्रोजन गैस का रासायनिक सूत्र क्या है?",
+        "options_en": ["H", "H₂", "H₃", "H₄"],
+        "options_hi": ["H", "H₂", "H₃", "H₄"],
+        "answer_en": "H₂",
+        "answer_hi": "H₂",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 27,
+        "question_en": "Which planet has the most moons in our solar system?",
+        "question_hi": "हमारे सौर मंडल में किस ग्रह के सबसे अधिक चंद्रमा हैं?",
+        "options_en": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+        "options_hi": ["बृहस्पति", "शनि", "युरेनस", "नेपच्यून"],
+        "answer_en": "Saturn",
+        "answer_hi": "शनि",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 28,
+        "question_en": "What is the chemical symbol for aluminum?",
+        "question_hi": "एल्युमीनियम का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Al", "Au", "Ag", "Am"],
+        "options_hi": ["Al", "Au", "Ag", "Am"],
+        "answer_en": "Al",
+        "answer_hi": "Al",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 29,
+        "question_en": "Which vitamin deficiency causes rickets?",
+        "question_hi": "किस विटामिन की कमी से रिकेट्स होता है?",
+        "options_en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin D",
+        "answer_hi": "विटामिन डी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 30,
+        "question_en": "What is the unit of density?",
+        "question_hi": "घनत्व की इकाई क्या है?",
+        "options_en": ["kg/m³", "m³/kg", "kg/m²", "m²/kg"],
+        "options_hi": ["kg/m³", "m³/kg", "kg/m²", "m²/kg"],
+        "answer_en": "kg/m³",
+        "answer_hi": "kg/m³",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 31,
+        "question_en": "Which acid is present in sour milk?",
+        "question_hi": "खट्टे दूध में कौन सा अम्ल मौजूद होता है?",
+        "options_en": ["Lactic acid", "Acetic acid", "Citric acid", "Tartaric acid"],
+        "options_hi": ["लैक्टिक अम्ल", "एसिटिक अम्ल", "साइट्रिक अम्ल", "टार्टरिक अम्ल"],
+        "answer_en": "Lactic acid",
+        "answer_hi": "लैक्टिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 32,
+        "question_en": "What is the chemical formula of nitrogen gas?",
+        "question_hi": "नाइट्रोजन गैस का रासायनिक सूत्र क्या है?",
+        "options_en": ["N", "N₂", "N₃", "N₄"],
+        "options_hi": ["N", "N₂", "N₃", "N₄"],
+        "answer_en": "N₂",
+        "answer_hi": "N₂",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 33,
+        "question_en": "Which planet is known as the Ice Giant?",
+        "question_hi": "किस ग्रह को बर्फीला दानव कहा जाता है?",
+        "options_en": ["Uranus", "Neptune", "Saturn", "Jupiter"],
+        "options_hi": ["युरेनस", "नेपच्यून", "शनि", "बृहस्पति"],
+        "answer_en": "Uranus",
+        "answer_hi": "युरेनस",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 34,
+        "question_en": "What is the chemical symbol for tin?",
+        "question_hi": "टिन का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Ti", "Tn", "Sn", "Si"],
+        "options_hi": ["Ti", "Tn", "Sn", "Si"],
+        "answer_en": "Sn",
+        "answer_hi": "Sn",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 35,
+        "question_en": "Which vitamin is also known as tocopherol?",
+        "question_hi": "किस विटामिन को टोकोफेरॉल भी कहा जाता है?",
+        "options_en": ["Vitamin D", "Vitamin E", "Vitamin K", "Vitamin B"],
+        "options_hi": ["विटामिन डी", "विटामिन ई", "विटामिन के", "विटामिन बी"],
+        "answer_en": "Vitamin E",
+        "answer_hi": "विटामिन ई",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 36,
+        "question_en": "What is the unit of velocity?",
+        "question_hi": "वेग की इकाई क्या है?",
+        "options_en": ["m/s", "m/s²", "N/s", "kg/m"],
+        "options_hi": ["m/s", "m/s²", "N/s", "kg/m"],
+        "answer_en": "m/s",
+        "answer_hi": "m/s",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 37,
+        "question_en": "Which acid is found in apples?",
+        "question_hi": "सेब में कौन सा अम्ल पाया जाता है?",
+        "options_en": ["Malic acid", "Citric acid", "Tartaric acid", "Acetic acid"],
+        "options_hi": ["मैलिक अम्ल", "साइट्रिक अम्ल", "टार्टरिक अम्ल", "एसिटिक अम्ल"],
+        "answer_en": "Malic acid",
+        "answer_hi": "मैलिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 38,
+        "question_en": "What is the chemical formula of sulfuric acid?",
+        "question_hi": "सल्फ्यूरिक अम्ल का रासायनिक सूत्र क्या है?",
+        "options_en": ["H₂SO₄", "HCl", "HNO₃", "H₃PO₄"],
+        "options_hi": ["H₂SO₄", "HCl", "HNO₃", "H₃PO₄"],
+        "answer_en": "H₂SO₄",
+        "answer_hi": "H₂SO₄",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 39,
+        "question_en": "Which planet has the longest day?",
+        "question_hi": "किस ग्रह का दिन सबसे लंबा होता है?",
+        "options_en": ["Venus", "Mercury", "Earth", "Mars"],
+        "options_hi": ["शुक्र", "बुध", "पृथ्वी", "मंगल"],
+        "answer_en": "Venus",
+        "answer_hi": "शुक्र",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 40,
+        "question_en": "What is the chemical symbol for nickel?",
+        "question_hi": "निकल का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Ni", "Nk", "Nl", "Nc"],
+        "options_hi": ["Ni", "Nk", "Nl", "Nc"],
+        "answer_en": "Ni",
+        "answer_hi": "Ni",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 41,
+        "question_en": "Which vitamin deficiency causes scurvy?",
+        "question_hi": "किस विटामिन की कमी से स्कर्वी होता है?",
+        "options_en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin C",
+        "answer_hi": "विटामिन सी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 42,
+        "question_en": "What is the unit of frequency?",
+        "question_hi": "आवृत्ति की इकाई क्या है?",
+        "options_en": ["Hertz", "Decibel", "Watt", "Joule"],
+        "options_hi": ["हर्ट्ज", "डेसिबल", "वाट", "जूल"],
+        "answer_en": "Hertz",
+        "answer_hi": "हर्ट्ज",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 43,
+        "question_en": "Which acid is present in tamarind?",
+        "question_hi": "इमली में कौन सा अम्ल मौजूद होता है?",
+        "options_en": ["Tartaric acid", "Citric acid", "Malic acid", "Acetic acid"],
+        "options_hi": ["टार्टरिक अम्ल", "साइट्रिक अम्ल", "मैलिक अम्ल", "एसिटिक अम्ल"],
+        "answer_en": "Tartaric acid",
+        "answer_hi": "टार्टरिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 44,
+        "question_en": "What is the chemical formula of methane?",
+        "question_hi": "मीथेन का रासायनिक सूत्र क्या है?",
+        "options_en": ["CH₄", "C₂H₆", "C₃H₈", "C₄H₁₀"],
+        "options_hi": ["CH₄", "C₂H₆", "C₃H₈", "C₄H₁₀"],
+        "answer_en": "CH₄",
+        "answer_hi": "CH₄",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 45,
+        "question_en": "Which planet is the smallest in our solar system?",
+        "question_hi": "हमारे सौर मंडल का सबसे छोटा ग्रह कौन सा है?",
+        "options_en": ["Mercury", "Mars", "Venus", "Earth"],
+        "options_hi": ["बुध", "मंगल", "शुक्र", "पृथ्वी"],
+        "answer_en": "Mercury",
+        "answer_hi": "बुध",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 46,
+        "question_en": "What is the chemical symbol for silicon?",
+        "question_hi": "सिलिकॉन का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Si", "Sl", "Sn", "Sc"],
+        "options_hi": ["Si", "Sl", "Sn", "Sc"],
+        "answer_en": "Si",
+        "answer_hi": "Si",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 47,
+        "question_en": "Which vitamin deficiency causes night blindness?",
+        "question_hi": "किस विटामिन की कमी से रतौंधी होती है?",
+        "options_en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin A",
+        "answer_hi": "विटामिन ए",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 48,
+        "question_en": "What is the unit of electric current?",
+        "question_hi": "विद्युत धारा की इकाई क्या है?",
+        "options_en": ["Ampere", "Volt", "Ohm", "Watt"],
+        "options_hi": ["एम्पीयर", "वोल्ट", "ओम", "वाट"],
+        "answer_en": "Ampere",
+        "answer_hi": "एम्पीयर",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 49,
+        "question_en": "Which acid is found in ants?",
+        "question_hi": "चींटियों में कौन सा अम्ल पाया जाता है?",
+        "options_en": ["Formic acid", "Acetic acid", "Citric acid", "Lactic acid"],
+        "options_hi": ["फॉर्मिक अम्ल", "एसिटिक अम्ल", "साइट्रिक अम्ल", "लैक्टिक अम्ल"],
+        "answer_en": "Formic acid",
+        "answer_hi": "फॉर्मिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 50,
+        "question_en": "What is the chemical formula of ethanol?",
+        "question_hi": "इथेनॉल का रासायनिक सूत्र क्या है?",
+        "options_en": ["C₂H₅OH", "CH₃OH", "C₃H₇OH", "C₄H₉OH"],
+        "options_hi": ["C₂H₅OH", "CH₃OH", "C₃H₇OH", "C₄H₉OH"],
+        "answer_en": "C₂H₅OH",
+        "answer_hi": "C₂H₅OH",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 51,
+        "question_en": "Which planet has the Great Red Spot?",
+        "question_hi": "किस ग्रह पर महान लाल धब्बा है?",
+        "options_en": ["Jupiter", "Saturn", "Mars", "Neptune"],
+        "options_hi": ["बृहस्पति", "शनि", "मंगल", "नेपच्यून"],
+        "answer_en": "Jupiter",
+        "answer_hi": "बृहस्पति",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 52,
+        "question_en": "What is the chemical symbol for lead?",
+        "question_hi": "सीसे का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Pb", "Ld", "Le", "Pl"],
+        "options_hi": ["Pb", "Ld", "Le", "Pl"],
+        "answer_en": "Pb",
+        "answer_hi": "Pb",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 53,
+        "question_en": "Which vitamin is also known as retinol?",
+        "question_hi": "किस विटामिन को रेटिनॉल के रूप में भी जाना जाता है?",
+        "options_en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin A",
+        "answer_hi": "विटामिन ए",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 54,
+        "question_en": "What is the unit of electric resistance?",
+        "question_hi": "विद्युत प्रतिरोध की इकाई क्या है?",
+        "options_en": ["Ohm", "Ampere", "Volt", "Watt"],
+        "options_hi": ["ओम", "एम्पीयर", "वोल्ट", "वाट"],
+        "answer_en": "Ohm",
+        "answer_hi": "ओम",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 55,
+        "question_en": "Which acid is present in oranges?",
+        "question_hi": "संतरे में कौन सा अम्ल मौजूद होता है?",
+        "options_en": ["Citric acid", "Ascorbic acid", "Both", "Tartaric acid"],
+        "options_hi": ["साइट्रिक अम्ल", "एस्कॉर्बिक अम्ल", "दोनों", "टार्टरिक अम्ल"],
+        "answer_en": "Both",
+        "answer_hi": "दोनों",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 56,
+        "question_en": "What is the chemical formula of nitric acid?",
+        "question_hi": "नाइट्रिक अम्ल का रासायनिक सूत्र क्या है?",
+        "options_en": ["HNO₃", "H₂SO₄", "HCl", "H₃PO₄"],
+        "options_hi": ["HNO₃", "H₂SO₄", "HCl", "H₃PO₄"],
+        "answer_en": "HNO₃",
+        "answer_hi": "HNO₃",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 57,
+        "question_en": "Which planet has the shortest day?",
+        "question_hi": "किस ग्रह का दिन सबसे छोटा होता है?",
+        "options_en": ["Jupiter", "Saturn", "Mercury", "Venus"],
+        "options_hi": ["बृहस्पति", "शनि", "बुध", "शुक्र"],
+        "answer_en": "Jupiter",
+        "answer_hi": "बृहस्पति",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 58,
+        "question_en": "What is the chemical symbol for manganese?",
+        "question_hi": "मैंगनीज का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Mg", "Mn", "Ma", "M"],
+        "options_hi": ["Mg", "Mn", "Ma", "M"],
+        "answer_en": "Mn",
+        "answer_hi": "Mn",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 59,
+        "question_en": "Which vitamin is essential for blood clotting?",
+        "question_hi": "रक्त के थक्के बनने के लिए कौन सा विटामिन आवश्यक है?",
+        "options_en": ["Vitamin K", "Vitamin C", "Vitamin D", "Vitamin E"],
+        "options_hi": ["विटामिन के", "विटामिन सी", "विटामिन डी", "विटामिन ई"],
+        "answer_en": "Vitamin K",
+        "answer_hi": "विटामिन के",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 60,
+        "question_en": "What is the unit of electric potential?",
+        "question_hi": "विद्युत विभव की इकाई क्या है?",
+        "options_en": ["Volt", "Ampere", "Ohm", "Watt"],
+        "options_hi": ["वोल्ट", "एम्पीयर", "ओम", "वाट"],
+        "answer_en": "Volt",
+        "answer_hi": "वोल्ट",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 61,
+        "question_en": "Which acid is used in car batteries?",
+        "question_hi": "कार बैटरियों में किस अम्ल का उपयोग किया जाता है?",
+        "options_en": ["Sulfuric acid", "Hydrochloric acid", "Nitric acid", "Phosphoric acid"],
+        "options_hi": ["सल्फ्यूरिक अम्ल", "हाइड्रोक्लोरिक अम्ल", "नाइट्रिक अम्ल", "फॉस्फोरिक अम्ल"],
+        "answer_en": "Sulfuric acid",
+        "answer_hi": "सल्फ्यूरिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 62,
+        "question_en": "What is the chemical formula of ammonia?",
+        "question_hi": "अमोनिया का रासायनिक सूत्र क्या है?",
+        "options_en": ["NH₃", "NH₄", "NO₂", "N₂O"],
+        "options_hi": ["NH₃", "NH₄", "NO₂", "N₂O"],
+        "answer_en": "NH₃",
+        "answer_hi": "NH₃",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 63,
+        "question_en": "Which planet is the coldest in our solar system?",
+        "question_hi": "हमारे सौर मंडल का सबसे ठंडा ग्रह कौन सा है?",
+        "options_en": ["Neptune", "Uranus", "Saturn", "Mars"],
+        "options_hi": ["नेपच्यून", "युरेनस", "शनि", "मंगल"],
+        "answer_en": "Neptune",
+        "answer_hi": "नेपच्यून",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 64,
+        "question_en": "What is the chemical symbol for chromium?",
+        "question_hi": "क्रोमियम का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Cr", "Ch", "Cm", "Co"],
+        "options_hi": ["Cr", "Ch", "Cm", "Co"],
+        "answer_en": "Cr",
+        "answer_hi": "Cr",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 65,
+        "question_en": "Which vitamin deficiency causes anemia?",
+        "question_hi": "किस विटामिन की कमी से एनीमिया होता है?",
+        "options_en": ["Vitamin B12", "Vitamin C", "Vitamin D", "Vitamin E"],
+        "options_hi": ["विटामिन बी12", "विटामिन सी", "विटामिन डी", "विटामिन ई"],
+        "answer_en": "Vitamin B12",
+        "answer_hi": "विटामिन बी12",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 66,
+        "question_en": "What is the unit of electric charge?",
+        "question_hi": "विद्युत आवेश की इकाई क्या है?",
+        "options_en": ["Coulomb", "Ampere", "Volt", "Ohm"],
+        "options_hi": ["कूलॉम", "एम्पीयर", "वोल्ट", "ओम"],
+        "answer_en": "Coulomb",
+        "answer_hi": "कूलॉम",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 67,
+        "question_en": "Which acid is present in grapes?",
+        "question_hi": "अंगूर में कौन सा अम्ल मौजूद होता है?",
+        "options_en": ["Tartaric acid", "Citric acid", "Malic acid", "All of these"],
+        "options_hi": ["टार्टरिक अम्ल", "साइट्रिक अम्ल", "मैलिक अम्ल", "ये सभी"],
+        "answer_en": "All of these",
+        "answer_hi": "ये सभी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 68,
+        "question_en": "What is the chemical formula of carbon monoxide?",
+        "question_hi": "कार्बन मोनोऑक्साइड का रासायनिक सूत्र क्या है?",
+        "options_en": ["CO", "CO₂", "C₂O", "CO₃"],
+        "options_hi": ["CO", "CO₂", "C₂O", "CO₃"],
+        "answer_en": "CO",
+        "answer_hi": "CO",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 69,
+        "question_en": "Which planet is known as the Evening Star?",
+        "question_hi": "किस ग्रह को शाम का तारा कहा जाता है?",
+        "options_en": ["Venus", "Mercury", "Mars", "Jupiter"],
+        "options_hi": ["शुक्र", "बुध", "मंगल", "बृहस्पति"],
+        "answer_en": "Venus",
+        "answer_hi": "शुक्र",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 70,
+        "question_en": "What is the chemical symbol for cobalt?",
+        "question_hi": "कोबाल्ट का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Co", "Cb", "Ct", "Ca"],
+        "options_hi": ["Co", "Cb", "Ct", "Ca"],
+        "answer_en": "Co",
+        "answer_hi": "Co",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 71,
+        "question_en": "Which vitamin is produced by the human body when exposed to sunlight?",
+        "question_hi": "सूर्य के प्रकाश के संपर्क में आने पर मानव शरीर कौन सा विटामिन उत्पन्न करता है?",
+        "options_en": ["Vitamin D", "Vitamin C", "Vitamin A", "Vitamin K"],
+        "options_hi": ["विटामिन डी", "विटामिन सी", "विटामिन ए", "विटामिन के"],
+        "answer_en": "Vitamin D",
+        "answer_hi": "विटामिन डी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 72,
+        "question_en": "What is the unit of capacitance?",
+        "question_hi": "धारिता की इकाई क्या है?",
+        "options_en": ["Farad", "Henry", "Tesla", "Weber"],
+        "options_hi": ["फैरड", "हेनरी", "टेस्ला", "वेबर"],
+        "answer_en": "Farad",
+        "answer_hi": "फैरड",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 73,
+        "question_en": "Which acid is present in tomatoes?",
+        "question_hi": "टमाटर में कौन सा अम्ल मौजूद होता है?",
+        "options_en": ["Oxalic acid", "Citric acid", "Malic acid", "All of these"],
+        "options_hi": ["ऑक्सालिक अम्ल", "साइट्रिक अम्ल", "मैलिक अम्ल", "ये सभी"],
+        "answer_en": "All of these",
+        "answer_hi": "ये सभी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 74,
+        "question_en": "What is the chemical formula of laughing gas?",
+        "question_hi": "हंसाने वाली गैस का रासायनिक सूत्र क्या है?",
+        "options_en": ["N₂O", "NO₂", "NO", "N₂O₃"],
+        "options_hi": ["N₂O", "NO₂", "NO", "N₂O₃"],
+        "answer_en": "N₂O",
+        "answer_hi": "N₂O",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 75,
+        "question_en": "Which planet rotates on its side?",
+        "question_hi": "कौन सा ग्रह अपनी तरफ घूमता है?",
+        "options_en": ["Uranus", "Neptune", "Saturn", "Jupiter"],
+        "options_hi": ["युरेनस", "नेपच्यून", "शनि", "बृहस्पति"],
+        "answer_en": "Uranus",
+        "answer_hi": "युरेनस",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 76,
+        "question_en": "What is the chemical symbol for platinum?",
+        "question_hi": "प्लेटिनम का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Pt", "Pl", "Pa", "Pn"],
+        "options_hi": ["Pt", "Pl", "Pa", "Pn"],
+        "answer_en": "Pt",
+        "answer_hi": "Pt",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 77,
+        "question_en": "Which vitamin is also called niacin?",
+        "question_hi": "किस विटामिन को नियासिन भी कहा जाता है?",
+        "options_en": ["Vitamin B3", "Vitamin B6", "Vitamin B12", "Vitamin C"],
+        "options_hi": ["विटामिन बी3", "विटामिन बी6", "विटामिन बी12", "विटामिन सी"],
+        "answer_en": "Vitamin B3",
+        "answer_hi": "विटामिन बी3",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 78,
+        "question_en": "What is the unit of inductance?",
+        "question_hi": "प्रेरकत्व की इकाई क्या है?",
+        "options_en": ["Henry", "Farad", "Tesla", "Weber"],
+        "options_hi": ["हेनरी", "फैरड", "टेस्ला", "वेबर"],
+        "answer_en": "Henry",
+        "answer_hi": "हेनरी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 79,
+        "question_en": "Which acid is used in soft drinks?",
+        "question_hi": "शीतल पेय में किस अम्ल का उपयोग किया जाता है?",
+        "options_en": ["Carbonic acid", "Citric acid", "Phosphoric acid", "All of these"],
+        "options_hi": ["कार्बोनिक अम्ल", "साइट्रिक अम्ल", "फॉस्फोरिक अम्ल", "ये सभी"],
+        "answer_en": "All of these",
+        "answer_hi": "ये सभी",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 80,
+        "question_en": "What is the chemical formula of ozone?",
+        "question_hi": "ओजोन का रासायनिक सूत्र क्या है?",
+        "options_en": ["O₃", "O₂", "O", "O₄"],
+        "options_hi": ["O₃", "O₂", "O", "O₄"],
+        "answer_en": "O₃",
+        "answer_hi": "O₃",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 81,
+        "question_en": "Which moon has active volcanoes?",
+        "question_hi": "किस चंद्रमा पर सक्रिय ज्वालामुखी हैं?",
+        "options_en": ["Io", "Europa", "Ganymede", "Callisto"],
+        "options_hi": ["आईओ", "यूरोपा", "गेनीमेड", "कैलिस्टो"],
+        "answer_en": "Io",
+        "answer_hi": "आईओ",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 82,
+        "question_en": "What is the chemical symbol for tungsten?",
+        "question_hi": "टंगस्टन का रासायनिक प्रतीक क्या है?",
+        "options_en": ["W", "Tg", "Tu", "Tn"],
+        "options_hi": ["W", "Tg", "Tu", "Tn"],
+        "answer_en": "W",
+        "answer_hi": "W",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 83,
+        "question_en": "Which vitamin is also called cobalamin?",
+        "question_hi": "किस विटामिन को कोबालामिन भी कहा जाता है?",
+        "options_en": ["Vitamin B12", "Vitamin B6", "Vitamin C", "Vitamin D"],
+        "options_hi": ["विटामिन बी12", "विटामिन बी6", "विटामिन सी", "विटामिन डी"],
+        "answer_en": "Vitamin B12",
+        "answer_hi": "विटामिन बी12",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 84,
+        "question_en": "What is the unit of magnetic flux?",
+        "question_hi": "चुंबकीय फ्लक्स की इकाई क्या है?",
+        "options_en": ["Weber", "Henry", "Tesla", "Farad"],
+        "options_hi": ["वेबर", "हेनरी", "टेस्ला", "फैरड"],
+        "answer_en": "Weber",
+        "answer_hi": "वेबर",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 85,
+        "question_en": "Which acid is used in aspirin?",
+        "question_hi": "एस्पिरिन में किस अम्ल का उपयोग किया जाता है?",
+        "options_en": ["Acetylsalicylic acid", "Salicylic acid", "Benzoic acid", "Formic acid"],
+        "options_hi": ["एसिटाइलसैलिसिलिक अम्ल", "सैलिसिलिक अम्ल", "बेंजोइक अम्ल", "फॉर्मिक अम्ल"],
+        "answer_en": "Acetylsalicylic acid",
+        "answer_hi": "एसिटाइलसैलिसिलिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 86,
+        "question_en": "What is the chemical formula of common sugar?",
+        "question_hi": "साधारण चीनी का रासायनिक सूत्र क्या है?",
+        "options_en": ["C₁₂H₂₂O₁₁", "C₆H₁₂O₆", "C₂H₄O₂", "C₆H₆O₆"],
+        "options_hi": ["C₁₂H₂₂O₁१", "C₆H₁₂O₆", "C₂H₄O₂", "C₆H₆O₆"],
+        "answer_en": "C₁₂H₂₂O₁₁",
+        "answer_hi": "C₁₂H₂₂O₁१",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 87,
+        "question_en": "Which planet has the Great Dark Spot?",
+        "question_hi": "किस ग्रह पर महान अंधेरा धब्बा है?",
+        "options_en": ["Neptune", "Uranus", "Saturn", "Jupiter"],
+        "options_hi": ["नेपच्यून", "युरेनस", "शनि", "बृहस्पति"],
+        "answer_en": "Neptune",
+        "answer_hi": "नेपच्यून",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 88,
+        "question_en": "What is the chemical symbol for uranium?",
+        "question_hi": "यूरेनियम का रासायनिक प्रतीक क्या है?",
+        "options_en": ["U", "Ur", "Um", "Ua"],
+        "options_hi": ["U", "Ur", "Um", "Ua"],
+        "answer_en": "U",
+        "answer_hi": "U",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 89,
+        "question_en": "Which vitamin is also called riboflavin?",
+        "question_hi": "किस विटामिन को राइबोफ्लेविन भी कहा जाता है?",
+        "options_en": ["Vitamin B2", "Vitamin B1", "Vitamin B6", "Vitamin B12"],
+        "options_hi": ["विटामिन बी2", "विटामिन बी1", "विटामिन बी6", "विटामिन बी12"],
+        "answer_en": "Vitamin B2",
+        "answer_hi": "विटामिन बी2",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 90,
+        "question_en": "What is the unit of magnetic field strength?",
+        "question_hi": "चुंबकीय क्षेत्र की शक्ति की इकाई क्या है?",
+        "options_en": ["Tesla", "Weber", "Henry", "Farad"],
+        "options_hi": ["टेस्ला", "वेबर", "हेनरी", "फैरड"],
+        "answer_en": "Tesla",
+        "answer_hi": "टेस्ला",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 91,
+        "question_en": "Which acid is found in honey bee sting?",
+        "question_hi": "मधुमक्खी के डंक में कौन सा अम्ल पाया जाता है?",
+        "options_en": ["Formic acid", "Acetic acid", "Citric acid", "Lactic acid"],
+        "options_hi": ["फॉर्मिक अम्ल", "एसिटिक अम्ल", "साइट्रिक अम्ल", "लैक्टिक अम्ल"],
+        "answer_en": "Formic acid",
+        "answer_hi": "फॉर्मिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 92,
+        "question_en": "What is the chemical formula of hydrogen peroxide?",
+        "question_hi": "हाइड्रोजन पेरोक्साइड का रासायनिक सूत्र क्या है?",
+        "options_en": ["H₂O₂", "H₂O", "HO₂", "H₃O"],
+        "options_hi": ["H₂O₂", "H₂O", "HO₂", "H₃O"],
+        "answer_en": "H₂O₂",
+        "answer_hi": "H₂O₂",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 93,
+        "question_en": "Which dwarf planet was formerly considered the ninth planet?",
+        "question_hi": "कौन सा बौना ग्रह पहले नौवां ग्रह माना जाता था?",
+        "options_en": ["Pluto", "Eris", "Ceres", "Haumea"],
+        "options_hi": ["प्लूटो", "एरिस", "सेरेस", "हौमिया"],
+        "answer_en": "Pluto",
+        "answer_hi": "प्लूटो",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 94,
+        "question_en": "What is the chemical symbol for boron?",
+        "question_hi": "बोरॉन का रासायनिक प्रतीक क्या है?",
+        "options_en": ["B", "Bo", "Br", "Bn"],
+        "options_hi": ["B", "Bo", "Br", "Bn"],
+        "answer_en": "B",
+        "answer_hi": "B",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 95,
+        "question_en": "Which vitamin is also called thiamine?",
+        "question_hi": "किस विटामिन को थायमिन भी कहा जाता है?",
+        "options_en": ["Vitamin B1", "Vitamin B2", "Vitamin B6", "Vitamin B12"],
+        "options_hi": ["विटामिन बी1", "विटामिन बी2", "विटामिन बी6", "विटामिन बी12"],
+        "answer_en": "Vitamin B1",
+        "answer_hi": "विटामिन बी1",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 96,
+        "question_en": "What is the SI unit of temperature?",
+        "question_hi": "तापमान की SI इकाई क्या है?",
+        "options_en": ["Kelvin", "Celsius", "Fahrenheit", "Rankine"],
+        "options_hi": ["केल्विन", "सेल्सियस", "फारेनहाइट", "रैंकिन"],
+        "answer_en": "Kelvin",
+        "answer_hi": "केल्विन",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 97,
+        "question_en": "Which acid is used in pickling?",
+        "question_hi": "अचार बनाने में किस अम्ल का उपयोग किया जाता है?",
+        "options_en": ["Acetic acid", "Citric acid", "Lactic acid", "Tartaric acid"],
+        "options_hi": ["एसिटिक अम्ल", "साइट्रिक अम्ल", "लैक्टिक अम्ल", "टार्टरिक अम्ल"],
+        "answer_en": "Acetic acid",
+        "answer_hi": "एसिटिक अम्ल",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 98,
+        "question_en": "What is the chemical formula of common bleach?",
+        "question_hi": "साधारण ब्लीच का रासायनिक सूत्र क्या है?",
+        "options_en": ["NaOCl", "NaCl", "NaOH", "NaHCO₃"],
+        "options_hi": ["NaOCl", "NaCl", "NaOH", "NaHCO₃"],
+        "answer_en": "NaOCl",
+        "answer_hi": "NaOCl",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 99,
+        "question_en": "Which planet has the fastest winds in the solar system?",
+        "question_hi": "सौर मंडल में किस ग्रह पर सबसे तेज हवाएं चलती हैं?",
+        "options_en": ["Neptune", "Jupiter", "Saturn", "Uranus"],
+        "options_hi": ["नेपच्यून", "बृहस्पति", "शनि", "युरेनस"],
+        "answer_en": "Neptune",
+        "answer_hi": "नेपच्यून",
+        "attempted": false,
+        "selected": ""
+    },
+    {
+        "num": 100,
+        "question_en": "What is the chemical symbol for radium?",
+        "question_hi": "रेडियम का रासायनिक प्रतीक क्या है?",
+        "options_en": ["Ra", "Rd", "Rm", "Rn"],
+        "options_hi": ["Ra", "Rd", "Rm", "Rn"],
+        "answer_en": "Ra",
+        "answer_hi": "Ra",
+        "attempted": false,
+        "selected": ""
+    }
+];
+// --------------------------- GLOBAL VARS -----------------------------
+// --------------------------- GLOBAL VARS -----------------------------
+let currentQuestion = 0;
+let language = "en";
+let timeLeft = 60 * 60;   // 60 minutes timer
+let timerInterval;
+
+// --------------------------- LOAD QUESTION ----------------------------
+function loadQuestion(index) {
+    const q = questions[index];
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
+
+    const optionsElement = document.getElementById("options");
+    optionsElement.innerHTML = "";
+
+    const options = language === "en" ? q.options_en : q.options_hi;
+
+    options.forEach((option) => {
+        const isSelected = q.selected === option;
+        const optionDiv = document.createElement("div");
+
+        optionDiv.className = "option-box";
+        optionDiv.style = `
+            border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
+            background-color: ${isSelected ? "#e7f1ff" : "white"};
+            padding: 10px;
+            border-radius: 8px;
+            margin: 6px 0;
+            cursor: pointer;
+        `;
+
+        optionDiv.innerHTML = `
+            <input type="radio" name="option"
+            value="${option}" ${isSelected ? "checked" : ""} /> ${option}
+        `;
+
+        optionDiv.addEventListener("click", () => {
+            markAttempted(index, option);
+            loadQuestion(index);
+        });
+
+        optionsElement.appendChild(optionDiv);
+    });
+
+    updateNavigation();
+}
+
+// --------------------------- MARK ATTEMPT ----------------------------
+function markAttempted(index, selectedAnswer) {
+    questions[index].attempted = true;
+    questions[index].selected = selectedAnswer;
+    updateNavigation();
+}
+
+// --------------------------- NEXT / PREV -----------------------------
+function nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
+    }
+}
+
+// --------------------------- LANGUAGE CHANGE -------------------------
+function changeLanguage() {
+    language = document.getElementById("languageSelect").value;
+    loadQuestion(currentQuestion);
+}
+
+// --------------------------- TIMER -------------------------------
+function startTimer() {
+    const timerElement = document.getElementById("timer");
+    clearInterval(timerInterval);
+
+    timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("⏳ Time Over!");
+            submitQuiz();
+            return;
+        }
+
+        const h = Math.floor(timeLeft / 3600);
+        const m = Math.floor((timeLeft % 3600) / 60);
+        const s = timeLeft % 60;
+
+        timerElement.textContent =
+            `Time Left: ${h.toString().padStart(2, "0")}:${m
+                .toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+
+        timeLeft--;
+    }, 1000);
+}
+
+// --------------------------- SUBMIT QUIZ ---------------------
+function submitQuiz() {
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
+
+    clearInterval(timerInterval);
+
+    // Calculate time spent
+    const totalTimeSpent = (60 * 60) - timeLeft;
+    const mins = Math.floor(totalTimeSpent / 60);
+    const secs = totalTimeSpent % 60;
+
+    // Save to localStorage
+    localStorage.setItem("timeTaken", `${mins} min ${secs} sec`);
+
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
+        if (q.attempted) {
+            attempted++;
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
+    });
+
+    // Save result data
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    // Stop camera stream if active
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Redirect
+    window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+}
+
+// --------------------------- NAVIGATION ------------------------------
+function updateNavigation() {
+    const nav = document.getElementById("circleContainer");
+    nav.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        let color = "gray";
+        if (i === currentQuestion) color = "blue";
+        else if (q.attempted) color = "green";
+
+        const circle = document.createElement("div");
+        circle.className = "circle";
+        circle.style.background = color;
+        circle.textContent = i + 1;
+        circle.onclick = () => jumpToQuestion(i);
+        nav.appendChild(circle);
+    });
+}
+
+function jumpToQuestion(i) {
+    currentQuestion = i;
+    loadQuestion(i);
+}
+
+// --------------------------- CAMERA ----------------------
+let videoStream;
+
+function startCamera() {
+    const container = document.createElement("div");
+    container.id = "camera-container";
+    container.style.position = "fixed";
+    container.style.top = "10px";
+    container.style.left = "10px";
+    container.style.width = "130px";
+    container.style.height = "130px";
+    container.style.borderRadius = "50%";
+    container.style.overflow = "hidden";
+    container.style.background = "#000";
+    container.style.border = "3px solid red";
+    container.style.zIndex = "9999";
+    document.body.appendChild(container);
+
+    const video = document.createElement("video");
+    video.autoplay = true;
+    video.playsInline = true;
+    video.style.width = "100%";
+    video.style.height = "100%";
+    video.style.objectFit = "cover";
+    container.appendChild(video);
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            videoStream = stream;
+        })
+        .catch(() => alert("Camera not accessible!"));
+}
+
+// --------------------------- PAGE LOAD --------------------------
+window.onload = function () {
+    loadQuestion(currentQuestion);
+    startTimer();
+    startCamera();
+};

@@ -1,0 +1,1322 @@
+const questions = [
+  {
+    "num": 1,
+    "question_en": "Two circles x² + y² - 6x - 8y + 21 = 0 and x² + y² - 2x - 4y + 1 = 0 intersect at P and Q. The equation of circle with PQ as diameter is:",
+    "question_hi": "दो वृत्त x² + y² - 6x - 8y + 21 = 0 और x² + y² - 2x - 4y + 1 = 0, P और Q पर प्रतिच्छेद करते हैं। PQ को व्यास मानकर वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 4x - 6y + 11 = 0", "x² + y² - 4x - 6y + 9 = 0", "x² + y² - 4x - 6y + 7 = 0", "x² + y² - 4x - 6y + 5 = 0"],
+    "options_hi": ["x² + y² - 4x - 6y + 11 = 0", "x² + y² - 4x - 6y + 9 = 0", "x² + y² - 4x - 6y + 7 = 0", "x² + y² - 4x - 6y + 5 = 0"],
+    "answer_en": "x² + y² - 4x - 6y + 11 = 0",
+    "answer_hi": "x² + y² - 4x - 6y + 11 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 2,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 cuts the three circles x² + y² = 5, x² + y² - 8x - 6y + 10 = 0 and x² + y² - 4x + 2y - 2 = 0 orthogonally, then g + f + c equals:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 तीन वृत्तों x² + y² = 5, x² + y² - 8x - 6y + 10 = 0 और x² + y² - 4x + 2y - 2 = 0 को लंबकोणीय काटता है, तो g + f + c बराबर है:",
+    "options_en": ["-9", "-10", "-11", "-12"],
+    "options_hi": ["-9", "-10", "-11", "-12"],
+    "answer_en": "-11",
+    "answer_hi": "-11",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 3,
+    "question_en": "The locus of centers of circles which cut the circles x² + y² + 4x - 6y + 9 = 0 and x² + y² - 4x + 6y + 4 = 0 orthogonally is a line. The distance of this line from origin is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो वृत्तों x² + y² + 4x - 6y + 9 = 0 और x² + y² - 4x + 6y + 4 = 0 को लंबकोणीय काटते हैं, एक रेखा है। इस रेखा की मूल बिंदु से दूरी है:",
+    "options_en": ["5/√13", "5/√12", "5/√10", "5/√5"],
+    "options_hi": ["5/√13", "5/√12", "5/√10", "5/√5"],
+    "answer_en": "5/√13",
+    "answer_hi": "5/√13",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 4,
+    "question_en": "A circle passes through the points (2, 2) and (9, 9) and touches the x-axis. The length of its radius is:",
+    "question_hi": "एक वृत्त बिंदुओं (2, 2) और (9, 9) से गुजरता है और x-अक्ष को स्पर्श करता है। इसकी त्रिज्या की लंबाई है:",
+    "options_en": ["5", "6", "7", "8"],
+    "options_hi": ["5", "6", "7", "8"],
+    "answer_en": "5",
+    "answer_hi": "5",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 5,
+    "question_en": "From the point A(0, 3) on the circle x² + y² - 4x - 6y + 9 = 0, chord AB is drawn and extended to P such that AP = 2AB. The locus of P is:",
+    "question_hi": "वृत्त x² + y² - 4x - 6y + 9 = 0 पर बिंदु A(0, 3) से जीवा AB खींची जाती है और P तक इस प्रकार बढ़ाई जाती है कि AP = 2AB। P का बिन्दुपथ है:",
+    "options_en": ["x² + y² - 8x - 12y + 27 = 0", "x² + y² - 6x - 9y + 18 = 0", "x² + y² - 4x - 6y + 9 = 0", "x² + y² - 2x - 3y + 4 = 0"],
+    "options_hi": ["x² + y² - 8x - 12y + 27 = 0", "x² + y² - 6x - 9y + 18 = 0", "x² + y² - 4x - 6y + 9 = 0", "x² + y² - 2x - 3y + 4 = 0"],
+    "answer_en": "x² + y² - 8x - 12y + 27 = 0",
+    "answer_hi": "x² + y² - 8x - 12y + 27 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 6,
+    "question_en": "If a circle passes through (a, b) and cuts the circle x² + y² = 4 orthogonally, then the locus of its center is:",
+    "question_hi": "यदि एक वृत्त (a, b) से गुजरता है और वृत्त x² + y² = 4 को लंबकोणीय काटता है, तो उसके केंद्र का बिन्दुपथ है:",
+    "options_en": ["2ax + 2by = a² + b² - 4", "2ax + 2by = a² + b² + 4", "x² + y² = a² + b² - 4", "x² + y² = a² + b² + 4"],
+    "options_hi": ["2ax + 2by = a² + b² - 4", "2ax + 2by = a² + b² + 4", "x² + y² = a² + b² - 4", "x² + y² = a² + b² + 4"],
+    "answer_en": "2ax + 2by = a² + b² - 4",
+    "answer_hi": "2ax + 2by = a² + b² - 4",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 7,
+    "question_en": "The equation of the circle which touches the circle x² + y² - 6x + 4y - 12 = 0 at (-1, 1) and passes through (2, -3) is:",
+    "question_hi": "उस वृत्त का समीकरण जो वृत्त x² + y² - 6x + 4y - 12 = 0 को (-1, 1) पर स्पर्श करता है और (2, -3) से गुजरता है, है:",
+    "options_en": ["x² + y² - 2x + 4y - 5 = 0", "x² + y² - 4x + 2y - 15 = 0", "x² + y² - 6x + 8y - 11 = 0", "x² + y² - 8x + 6y - 7 = 0"],
+    "options_hi": ["x² + y² - 2x + 4y - 5 = 0", "x² + y² - 4x + 2y - 15 = 0", "x² + y² - 6x + 8y - 11 = 0", "x² + y² - 8x + 6y - 7 = 0"],
+    "answer_en": "x² + y² - 6x + 8y - 11 = 0",
+    "answer_hi": "x² + y² - 6x + 8y - 11 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 8,
+    "question_en": "If the line 3x - 4y - k = 0 touches the circle x² + y² - 4x - 8y - 5 = 0, then the values of k are:",
+    "question_hi": "यदि रेखा 3x - 4y - k = 0 वृत्त x² + y² - 4x - 8y - 5 = 0 को स्पर्श करती है, तो k के मान हैं:",
+    "options_en": ["-35, 15", "35, -15", "20, -30", "-20, 30"],
+    "options_hi": ["-35, 15", "35, -15", "20, -30", "-20, 30"],
+    "answer_en": "-35, 15",
+    "answer_hi": "-35, 15",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 9,
+    "question_en": "The circle x² + y² - 4x - 4y + 4 = 0 is inscribed in a triangle which has two sides along coordinate axes. The equation of circumcircle of the triangle is:",
+    "question_hi": "वृत्त x² + y² - 4x - 4y + 4 = 0 एक त्रिभुज में अंकित है जिसकी दो भुजाएँ निर्देशांक अक्षों के अनुदिश हैं। त्रिभुज के परिवृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 4x - 4y = 0", "x² + y² - 2x - 2y = 0", "x² + y² - 6x - 6y + 9 = 0", "x² + y² - 8x - 8y + 16 = 0"],
+    "options_hi": ["x² + y² - 4x - 4y = 0", "x² + y² - 2x - 2y = 0", "x² + y² - 6x - 6y + 9 = 0", "x² + y² - 8x - 8y + 16 = 0"],
+    "answer_en": "x² + y² - 4x - 4y = 0",
+    "answer_hi": "x² + y² - 4x - 4y = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 10,
+    "question_en": "The locus of midpoints of chords of circle x² + y² = a² which are tangent to the circle x² + y² - 2ax = 0 is:",
+    "question_hi": "वृत्त x² + y² = a² की उन जीवाओं के मध्य बिंदुओं का बिन्दुपथ जो वृत्त x² + y² - 2ax = 0 की स्पर्श रेखाएँ हैं, है:",
+    "options_en": ["y² = a(a - 2x)", "y² = 2a(a - x)", "x² = a(a - 2y)", "x² = 2a(a - y)"],
+    "options_hi": ["y² = a(a - 2x)", "y² = 2a(a - x)", "x² = a(a - 2y)", "x² = 2a(a - y)"],
+    "answer_en": "y² = a(a - 2x)",
+    "answer_hi": "y² = a(a - 2x)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 11,
+    "question_en": "If a circle cuts two circles x² + y² = a² and x² + y² = b² orthogonally, then its center lies on:",
+    "question_hi": "यदि एक वृत्त दो वृत्तों x² + y² = a² और x² + y² = b² को लंबकोणीय काटता है, तो उसका केंद्र स्थित है:",
+    "options_en": ["x-axis", "y-axis", "line x = y", "origin"],
+    "options_hi": ["x-अक्ष", "y-अक्ष", "रेखा x = y", "मूल बिंदु"],
+    "answer_en": "origin",
+    "answer_hi": "मूल बिंदु",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 12,
+    "question_en": "The angle between the tangents from (α, β) to the circle x² + y² = a² is 60°. Then the locus of (α, β) is:",
+    "question_hi": "(α, β) से वृत्त x² + y² = a² पर स्पर्श रेखाओं के बीच का कोण 60° है। तब (α, β) का बिन्दुपथ है:",
+    "options_en": ["α² + β² = 2a²", "α² + β² = 3a²", "α² + β² = 4a²", "α² + β² = a²/3"],
+    "options_hi": ["α² + β² = 2a²", "α² + β² = 3a²", "α² + β² = 4a²", "α² + β² = a²/3"],
+    "answer_en": "α² + β² = 4a²",
+    "answer_hi": "α² + β² = 4a²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 13,
+    "question_en": "The circles x² + y² + 2ax + c = 0 and x² + y² + 2by + c = 0 touch each other if:",
+    "question_hi": "वृत्त x² + y² + 2ax + c = 0 और x² + y² + 2by + c = 0 एक दूसरे को स्पर्श करते हैं यदि:",
+    "options_en": ["1/a² + 1/b² = 1/c", "1/a + 1/b = 1/c", "a² + b² = c", "a + b = c"],
+    "options_hi": ["1/a² + 1/b² = 1/c", "1/a + 1/b = 1/c", "a² + b² = c", "a + b = c"],
+    "answer_en": "1/a² + 1/b² = 1/c",
+    "answer_hi": "1/a² + 1/b² = 1/c",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 14,
+    "question_en": "A circle of radius 2 has center at (2, 0). Another circle of radius 1 has center at (5, 0). A line is tangent to the two circles at points in the first quadrant. The equation of the line is:",
+    "question_hi": "त्रिज्या 2 के एक वृत्त का केंद्र (2, 0) पर है। त्रिज्या 1 के एक अन्य वृत्त का केंद्र (5, 0) पर है। एक रेखा प्रथम चतुर्थांश में बिंदुओं पर दोनों वृत्तों की स्पर्श रेखा है। रेखा का समीकरण है:",
+    "options_en": ["y = (√3/3)x + 4√3/3", "y = (√3)x + 4√3", "y = (1/√3)x + 4/√3", "y = √3x + 4"],
+    "options_hi": ["y = (√3/3)x + 4√3/3", "y = (√3)x + 4√3", "y = (1/√3)x + 4/√3", "y = √3x + 4"],
+    "answer_en": "y = (√3/3)x + 4√3/3",
+    "answer_hi": "y = (√3/3)x + 4√3/3",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 15,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 bisects the circumference of circle x² + y² + 2g'x + 2f'y + c' = 0, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 वृत्त x² + y² + 2g'x + 2f'y + c' = 0 की परिधि को समद्विभाजित करता है, तो:",
+    "options_en": ["2g(g - g') + 2f(f - f') = c - c'", "2g'(g - g') + 2f'(f - f') = c - c'", "g(g - g') + f(f - f') = c - c'", "g'(g - g') + f'(f - f') = c - c'"],
+    "options_hi": ["2g(g - g') + 2f(f - f') = c - c'", "2g'(g - g') + 2f'(f - f') = c - c'", "g(g - g') + f(f - f') = c - c'", "g'(g - g') + f'(f - f') = c - c'"],
+    "answer_en": "2g(g - g') + 2f(f - f') = c - c'",
+    "answer_hi": "2g(g - g') + 2f(f - f') = c - c'",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 16,
+    "question_en": "The equation of circle passing through (1, 1) and the points of intersection of circles x² + y² + 13x - 3y = 0 and 2x² + 2y² + 4x - 7y - 25 = 0 is:",
+    "question_hi": "(1, 1) से गुजरने वाले और वृत्तों x² + y² + 13x - 3y = 0 और 2x² + 2y² + 4x - 7y - 25 = 0 के प्रतिच्छेदन बिंदुओं से गुजरने वाले वृत्त का समीकरण है:",
+    "options_en": ["4x² + 4y² + 30x - 13y - 25 = 0", "4x² + 4y² - 30x - 13y + 25 = 0", "4x² + 4y² + 30x - 13y + 25 = 0", "4x² + 4y² - 30x - 13y - 25 = 0"],
+    "options_hi": ["4x² + 4y² + 30x - 13y - 25 = 0", "4x² + 4y² - 30x - 13y + 25 = 0", "4x² + 4y² + 30x - 13y + 25 = 0", "4x² + 4y² - 30x - 13y - 25 = 0"],
+    "answer_en": "4x² + 4y² + 30x - 13y - 25 = 0",
+    "answer_hi": "4x² + 4y² + 30x - 13y - 25 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 17,
+    "question_en": "A circle touches the line y = x at (1, 1) and has radius √2. The equation of circle is:",
+    "question_hi": "एक वृत्त रेखा y = x को (1, 1) पर स्पर्श करता है और त्रिज्या √2 है। वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 2x - 2y = 0", "x² + y² - 4x + 2 = 0", "x² + y² - 4x - 4y + 6 = 0", "x² + y² - 2x - 4y + 4 = 0"],
+    "options_hi": ["x² + y² - 2x - 2y = 0", "x² + y² - 4x + 2 = 0", "x² + y² - 4x - 4y + 6 = 0", "x² + y² - 2x - 4y + 4 = 0"],
+    "answer_en": "x² + y² - 4x - 4y + 6 = 0",
+    "answer_hi": "x² + y² - 4x - 4y + 6 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 18,
+    "question_en": "If the line y = mx + c is a tangent to the circle x² + y² = a² and also a normal to the circle x² + y² = b², then:",
+    "question_hi": "यदि रेखा y = mx + c वृत्त x² + y² = a² की स्पर्श रेखा है और वृत्त x² + y² = b² के लिए अभिलंब भी है, तो:",
+    "options_en": ["a² + b² = c²(1 + m²)", "a² - b² = c²(1 + m²)", "a²b² = c²(1 + m²)", "a²/b² = 1 + m²"],
+    "options_hi": ["a² + b² = c²(1 + m²)", "a² - b² = c²(1 + m²)", "a²b² = c²(1 + m²)", "a²/b² = 1 + m²"],
+    "answer_en": "a² + b² = c²(1 + m²)",
+    "answer_hi": "a² + b² = c²(1 + m²)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 19,
+    "question_en": "The locus of centers of circles which touch the circle x² + y² - 6x - 6y + 14 = 0 externally and also touch y-axis is given by:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो वृत्त x² + y² - 6x - 6y + 14 = 0 को बाह्य रूप से स्पर्श करते हैं और y-अक्ष को भी स्पर्श करते हैं, द्वारा दिया गया है:",
+    "options_en": ["x² - 6x - 10y + 14 = 0", "y² - 6x - 10y + 14 = 0", "y² - 10x - 6y + 14 = 0", "x² - 10x - 6y + 14 = 0"],
+    "options_hi": ["x² - 6x - 10y + 14 = 0", "y² - 6x - 10y + 14 = 0", "y² - 10x - 6y + 14 = 0", "x² - 10x - 6y + 14 = 0"],
+    "answer_en": "y² - 10x - 6y + 14 = 0",
+    "answer_hi": "y² - 10x - 6y + 14 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 20,
+    "question_en": "A variable circle passes through the fixed point A(p, q) and touches x-axis. The locus of the other end of diameter through A is:",
+    "question_hi": "एक परिवर्ती वृत्त नियत बिंदु A(p, q) से गुजरता है और x-अक्ष को स्पर्श करता है। A से होकर जाने वाले व्यास के दूसरे सिरे का बिन्दुपथ है:",
+    "options_en": ["(x - p)² = 4qy", "(y - q)² = 4px", "(x - p)² = 4q(y - q)", "(y - q)² = 4p(x - p)"],
+    "options_hi": ["(x - p)² = 4qy", "(y - q)² = 4px", "(x - p)² = 4q(y - q)", "(y - q)² = 4p(x - p)"],
+    "answer_en": "(x - p)² = 4qy",
+    "answer_hi": "(x - p)² = 4qy",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 21,
+    "question_en": "The circle x² + y² + 4x - 7y + 12 = 0 cuts a chord of length 1 on x-axis. The equation of circle with this chord as diameter is:",
+    "question_hi": "वृत्त x² + y² + 4x - 7y + 12 = 0, x-अक्ष पर लंबाई 1 की एक जीवा काटता है। इस जीवा को व्यास मानकर वृत्त का समीकरण है:",
+    "options_en": ["x² + y² + 4x - 8y + 15 = 0", "x² + y² + 4x - 8y + 12 = 0", "x² + y² + 4x - 8y + 11 = 0", "x² + y² + 4x - 8y + 10 = 0"],
+    "options_hi": ["x² + y² + 4x - 8y + 15 = 0", "x² + y² + 4x - 8y + 12 = 0", "x² + y² + 4x - 8y + 11 = 0", "x² + y² + 4x - 8y + 10 = 0"],
+    "answer_en": "x² + y² + 4x - 8y + 11 = 0",
+    "answer_hi": "x² + y² + 4x - 8y + 11 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 22,
+    "question_en": "If the line lx + my = 1 is a tangent to the circle (x - h)² + (y - k)² = a², then:",
+    "question_hi": "यदि रेखा lx + my = 1 वृत्त (x - h)² + (y - k)² = a² की स्पर्श रेखा है, तो:",
+    "options_en": ["(lh + mk - 1)² = a²(l² + m²)", "(lh - mk)² = a²(l² + m²)", "(h - l)² + (k - m)² = a²", "(h + l)² + (k + m)² = a²"],
+    "options_hi": ["(lh + mk - 1)² = a²(l² + m²)", "(lh - mk)² = a²(l² + m²)", "(h - l)² + (k - m)² = a²", "(h + l)² + (k + m)² = a²"],
+    "answer_en": "(lh + mk - 1)² = a²(l² + m²)",
+    "answer_hi": "(lh + mk - 1)² = a²(l² + m²)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 23,
+    "question_en": "A circle of radius 2 lies in first quadrant touching both axes. The equation of circle with same radius touching it externally and also touching both axes is:",
+    "question_hi": "त्रिज्या 2 का एक वृत्त प्रथम चतुर्थांश में दोनों अक्षों को स्पर्श करता है। समान त्रिज्या वाले वृत्त का समीकरण जो इसे बाह्य रूप से स्पर्श करता है और दोनों अक्षों को भी स्पर्श करता है, है:",
+    "options_en": ["x² + y² - 4x - 4y + 4 = 0", "x² + y² - 8x - 8y + 16 = 0", "x² + y² - 12x - 12y + 36 = 0", "x² + y² - 6x - 6y + 9 = 0"],
+    "options_hi": ["x² + y² - 4x - 4y + 4 = 0", "x² + y² - 8x - 8y + 16 = 0", "x² + y² - 12x - 12y + 36 = 0", "x² + y² - 6x - 6y + 9 = 0"],
+    "answer_en": "x² + y² - 8x - 8y + 16 = 0",
+    "answer_hi": "x² + y² - 8x - 8y + 16 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 24,
+    "question_en": "The line x + y = p meets the axes at A and B. A circle is circumscribed about triangle OAB. If the radii of circumcircle for all positions of line are equal, then locus of center of circle is:",
+    "question_hi": "रेखा x + y = p अक्षों को A और B पर मिलती है। त्रिभुज OAB के चारों ओर एक वृत्त परिगत है। यदि रेखा की सभी स्थितियों के लिए परिवृत्त की त्रिज्याएँ समान हैं, तो वृत्त के केंद्र का बिन्दुपथ है:",
+    "options_en": ["x² - y² = 0", "x² + y² = 0", "x² - y² = p²", "x² + y² = p²"],
+    "options_hi": ["x² - y² = 0", "x² + y² = 0", "x² - y² = p²", "x² + y² = p²"],
+    "answer_en": "x² - y² = 0",
+    "answer_hi": "x² - y² = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 25,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 bisects the circumference of circle x² + y² + 2g'x + 2f'y + c' = 0, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 वृत्त x² + y² + 2g'x + 2f'y + c' = 0 की परिधि को समद्विभाजित करता है, तो:",
+    "options_en": ["2g'(g - g') + 2f'(f - f') = c - c'", "2g(g' - g) + 2f(f' - f) = c' - c", "2g(g - g') + 2f(f - f') = c - c'", "2g'(g' - g) + 2f'(f' - f) = c' - c"],
+    "options_hi": ["2g'(g - g') + 2f'(f - f') = c - c'", "2g(g' - g) + 2f(f' - f) = c' - c", "2g(g - g') + 2f(f - f') = c - c'", "2g'(g' - g) + 2f'(f' - f) = c' - c"],
+    "answer_en": "2g(g - g') + 2f(f - f') = c - c'",
+    "answer_hi": "2g(g - g') + 2f(f - f') = c - c'",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 26,
+    "question_en": "The line y = mx + c intersects the circle x² + y² = r² in two distinct points if:",
+    "question_hi": "रेखा y = mx + c वृत्त x² + y² = r² को दो अलग-अलग बिंदुओं पर प्रतिच्छेद करती है यदि:",
+    "options_en": ["-r√(1+m²) < c < r√(1+m²)", "c < -r√(1+m²) or c > r√(1+m²)", "c = ±r√(1+m²)", "c = 0"],
+    "options_hi": ["-r√(1+m²) < c < r√(1+m²)", "c < -r√(1+m²) या c > r√(1+m²)", "c = ±r√(1+m²)", "c = 0"],
+    "answer_en": "-r√(1+m²) < c < r√(1+m²)",
+    "answer_hi": "-r√(1+m²) < c < r√(1+m²)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 27,
+    "question_en": "A circle touches the line y = x at a point P such that OP = 4√2, where O is origin. The circle contains the point (-10, 2) in its interior. The radius of circle is:",
+    "question_hi": "एक वृत्त रेखा y = x को एक बिंदु P पर स्पर्श करता है जिससे OP = 4√2, जहाँ O मूल बिंदु है। वृत्त बिंदु (-10, 2) को अपने आंतरिक भाग में समाहित करता है। वृत्त की त्रिज्या है:",
+    "options_en": ["5", "7", "8", "10"],
+    "options_hi": ["5", "7", "8", "10"],
+    "answer_en": "10",
+    "answer_hi": "10",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 28,
+    "question_en": "The equation of circle with center (h, k) and radius equal to distance of (h, k) from line x + y = 1 is:",
+    "question_hi": "केंद्र (h, k) और त्रिज्या रेखा x + y = 1 से (h, k) की दूरी के बराबर वाले वृत्त का समीकरण है:",
+    "options_en": ["(x - h)² + (y - k)² = (h + k - 1)²/2", "(x - h)² + (y - k)² = (h + k - 1)²", "(x - h)² + (y - k)² = h² + k²", "(x - h)² + (y - k)² = (h - k)²"],
+    "options_hi": ["(x - h)² + (y - k)² = (h + k - 1)²/2", "(x - h)² + (y - k)² = (h + k - 1)²", "(x - h)² + (y - k)² = h² + k²", "(x - h)² + (y - k)² = (h - k)²"],
+    "answer_en": "(x - h)² + (y - k)² = (h + k - 1)²/2",
+    "answer_hi": "(x - h)² + (y - k)² = (h + k - 1)²/2",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 29,
+    "question_en": "A variable chord is drawn through the origin to the circle x² + y² - 2ax = 0. The locus of center of circle drawn on this chord as diameter is:",
+    "question_hi": "वृत्त x² + y² - 2ax = 0 के मूल बिंदु से होकर एक परिवर्ती जीवा खींची जाती है। इस जीवा को व्यास मानकर खींचे गए वृत्त के केंद्र का बिन्दुपथ है:",
+    "options_en": ["x² + y² - ax = 0", "x² + y² + ax = 0", "x² + y² - ay = 0", "x² + y² + ay = 0"],
+    "options_hi": ["x² + y² - ax = 0", "x² + y² + ax = 0", "x² + y² - ay = 0", "x² + y² + ay = 0"],
+    "answer_en": "x² + y² - ax = 0",
+    "answer_hi": "x² + y² - ax = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 30,
+    "question_en": "The locus of midpoint of chords of circle x² + y² = a² which are tangent to parabola y² = 4ax is:",
+    "question_hi": "वृत्त x² + y² = a² की उन जीवाओं के मध्य बिंदुओं का बिन्दुपथ जो परवलय y² = 4ax की स्पर्श रेखाएँ हैं, है:",
+    "options_en": ["y²(x - 2a) + a³ = 0", "y²(x + 2a) - a³ = 0", "y²(x - a) + a³ = 0", "y²(x + a) - a³ = 0"],
+    "options_hi": ["y²(x - 2a) + a³ = 0", "y²(x + 2a) - a³ = 0", "y²(x - a) + a³ = 0", "y²(x + a) - a³ = 0"],
+    "answer_en": "y²(x - 2a) + a³ = 0",
+    "answer_hi": "y²(x - 2a) + a³ = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 31,
+    "question_en": "The area of triangle formed by the tangents from the point (4, 3) to the circle x² + y² = 9 and the line joining their points of contact is:",
+    "question_hi": "बिंदु (4, 3) से वृत्त x² + y² = 9 पर खींची गई स्पर्श रेखाओं और उनके स्पर्श बिंदुओं को मिलाने वाली रेखा से बने त्रिभुज का क्षेत्रफल है:",
+    "options_en": ["192/25", "192/5", "96/25", "96/5"],
+    "options_hi": ["192/25", "192/5", "96/25", "96/5"],
+    "answer_en": "192/25",
+    "answer_hi": "192/25",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 32,
+    "question_en": "A circle of radius 5 units has diameter along the angle bisector of lines x + y = 2 and x - y = 2. If chord of contact from origin makes an angle of 45° with x-axis, the equation of circle is:",
+    "question_hi": "त्रिज्या 5 इकाई का एक वृत्त जिसका व्यास रेखाओं x + y = 2 और x - y = 2 के कोण समद्विभाजक के अनुदिश है। यदि मूल बिंदु से सम्पर्क जीवा x-अक्ष से 45° का कोण बनाती है, तो वृत्त का समीकरण है:",
+    "options_en": ["(x - 2)² + y² = 25", "x² + (y - 2)² = 25", "(x - 2√2)² + y² = 25", "x² + (y - 2√2)² = 25"],
+    "options_hi": ["(x - 2)² + y² = 25", "x² + (y - 2)² = 25", "(x - 2√2)² + y² = 25", "x² + (y - 2√2)² = 25"],
+    "answer_en": "(x - 2)² + y² = 25",
+    "answer_hi": "(x - 2)² + y² = 25",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 33,
+    "question_en": "If the line 3x - 4y - λ = 0 touches the circle x² + y² - 4x - 8y - 5 = 0, then λ can be:",
+    "question_hi": "यदि रेखा 3x - 4y - λ = 0 वृत्त x² + y² - 4x - 8y - 5 = 0 को स्पर्श करती है, तो λ हो सकता है:",
+    "options_en": ["-35 or 15", "35 or -15", "20 or -30", "-20 or 30"],
+    "options_hi": ["-35 या 15", "35 या -15", "20 या -30", "-20 या 30"],
+    "answer_en": "-35 or 15",
+    "answer_hi": "-35 या 15",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 34,
+    "question_en": "The locus of centers of circles which cut the circles x² + y² + 4x - 6y + 9 = 0 and x² + y² - 4x + 6y + 4 = 0 orthogonally is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो वृत्तों x² + y² + 4x - 6y + 9 = 0 और x² + y² - 4x + 6y + 4 = 0 को लंबकोणीय काटते हैं, है:",
+    "options_en": ["12x - 8y + 5 = 0", "8x - 12y + 5 = 0", "12x + 8y + 5 = 0", "8x + 12y + 5 = 0"],
+    "options_hi": ["12x - 8y + 5 = 0", "8x - 12y + 5 = 0", "12x + 8y + 5 = 0", "8x + 12y + 5 = 0"],
+    "answer_en": "12x - 8y + 5 = 0",
+    "answer_hi": "12x - 8y + 5 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 35,
+    "question_en": "A circle touches the x-axis and also touches the circle with center (0, 3) and radius 2. The locus of center of circle is:",
+    "question_hi": "एक वृत्त x-अक्ष को स्पर्श करता है और केंद्र (0, 3) और त्रिज्या 2 वाले वृत्त को भी स्पर्श करता है। वृत्त के केंद्र का बिन्दुपथ है:",
+    "options_en": ["parabola", "ellipse", "hyperbola", "circle"],
+    "options_hi": ["परवलय", "दीर्घवृत्त", "अतिपरवलय", "वृत्त"],
+    "answer_en": "parabola",
+    "answer_hi": "परवलय",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 36,
+    "question_en": "The equation of circle which passes through (1, 0) and (0, 1) and has its center on line x + y = 1 is:",
+    "question_hi": "उस वृत्त का समीकरण जो (1, 0) और (0, 1) से गुजरता है और जिसका केंद्र रेखा x + y = 1 पर है, है:",
+    "options_en": ["x² + y² + x + y - 2 = 0", "x² + y² - x - y = 0", "x² + y² + x + y + 2 = 0", "x² + y² - x - y - 2 = 0"],
+    "options_hi": ["x² + y² + x + y - 2 = 0", "x² + y² - x - y = 0", "x² + y² + x + y + 2 = 0", "x² + y² - x - y - 2 = 0"],
+    "answer_en": "x² + y² - x - y = 0",
+    "answer_hi": "x² + y² - x - y = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 37,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 cuts each of the circles x² + y² - 4 = 0, x² + y² - 6x - 8y + 10 = 0 and x² + y² + 2x - 4y - 2 = 0 at the extremities of a diameter, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 प्रत्येक वृत्त x² + y² - 4 = 0, x² + y² - 6x - 8y + 10 = 0 और x² + y² + 2x - 4y - 2 = 0 को एक व्यास के सिरों पर काटता है, तो:",
+    "options_en": ["c = -4", "g + f = c - 1", "g = 2, f = 3", "g = -2, f = -3, c = -4"],
+    "options_hi": ["c = -4", "g + f = c - 1", "g = 2, f = 3", "g = -2, f = -3, c = -4"],
+    "answer_en": "g = -2, f = -3, c = -4",
+    "answer_hi": "g = -2, f = -3, c = -4",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 38,
+    "question_en": "A circle of radius 5 touches the coordinate axes in first quadrant. If the circle makes a complete rotation on the circumference of another circle of radius 4, the equation of locus of its center is:",
+    "question_hi": "त्रिज्या 5 का एक वृत्त प्रथम चतुर्थांश में निर्देशांक अक्षों को स्पर्श करता है। यदि वृत्त त्रिज्या 4 के किसी अन्य वृत्त की परिधि पर एक पूर्ण घूर्णन करता है, तो उसके केंद्र का बिन्दुपथ समीकरण है:",
+    "options_en": ["x² + y² = 81", "x² + y² = 1", "x² + y² = 9", "x² + y² = 36"],
+    "options_hi": ["x² + y² = 81", "x² + y² = 1", "x² + y² = 9", "x² + y² = 36"],
+    "answer_en": "x² + y² = 81",
+    "answer_hi": "x² + y² = 81",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 39,
+    "question_en": "The locus of point of intersection of perpendicular tangents to the circle x² + y² + 2gx + 2fy + c = 0 is:",
+    "question_hi": "वृत्त x² + y² + 2gx + 2fy + c = 0 पर लंबवत स्पर्श रेखाओं के प्रतिच्छेदन बिंदु का बिन्दुपथ है:",
+    "options_en": ["x² + y² + 2gx + 2fy + 2c = 0", "x² + y² + 2gx + 2fy + c/2 = 0", "x² + y² + 2gx + 2fy + 2g² + 2f² - c = 0", "x² + y² + 2gx + 2fy + g² + f² - c = 0"],
+    "options_hi": ["x² + y² + 2gx + 2fy + 2c = 0", "x² + y² + 2gx + 2fy + c/2 = 0", "x² + y² + 2gx + 2fy + 2g² + 2f² - c = 0", "x² + y² + 2gx + 2fy + g² + f² - c = 0"],
+    "answer_en": "x² + y² + 2gx + 2fy + 2g² + 2f² - c = 0",
+    "answer_hi": "x² + y² + 2gx + 2fy + 2g² + 2f² - c = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 40,
+    "question_en": "The angle between the tangents from (α, β) to the circle x² + y² = a² is 2θ. Then the locus of (α, β) is:",
+    "question_hi": "(α, β) से वृत्त x² + y² = a² पर स्पर्श रेखाओं के बीच का कोण 2θ है। तब (α, β) का बिन्दुपथ है:",
+    "options_en": ["(α² + β²) sin²θ = a²", "(α² + β²) cos²θ = a²", "(α² + β²) = a² cosec²θ", "(α² + β²) = a² sec²θ"],
+    "options_hi": ["(α² + β²) sin²θ = a²", "(α² + β²) cos²θ = a²", "(α² + β²) = a² cosec²θ", "(α² + β²) = a² sec²θ"],
+    "answer_en": "(α² + β²) cos²θ = a²",
+    "answer_hi": "(α² + β²) cos²θ = a²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 41,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 is bisected by the circle x² + y² + 2g'x + 2f'y + c' = 0, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0, वृत्त x² + y² + 2g'x + 2f'y + c' = 0 द्वारा समद्विभाजित होता है, तो:",
+    "options_en": ["2g'(g - g') + 2f'(f - f') = c - c'", "2g(g' - g) + 2f(f' - f) = c' - c", "g(g - g') + f(f - f') = c - c'", "g'(g' - g) + f'(f' - f) = c' - c"],
+    "options_hi": ["2g'(g - g') + 2f'(f - f') = c - c'", "2g(g' - g) + 2f(f' - f) = c' - c", "g(g - g') + f(f - f') = c - c'", "g'(g' - g) + f'(f' - f) = c' - c"],
+    "answer_en": "2g(g' - g) + 2f(f' - f) = c' - c",
+    "answer_hi": "2g(g' - g) + 2f(f' - f) = c' - c",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 42,
+    "question_en": "A line meets the coordinate axes at A and B. A circle is circumscribed about triangle OAB. If m and n are distances of the tangent to the circle at origin from A and B respectively, then diameter of circle is:",
+    "question_hi": "एक रेखा निर्देशांक अक्षों को A और B पर मिलती है। त्रिभुज OAB के चारों ओर एक वृत्त परिगत है। यदि मूल बिंदु पर वृत्त की स्पर्श रेखा की A और B से दूरियाँ क्रमशः m और n हैं, तो वृत्त का व्यास है:",
+    "options_en": ["m + n", "(m + n)/2", "2mn/(m + n)", "√(mn)"],
+    "options_hi": ["m + n", "(m + n)/2", "2mn/(m + n)", "√(mn)"],
+    "answer_en": "m + n",
+    "answer_hi": "m + n",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 43,
+    "question_en": "The number of distinct chords of the circle x² + y² - 4x - 6y - 3 = 0 which are bisected at (1, -2) is:",
+    "question_hi": "वृत्त x² + y² - 4x - 6y - 3 = 0 की अलग-अलग जीवाओं की संख्या जो (1, -2) पर समद्विभाजित होती हैं, है:",
+    "options_en": ["0", "1", "2", "infinite"],
+    "options_hi": ["0", "1", "2", "अनंत"],
+    "answer_en": "0",
+    "answer_hi": "0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 44,
+    "question_en": "If the chords of contact of tangents from two points (x₁, y₁) and (x₂, y₂) to the circle x² + y² = a² are perpendicular, then x₁x₂ + y₁y₂ is equal to:",
+    "question_hi": "यदि दो बिंदुओं (x₁, y₁) और (x₂, y₂) से वृत्त x² + y² = a² पर स्पर्श रेखाओं की जीवा सम्पर्क परस्पर लंबवत हैं, तो x₁x₂ + y₁y₂ बराबर है:",
+    "options_en": ["0", "a²", "2a²", "a²/2"],
+    "options_hi": ["0", "a²", "2a²", "a²/2"],
+    "answer_en": "0",
+    "answer_hi": "0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 45,
+    "question_en": "The locus of center of circle which cuts orthogonally the circles x² + y² = 4 and x² + y² - 2x + 8y + 1 = 0 is:",
+    "question_hi": "उस वृत्त के केंद्र का बिन्दुपथ जो वृत्तों x² + y² = 4 और x² + y² - 2x + 8y + 1 = 0 को लंबकोणीय काटता है, है:",
+    "options_en": ["2x - 8y - 1 = 0", "2x + 8y - 1 = 0", "x - 4y - 1 = 0", "x + 4y - 1 = 0"],
+    "options_hi": ["2x - 8y - 1 = 0", "2x + 8y - 1 = 0", "x - 4y - 1 = 0", "x + 4y - 1 = 0"],
+    "answer_en": "2x - 8y - 1 = 0",
+    "answer_hi": "2x - 8y - 1 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 46,
+    "question_en": "If the line y = mx + c touches the circle x² + y² = a², then the point of contact is:",
+    "question_hi": "यदि रेखा y = mx + c वृत्त x² + y² = a² को स्पर्श करती है, तो स्पर्श बिंदु है:",
+    "options_en": ["(-a²m/c, -a²/c)", "(a²m/c, -a²/c)", "(-a²m/c, a²/c)", "(a²m/c, a²/c)"],
+    "options_hi": ["(-a²m/c, -a²/c)", "(a²m/c, -a²/c)", "(-a²m/c, a²/c)", "(a²m/c, a²/c)"],
+    "answer_en": "(-a²m/c, a²/c)",
+    "answer_hi": "(-a²m/c, a²/c)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 47,
+    "question_en": "The equation of chord of the circle x² + y² = a² having (x₁, y₁) as its midpoint is:",
+    "question_hi": "वृत्त x² + y² = a² की जीवा का समीकरण जिसका मध्य बिंदु (x₁, y₁) है, है:",
+    "options_en": ["xx₁ + yy₁ = x₁² + y₁²", "xx₁ + yy₁ = a²", "xx₁ - yy₁ = x₁² - y₁²", "x² + y² = xx₁ + yy₁"],
+    "options_hi": ["xx₁ + yy₁ = x₁² + y₁²", "xx₁ + yy₁ = a²", "xx₁ - yy₁ = x₁² - y₁²", "x² + y² = xx₁ + yy₁"],
+    "answer_en": "xx₁ + yy₁ = x₁² + y₁²",
+    "answer_hi": "xx₁ + yy₁ = x₁² + y₁²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 48,
+    "question_en": "If the line 3x + 4y - 24 = 0 intersects the x-axis at A and y-axis at B, then the incentre of triangle OAB (O is origin) is:",
+    "question_hi": "यदि रेखा 3x + 4y - 24 = 0, x-अक्ष को A पर और y-अक्ष को B पर प्रतिच्छेद करती है, तो त्रिभुज OAB (O मूल बिंदु है) का अंतःकेंद्र है:",
+    "options_en": ["(2, 2)", "(4, 4)", "(4, 3)", "(3, 4)"],
+    "options_hi": ["(2, 2)", "(4, 4)", "(4, 3)", "(3, 4)"],
+    "answer_en": "(2, 2)",
+    "answer_hi": "(2, 2)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 49,
+    "question_en": "A circle touches the x-axis at (3, 0) and passes through (5, 2). Its radius is:",
+    "question_hi": "एक वृत्त x-अक्ष को (3, 0) पर स्पर्श करता है और (5, 2) से गुजरता है। इसकी त्रिज्या है:",
+    "options_en": ["2", "3", "4", "5"],
+    "options_hi": ["2", "3", "4", "5"],
+    "answer_en": "5",
+    "answer_hi": "5",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 50,
+    "question_en": "The locus of midpoint of chords of circle x² + y² = a² which subtend right angle at (h, k) is:",
+    "question_hi": "वृत्त x² + y² = a² की उन जीवाओं के मध्य बिंदुओं का बिन्दुपथ जो (h, k) पर समकोण बनाती हैं, है:",
+    "options_en": ["x² + y² - hx - ky = 0", "x² + y² - hx - ky + (h² + k² - a²)/2 = 0", "x² + y² = hx + ky", "x² + y² - hx - ky + a² = 0"],
+    "options_hi": ["x² + y² - hx - ky = 0", "x² + y² - hx - ky + (h² + k² - a²)/2 = 0", "x² + y² = hx + ky", "x² + y² - hx - ky + a² = 0"],
+    "answer_en": "x² + y² - hx - ky + (h² + k² - a²)/2 = 0",
+    "answer_hi": "x² + y² - hx - ky + (h² + k² - a²)/2 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 51,
+    "question_en": "The equation of circle which touches the axes of coordinates and the line x/3 + y/4 = 1 and whose center lies in first quadrant is x² + y² - 2cx - 2cy + c² = 0, where c is:",
+    "question_hi": "उस वृत्त का समीकरण जो निर्देशांक अक्षों और रेखा x/3 + y/4 = 1 को स्पर्श करता है और जिसका केंद्र प्रथम चतुर्थांश में है, x² + y² - 2cx - 2cy + c² = 0 है, जहाँ c है:",
+    "options_en": ["1", "2", "3", "6"],
+    "options_hi": ["1", "2", "3", "6"],
+    "answer_en": "1",
+    "answer_hi": "1",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 52,
+    "question_en": "If the line y = mx + c is a normal to the circle x² + y² = a², then:",
+    "question_hi": "यदि रेखा y = mx + c वृत्त x² + y² = a² के लिए अभिलंब है, तो:",
+    "options_en": ["c = 0", "c = a√(1 + m²)", "c = -a√(1 + m²)", "c = ±a√(1 + m²)"],
+    "options_hi": ["c = 0", "c = a√(1 + m²)", "c = -a√(1 + m²)", "c = ±a√(1 + m²)"],
+    "answer_en": "c = 0",
+    "answer_hi": "c = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 53,
+    "question_en": "The locus of centers of circles passing through two given points is:",
+    "question_hi": "दो दिए गए बिंदुओं से गुजरने वाले वृत्तों के केंद्रों का बिन्दुपथ है:",
+    "options_en": ["a circle", "a line", "a parabola", "an ellipse"],
+    "options_hi": ["एक वृत्त", "एक रेखा", "एक परवलय", "एक दीर्घवृत्त"],
+    "answer_en": "a line",
+    "answer_hi": "एक रेखा",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 54,
+    "question_en": "If two circles x² + y² + 2g₁x + 2f₁y = 0 and x² + y² + 2g₂x + 2f₂y = 0 touch each other, then:",
+    "question_hi": "यदि दो वृत्त x² + y² + 2g₁x + 2f₁y = 0 और x² + y² + 2g₂x + 2f₂y = 0 एक दूसरे को स्पर्श करते हैं, तो:",
+    "options_en": ["g₁g₂ + f₁f₂ = 0", "g₁f₂ = g₂f₁", "g₁g₂ = f₁f₂", "g₁² + f₁² = g₂² + f₂²"],
+    "options_hi": ["g₁g₂ + f₁f₂ = 0", "g₁f₂ = g₂f₁", "g₁g₂ = f₁f₂", "g₁² + f₁² = g₂² + f₂²"],
+    "answer_en": "g₁f₂ = g₂f₁",
+    "answer_hi": "g₁f₂ = g₂f₁",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 55,
+    "question_en": "The line x cos α + y sin α = p will touch the circle x² + y² - 2ax cos α - 2ay sin α = 0 if:",
+    "question_hi": "रेखा x cos α + y sin α = p वृत्त x² + y² - 2ax cos α - 2ay sin α = 0 को स्पर्श करेगी यदि:",
+    "options_en": ["p = 0", "p = a", "p = 2a", "p = a/2"],
+    "options_hi": ["p = 0", "p = a", "p = 2a", "p = a/2"],
+    "answer_en": "p = 0",
+    "answer_hi": "p = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 56,
+    "question_en": "The locus of midpoint of chords of circle x² + y² = a² which pass through a fixed point (h, k) is:",
+    "question_hi": "वृत्त x² + y² = a² की उन जीवाओं के मध्य बिंदुओं का बिन्दुपथ जो एक निश्चित बिंदु (h, k) से गुजरती हैं, है:",
+    "options_en": ["x² + y² - hx - ky = 0", "x² + y² = hx + ky", "x² + y² = a²", "x² + y² + hx + ky = 0"],
+    "options_hi": ["x² + y² - hx - ky = 0", "x² + y² = hx + ky", "x² + y² = a²", "x² + y² + hx + ky = 0"],
+    "answer_en": "x² + y² - hx - ky = 0",
+    "answer_hi": "x² + y² - hx - ky = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 57,
+    "question_en": "The radius of circle which passes through origin and cuts off intercepts a and b from axes is:",
+    "question_hi": "उस वृत्त की त्रिज्या जो मूल बिंदु से गुजरती है और अक्षों से अंतःखंड a और b काटती है, है:",
+    "options_en": ["√(a² + b²)", "(a + b)/2", "√(a² + b²)/2", "√(a² + b²)/√2"],
+    "options_hi": ["√(a² + b²)", "(a + b)/2", "√(a² + b²)/2", "√(a² + b²)/√2"],
+    "answer_en": "√(a² + b²)/2",
+    "answer_hi": "√(a² + b²)/2",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 58,
+    "question_en": "The angle between the two tangents from origin to the circle (x - 7)² + (y + 1)² = 25 is:",
+    "question_hi": "मूल बिंदु से वृत्त (x - 7)² + (y + 1)² = 25 पर दो स्पर्श रेखाओं के बीच का कोण है:",
+    "options_en": ["π/3", "π/2", "π/4", "π/6"],
+    "options_hi": ["π/3", "π/2", "π/4", "π/6"],
+    "answer_en": "π/2",
+    "answer_hi": "π/2",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 59,
+    "question_en": "A circle of radius 5 touches the coordinate axes. The equation of circle with same radius touching it externally and also touching the axes is:",
+    "question_hi": "त्रिज्या 5 का एक वृत्त निर्देशांक अक्षों को स्पर्श करता है। समान त्रिज्या वाले वृत्त का समीकरण जो इसे बाह्य रूप से स्पर्श करता है और अक्षों को भी स्पर्श करता है, है:",
+    "options_en": ["x² + y² - 20x - 20y + 100 = 0", "x² + y² + 20x + 20y + 100 = 0", "x² + y² - 30x - 30y + 225 = 0", "x² + y² + 30x + 30y + 225 = 0"],
+    "options_hi": ["x² + y² - 20x - 20y + 100 = 0", "x² + y² + 20x + 20y + 100 = 0", "x² + y² - 30x - 30y + 225 = 0", "x² + y² + 30x + 30y + 225 = 0"],
+    "answer_en": "x² + y² - 20x - 20y + 100 = 0",
+    "answer_hi": "x² + y² - 20x - 20y + 100 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 60,
+    "question_en": "If the line y = mx + c touches the circle (x - a)² + (y - b)² = r², then the point of contact is:",
+    "question_hi": "यदि रेखा y = mx + c वृत्त (x - a)² + (y - b)² = r² को स्पर्श करती है, तो स्पर्श बिंदु है:",
+    "options_en": ["(a + r²m/√(1+m²), b + r²/√(1+m²))", "(a - r²m/√(1+m²), b - r²/√(1+m²))", "(a - r²m/√(1+m²), b + r²/√(1+m²))", "(a + r²m/√(1+m²), b - r²/√(1+m²))"],
+    "options_hi": ["(a + r²m/√(1+m²), b + r²/√(1+m²))", "(a - r²m/√(1+m²), b - r²/√(1+m²))", "(a - r²m/√(1+m²), b + r²/√(1+m²))", "(a + r²m/√(1+m²), b - r²/√(1+m²))"],
+    "answer_en": "(a - r²m/√(1+m²), b + r²/√(1+m²))",
+    "answer_hi": "(a - r²m/√(1+m²), b + r²/√(1+m²))",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 61,
+    "question_en": "The number of common tangents to circles x² + y² = 4 and x² + y² - 8x + 12 = 0 is:",
+    "question_hi": "वृत्तों x² + y² = 4 और x² + y² - 8x + 12 = 0 के बीच उभयनिष्ठ स्पर्श रेखाओं की संख्या है:",
+    "options_en": ["1", "2", "3", "4"],
+    "options_hi": ["1", "2", "3", "4"],
+    "answer_en": "3",
+    "answer_hi": "3",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 62,
+    "question_en": "If a circle passes through the point (a, b) and cuts the circle x² + y² = p² orthogonally, then the equation of locus of its center is:",
+    "question_hi": "यदि एक वृत्त बिंदु (a, b) से गुजरता है और वृत्त x² + y² = p² को लंबकोणीय काटता है, तो उसके केंद्र का बिन्दुपथ समीकरण है:",
+    "options_en": ["2ax + 2by = a² + b² + p²", "2ax + 2by = a² + b² - p²", "x² + y² - 2ax - 2by + a² + b² - p² = 0", "x² + y² = 2ax + 2by + p²"],
+    "options_hi": ["2ax + 2by = a² + b² + p²", "2ax + 2by = a² + b² - p²", "x² + y² - 2ax - 2by + a² + b² - p² = 0", "x² + y² = 2ax + 2by + p²"],
+    "answer_en": "2ax + 2by = a² + b² - p²",
+    "answer_hi": "2ax + 2by = a² + b² - p²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 63,
+    "question_en": "The equation of circle which touches the line 2x + 3y + 1 = 0 at (1, -1) and cuts orthogonally the circle x² + y² + 4x + 2y - 3 = 0 is:",
+    "question_hi": "उस वृत्त का समीकरण जो रेखा 2x + 3y + 1 = 0 को (1, -1) पर स्पर्श करता है और वृत्त x² + y² + 4x + 2y - 3 = 0 को लंबकोणीय काटता है, है:",
+    "options_en": ["x² + y² + 4x + 4y + 1 = 0", "x² + y² - 4x - 4y + 1 = 0", "x² + y² - 4x + 4y + 1 = 0", "x² + y² + 4x - 4y + 1 = 0"],
+    "options_hi": ["x² + y² + 4x + 4y + 1 = 0", "x² + y² - 4x - 4y + 1 = 0", "x² + y² - 4x + 4y + 1 = 0", "x² + y² + 4x - 4y + 1 = 0"],
+    "answer_en": "x² + y² - 4x - 4y + 1 = 0",
+    "answer_hi": "x² + y² - 4x - 4y + 1 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 64,
+    "question_en": "If the line y = mx + c is a tangent to the circle x² + y² = a², then the condition is:",
+    "question_hi": "यदि रेखा y = mx + c वृत्त x² + y² = a² की स्पर्श रेखा है, तो शर्त है:",
+    "options_en": ["c² = a²(1 + m²)", "c = a√(1 + m²)", "c² = a²(1 - m²)", "c = a√(1 - m²)"],
+    "options_hi": ["c² = a²(1 + m²)", "c = a√(1 + m²)", "c² = a²(1 - m²)", "c = a√(1 - m²)"],
+    "answer_en": "c² = a²(1 + m²)",
+    "answer_hi": "c² = a²(1 + m²)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 65,
+    "question_en": "The locus of centers of circles which touch the circle x² + y² = a² externally and also touch the x-axis is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो वृत्त x² + y² = a² को बाह्य रूप से स्पर्श करते हैं और x-अक्ष को भी स्पर्श करते हैं, है:",
+    "options_en": ["y² - 2ax - a² = 0", "y² + 2ax + a² = 0", "x² - 2ay - a² = 0", "x² + 2ay + a² = 0"],
+    "options_hi": ["y² - 2ax - a² = 0", "y² + 2ax + a² = 0", "x² - 2ay - a² = 0", "x² + 2ay + a² = 0"],
+    "answer_en": "y² - 2ax - a² = 0",
+    "answer_hi": "y² - 2ax - a² = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 66,
+    "question_en": "The equation of circle which passes through (1, 2) and (2, 1) and has radius as small as possible is:",
+    "question_hi": "उस वृत्त का समीकरण जो (1, 2) और (2, 1) से गुजरता है और जिसकी त्रिज्या यथासंभव छोटी है, है:",
+    "options_en": ["x² + y² - 3x - 3y + 4 = 0", "x² + y² - x - y = 0", "x² + y² - 2x - 2y + 1 = 0", "x² + y² - 3x - 3y + 6 = 0"],
+    "options_hi": ["x² + y² - 3x - 3y + 4 = 0", "x² + y² - x - y = 0", "x² + y² - 2x - 2y + 1 = 0", "x² + y² - 3x - 3y + 6 = 0"],
+    "answer_en": "x² + y² - 3x - 3y + 4 = 0",
+    "answer_hi": "x² + y² - 3x - 3y + 4 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 67,
+    "question_en": "The number of common chords of circles x² + y² + 2x + 4y - 20 = 0 and x² + y² - 4x - 2y - 10 = 0 is:",
+    "question_hi": "वृत्तों x² + y² + 2x + 4y - 20 = 0 और x² + y² - 4x - 2y - 10 = 0 की उभयनिष्ठ जीवाओं की संख्या है:",
+    "options_en": ["0", "1", "2", "3"],
+    "options_hi": ["0", "1", "2", "3"],
+    "answer_en": "2",
+    "answer_hi": "2",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 68,
+    "question_en": "The locus of midpoint of chords of circle x² + y² = a² which touch the parabola y² = 4ax is:",
+    "question_hi": "वृत्त x² + y² = a² की उन जीवाओं के मध्य बिंदुओं का बिन्दुपथ जो परवलय y² = 4ax को स्पर्श करती हैं, है:",
+    "options_en": ["y²(x + a) = a³", "y²(x - a) = a³", "y²(x + 2a) = a³", "y²(x - 2a) = a³"],
+    "options_hi": ["y²(x + a) = a³", "y²(x - a) = a³", "y²(x + 2a) = a³", "y²(x - 2a) = a³"],
+    "answer_en": "y²(x - 2a) = a³",
+    "answer_hi": "y²(x - 2a) = a³",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 69,
+    "question_en": "A circle of radius 2 has center at (2, 0). Another circle of radius 1 has center at (5, 0). A line is tangent to the two circles at points in the first quadrant. The y-intercept of the line is:",
+    "question_hi": "त्रिज्या 2 के एक वृत्त का केंद्र (2, 0) पर है। त्रिज्या 1 के एक अन्य वृत्त का केंद्र (5, 0) पर है। एक रेखा प्रथम चतुर्थांश में बिंदुओं पर दोनों वृत्तों की स्पर्श रेखा है। रेखा का y-अंतःखंड है:",
+    "options_en": ["√2", "2√2", "3√2", "4√2"],
+    "options_hi": ["√2", "2√2", "3√2", "4√2"],
+    "answer_en": "2√2",
+    "answer_hi": "2√2",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 70,
+    "question_en": "The number of common tangents to circles x² + y² = 4 and x² + y² - 6x - 8y - 24 = 0 is:",
+    "question_hi": "वृत्तों x² + y² = 4 और x² + y² - 6x - 8y - 24 = 0 के बीच उभयनिष्ठ स्पर्श रेखाओं की संख्या है:",
+    "options_en": ["0", "1", "2", "3"],
+    "options_hi": ["0", "1", "2", "3"],
+    "answer_en": "1",
+    "answer_hi": "1",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 71,
+    "question_en": "The equation of circle which passes through (2, 3) and (4, 5) and the center lies on the line 3x + 4y = 7 is:",
+    "question_hi": "उस वृत्त का समीकरण जो (2, 3) और (4, 5) से गुजरता है और जिसका केंद्र रेखा 3x + 4y = 7 पर है, है:",
+    "options_en": ["x² + y² - 4x - 6y + 11 = 0", "x² + y² - 6x - 8y + 21 = 0", "x² + y² - 8x - 10y + 35 = 0", "x² + y² - 10x - 12y + 51 = 0"],
+    "options_hi": ["x² + y² - 4x - 6y + 11 = 0", "x² + y² - 6x - 8y + 21 = 0", "x² + y² - 8x - 10y + 35 = 0", "x² + y² - 10x - 12y + 51 = 0"],
+    "answer_en": "x² + y² - 4x - 6y + 11 = 0",
+    "answer_hi": "x² + y² - 4x - 6y + 11 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 72,
+    "question_en": "If the circles x² + y² + 2ax + c = 0 and x² + y² + 2by + c = 0 touch each other, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2ax + c = 0 और x² + y² + 2by + c = 0 एक दूसरे को स्पर्श करते हैं, तो:",
+    "options_en": ["1/a² + 1/b² = 1/c", "1/a + 1/b = 1/c", "a² + b² = c²", "a + b = c"],
+    "options_hi": ["1/a² + 1/b² = 1/c", "1/a + 1/b = 1/c", "a² + b² = c²", "a + b = c"],
+    "answer_en": "1/a² + 1/b² = 1/c",
+    "answer_hi": "1/a² + 1/b² = 1/c",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 73,
+    "question_en": "The locus of point of intersection of the lines x cos α + y sin α = a and x sin α - y cos α = b (α is parameter) is:",
+    "question_hi": "रेखाओं x cos α + y sin α = a और x sin α - y cos α = b (α पैरामीटर है) के प्रतिच्छेदन बिंदु का बिन्दुपथ है:",
+    "options_en": ["x² + y² = a² + b²", "x² - y² = a² - b²", "xy = ab", "x²/a² + y²/b² = 1"],
+    "options_hi": ["x² + y² = a² + b²", "x² - y² = a² - b²", "xy = ab", "x²/a² + y²/b² = 1"],
+    "answer_en": "x² + y² = a² + b²",
+    "answer_hi": "x² + y² = a² + b²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 74,
+    "question_en": "Two circles x² + y² + 2gx + 2fy + c = 0 and x² + y² + 2g'x + 2f'y + c' = 0 intersect orthogonally if:",
+    "question_hi": "दो वृत्त x² + y² + 2gx + 2fy + c = 0 और x² + y² + 2g'x + 2f'y + c' = 0 लंबकोणीय प्रतिच्छेद करते हैं यदि:",
+    "options_en": ["gg' + ff' = c + c'", "2gg' + 2ff' = c + c'", "gg' + ff' = (c + c')/2", "2(gg' + ff') = c + c'"],
+    "options_hi": ["gg' + ff' = c + c'", "2gg' + 2ff' = c + c'", "gg' + ff' = (c + c')/2", "2(gg' + ff') = c + c'"],
+    "answer_en": "2gg' + 2ff' = c + c'",
+    "answer_hi": "2gg' + 2ff' = c + c'",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 75,
+    "question_en": "The equation of circle passing through the intersection of circles x² + y² = 6 and x² + y² - 6x + 8 = 0 and through point (1, 1) is:",
+    "question_hi": "वृत्तों x² + y² = 6 और x² + y² - 6x + 8 = 0 के प्रतिच्छेदन से गुजरने वाले और बिंदु (1, 1) से गुजरने वाले वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 3x - 4y + 6 = 0", "x² + y² - 3x - 4y + 4 = 0", "x² + y² - 6x - 8y + 14 = 0", "x² + y² - 6x - 8y + 12 = 0"],
+    "options_hi": ["x² + y² - 3x - 4y + 6 = 0", "x² + y² - 3x - 4y + 4 = 0", "x² + y² - 6x - 8y + 14 = 0", "x² + y² - 6x - 8y + 12 = 0"],
+    "answer_en": "x² + y² - 3x - 4y + 6 = 0",
+    "answer_hi": "x² + y² - 3x - 4y + 6 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 76,
+    "question_en": "A circle of radius 4 is drawn touching the coordinate axes. The equation of circle with same radius touching it externally and having center in first quadrant is:",
+    "question_hi": "त्रिज्या 4 का एक वृत्त निर्देशांक अक्षों को स्पर्श करता हुआ खींचा गया है। समान त्रिज्या वाले वृत्त का समीकरण जो इसे बाह्य रूप से स्पर्श करता है और जिसका केंद्र प्रथम चतुर्थांश में है, है:",
+    "options_en": ["x² + y² - 12x - 12y + 36 = 0", "x² + y² - 8x - 8y + 16 = 0", "x² + y² - 16x - 16y + 64 = 0", "x² + y² - 20x - 20y + 100 = 0"],
+    "options_hi": ["x² + y² - 12x - 12y + 36 = 0", "x² + y² - 8x - 8y + 16 = 0", "x² + y² - 16x - 16y + 64 = 0", "x² + y² - 20x - 20y + 100 = 0"],
+    "answer_en": "x² + y² - 12x - 12y + 36 = 0",
+    "answer_hi": "x² + y² - 12x - 12y + 36 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 77,
+    "question_en": "If the line y = mx is a chord of the circle x² + y² - 2ax = 0, then the equation of circle with this chord as diameter is:",
+    "question_hi": "यदि रेखा y = mx वृत्त x² + y² - 2ax = 0 की एक जीवा है, तो इस जीवा को व्यास मानकर वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - a(1+m²)x = 0", "x² + y² - 2a(1+m²)x = 0", "x² + y² - a(1+m)x = 0", "x² + y² - 2a(1+m)x = 0"],
+    "options_hi": ["x² + y² - a(1+m²)x = 0", "x² + y² - 2a(1+m²)x = 0", "x² + y² - a(1+m)x = 0", "x² + y² - 2a(1+m)x = 0"],
+    "answer_en": "x² + y² - a(1+m²)x = 0",
+    "answer_hi": "x² + y² - a(1+m²)x = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 78,
+    "question_en": "The locus of centers of circles which touch the line y = mx + c and also touch the circle x² + y² = a² is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो रेखा y = mx + c को स्पर्श करते हैं और वृत्त x² + y² = a² को भी स्पर्श करते हैं, है:",
+    "options_en": ["a pair of straight lines", "a circle", "a parabola", "an ellipse"],
+    "options_hi": ["एक सीधी रेखाओं का जोड़ा", "एक वृत्त", "एक परवलय", "एक दीर्घवृत्त"],
+    "answer_en": "a pair of straight lines",
+    "answer_hi": "एक सीधी रेखाओं का जोड़ा",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 79,
+    "question_en": "The equation of circle which touches the line x + y = 5 at (1, 4) and cuts the circle x² + y² = 4 orthogonally is:",
+    "question_hi": "उस वृत्त का समीकरण जो रेखा x + y = 5 को (1, 4) पर स्पर्श करता है और वृत्त x² + y² = 4 को लंबकोणीय काटता है, है:",
+    "options_en": ["x² + y² - 2x - 6y + 5 = 0", "x² + y² + 2x + 6y - 5 = 0", "x² + y² - 2x - 6y - 5 = 0", "x² + y² + 2x + 6y + 5 = 0"],
+    "options_hi": ["x² + y² - 2x - 6y + 5 = 0", "x² + y² + 2x + 6y - 5 = 0", "x² + y² - 2x - 6y - 5 = 0", "x² + y² + 2x + 6y + 5 = 0"],
+    "answer_en": "x² + y² - 2x - 6y + 5 = 0",
+    "answer_hi": "x² + y² - 2x - 6y + 5 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 80,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 cuts the circle x² + y² + 2g'x + 2f'y + c' = 0 orthogonally, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 वृत्त x² + y² + 2g'x + 2f'y + c' = 0 को लंबकोणीय काटता है, तो:",
+    "options_en": ["gg' + ff' = c + c'", "2gg' + 2ff' = c + c'", "gg' + ff' = (c + c')/2", "2(gg' + ff') = c + c'"],
+    "options_hi": ["gg' + ff' = c + c'", "2gg' + 2ff' = c + c'", "gg' + ff' = (c + c')/2", "2(gg' + ff') = c + c'"],
+    "answer_en": "2gg' + 2ff' = c + c'",
+    "answer_hi": "2gg' + 2ff' = c + c'",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 81,
+    "question_en": "The equation of circle passing through (0, 0) and touching the circle x² + y² - 6x - 8y + 21 = 0 externally is:",
+    "question_hi": "(0, 0) से गुजरने वाले और वृत्त x² + y² - 6x - 8y + 21 = 0 को बाह्य रूप से स्पर्श करने वाले वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 2x - 4y = 0", "x² + y² - 4x - 6y = 0", "x² + y² - 6x - 8y = 0", "x² + y² - 8x - 10y = 0"],
+    "options_hi": ["x² + y² - 2x - 4y = 0", "x² + y² - 4x - 6y = 0", "x² + y² - 6x - 8y = 0", "x² + y² - 8x - 10y = 0"],
+    "answer_en": "x² + y² - 2x - 4y = 0",
+    "answer_hi": "x² + y² - 2x - 4y = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 82,
+    "question_en": "If the line x cos α + y sin α = p is a tangent to the circle x² + y² = a², then:",
+    "question_hi": "यदि रेखा x cos α + y sin α = p वृत्त x² + y² = a² की स्पर्श रेखा है, तो:",
+    "options_en": ["p² = a²", "p = a", "p² = a²(sin²α + cos²α)", "p = a(sin α + cos α)"],
+    "options_hi": ["p² = a²", "p = a", "p² = a²(sin²α + cos²α)", "p = a(sin α + cos α)"],
+    "answer_en": "p² = a²",
+    "answer_hi": "p² = a²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 83,
+    "question_en": "The locus of centers of circles which touch the circle x² + y² = a² internally and also touch the y-axis is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो वृत्त x² + y² = a² को आंतरिक रूप से स्पर्श करते हैं और y-अक्ष को भी स्पर्श करते हैं, है:",
+    "options_en": ["y² = 4a(x + a)", "y² = 4a(x - a)", "x² = 4a(y + a)", "x² = 4a(y - a)"],
+    "options_hi": ["y² = 4a(x + a)", "y² = 4a(x - a)", "x² = 4a(y + a)", "x² = 4a(y - a)"],
+    "answer_en": "y² = 4a(x + a)",
+    "answer_hi": "y² = 4a(x + a)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 84,
+    "question_en": "A circle of radius 3 touches the circle x² + y² - 4x - 6y - 12 = 0 internally. The equation of circle is:",
+    "question_hi": "त्रिज्या 3 का एक वृत्त वृत्त x² + y² - 4x - 6y - 12 = 0 को आंतरिक रूप से स्पर्श करता है। वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 4x - 6y + 4 = 0", "x² + y² - 4x - 6y + 1 = 0", "x² + y² - 4x - 6y - 4 = 0", "x² + y² - 4x - 6y - 1 = 0"],
+    "options_hi": ["x² + y² - 4x - 6y + 4 = 0", "x² + y² - 4x - 6y + 1 = 0", "x² + y² - 4x - 6y - 4 = 0", "x² + y² - 4x - 6y - 1 = 0"],
+    "answer_en": "x² + y² - 4x - 6y + 4 = 0",
+    "answer_hi": "x² + y² - 4x - 6y + 4 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 85,
+    "question_en": "The equation of circle having the lines x² + 2xy + 3x + 6y = 0 as its normals and having size just sufficient to contain the circle x(x - 4) + y(y - 3) = 0 is:",
+    "question_hi": "उस वृत्त का समीकरण जिसकी अभिलंब रेखाएँ x² + 2xy + 3x + 6y = 0 हैं और जिसका आकार वृत्त x(x - 4) + y(y - 3) = 0 को समाहित करने के लिए पर्याप्त है, है:",
+    "options_en": ["x² + y² + 6x - 3y = 0", "x² + y² - 6x + 3y = 0", "x² + y² + 6x + 3y = 0", "x² + y² - 6x - 3y = 0"],
+    "options_hi": ["x² + y² + 6x - 3y = 0", "x² + y² - 6x + 3y = 0", "x² + y² + 6x + 3y = 0", "x² + y² - 6x - 3y = 0"],
+    "answer_en": "x² + y² + 6x - 3y = 0",
+    "answer_hi": "x² + y² + 6x - 3y = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 86,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 is bisected by the circle x² + y² + 2g'x + 2f'y + c' = 0, then the radical axis of the two circles is:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0, वृत्त x² + y² + 2g'x + 2f'y + c' = 0 द्वारा समद्विभाजित होता है, तो दोनों वृत्तों का मूल अक्ष है:",
+    "options_en": ["2(g - g')x + 2(f - f')y + (c - c') = 0", "2(g' - g)x + 2(f' - f)y + (c' - c) = 0", "(g - g')x + (f - f')y + (c - c')/2 = 0", "(g' - g)x + (f' - f)y + (c' - c)/2 = 0"],
+    "options_hi": ["2(g - g')x + 2(f - f')y + (c - c') = 0", "2(g' - g)x + 2(f' - f)y + (c' - c) = 0", "(g - g')x + (f - f')y + (c - c')/2 = 0", "(g' - g)x + (f' - f)y + (c' - c)/2 = 0"],
+    "answer_en": "2(g - g')x + 2(f - f')y + (c - c') = 0",
+    "answer_hi": "2(g - g')x + 2(f - f')y + (c - c') = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 87,
+    "question_en": "A circle touches the line 2x - y + 1 = 0 at (1, 3) and has radius √5. The equation of circle is:",
+    "question_hi": "एक वृत्त रेखा 2x - y + 1 = 0 को (1, 3) पर स्पर्श करता है और त्रिज्या √5 है। वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 6x - 4y + 8 = 0", "x² + y² - 6x - 4y + 12 = 0", "x² + y² - 4x - 6y + 8 = 0", "x² + y² - 4x - 6y + 12 = 0"],
+    "options_hi": ["x² + y² - 6x - 4y + 8 = 0", "x² + y² - 6x - 4y + 12 = 0", "x² + y² - 4x - 6y + 8 = 0", "x² + y² - 4x - 6y + 12 = 0"],
+    "answer_en": "x² + y² - 6x - 4y + 8 = 0",
+    "answer_hi": "x² + y² - 6x - 4y + 8 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 88,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 cuts the three circles x² + y² = 5, x² + y² - 8x - 6y + 10 = 0 and x² + y² - 4x + 2y - 2 = 0 at the extremities of diameters, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 तीन वृत्तों x² + y² = 5, x² + y² - 8x - 6y + 10 = 0 और x² + y² - 4x + 2y - 2 = 0 को व्यास के सिरों पर काटता है, तो:",
+    "options_en": ["g = 2, f = 3, c = -4", "g = -2, f = -3, c = -4", "g = 2, f = 3, c = 4", "g = -2, f = -3, c = 4"],
+    "options_hi": ["g = 2, f = 3, c = -4", "g = -2, f = -3, c = -4", "g = 2, f = 3, c = 4", "g = -2, f = -3, c = 4"],
+    "answer_en": "g = -2, f = -3, c = -4",
+    "answer_hi": "g = -2, f = -3, c = -4",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 89,
+    "question_en": "The equation of circle passing through (1, 2) and touching the lines 4x - 3y + 5 = 0 and 3x + 4y - 10 = 0 is:",
+    "question_hi": "(1, 2) से गुजरने वाले और रेखाओं 4x - 3y + 5 = 0 और 3x + 4y - 10 = 0 को स्पर्श करने वाले वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 2x - 4y + 3 = 0", "x² + y² - 2x - 4y + 4 = 0", "x² + y² - 2x - 4y + 5 = 0", "x² + y² - 2x - 4y + 6 = 0"],
+    "options_hi": ["x² + y² - 2x - 4y + 3 = 0", "x² + y² - 2x - 4y + 4 = 0", "x² + y² - 2x - 4y + 5 = 0", "x² + y² - 2x - 4y + 6 = 0"],
+    "answer_en": "x² + y² - 2x - 4y + 4 = 0",
+    "answer_hi": "x² + y² - 2x - 4y + 4 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 90,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 touches the line y = x at (α, α), then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 रेखा y = x को (α, α) पर स्पर्श करता है, तो:",
+    "options_en": ["g = f", "g + f = 2α", "g + f = α", "g - f = α"],
+    "options_hi": ["g = f", "g + f = 2α", "g + f = α", "g - f = α"],
+    "answer_en": "g = f",
+    "answer_hi": "g = f",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 91,
+    "question_en": "The locus of centers of circles which touch the circle x² + y² = a² and also touch the line x = a is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो वृत्त x² + y² = a² को स्पर्श करते हैं और रेखा x = a को भी स्पर्श करते हैं, है:",
+    "options_en": ["y² = 4a(x - a)", "y² = 4a(x + a)", "x² = 4a(y - a)", "x² = 4a(y + a)"],
+    "options_hi": ["y² = 4a(x - a)", "y² = 4a(x + a)", "x² = 4a(y - a)", "x² = 4a(y + a)"],
+    "answer_en": "y² = 4a(x - a)",
+    "answer_hi": "y² = 4a(x - a)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 92,
+    "question_en": "A circle of radius 2 touches the coordinate axes. The equation of circle with same radius touching it externally and having center in second quadrant is:",
+    "question_hi": "त्रिज्या 2 का एक वृत्त निर्देशांक अक्षों को स्पर्श करता है। समान त्रिज्या वाले वृत्त का समीकरण जो इसे बाह्य रूप से स्पर्श करता है और जिसका केंद्र द्वितीय चतुर्थांश में है, है:",
+    "options_en": ["x² + y² + 4x - 4y + 4 = 0", "x² + y² + 4x + 4y + 4 = 0", "x² + y² - 4x + 4y + 4 = 0", "x² + y² - 4x - 4y + 4 = 0"],
+    "options_hi": ["x² + y² + 4x - 4y + 4 = 0", "x² + y² + 4x + 4y + 4 = 0", "x² + y² - 4x + 4y + 4 = 0", "x² + y² - 4x - 4y + 4 = 0"],
+    "answer_en": "x² + y² + 4x + 4y + 4 = 0",
+    "answer_hi": "x² + y² + 4x + 4y + 4 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 93,
+    "question_en": "If the line 3x + 4y - 12 = 0 meets the coordinate axes at A and B, then the equation of circle with AB as diameter is:",
+    "question_hi": "यदि रेखा 3x + 4y - 12 = 0 निर्देशांक अक्षों को A और B पर मिलती है, तो AB को व्यास मानकर वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 4x - 3y = 0", "x² + y² + 4x + 3y = 0", "x² + y² - 4x - 3y + 12 = 0", "x² + y² + 4x + 3y + 12 = 0"],
+    "options_hi": ["x² + y² - 4x - 3y = 0", "x² + y² + 4x + 3y = 0", "x² + y² - 4x - 3y + 12 = 0", "x² + y² + 4x + 3y + 12 = 0"],
+    "answer_en": "x² + y² - 4x - 3y = 0",
+    "answer_hi": "x² + y² - 4x - 3y = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 94,
+    "question_en": "The equation of circle which touches the line x = 0 at (0, 2) and passes through (2, 0) is:",
+    "question_hi": "उस वृत्त का समीकरण जो रेखा x = 0 को (0, 2) पर स्पर्श करता है और (2, 0) से गुजरता है, है:",
+    "options_en": ["x² + y² - 4x - 4y + 4 = 0", "x² + y² - 2x - 4y + 4 = 0", "x² + y² - 4x - 2y + 4 = 0", "x² + y² - 2x - 2y = 0"],
+    "options_hi": ["x² + y² - 4x - 4y + 4 = 0", "x² + y² - 2x - 4y + 4 = 0", "x² + y² - 4x - 2y + 4 = 0", "x² + y² - 2x - 2y = 0"],
+    "answer_en": "x² + y² - 2x - 4y + 4 = 0",
+    "answer_hi": "x² + y² - 2x - 4y + 4 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 95,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 cuts the circle x² + y² = a² orthogonally, then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 वृत्त x² + y² = a² को लंबकोणीय काटता है, तो:",
+    "options_en": ["c = a²", "c = -a²", "c = a² - g² - f²", "c = g² + f² - a²"],
+    "options_hi": ["c = a²", "c = -a²", "c = a² - g² - f²", "c = g² + f² - a²"],
+    "answer_en": "c = a² - g² - f²",
+    "answer_hi": "c = a² - g² - f²",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 96,
+    "question_en": "The locus of centers of circles which pass through the point (2, 0) and touch the line x = 4 is:",
+    "question_hi": "उन वृत्तों के केंद्रों का बिन्दुपथ जो बिंदु (2, 0) से गुजरते हैं और रेखा x = 4 को स्पर्श करते हैं, है:",
+    "options_en": ["y² = 4(x - 3)", "y² = 8(x - 3)", "y² = 4(x - 2)", "y² = 8(x - 2)"],
+    "options_hi": ["y² = 4(x - 3)", "y² = 8(x - 3)", "y² = 4(x - 2)", "y² = 8(x - 2)"],
+    "answer_en": "y² = 8(x - 3)",
+    "answer_hi": "y² = 8(x - 3)",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 97,
+    "question_en": "A circle touches the line x + y = 0 at (1, -1) and has radius √2. The equation of circle is:",
+    "question_hi": "एक वृत्त रेखा x + y = 0 को (1, -1) पर स्पर्श करता है और त्रिज्या √2 है। वृत्त का समीकरण है:",
+    "options_en": ["x² + y² - 2x + 2y + 2 = 0", "x² + y² - 2x + 2y = 0", "x² + y² + 2x - 2y + 2 = 0", "x² + y² + 2x - 2y = 0"],
+    "options_hi": ["x² + y² - 2x + 2y + 2 = 0", "x² + y² - 2x + 2y = 0", "x² + y² + 2x - 2y + 2 = 0", "x² + y² + 2x - 2y = 0"],
+    "answer_en": "x² + y² - 2x + 2y + 2 = 0",
+    "answer_hi": "x² + y² - 2x + 2y + 2 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 98,
+    "question_en": "If the circle x² + y² + 2gx + 2fy + c = 0 cuts the circle x² + y² = a² in points which are concyclic with (0, 0) and (a, 0), then:",
+    "question_hi": "यदि वृत्त x² + y² + 2gx + 2fy + c = 0 वृत्त x² + y² = a² को ऐसे बिंदुओं पर काटता है जो (0, 0) और (a, 0) के साथ चक्रीय हैं, तो:",
+    "options_en": ["g = a/2", "f = 0", "c = -a²", "All of these"],
+    "options_hi": ["g = a/2", "f = 0", "c = -a²", "उपरोक्त सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "उपरोक्त सभी",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 99,
+    "question_en": "The equation of circle which touches the line y = x at (2, 2) and has radius 2√2 is:",
+    "question_hi": "उस वृत्त का समीकरण जो रेखा y = x को (2, 2) पर स्पर्श करता है और त्रिज्या 2√2 है, है:",
+    "options_en": ["x² + y² - 8x - 8y + 24 = 0", "x² + y² - 4x - 4y + 4 = 0", "x² + y² - 8x - 8y + 32 = 0", "x² + y² - 4x - 4y + 8 = 0"],
+    "options_hi": ["x² + y² - 8x - 8y + 24 = 0", "x² + y² - 4x - 4y + 4 = 0", "x² + y² - 8x - 8y + 32 = 0", "x² + y² - 4x - 4y + 8 = 0"],
+    "answer_en": "x² + y² - 8x - 8y + 24 = 0",
+    "answer_hi": "x² + y² - 8x - 8y + 24 = 0",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 100,
+    "question_en": "If the circles x² + y² + 2ax + c = 0 and x² + y² + 2by + c = 0 touch each other, then the point of contact is:",
+    "question_hi": "यदि वृत्त x² + y² + 2ax + c = 0 और x² + y² + 2by + c = 0 एक दूसरे को स्पर्श करते हैं, तो स्पर्श बिंदु है:",
+    "options_en": ["(ac/(a²+b²), bc/(a²+b²))", "(ac/(a+b), bc/(a+b))", "(a²c/(a²+b²), b²c/(a²+b²))", "(a²c/(a+b), b²c/(a+b))"],
+    "options_hi": ["(ac/(a²+b²), bc/(a²+b²))", "(ac/(a+b), bc/(a+b))", "(a²c/(a²+b²), b²c/(a²+b²))", "(a²c/(a+b), b²c/(a+b))"],
+    "answer_en": "(ac/(a²+b²), bc/(a²+b²))",
+    "answer_hi": "(ac/(a²+b²), bc/(a²+b²))",
+    "attempted": false,
+    "selected": ""
+  }
+];
+// --------------------------- GLOBAL VARS -----------------------------
+let currentQuestion = 0;
+let language = "en";
+let timeLeft = 60 * 60;   // 60 minutes timer
+let timerInterval;
+
+// --------------------------- LOAD QUESTION ----------------------------
+function loadQuestion(index) {
+    const q = questions[index];
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
+
+    const optionsElement = document.getElementById("options");
+    optionsElement.innerHTML = "";
+
+    const options = language === "en" ? q.options_en : q.options_hi;
+
+    options.forEach((option) => {
+        const isSelected = q.selected === option;
+        const optionDiv = document.createElement("div");
+
+        optionDiv.className = "option-box";
+        optionDiv.style = `
+            border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
+            background-color: ${isSelected ? "#e7f1ff" : "white"};
+            padding: 10px;
+            border-radius: 8px;
+            margin: 6px 0;
+            cursor: pointer;
+        `;
+
+        optionDiv.innerHTML = `
+            <input type="radio" name="option"
+            value="${option}" ${isSelected ? "checked" : ""} /> ${option}
+        `;
+
+        optionDiv.addEventListener("click", () => {
+            markAttempted(index, option);
+            loadQuestion(index);
+        });
+
+        optionsElement.appendChild(optionDiv);
+    });
+
+    updateNavigation();
+}
+
+// --------------------------- MARK ATTEMPT ----------------------------
+function markAttempted(index, selectedAnswer) {
+    questions[index].attempted = true;
+    questions[index].selected = selectedAnswer;
+    updateNavigation();
+}
+
+// --------------------------- NEXT / PREV -----------------------------
+function nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
+    }
+}
+
+// --------------------------- LANGUAGE CHANGE -------------------------
+function changeLanguage() {
+    language = document.getElementById("languageSelect").value;
+    loadQuestion(currentQuestion);
+}
+
+// --------------------------- TIMER -------------------------------
+function startTimer() {
+    const timerElement = document.getElementById("timer");
+    clearInterval(timerInterval);
+
+    timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("⏳ Time Over!");
+            submitQuiz();
+            return;
+        }
+
+        const h = Math.floor(timeLeft / 3600);
+        const m = Math.floor((timeLeft % 3600) / 60);
+        const s = timeLeft % 60;
+
+        timerElement.textContent =
+            `Time Left: ${h.toString().padStart(2, "0")}:${m
+                .toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+
+        timeLeft--;
+    }, 1000);
+}
+
+// --------------------------- SUBMIT QUIZ ---------------------
+function submitQuiz() {
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
+
+    clearInterval(timerInterval);
+
+    // Calculate time spent
+    const totalTimeSpent = (60 * 60) - timeLeft;
+    const mins = Math.floor(totalTimeSpent / 60);
+    const secs = totalTimeSpent % 60;
+
+    // Save to localStorage
+    localStorage.setItem("timeTaken", `${mins} min ${secs} sec`);
+
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
+        if (q.attempted) {
+            attempted++;
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
+    });
+
+    // Save result data
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    // Stop camera stream if active
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Redirect
+    window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+}
+
+// --------------------------- NAVIGATION ------------------------------
+function updateNavigation() {
+    const nav = document.getElementById("circleContainer");
+    nav.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        let color = "gray";
+        if (i === currentQuestion) color = "blue";
+        else if (q.attempted) color = "green";
+
+        const circle = document.createElement("div");
+        circle.className = "circle";
+        circle.style.background = color;
+        circle.textContent = i + 1;
+        circle.onclick = () => jumpToQuestion(i);
+        nav.appendChild(circle);
+    });
+}
+
+function jumpToQuestion(i) {
+    currentQuestion = i;
+    loadQuestion(i);
+}
+
+// --------------------------- CAMERA ----------------------
+let videoStream;
+
+function startCamera() {
+    const container = document.createElement("div");
+    container.id = "camera-container";
+    container.style.position = "fixed";
+    container.style.top = "10px";
+    container.style.left = "10px";
+    container.style.width = "130px";
+    container.style.height = "130px";
+    container.style.borderRadius = "50%";
+    container.style.overflow = "hidden";
+    container.style.background = "#000";
+    container.style.border = "3px solid red";
+    container.style.zIndex = "9999";
+    document.body.appendChild(container);
+
+    const video = document.createElement("video");
+    video.autoplay = true;
+    video.playsInline = true;
+    video.style.width = "100%";
+    video.style.height = "100%";
+    video.style.objectFit = "cover";
+    container.appendChild(video);
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            videoStream = stream;
+        })
+        .catch(() => alert("Camera not accessible!"));
+}
+
+// --------------------------- PAGE LOAD --------------------------
+window.onload = function () {
+    loadQuestion(currentQuestion);
+    startTimer();
+    startCamera();
+};

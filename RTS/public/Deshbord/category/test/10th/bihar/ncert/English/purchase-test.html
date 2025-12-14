@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+  <link rel="stylesheet" href="/RTS/public/css/purchase.css">
+  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+  <link rel="stylesheet" href="/RTS/public/css/footer.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <!-- Top Info Bar -->
+    <div class="header-info">
+      <div class="info-text">
+        <p><span>RID (Research Innovation & Discovery) by TWSKAA Welfare Foundation</span></p>
+        <p><strong>Helpline:</strong> <span>+91-8307 87323</span></p>
+        <p><strong>Email:</strong> <span>supportrid5@gmail.com</span></p>
+      </div>
+      <div class="header-links">
+        <a href="#">Main Content</a>
+        <a href="#">+A</a>
+        <a href="#">A</a>
+        <a href="#">A-</a>
+        <a href="#">Feedback</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
+      </div>
+
+      <!-- Menu Toggle Button for Mobile -->
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="text" placeholder="Search Anything..." id="searchInput">
+          <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Certificate and Profile Buttons -->
+        <div class="nav-buttons">
+          <a href="/Certificate-Verification/verify.html" class="btn">
+            <i class="fas fa-award"></i> Certificate
+          </a>
+
+          <a href="/RTS/public/profile.html" class="btn"><i class="fas fa-user"></i> Profile</a>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <ul class="mobile-nav" id="mobileNav">
+          <!-- Mobile Search Box -->
+          <div class="mobile-search-box">
+            <input type="text" placeholder="Search Anything..." id="mobileSearchInput">
+            <i class="fas fa-search"></i>
+          </div>
+
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
+          <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+          <li class="has-dropdown">
+            <a href="#"><i class="fas fa-building"></i> Center</a>
+            <ul class="mobile-dropdown">
+              <li><a href="#"><i class="fas fa-rocket"></i> Skill Center</a></li>
+              <li><a href="#"><i class="fas fa-flask"></i> WIT Center</a></li>
+              <li><a href="#"><i class="fas fa-microscope"></i> RID Center</a></li>
+            </ul>
+          </li>
+          <li><a href="/project_rid/public/contact/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <ul class="main-nav">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
+      <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+
+      <li>
+        <a href="#"><i class="fas fa-building"></i> Center <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="fas fa-rocket"></i> Skill Center</a></li>
+          <li><a href="#"><i class="fas fa-flask"></i> WIT Center</a></li>
+          <li><a href="#"><i class="fas fa-microscope"></i> RID Center</a></li>
+        </ul>
+      </li>
+      <li><a href="/project_rid/public/contact/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+    </ul>
+  </header>
+
+  <!----side bar wala contain suru -->
+  <button class="sidebar-toggle">☰</button>
+  <aside class="sidebar">
+    <h2 class="mainu">Main Menu</h2>
+    <ul class="menu">
+      <li><i class="fas fa-home home-icon"></i><a href="/RTS/public/Deshbord.html">Home</a></li>
+      <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
+      <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a>
+      </li>
+      <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My
+          Purchase</a></li>
+      <li><i class="fas fa-comment-dots feedback-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
+      <li><i class="fas fa-dollar-sign refund-icon"></i><a
+          href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
+      <li><i class="fas fa-shield-alt privacy-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
+      <li><i class="fas fa-file-contract terms-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
+      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a>
+      </li>
+      <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="/index.html">Logout</a></li>
+    </ul>
+  </aside><br>
+
+  <main>
+    <!-- Mobile Search Container - NEW -->
+    <div class="mobile-search-container">
+      <div class="search-box">
+        <input type="text" placeholder="Search Anything..." id="mainMobileSearchInput">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+            <section class="description-section" aria-labelledby="tests-title">
+                <h2 class="section-title" id="tests-title">ENGLISH_ALL_TEST's</h2>
+                <div class="test-grid">
+                    <!-- Test Item 1 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test:1</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/1-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 2 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :2</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                          
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/2-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 3 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 3</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/3-test.html">
+                            
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 4 -->
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :4</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/4-test.html">
+                            
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Item 5 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :5</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                                <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/5-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  6</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/6-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  7</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                           <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/7-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <!-- Test Item 8 -->
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 8</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                               <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/8-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 9</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                                <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/9-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  10</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/10-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  11</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/11-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  12</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/12-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  13</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/13-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  14</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/14-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  15</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/15-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  16</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/16-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  17</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/17-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  18</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/18-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  19</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/19-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  20</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/20-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  
+                    <div class="test-item">
+                    <div class="test-header">
+                            <h3>Test :  21</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/21-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div> 
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  22</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/22-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  23</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/23-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  24</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/24-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  25</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/25-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  26</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/26-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  27</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/27-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  28</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/28-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  29</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/29-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  30</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/30-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  31</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/31-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  32</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/32-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  33</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/33-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  34</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/34-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  35</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/35-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  36</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/36-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  37</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/37-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  38</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/38-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  39</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/39-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  40</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/English/40-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+  <main class="section-parts">
+        <section class="description-section" aria-labelledby="description-title">
+            <h2 class="section-title" id="description-title">Description</h2>
+            <div class="description-box">
+                <p>
+                    Reading is an essential skill that helps improve our knowledge, language, and imagination. It allows
+                    us
+                    to explore different worlds, understand diverse perspectives, and learn new ideas. When we read, we
+                    not
+                    only learn facts but also improve our vocabulary and comprehension skills. <br> <br>
+
+                    Books, newspapers, and articles offer a wide range of information, from history and science to
+                    current
+                    events. Reading regularly helps us stay informed and aware of what is happening around the world. It
+                    also enhances our critical thinking skills because we learn to analyze and evaluate the information
+                    presented. <br> <br>
+
+                    In addition, reading is a great way to relax and reduce stress. It provides an escape from daily
+                    routines and offers a peaceful break. Whether it's a novel, a magazine, or even a blog post, reading
+                    can
+                    be both entertaining and educational.
+                </p>
+            </div>
+        </section>
+    </main>
+
+  <!----------------------------------------------------------Footer parts in desbord---------------------------------------------------------------->
+  <section class="footer">
+    <footer>
+      <div class="left">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
+        <p>
+          Mig, 72, Rajiv Nagar, A Sector, Aayodhya Bypass Bhopal,
+          Madhya Pradesh, India (462022)
+        </p>
+        <div>
+          <a href="mailto:ridorg.in@gmail.com">
+            <i class="fas fa-envelope"></i> ridorg.in@gmail.com | Email
+          </a>
+          <a href="tel:+91 9202707903">
+            <i class="fas fa-phone"></i> +91 9202707903 | Mobile
+          </a>
+        </div>
+      </div>
+
+      <div class="links-head">
+        <h3>Research Topics</h3>
+        <hr>
+        <div class="links">
+          <div class="links-1">
+            <a href="#">Computers</a>
+            <a href="#">Tech National Affairs</a>
+            <a href="#">AI: Artificial Intelligence</a>
+            <a href="#">Race & Ethnicity</a>
+            <a href="#">Religion</a>
+            <a href="#">Age & Generations</a>
+            <a href="#">Gender & Equality</a>
+          </div>
+          <div class="links-2">
+            <a href="#">Space Engineering</a>
+            <a href="#">Economy & Work</a>
+            <a href="#">Science</a>
+            <a href="#">Internet & Technology</a>
+            <a href="#">News Habits & Media</a>
+            <a href="#">Methodological Research</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="links-social">
+        <h3>Social Links</h3>
+        <hr>
+        <div class="links">
+          <div class="links-1">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+            <a href="https://www.linkedin.com/in/rid-bharat-9a4517324">
+              <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+            </a>
+            <a href="https://youtube.com/@ridbharat">
+              <ion-icon name="logo-youtube"></ion-icon> YouTube
+            </a>
+          </div>
+          <div class="links-2">
+            <a href="https://www.instagram.com/ridbharat">
+              <ion-icon name="logo-instagram"></ion-icon> Instagram
+            </a>
+            <a href="mailto:ridorg.in@gmail.com">
+              <ion-icon name="mail-outline"></ion-icon> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <p class="about-text">
+      <strong>ABOUT RESEARCH INNOVATION & DISCOVERY:</strong> RID Organization i.e. Research,
+      Innovation and Discovery Organization is an organization which is run by TWF (TWKSAA WELFARE FOUNDATION) NGO. The
+      main objective of which is that in the coming times, the discovery, publication and use of NEW (RID, PMS & TLR)
+      should be done first in Indian culture, civilization and language from this holy land of India.
+    </p>
+
+    <section class="copyrightsection">
+      <p>Copyright ©2024, RID | TWF (TWKSAA Welfare Foundation). All Rights Reserved.</p>
+      <div class="link">
+        <a href="#">About</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Feedback</a>
+      </div>
+    </section>
+  </section>
+
+  <!-- JavaScript Files -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sidebar toggle functionality
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
+      const sidebar = document.querySelector('.sidebar');
+
+      if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+
+      // Navbar toggle functionality
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.getElementById('navMenu');
+      const mobileNav = document.getElementById('mobileNav');
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+        });
+      }
+
+      // Close mobile nav when a link is clicked
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          mobileNav.classList.remove('active');
+        });
+      });
+
+      // Close sidebar when a link is clicked (on mobile)
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 992) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+    });
+
+    // serch war js code 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const inputs = [
+    document.getElementById("searchInput"),
+    document.getElementById("mobileSearchInput"),
+    document.getElementById("mainMobileSearchInput")
+  ].filter(Boolean);
+
+  const testItems = document.querySelectorAll(".test-item");
+
+  function normalize(text) {
+    return text.toLowerCase().replace(/\s|:|-/g, "");
+  }
+
+  function filterTests(value) {
+    const searchValue = normalize(value);
+
+    testItems.forEach(item => {
+      const title = item.querySelector(".test-header h3").textContent;
+      const normalizedTitle = normalize(title);
+
+      if (normalizedTitle.includes(searchValue) || normalizedTitle.includes("test" + searchValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", function () {
+      filterTests(this.value);
+    });
+  });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const inputs = [
+    document.getElementById("searchInput"),
+    document.getElementById("mobileSearchInput"),
+    document.getElementById("mainMobileSearchInput")
+  ].filter(Boolean);
+
+  const testItems = document.querySelectorAll(".test-item");
+
+  function normalize(text) {
+    return text.toLowerCase().replace(/\s|:|-/g, "");
+  }
+
+  function filterTests(value) {
+    const searchValue = normalize(value);
+
+    testItems.forEach(item => {
+      const title = item.querySelector(".test-header h3").textContent;
+      const normalizedTitle = normalize(title);
+
+      if (normalizedTitle.includes(searchValue) || normalizedTitle.includes("test" + searchValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", function () {
+      filterTests(this.value);
+    });
+  });
+
+});
+    
+  </script>
+</body>
+
+</html>

@@ -24,12 +24,13 @@ const app = express();
 const port = process.env.PORT || 9191;
 
 // ========== DATABASE CONNECTION ==========
-const mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/booklibrary';
+// Use the correct environment variable name from your .env file
+const mongoUrl = process.env.MONGO_URI || 'mongodb://localhost:27017/booklibrary';
 
-mongoose.connect(mongoUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+console.log('🔧 Attempting to connect to MongoDB...');
+console.log('🔧 Connection URL:', mongoUrl.replace(/\/\/([^:]+):([^@]+)@/, '//***:***@')); // Hide credentials
+
+mongoose.connect(mongoUrl)
 .then(async () => {
     console.log('✅ MongoDB Connected Successfully');
     
@@ -37,9 +38,14 @@ mongoose.connect(mongoUrl, {
     await User.createDefaultAdmin();
 })
 .catch(err => {
-    console.error('❌ MongoDB Connection Error:', err);
+    console.error('❌ MongoDB Connection Error Details:', err.message);
+    console.error('💡 Check if:');
+    console.error('   1. Your Atlas cluster is running (check at https://cloud.mongodb.com)');
+    console.error('   2. Your IP is whitelisted in Atlas Network Access');
+    console.error('   3. Database user credentials are correct');
     process.exit(1);
 });
+
 
 // ========== SESSION CONFIGURATION ==========
 app.use(session({
