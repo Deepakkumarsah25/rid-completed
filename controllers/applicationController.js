@@ -370,210 +370,184 @@ async function generateCompletionCertificatePDF(app, filePath) {
       const stream = fs.createWriteStream(filePath);
       doc.pipe(stream);
 
-      // Set colors
+      // ================= COLORS =================
       const primaryColor = '#000000';
       const secondaryColor = '#666666';
       const accentColor = '#2c3e50';
       const certificateColor = '#166534';
 
-      // Add border around the page
+      // ================= BORDERS =================
       doc.lineWidth(2);
       doc.strokeColor('#16a34a');
       doc.rect(30, 30, doc.page.width - 60, doc.page.height - 60).stroke();
 
-      // Inner border
       doc.lineWidth(1);
       doc.strokeColor('#cccccc');
       doc.rect(35, 35, doc.page.width - 70, doc.page.height - 70).stroke();
 
-      // Get duration details
+      // ================= DURATION =================
       const durationValue = app.duration || "0";
       const durationUnit = app.durationUnit || "weeks";
       const startDate = formatDate(app.startDate);
       const endDate = formatDate(app.endDate);
 
-      // ===== HEADER SECTION =====
-      // Top left: Registration Number
+      // ================= HEADER =================
       doc.fillColor(secondaryColor).fontSize(10)
-         .text('Registration Number: 048884', 50, 60);
+        .text('Registration Number: 048884', 50, 60);
 
-      // Top right: Website
       doc.text('Website: www.ridbharat.com', 0, 60, { align: 'right' });
 
-      // Center: Organization Name
       doc.fillColor(accentColor).fontSize(22).font('Helvetica-Bold')
-         .text('Research, Innovation & Discovery Bharat', 0, 90, { align: 'center' });
+        .text('Research, Innovation & Discovery Bharat', 0, 90, { align: 'center' });
 
-      // Tagline
-      doc.fillColor(accentColor).fontSize(14)
-         .text('RID Organization, Provides Solutions for Every Problem', 0, 115, { align: 'center' });
+      doc.fontSize(14).font('Helvetica')
+        .text('RID Organization, Provides Solutions for Every Problem', 0, 115, { align: 'center' });
 
-      // Managed by and certifications
       doc.fillColor(secondaryColor).fontSize(10)
-         .text('Managed & Run by TWKSAA Welfare Foundation, Certified by Central Government', 0, 140, { align: 'center' });
-      
+        .text('Managed & Run by TWKSAA Welfare Foundation, Certified by Central Government', 0, 140, { align: 'center' });
+
       doc.text('An ISO 9001:2015 Certified Organization', 0, 155, { align: 'center' });
 
-      // Horizontal line
       doc.strokeColor('#cccccc').lineWidth(1)
-         .moveTo(50, 170)
-         .lineTo(doc.page.width - 50, 170)
-         .stroke();
+        .moveTo(50, 170)
+        .lineTo(doc.page.width - 50, 170)
+        .stroke();
 
-      // Issue Date and Certificate Number
       const issueDate = formatDate(new Date());
       doc.fillColor(primaryColor).fontSize(11)
-         .text(`Issue Date: ${issueDate}`, 50, 190);
-      
+        .text(`Issue Date: ${issueDate}`, 50, 190);
+
       doc.text(`Certificate Number: ${app.appId}`, 0, 190, { align: 'right' });
 
-      // Duration Line (NEW - Added as per requirement)
       doc.fillColor(certificateColor).fontSize(11).font('Helvetica-Bold')
-         .text(`Duration: ${durationValue} ${durationUnit} (${startDate} to ${endDate})`, 0, 210, { align: 'center' });
+        .text(`Duration: ${durationValue} ${durationUnit} (${startDate} to ${endDate})`, 0, 210, { align: 'center' });
 
-      // Certificate Title
-      doc.fillColor(certificateColor).fontSize(28).font('Helvetica-Bold')
-         .text('CERTIFICATE OF COMPLETION', 0, 240, { align: 'center' });
+      // ================= TITLE =================
+      doc.fontSize(28).font('Helvetica-Bold')
+        .text('CERTIFICATE OF COMPLETION', 0, 240, { align: 'center' });
 
-      // ===== BODY CONTENT =====
-      // Main content
+      // ================= BODY =================
       doc.fillColor(primaryColor).fontSize(14)
-         .text('This is to certify that', 0, 290, { align: 'center' });
+        .text('This is to certify that', 0, 290, { align: 'center' });
 
-      // Name in bold and larger font
       doc.fillColor(certificateColor).fontSize(24).font('Helvetica-Bold')
-         .text(app.fullName.toUpperCase(), 0, 320, { align: 'center' });
-      
+        .text(app.fullName.toUpperCase(), 0, 320, { align: 'center' });
+
       doc.fillColor(primaryColor).fontSize(14)
-         .text(`Son/Daughter of ${app.fatherName}`, 0, 350, { align: 'center' });
+        .text(`Son/Daughter of ${app.fatherName}`, 0, 350, { align: 'center' });
 
-      // Course completion details
-      doc.fontSize(14)
-         .text(`has successfully completed the ${app.course} course`, 0, 390, { align: 'center' });
-      
-      doc.fontSize(14)
-         .text(`with project "${app.projectName}"`, 0, 410, { align: 'center' });
+      doc.text(`has successfully completed the ${app.course} course`, 0, 390, { align: 'center' });
+      doc.text(`with project "${app.projectName}"`, 0, 410, { align: 'center' });
 
-      // Duration in body text - जो user ने duration डाला है वही दिखेगा
-      doc.fontSize(14)
-         .text(`Duration: ${durationValue} ${durationUnit} (${startDate} to ${endDate})`, 0, 440, { align: 'center' });
-
-      // Achievement text
-      doc.fontSize(12)
-         .text('has demonstrated dedication, hard work and excellence throughout the course.', 50, 480, {
-           align: 'left',
-           width: doc.page.width - 100
-         });
+      doc.text(
+        `Duration: ${durationValue} ${durationUnit} (${startDate} to ${endDate})`,
+        0,
+        440,
+        { align: 'center' }
+      );
 
       doc.fontSize(12)
-         .text('This certificate is awarded in recognition of successful completion of the training program.', 50, 500, {
-           align: 'left',
-           width: doc.page.width - 100
-         });
+        .text(
+          'has demonstrated dedication, hard work and excellence throughout the course.',
+          50,
+          480,
+          { width: doc.page.width - 100 }
+        );
 
-      // ===== SIGNATURE SECTION =====
-  const signatureY = 560;
+      doc.text(
+        'This certificate is awarded in recognition of successful completion of the training program.',
+        50,
+        500,
+        { width: doc.page.width - 100 }
+        );
 
-// ✅ SIGNATURE IMAGE
-drawImageSafe(
-  doc,
-  signatureImagePath,
-  100,
-  signatureY - 35,
-  { width: 120 }
-);
+      // ================= SIGNATURE SECTION =================
+      const signatureY = 560;
 
-
-      
-      // Random names array
       const randomNames = [
         "Er. Rajesh Prasad",
         "Er. Deepak Kumar"
       ];
-      
-      // Pick random name
-      const randomIndex = Math.floor(Math.random() * randomNames.length);
-      const randomName = randomNames[randomIndex];
+      const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
 
-      // Left side: Signature
+      // ✅ SIGNATURE IMAGE
+      if (fs.existsSync(signatureImagePath)) {
+        doc.image(signatureImagePath, 100, signatureY - 45, {
+          width: 120
+        });
+      }
+
       doc.fillColor(primaryColor).fontSize(12)
-         .text('Authorized Signatory', 100, signatureY);
-      
+        .text('Authorized Signatory', 100, signatureY + 20);
+
       doc.fontSize(14).font('Helvetica-Bold')
-         .text(randomName, 100, signatureY + 30);
-      
+        .text(randomName, 100, signatureY + 40);
+
       doc.fontSize(12).font('Helvetica')
-         .text('CEO & Director', 100, signatureY + 50);
-      
-      doc.text('RID Bharat, Bhopal', 100, signatureY + 70);
+        .text('CEO & Director', 100, signatureY + 60);
+
+      doc.text('RID Bharat, Bhopal', 100, signatureY + 75);
 
       // Signature line
-      doc.strokeColor('#000000').lineWidth(1)
-         .moveTo(100, signatureY + 25)
-         .lineTo(300, signatureY + 25)
-         .stroke();
+      doc.strokeColor('#000').lineWidth(1)
+        .moveTo(100, signatureY + 30)
+        .lineTo(300, signatureY + 30)
+        .stroke();
 
-      // Right side: Stamp/Seal area
+      // ✅ STAMP IMAGE
+      if (fs.existsSync(stampImagePath)) {
+        doc.image(
+          stampImagePath,
+          doc.page.width - 190,
+          signatureY - 25,
+          { width: 100 }
+        );
+      }
+
       doc.fillColor(secondaryColor).fontSize(10)
-         .text('Official Stamp & Seal', doc.page.width - 200, signatureY, {
-           width: 150,
-           align: 'center'
-         });
-// ===== ADD STAMP IMAGE (NO CODE REMOVED) =====
-if (fs.existsSync(stampImagePath)) {
-  doc.image(
-    stampImagePath,
-    doc.page.width - 170,
-    signatureY + 10,
-    {
-      width: 90
-    }
-  );
-}
+        .text('Official Stamp & Seal', doc.page.width - 200, signatureY + 80, {
+          width: 150,
+          align: 'center'
+        });
 
-      // Draw stamp circle
-      doc.strokeColor('#dc2626').lineWidth(2)
-         .circle(doc.page.width - 125, signatureY + 40, 40)
-         .stroke();
-
-      doc.fillColor('#dc2626').fontSize(10).font('Helvetica-Bold')
-         .text('RID BHARAT', doc.page.width - 125, signatureY + 35, {
-           width: 80,
-           align: 'center'
-         });
-      
-      doc.text('OFFICIAL', doc.page.width - 125, signatureY + 50, {
-        width: 80,
-        align: 'center'
-      });
-
-      doc.text('CERTIFICATE', doc.page.width - 125, signatureY + 65, {
-        width: 80,
-        align: 'center'
-      });
-
-      // ===== FOOTER =====
-      // Digital signature line
+      // ================= FOOTER =================
       doc.strokeColor('#cccccc').lineWidth(0.5)
-         .moveTo(50, doc.page.height - 80)
-         .lineTo(doc.page.width - 50, doc.page.height - 80)
-         .stroke();
+        .moveTo(50, doc.page.height - 80)
+        .lineTo(doc.page.width - 50, doc.page.height - 80)
+        .stroke();
 
       doc.fillColor(accentColor).fontSize(10).font('Helvetica-Bold')
-         .text('Digitally Signed & Verified', 0, doc.page.height - 70, { align: 'center' });
-      
-      doc.text('Research, Innovation & Discovery Bharat (RID Bharat)', 0, doc.page.height - 55, { align: 'center' });
+        .text('Digitally Signed & Verified', 0, doc.page.height - 70, { align: 'center' });
 
-      // Verification info
+      doc.text(
+        'Research, Innovation & Discovery Bharat (RID Bharat)',
+        0,
+        doc.page.height - 55,
+        { align: 'center' }
+      );
+
       doc.fillColor(certificateColor).fontSize(9)
-         .text(`Verify this certificate at: rid-bharat.org/verify | Certificate ID: ${app.appId}`, 0, doc.page.height - 40, { align: 'center' });
+        .text(
+          `Verify this certificate at: rid-bharat.org/verify | Certificate ID: ${app.appId}`,
+          0,
+          doc.page.height - 40,
+          { align: 'center' }
+        );
 
-      // Office address
       doc.fillColor(secondaryColor).fontSize(8)
-         .text('Office Address: MiG–72, Sector A, Rajeev Nagar, Ayodhya Nagar, Bhopal, Madhya Pradesh 462021 (India)', 0, doc.page.height - 25, { align: 'center' });
+        .text(
+          'Office Address: MiG–72, Sector A, Rajeev Nagar, Ayodhya Nagar, Bhopal, Madhya Pradesh 462021 (India)',
+          0,
+          doc.page.height - 25,
+          { align: 'center' }
+        );
 
-      // Contact info
-      doc.text('Contact: +91 98927 82728 | Email: supportid@gamil.com', 0, doc.page.height - 15, { align: 'center' });
+      doc.text(
+        'Contact: +91 98927 82728 | Email: supportid@gamil.com',
+        0,
+        doc.page.height - 15,
+        { align: 'center' }
+      );
 
       doc.end();
 
@@ -585,188 +559,195 @@ if (fs.existsSync(stampImagePath)) {
   });
 }
 
+
 // Generate Experience Letter PDF - User entered duration as is
 async function generateExperienceLetterPDF(app, filePath) {
   return new Promise((resolve, reject) => {
     try {
-      const doc = new PDFDocument({ 
-        size: "A4", 
+      const doc = new PDFDocument({
+        size: "A4",
         margin: 40
       });
-      
+
       const stream = fs.createWriteStream(filePath);
       doc.pipe(stream);
 
-      // Set colors
+      // ================= COLORS =================
       const primaryColor = '#000000';
       const secondaryColor = '#666666';
       const accentColor = '#2c3e50';
 
-      // Add border around the page
+      // ================= BORDERS =================
       doc.lineWidth(2);
       doc.strokeColor('#16a34a');
       doc.rect(30, 30, doc.page.width - 60, doc.page.height - 60).stroke();
 
-      // Inner border
       doc.lineWidth(1);
       doc.strokeColor('#cccccc');
       doc.rect(35, 35, doc.page.width - 70, doc.page.height - 70).stroke();
 
-      // Get duration details - जो user ने डाला है वही दिखेगा
+      // ================= DURATION =================
       const durationValue = app.duration || "0";
       const durationUnit = app.durationUnit || "months";
       const startDate = formatDate(app.startDate);
       const endDate = formatDate(app.endDate);
 
-      // ===== HEADER SECTION =====
-      // Top left: Registration Number
+      // ================= HEADER =================
       doc.fillColor(secondaryColor).fontSize(10)
-         .text('Registration Number: 048884', 50, 60);
+        .text('Registration Number: 048884', 50, 60);
 
-      // Top right: Website
       doc.text('Website: www.ridbharat.com', 0, 60, { align: 'right' });
 
-      // Center: Organization Name
       doc.fillColor(accentColor).fontSize(22).font('Helvetica-Bold')
-         .text('Research, Innovation & Discovery Bharat', 0, 90, { align: 'center' });
+        .text('Research, Innovation & Discovery Bharat', 0, 90, { align: 'center' });
 
-      // Tagline
-      doc.fillColor(accentColor).fontSize(14)
-         .text('RID Organization, Provides Solutions for Every Problem', 0, 115, { align: 'center' });
+      doc.fontSize(14).font('Helvetica')
+        .text('RID Organization, Provides Solutions for Every Problem', 0, 115, { align: 'center' });
 
-      // Managed by and certifications
       doc.fillColor(secondaryColor).fontSize(10)
-         .text('Managed & Run by TWKSAA Welfare Foundation, Certified by Central Government', 0, 140, { align: 'center' });
-      
+        .text('Managed & Run by TWKSAA Welfare Foundation, Certified by Central Government', 0, 140, { align: 'center' });
+
       doc.text('An ISO 9001:2015 Certified Organization', 0, 155, { align: 'center' });
 
-      // Horizontal line
       doc.strokeColor('#cccccc').lineWidth(1)
-         .moveTo(50, 170)
-         .lineTo(doc.page.width - 50, 170)
-         .stroke();
+        .moveTo(50, 170)
+        .lineTo(doc.page.width - 50, 170)
+        .stroke();
 
-      // Issue Date and IEL Number
       const issueDate = formatDate(new Date());
       doc.fillColor(primaryColor).fontSize(11)
-         .text(`Issue Date: ${issueDate}`, 50, 190);
-      
+        .text(`Issue Date: ${issueDate}`, 50, 190);
+
       doc.text(`IEL Number: ${app.appId}`, 0, 190, { align: 'right' });
 
-      // Duration Line (NEW - Added as per requirement)
       doc.fillColor(accentColor).fontSize(11).font('Helvetica-Bold')
-         .text(`Duration: ${durationValue} ${durationUnit} (${startDate} to ${endDate})`, 0, 210, { align: 'center' });
+        .text(`Duration: ${durationValue} ${durationUnit} (${startDate} to ${endDate})`, 0, 210, { align: 'center' });
 
-      // Certificate Title
+      // ================= TITLE =================
       doc.fillColor(accentColor).fontSize(28).font('Helvetica-Bold')
-         .text('Internship Experience Letter', 0, 240, { align: 'center' });
+        .text('Internship Experience Letter', 0, 240, { align: 'center' });
 
-      // ===== BODY CONTENT =====
-      // To: Address section
+      // ================= BODY =================
       doc.fillColor(primaryColor).fontSize(12)
-         .text('To,', 50, 300);
-      
+        .text('To,', 50, 300);
+
       doc.text(`${app.fullName},`, 80, 320);
       doc.text(`S/O ${app.fatherName},`, 80, 340);
-      doc.text(`Bhopal, Madhya Pradesh`, 80, 360);
+      doc.text('Bhopal, Madhya Pradesh', 80, 360);
 
-      // Subject line
       doc.fillColor(accentColor).fontSize(12).font('Helvetica-Bold')
-         .text(`Subject: Experience Letter of Internship Completion at RID Bharat.`, 50, 400);
+        .text('Subject: Experience Letter of Internship Completion at RID Bharat.', 50, 400);
 
-      // Main content - User entered duration is used exactly as entered
       doc.fillColor(primaryColor).fontSize(12)
-         .text(`This is to certify that ${app.fullName} has completed his/her ${durationValue} ${durationUnit} internship with us, from ${startDate} to ${endDate}.`, 50, 440, {
-           align: 'left',
-           width: doc.page.width - 100
-         });
+        .text(
+          `This is to certify that ${app.fullName} has completed his/her ${durationValue} ${durationUnit} internship with us, from ${startDate} to ${endDate}.`,
+          50,
+          440,
+          { width: doc.page.width - 100 }
+        );
 
-      doc.text(`As part of his/her internship, he/she has worked on "${app.projectName}" in RID Bharat Project.`, 50, 480, {
-        align: 'left',
-        width: doc.page.width - 100
-      });
+      doc.text(
+        `As part of his/her internship, he/she has worked on "${app.projectName}" in RID Bharat Project.`,
+        50,
+        480,
+        { width: doc.page.width - 100 }
+      );
 
-      doc.text(`During the tenure with us, we found ${app.fullName}, sincere and result oriented.`, 50, 520, {
-        align: 'left',
-        width: doc.page.width - 100
-      });
+      doc.text(
+        `During the tenure with us, we found ${app.fullName}, sincere and result oriented.`,
+        50,
+        520,
+        { width: doc.page.width - 100 }
+      );
 
-      doc.text(`We wish ${app.fullName}, all the best for his/her future endeavors.`, 50, 560, {
-        align: 'left',
-        width: doc.page.width - 100
-      });
+      doc.text(
+        `We wish ${app.fullName}, all the best for his/her future endeavors.`,
+        50,
+        560,
+        { width: doc.page.width - 100 }
+      );
 
-      // ===== SIGNATURE SECTION =====
+      // ================= SIGNATURE SECTION =================
       const signatureY = 630;
-      doc.fillColor(primaryColor).fontSize(12)
-         .text('Best Regards,', 50, signatureY);
 
-      // Random names array
       const randomNames = [
         "Er. Rajesh Prasad",
         "Er. Deepak Kumar"
       ];
-      
-      // Pick random name
-      const randomIndex = Math.floor(Math.random() * randomNames.length);
-      const randomName = randomNames[randomIndex];
+      const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
 
-      // Signature area with random name
+      doc.fillColor(primaryColor).fontSize(12)
+        .text('Best Regards,', 50, signatureY);
+
+      // ✅ SIGNATURE IMAGE
+      if (fs.existsSync(signatureImagePath)) {
+        doc.image(signatureImagePath, 50, signatureY + 15, {
+          width: 120
+        });
+      }
+
       doc.fontSize(14).font('Helvetica-Bold')
-         .text(randomName, 50, signatureY + 30);
-      
+        .text(randomName, 50, signatureY + 45);
+
       doc.fontSize(12).font('Helvetica')
-         .text('CEO & Director', 50, signatureY + 50);
-      
-      doc.text('(RID Bharat Bhopal)', 50, signatureY + 70);
+        .text('CEO & Director', 50, signatureY + 65);
+
+      doc.text('(RID Bharat Bhopal)', 50, signatureY + 80);
 
       // Signature line
       doc.strokeColor('#000000').lineWidth(1)
-         .moveTo(50, signatureY + 25)
-         .lineTo(250, signatureY + 25)
-         .stroke();
+        .moveTo(50, signatureY + 35)
+        .lineTo(250, signatureY + 35)
+        .stroke();
 
-      // Right side: Stamp/Seal area
+      // ✅ STAMP IMAGE (RIGHT SIDE)
+      if (fs.existsSync(stampImagePath)) {
+        doc.image(
+          stampImagePath,
+          doc.page.width - 190,
+          signatureY + 20,
+          { width: 100 }
+        );
+      }
+
       doc.fillColor(secondaryColor).fontSize(10)
-         .text('Authorized Stamp & Signature', doc.page.width - 200, signatureY + 30, {
-           width: 150,
-           align: 'center'
-         });
+        .text(
+          'Authorized Stamp & Signature',
+          doc.page.width - 200,
+          signatureY + 130,
+          { width: 150, align: 'center' }
+        );
 
-      // Draw stamp circle
-      doc.strokeColor('#dc2626').lineWidth(2)
-         .circle(doc.page.width - 125, signatureY + 60, 40)
-         .stroke();
-
-      doc.fillColor('#dc2626').fontSize(8)
-         .text('RID BHARAT', doc.page.width - 125, signatureY + 55, {
-           width: 80,
-           align: 'center'
-         });
-      
-      doc.text('OFFICIAL', doc.page.width - 125, signatureY + 65, {
-        width: 80,
-        align: 'center'
-      });
-
-      // ===== FOOTER =====
-      // Digital signature line
+      // ================= FOOTER =================
       doc.strokeColor('#cccccc').lineWidth(0.5)
-         .moveTo(50, doc.page.height - 80)
-         .lineTo(doc.page.width - 50, doc.page.height - 80)
-         .stroke();
+        .moveTo(50, doc.page.height - 80)
+        .lineTo(doc.page.width - 50, doc.page.height - 80)
+        .stroke();
 
       doc.fillColor(accentColor).fontSize(10).font('Helvetica-Bold')
-         .text('Digitally Signed & Approved', 0, doc.page.height - 70, { align: 'center' });
-      
-      doc.text('Research, Innovation & Discovery Bharat (RID Bharat)', 0, doc.page.height - 55, { align: 'center' });
+        .text('Digitally Signed & Approved', 0, doc.page.height - 70, { align: 'center' });
 
-      // Office address
+      doc.text(
+        'Research, Innovation & Discovery Bharat (RID Bharat)',
+        0,
+        doc.page.height - 55,
+        { align: 'center' }
+      );
+
       doc.fillColor(secondaryColor).fontSize(9)
-         .text('Office Address: MiG–72, Sector A, Rajeev Nagar, Ayodhya Nagar, Bhopal, Madhya Pradesh 462021 (India)', 0, doc.page.height - 30, { align: 'center' });
+        .text(
+          'Office Address: MiG–72, Sector A, Rajeev Nagar, Ayodhya Nagar, Bhopal, Madhya Pradesh 462021 (India)',
+          0,
+          doc.page.height - 30,
+          { align: 'center' }
+        );
 
-      // Contact info
-      doc.text('Contact: +91 98927 82728 | Email: supportid@gamil.com', 0, doc.page.height - 15, { align: 'center' });
+      doc.text(
+        'Contact: +91 98927 82728 | Email: supportid@gamil.com',
+        0,
+        doc.page.height - 15,
+        { align: 'center' }
+      );
 
       doc.end();
 
