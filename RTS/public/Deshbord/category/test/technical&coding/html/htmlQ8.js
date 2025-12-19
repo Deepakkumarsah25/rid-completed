@@ -1,551 +1,596 @@
 const questions = [
   {
     "num": 1,
-    "question_en": "Which HTML attribute is used to specify that an input field should be pre-filled with a value?",
-    "question_hi": "इनपुट फील्ड प्री-फिल्ड वैल्यू के साथ होनी चाहिए यह निर्दिष्ट करने के लिए कौन सा HTML एट्रिब्यूट उपयोग होता है?",
-    "options_en": ["value", "placeholder", "default", "prefill"],
-    "options_hi": ["value", "placeholder", "default", "prefill"],
-    "answer_en": "value",
-    "answer_hi": "value",
+    "question_en": "Which HTML element is used to group block-level and inline elements together?",
+    "question_hi": "कौन सा HTML एलिमेंट block-level और inline elements को एक साथ समूहित करता है?",
+    "options_en": ["div", "span", "group", "section"],
+    "options_hi": ["div", "span", "group", "section"],
+    "answer_en": "div",
+    "answer_hi": "div",
     "attempted": false,
     "selected": ""
   },
   {
     "num": 2,
-    "question_en": "Which HTML attribute specifies that a form should not be validated when submitted?",
-    "question_hi": "फॉर्म सबमिट होने पर वैलिडेट नहीं होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["novalidate", "no-validate", "skip-validation", "formnovalidate"],
-    "options_hi": ["novalidate", "no-validate", "skip-validation", "formnovalidate"],
-    "answer_en": "novalidate",
-    "answer_hi": "novalidate",
+    "question_en": "Which HTML tag represents small print or side comments?",
+    "question_hi": "कौन सा HTML टैग छोटे प्रिंट या साइड टिप्पणी को दर्शाता है?",
+    "options_en": ["small", "comment", "aside", "note"],
+    "options_hi": ["small", "comment", "aside", "note"],
+    "answer_en": "small",
+    "answer_hi": "small",
     "attempted": false,
     "selected": ""
   },
   {
     "num": 3,
-    "question_en": "Which HTML attribute specifies that an input field should have multiple values?",
-    "question_hi": "इनपुट फील्ड में मल्टीपल वैल्यूज होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["multiple", "many", "several", "multi"],
-    "options_hi": ["multiple", "many", "several", "multi"],
-    "answer_en": "multiple",
-    "answer_hi": "multiple",
+    "question_en": "Which HTML attribute is used to open a link in a new tab?",
+    "question_hi": "लिंक को नई टैब में खोलने के लिए कौन सा HTML attribute उपयोग होता है?",
+    "options_en": ["target=\"_blank\"", "open", "tab", "new"],
+    "options_hi": ["target=\"_blank\"", "open", "tab", "new"],
+    "answer_en": "target=\"_blank\"",
+    "answer_hi": "target=\"_blank\"",
     "attempted": false,
     "selected": ""
   },
   {
     "num": 4,
-    "question_en": "Which HTML attribute specifies the pattern that an input field's value is checked against?",
-    "question_hi": "इनपुट फील्ड की वैल्यू किस पैटर्न के खिलाफ चेक की जाएगी यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["pattern", "regex", "format", "validate"],
-    "options_hi": ["pattern", "regex", "format", "validate"],
-    "answer_en": "pattern",
-    "answer_hi": "pattern",
+    "question_en": "Which element is used to mark emphasized text?",
+    "question_hi": "कौन सा एलिमेंट emphasized टेक्स्ट को दर्शाता है?",
+    "options_en": ["em", "i", "mark", "strong"],
+    "options_hi": ["em", "i", "mark", "strong"],
+    "answer_en": "em",
+    "answer_hi": "em",
     "attempted": false,
     "selected": ""
   },
   {
     "num": 5,
-    "question_en": "Which HTML attribute specifies the type of content in a meta tag?",
-    "question_hi": "मेटा टैग में कंटेंट का टाइप निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["name", "content", "http-equiv", "charset"],
-    "options_hi": ["name", "content", "http-equiv", "charset"],
-    "answer_en": "name",
-    "answer_hi": "name",
+    "question_en": "Which tag defines a self-contained composition like a blog or article?",
+    "question_hi": "कौन सा टैग blog या article जैसी self-contained सामग्री को परिभाषित करता है?",
+    "options_en": ["article", "section", "div", "content"],
+    "options_hi": ["article", "section", "div", "content"],
+    "answer_en": "article",
+    "answer_hi": "article",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 6,
-    "question_en": "Which HTML attribute specifies the content of a meta tag?",
-    "question_hi": "मेटा टैग के कंटेंट को निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["content", "value", "data", "meta-content"],
-    "options_hi": ["content", "value", "data", "meta-content"],
-    "answer_en": "content",
-    "answer_hi": "content",
+    "question_en": "Which HTML element is used to define a label for an input?",
+    "question_hi": "इनपुट के लिए लेबल परिभाषित करने हेतु कौन सा HTML एलिमेंट उपयोग होता है?",
+    "options_en": ["label", "caption", "name", "tag"],
+    "options_hi": ["label", "caption", "name", "tag"],
+    "answer_en": "label",
+    "answer_hi": "label",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 7,
-    "question_en": "Which HTML attribute specifies that a link is a stylesheet?",
-    "question_hi": "लिंक एक स्टाइलशीट है यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["rel", "type", "href", "stylesheet"],
-    "options_hi": ["rel", "type", "href", "stylesheet"],
-    "answer_en": "rel",
-    "answer_hi": "rel",
+    "question_en": "Which HTML tag creates an ordered list?",
+    "question_hi": "कौन सा HTML टैग क्रमबद्ध सूची बनाता है?",
+    "options_en": ["ol", "ul", "li", "list"],
+    "options_hi": ["ol", "ul", "li", "list"],
+    "answer_en": "ol",
+    "answer_hi": "ol",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 8,
-    "question_en": "Which HTML attribute specifies the size of an input field?",
-    "question_hi": "इनपुट फील्ड का साइज निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["size", "width", "length", "maxlength"],
-    "options_hi": ["size", "width", "length", "maxlength"],
-    "answer_en": "size",
-    "answer_hi": "size",
+    "question_en": "Which HTML element is used to define keyboard input?",
+    "question_hi": "कीबोर्ड इनपुट दर्शाने के लिए कौन सा HTML एलिमेंट उपयोग होता है?",
+    "options_en": ["kbd", "code", "input", "pre"],
+    "options_hi": ["kbd", "code", "input", "pre"],
+    "answer_en": "kbd",
+    "answer_hi": "kbd",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 9,
-    "question_en": "Which HTML attribute specifies that an image should be loaded when the page loads?",
-    "question_hi": "पेज लोड होने पर इमेज लोड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["loading", "eager", "lazy", "load"],
-    "options_hi": ["loading", "eager", "lazy", "load"],
-    "answer_en": "loading",
-    "answer_hi": "loading",
+    "question_en": "Which tag is used to display scalar measurements like disk usage?",
+    "question_hi": "कौन सा टैग scalar measurements (जैसे disk usage) दिखाने के लिए उपयोग होता है?",
+    "options_en": ["meter", "progress", "range", "scale"],
+    "options_hi": ["meter", "progress", "range", "scale"],
+    "answer_en": "meter",
+    "answer_hi": "meter",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 10,
-    "question_en": "Which HTML attribute specifies that an image should be loaded only when it's visible in the viewport?",
-    "question_hi": "इमेज तभी लोड होनी चाहिए जब वह व्यूपोर्ट में विजिबल हो यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["loading", "lazy", "eager", "visible"],
-    "options_hi": ["loading", "lazy", "eager", "visible"],
-    "answer_en": "loading",
-    "answer_hi": "loading",
+    "question_en": "Which element defines a command button in a form?",
+    "question_hi": "फॉर्म में command बटन परिभाषित करने वाला एलिमेंट कौन सा है?",
+    "options_en": ["button", "input-button", "submit", "command"],
+    "options_hi": ["button", "input-button", "submit", "command"],
+    "answer_en": "button",
+    "answer_hi": "button",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 11,
-    "question_en": "Which HTML attribute specifies the relationship between the current document and the linked document in a link tag?",
-    "question_hi": "लिंक टैग में करंट डॉक्यूमेंट और लिंक्ड डॉक्यूमेंट के बीच रिलेशनशिप निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["rel", "relationship", "type", "href"],
-    "options_hi": ["rel", "relationship", "type", "href"],
-    "answer_en": "rel",
-    "answer_hi": "rel",
+    "question_en": "Which element is used to highlight text?",
+    "question_hi": "टेक्स्ट को highlight करने के लिए कौन सा एलिमेंट उपयोग होता है?",
+    "options_en": ["mark", "highlight", "yellow", "light"],
+    "options_hi": ["mark", "highlight", "yellow", "light"],
+    "answer_en": "mark",
+    "answer_hi": "mark",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 12,
-    "question_en": "Which HTML attribute specifies the URL of the page that the link goes to in an anchor tag?",
-    "question_hi": "एंकर टैग में लिंक किस पेज पर जाएगा इसका URL निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["href", "src", "url", "link"],
-    "options_hi": ["href", "src", "url", "link"],
+    "question_en": "Which HTML tag represents a line break?",
+    "question_hi": "लाइन ब्रेक दर्शाने वाला HTML टैग कौन सा है?",
+    "options_en": ["br", "lb", "break", "ln"],
+    "options_hi": ["br", "lb", "break", "ln"],
+    "answer_en": "br",
+    "answer_hi": "br",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 13,
+    "question_en": "Which HTML tag is used for abbreviation?",
+    "question_hi": "संक्षेप (abbreviation) दर्शाने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["abbr", "short", "small", "note"],
+    "options_hi": ["abbr", "short", "small", "note"],
+    "answer_en": "abbr",
+    "answer_hi": "abbr",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 14,
+    "question_en": "Which HTML attribute makes form input mandatory?",
+    "question_hi": "फॉर्म इनपुट को अनिवार्य बनाने के लिए कौन सा attribute उपयोग होता है?",
+    "options_en": ["required", "must", "mandatory", "need"],
+    "options_hi": ["required", "must", "mandatory", "need"],
+    "answer_en": "required",
+    "answer_hi": "required",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 15,
+    "question_en": "Which element defines the footer of a document?",
+    "question_hi": "डॉक्यूमेंट का footer परिभाषित करने वाला एलिमेंट कौन सा है?",
+    "options_en": ["footer", "bottom", "foot", "end"],
+    "options_hi": ["footer", "bottom", "foot", "end"],
+    "answer_en": "footer",
+    "answer_hi": "footer",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 16,
+    "question_en": "Which element represents a progress bar?",
+    "question_hi": "कौन सा एलिमेंट progress bar दर्शाता है?",
+    "options_en": ["progress", "meter", "bar", "load"],
+    "options_hi": ["progress", "meter", "bar", "load"],
+    "answer_en": "progress",
+    "answer_hi": "progress",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 17,
+    "question_en": "Which HTML tag is used to define table headings?",
+    "question_hi": "टेबल में headings परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["th", "td", "thead", "hd"],
+    "options_hi": ["th", "td", "thead", "hd"],
+    "answer_en": "th",
+    "answer_hi": "th",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 18,
+    "question_en": "Which HTML element embeds external content like ads?",
+    "question_hi": "कौन सा HTML एलिमेंट external content (जैसे ads) embed करता है?",
+    "options_en": ["iframe", "embed", "object", "link"],
+    "options_hi": ["iframe", "embed", "object", "link"],
+    "answer_en": "iframe",
+    "answer_hi": "iframe",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 19,
+    "question_en": "Which element is used to define navigation menus?",
+    "question_hi": "नेविगेशन मेनू परिभाषित करने के लिए कौन सा तत्व उपयोग होता है?",
+    "options_en": ["nav", "menu", "links", "route"],
+    "options_hi": ["nav", "menu", "links", "route"],
+    "answer_en": "nav",
+    "answer_hi": "nav",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 20,
+    "question_en": "Which HTML attribute is used to specify alternative text for images?",
+    "question_hi": "छवियों के लिए alternative text निर्धारित करने हेतु कौन सा attribute उपयोग होता है?",
+    "options_en": ["alt", "text", "comment", "desc"],
+    "options_hi": ["alt", "text", "comment", "desc"],
+    "answer_en": "alt",
+    "answer_hi": "alt",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 21,
+    "question_en": "Which HTML tag indicates the document language?",
+    "question_hi": "डॉक्यूमेंट की भाषा दर्शाने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["html lang", "meta", "header", "doc"],
+    "options_hi": ["html lang", "meta", "header", "doc"],
+    "answer_en": "html lang",
+    "answer_hi": "html lang",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 22,
+    "question_en": "Which HTML tag is used for italic text?",
+    "question_hi": "italic टेक्स्ट के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["i", "em", "italic", "style"],
+    "options_hi": ["i", "em", "italic", "style"],
+    "answer_en": "i",
+    "answer_hi": "i",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 23,
+    "question_en": "Which HTML element displays preformatted text?",
+    "question_hi": "कौन सा HTML एलिमेंट preformatted टेक्स्ट प्रदर्शित करता है?",
+    "options_en": ["pre", "code", "format", "text"],
+    "options_hi": ["pre", "code", "format", "text"],
+    "answer_en": "pre",
+    "answer_hi": "pre",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 24,
+    "question_en": "Which tag defines a dropdown list?",
+    "question_hi": "ड्रॉपडाउन सूची परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["select", "option", "dropdown", "list"],
+    "options_hi": ["select", "option", "dropdown", "list"],
+    "answer_en": "select",
+    "answer_hi": "select",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 25,
+    "question_en": "Which element is used to define a description list?",
+    "question_hi": "description list परिभाषित करने वाला एलिमेंट कौन सा है?",
+    "options_en": ["dl", "dt", "dd", "list"],
+    "options_hi": ["dl", "dt", "dd", "list"],
+    "answer_en": "dl",
+    "answer_hi": "dl",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 26,
+    "question_en": "Which tag defines the title of a table?",
+    "question_hi": "टेबल का शीर्षक (title) परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["caption", "title", "thead", "label"],
+    "options_hi": ["caption", "title", "thead", "label"],
+    "answer_en": "caption",
+    "answer_hi": "caption",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 27,
+    "question_en": "Which attribute specifies the URL of a hyperlink?",
+    "question_hi": "हाइपरलिंक का URL निर्धारित करने के लिए कौन सा attribute उपयोग होता है?",
+    "options_en": ["href", "src", "link", "url"],
+    "options_hi": ["href", "src", "link", "url"],
     "answer_en": "href",
     "answer_hi": "href",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 13,
-    "question_en": "Which HTML attribute specifies that a link should open in a new tab?",
-    "question_hi": "लिंक न्यू टैब में खुलनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["target", "_blank", "new", "window"],
-    "options_hi": ["target", "_blank", "new", "window"],
-    "answer_en": "target",
-    "answer_hi": "target",
+    "num": 28,
+    "question_en": "Which HTML tag is used to define inline styling?",
+    "question_hi": "inline styling के लिए कौन सा HTML attribute उपयोग होता है?",
+    "options_en": ["style", "css", "design", "format"],
+    "options_hi": ["style", "css", "design", "format"],
+    "answer_en": "style",
+    "answer_hi": "style",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 14,
-    "question_en": "Which HTML attribute specifies that a link should open in the same tab?",
-    "question_hi": "लिंक सेम टैब में खुलनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["target", "_self", "same", "current"],
-    "options_hi": ["target", "_self", "same", "current"],
-    "answer_en": "target",
-    "answer_hi": "target",
+    "num": 29,
+    "question_en": "Which tag represents time or date?",
+    "question_hi": "कौन सा टैग समय या तारीख दर्शाता है?",
+    "options_en": ["time", "date", "clock", "moment"],
+    "options_hi": ["time", "date", "clock", "moment"],
+    "answer_en": "time",
+    "answer_hi": "time",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 15,
-    "question_en": "Which HTML attribute specifies that a link should open in the parent frame?",
-    "question_hi": "लिंक पेरेंट फ्रेम में खुलनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["target", "_parent", "parent", "up"],
-    "options_hi": ["target", "_parent", "parent", "up"],
-    "answer_en": "target",
-    "answer_hi": "target",
+    "num": 30,
+    "question_en": "Which HTML tag defines a list item?",
+    "question_hi": "सूची आइटम परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["li", "ul", "ol", "item"],
+    "options_hi": ["li", "ul", "ol", "item"],
+    "answer_en": "li",
+    "answer_hi": "li",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 16,
-    "question_en": "Which HTML attribute specifies that a link should open in the full body of the window?",
-    "question_hi": "लिंक विंडो के फुल बॉडी में खुलनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["target", "_top", "top", "full"],
-    "options_hi": ["target", "_top", "top", "full"],
-    "answer_en": "target",
-    "answer_hi": "target",
+    "num": 31,
+    "question_en": "Which HTML tag defines bold text?",
+    "question_hi": "bold टेक्स्ट परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["b", "strong", "bold", "bl"],
+    "options_hi": ["b", "strong", "bold", "bl"],
+    "answer_en": "b",
+    "answer_hi": "b",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 17,
-    "question_en": "Which HTML attribute specifies the language of the linked document?",
-    "question_hi": "लिंक्ड डॉक्यूमेंट की भाषा निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["hreflang", "lang", "language", "xml:lang"],
-    "options_hi": ["hreflang", "lang", "language", "xml:lang"],
-    "answer_en": "hreflang",
-    "answer_hi": "hreflang",
+    "num": 32,
+    "question_en": "Which HTML element is used to embed JavaScript?",
+    "question_hi": "JavaScript embed करने के लिए कौन सा HTML एलिमेंट उपयोग होता है?",
+    "options_en": ["script", "js", "code", "program"],
+    "options_hi": ["script", "js", "code", "program"],
+    "answer_en": "script",
+    "answer_hi": "script",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 18,
-    "question_en": "Which HTML attribute specifies the media type of the linked document in a link tag?",
-    "question_hi": "लिंक टैग में लिंक्ड डॉक्यूमेंट का मीडिया टाइप निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["media", "type", "content-type", "mime"],
-    "options_hi": ["media", "type", "content-type", "mime"],
-    "answer_en": "media",
-    "answer_hi": "media",
+    "num": 33,
+    "question_en": "Which HTML element defines the website’s header?",
+    "question_hi": "वेबसाइट का header परिभाषित करने वाला एलिमेंट कौन सा है?",
+    "options_en": ["header", "top", "head", "nav"],
+    "options_hi": ["header", "top", "head", "nav"],
+    "answer_en": "header",
+    "answer_hi": "header",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 19,
-    "question_en": "Which HTML attribute specifies the character encoding for the document in a meta tag?",
-    "question_hi": "मेटा टैग में डॉक्यूमेंट के लिए कैरेक्टर एन्कोडिंग निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["charset", "encoding", "char", "charset-encoding"],
-    "options_hi": ["charset", "encoding", "char", "charset-encoding"],
-    "answer_en": "charset",
-    "answer_hi": "charset",
+    "num": 34,
+    "question_en": "Which HTML tag is used to insert a horizontal line?",
+    "question_hi": "क्षैतिज रेखा (horizontal line) डालने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["hr", "line", "break", "hl"],
+    "options_hi": ["hr", "line", "break", "hl"],
+    "answer_en": "hr",
+    "answer_hi": "hr",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 20,
-    "question_en": "Which HTML attribute specifies the viewport settings for responsive design?",
-    "question_hi": "रिस्पॉन्सिव डिजाइन के लिए व्यूपोर्ट सेटिंग्स निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["content", "name", "viewport", "meta"],
-    "options_hi": ["content", "name", "viewport", "meta"],
-    "answer_en": "name",
-    "answer_hi": "name",
+    "num": 35,
+    "question_en": "Which tag displays content in quotation marks?",
+    "question_hi": "कौन सा टैग सामग्री को उद्धरण चिह्नों में दर्शाता है?",
+    "options_en": ["q", "blockquote", "quote", "c"],
+    "options_hi": ["q", "blockquote", "quote", "c"],
+    "answer_en": "q",
+    "answer_hi": "q",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 21,
-    "question_en": "Which HTML attribute specifies that a form element should be submitted with the form?",
-    "question_hi": "फॉर्म एलिमेंट को फॉर्म के साथ सबमिट किया जाना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["name", "id", "form", "submit"],
-    "options_hi": ["name", "id", "form", "submit"],
-    "answer_en": "name",
-    "answer_hi": "name",
+    "num": 36,
+    "question_en": "Which element defines a long quotation?",
+    "question_hi": "लंबे उद्धरण को दर्शाने वाला एलिमेंट कौन सा है?",
+    "options_en": ["blockquote", "q", "quote", "text"],
+    "options_hi": ["blockquote", "q", "quote", "text"],
+    "answer_en": "blockquote",
+    "answer_hi": "blockquote",
     "attempted": false,
     "selected": ""
   },
+
   {
-    "num": 22,
-    "question_en": "Which HTML attribute specifies that an input field should be part of a form?",
-    "question_hi": "इनपुट फील्ड फॉर्म का पार्ट होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["form", "name", "id", "form-id"],
-    "options_hi": ["form", "name", "id", "form-id"],
+    "num": 37,
+    "question_en": "Which tag is used to display an image?",
+    "question_hi": "इमेज प्रदर्शित करने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["img", "image", "src", "pic"],
+    "options_hi": ["img", "image", "src", "pic"],
+    "answer_en": "img",
+    "answer_hi": "img",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 38,
+    "question_en": "Which HTML attribute is used to set the size of a text area?",
+    "question_hi": "text area का आकार निर्धारित करने के लिए कौन सा attribute उपयोग होता है?",
+    "options_en": ["rows & cols", "size", "area", "space"],
+    "options_hi": ["rows & cols", "size", "area", "space"],
+    "answer_en": "rows & cols",
+    "answer_hi": "rows & cols",
+    "attempted": false,
+    "selected": ""
+  },
+
+  {
+    "num": 39,
+    "question_en": "Which HTML element is used to define a form?",
+    "question_hi": "फॉर्म परिभाषित करने के लिए कौन सा HTML एलिमेंट उपयोग होता है?",
+    "options_en": ["form", "input", "label", "submit"],
+    "options_hi": ["form", "input", "label", "submit"],
     "answer_en": "form",
     "answer_hi": "form",
     "attempted": false,
     "selected": ""
   },
-  {
-    "num": 23,
-    "question_en": "Which HTML attribute specifies that a button should submit the form?",
-    "question_hi": "बटन फॉर्म सबमिट करेगा यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "submit", "form", "action"],
-    "options_hi": ["type", "submit", "form", "action"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 24,
-    "question_en": "Which HTML attribute specifies that a button should reset the form?",
-    "question_hi": "बटन फॉर्म रीसेट करेगा यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "reset", "form", "action"],
-    "options_hi": ["type", "reset", "form", "action"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 25,
-    "question_en": "Which HTML attribute specifies that a button should be a clickable button?",
-    "question_hi": "बटन क्लिकेबल बटन होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "button", "click", "action"],
-    "options_hi": ["type", "button", "click", "action"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 26,
-    "question_en": "Which HTML attribute specifies that an input field should be a password field?",
-    "question_hi": "इनपुट फील्ड पासवर्ड फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "password", "input", "secret"],
-    "options_hi": ["type", "password", "input", "secret"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 27,
-    "question_en": "Which HTML attribute specifies that an input field should be a checkbox?",
-    "question_hi": "इनपुट फील्ड चेकबॉक्स होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "checkbox", "input", "check"],
-    "options_hi": ["type", "checkbox", "input", "check"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 28,
-    "question_en": "Which HTML attribute specifies that an input field should be a radio button?",
-    "question_hi": "इनपुट फील्ड रेडियो बटन होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "radio", "input", "option"],
-    "options_hi": ["type", "radio", "input", "option"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 29,
-    "question_en": "Which HTML attribute specifies that an input field should be a file upload field?",
-    "question_hi": "इनपुट फील्ड फाइल अपलोड फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "file", "input", "upload"],
-    "options_hi": ["type", "file", "input", "upload"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 30,
-    "question_en": "Which HTML attribute specifies that an input field should be a hidden field?",
-    "question_hi": "इनपुट फील्ड हिडन फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "hidden", "input", "secret"],
-    "options_hi": ["type", "hidden", "input", "secret"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 31,
-    "question_en": "Which HTML attribute specifies that an input field should be an email field?",
-    "question_hi": "इनपुट फील्ड ईमेल फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "email", "input", "mail"],
-    "options_hi": ["type", "email", "input", "mail"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 32,
-    "question_en": "Which HTML attribute specifies that an input field should be a URL field?",
-    "question_hi": "इनपुट फील्ड URL फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "url", "input", "link"],
-    "options_hi": ["type", "url", "input", "link"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 33,
-    "question_en": "Which HTML attribute specifies that an input field should be a number field?",
-    "question_hi": "इनपुट फील्ड नंबर फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "number", "input", "numeric"],
-    "options_hi": ["type", "number", "input", "numeric"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 34,
-    "question_en": "Which HTML attribute specifies that an input field should be a range slider?",
-    "question_hi": "इनपुट फील्ड रेंज स्लाइडर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "range", "input", "slider"],
-    "options_hi": ["type", "range", "input", "slider"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 35,
-    "question_en": "Which HTML attribute specifies that an input field should be a date picker?",
-    "question_hi": "इनपुट फील्ड डेट पिकर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "date", "input", "calendar"],
-    "options_hi": ["type", "date", "input", "calendar"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 36,
-    "question_en": "Which HTML attribute specifies that an input field should be a color picker?",
-    "question_hi": "इनपुट फील्ड कलर पिकर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "color", "input", "picker"],
-    "options_hi": ["type", "color", "input", "picker"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 37,
-    "question_en": "Which HTML attribute specifies that an input field should be a search field?",
-    "question_hi": "इनपुट फील्ड सर्च फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "search", "input", "find"],
-    "options_hi": ["type", "search", "input", "find"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 38,
-    "question_en": "Which HTML attribute specifies that an input field should be a telephone number field?",
-    "question_hi": "इनपुट फील्ड टेलीफोन नंबर फील्ड होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "tel", "input", "phone"],
-    "options_hi": ["type", "tel", "input", "phone"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
-  {
-    "num": 39,
-    "question_en": "Which HTML attribute specifies that an input field should be a time picker?",
-    "question_hi": "इनपुट फील्ड टाइम पिकर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "time", "input", "clock"],
-    "options_hi": ["type", "time", "input", "clock"],
-    "answer_en": "type",
-    "answer_hi": "type",
-    "attempted": false,
-    "selected": ""
-  },
+
   {
     "num": 40,
-    "question_en": "Which HTML attribute specifies that an input field should be a month picker?",
-    "question_hi": "इनपुट फील्ड मंथ पिकर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "month", "input", "calendar"],
-    "options_hi": ["type", "month", "input", "calendar"],
-    "answer_en": "type",
-    "answer_hi": "type",
+    "question_en": "Which HTML tag is used to create a table?",
+    "question_hi": "टेबल बनाने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["table", "tab", "grid", "data"],
+    "options_hi": ["table", "tab", "grid", "data"],
+    "answer_en": "table",
+    "answer_hi": "table",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 41,
-    "question_en": "Which HTML attribute specifies that an input field should be a week picker?",
-    "question_hi": "इनपुट फील्ड वीक पिकर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "week", "input", "calendar"],
-    "options_hi": ["type", "week", "input", "calendar"],
-    "answer_en": "type",
-    "answer_hi": "type",
+    "question_en": "Which HTML tag defines a row in a table?",
+    "question_hi": "टेबल में row परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["tr", "td", "th", "row"],
+    "options_hi": ["tr", "td", "th", "row"],
+    "answer_en": "tr",
+    "answer_hi": "tr",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 42,
-    "question_en": "Which HTML attribute specifies that an input field should be a datetime-local picker?",
-    "question_hi": "इनपुट फील्ड डेटटाइम-लोकल पिकर होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["type", "datetime-local", "input", "calendar"],
-    "options_hi": ["type", "datetime-local", "input", "calendar"],
-    "answer_en": "type",
-    "answer_hi": "type",
+    "question_en": "Which tag defines a cell in a table?",
+    "question_hi": "टेबल में cell परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["td", "tr", "th", "cell"],
+    "options_hi": ["td", "tr", "th", "cell"],
+    "answer_en": "td",
+    "answer_hi": "td",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 43,
-    "question_en": "Which HTML attribute specifies that a textarea should have a default value?",
-    "question_hi": "टेक्स्टएरिया में डिफॉल्ट वैल्यू होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["value", "placeholder", "default", "text"],
-    "options_hi": ["value", "placeholder", "default", "text"],
-    "answer_en": "placeholder",
-    "answer_hi": "placeholder",
+    "question_en": "Which HTML element represents machine-readable data?",
+    "question_hi": "कौन सा HTML एलिमेंट machine-readable data दर्शाता है?",
+    "options_en": ["data", "meta", "input", "value"],
+    "options_hi": ["data", "meta", "input", "value"],
+    "answer_en": "data",
+    "answer_hi": "data",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 44,
-    "question_en": "Which HTML attribute specifies that a select element should have multiple options selectable?",
-    "question_hi": "सेलेक्ट एलिमेंट में मल्टीपल ऑप्शन सेलेक्टेबल होने चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["multiple", "many", "several", "multi"],
-    "options_hi": ["multiple", "many", "several", "multi"],
-    "answer_en": "multiple",
-    "answer_hi": "multiple",
+    "question_en": "Which HTML tag embeds external files like PDFs?",
+    "question_hi": "कौन सा HTML टैग PDF जैसे external files embed करता है?",
+    "options_en": ["embed", "object", "iframe", "file"],
+    "options_hi": ["embed", "object", "iframe", "file"],
+    "answer_en": "embed",
+    "answer_hi": "embed",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 45,
-    "question_en": "Which HTML attribute specifies that an option in a select element should be disabled?",
-    "question_hi": "सेलेक्ट एलिमेंट में ऑप्शन डिसेबल होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["disabled", "readonly", "off", "inactive"],
-    "options_hi": ["disabled", "readonly", "off", "inactive"],
-    "answer_en": "disabled",
-    "answer_hi": "disabled",
+    "question_en": "Which tag defines a clickable button?",
+    "question_hi": "क्लिक करने योग्य बटन परिभाषित करने वाला टैग कौन सा है?",
+    "options_en": ["button", "btn", "click", "submit"],
+    "options_hi": ["button", "btn", "click", "submit"],
+    "answer_en": "button",
+    "answer_hi": "button",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 46,
-    "question_en": "Which HTML attribute specifies that an option in a select element should be the default selected option?",
-    "question_hi": "सेलेक्ट एलिमेंट में ऑप्शन डिफॉल्ट सेलेक्टेड ऑप्शन होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["selected", "checked", "default", "on"],
-    "options_hi": ["selected", "checked", "default", "on"],
-    "answer_en": "selected",
-    "answer_hi": "selected",
+    "question_en": "Which HTML tag is used for comments?",
+    "question_hi": "कमेंट लिखने के लिए कौन सा HTML सिंटैक्स उपयोग होता है?",
+    "options_en": ["<!-- -->", "//", "/* */", "comment"],
+    "options_hi": ["<!-- -->", "//", "/* */", "comment"],
+    "answer_en": "<!-- -->",
+    "answer_hi": "<!-- -->",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 47,
-    "question_en": "Which HTML attribute specifies that an input field should have a list of pre-defined options?",
-    "question_hi": "इनपुट फील्ड में प्री-डिफाइंड ऑप्शन्स की लिस्ट होनी चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["list", "options", "datalist", "predefined"],
-    "options_hi": ["list", "options", "datalist", "predefined"],
-    "answer_en": "list",
-    "answer_hi": "list",
+    "question_en": "Which HTML tag is used to play audio files?",
+    "question_hi": "ऑडियो फाइल चलाने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["audio", "sound", "mp3", "play"],
+    "options_hi": ["audio", "sound", "mp3", "play"],
+    "answer_en": "audio",
+    "answer_hi": "audio",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 48,
-    "question_en": "Which HTML attribute specifies that a form should be validated using HTML5 validation?",
-    "question_hi": "फॉर्म HTML5 वैलिडेशन का उपयोग करके वैलिडेट होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["novalidate", "validate", "html5validate", "formvalidate"],
-    "options_hi": ["novalidate", "validate", "html5validate", "formvalidate"],
-    "answer_en": "novalidate",
-    "answer_hi": "novalidate",
+    "question_en": "Which HTML tag is used to play video files?",
+    "question_hi": "वीडियो फाइल चलाने के लिए कौन सा HTML टैग उपयोग होता है?",
+    "options_en": ["video", "mp4", "movie", "play"],
+    "options_hi": ["video", "mp4", "movie", "play"],
+    "answer_en": "video",
+    "answer_hi": "video",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 49,
-    "question_en": "Which HTML attribute specifies that an input field should have a spell check enabled?",
-    "question_hi": "इनपुट फील्ड में स्पेल चेक एनेबल होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["spellcheck", "check", "spell", "validate"],
-    "options_hi": ["spellcheck", "check", "spell", "validate"],
-    "answer_en": "spellcheck",
-    "answer_hi": "spellcheck",
+    "question_en": "Which tag specifies metadata for the document?",
+    "question_hi": "कौन सा टैग डॉक्यूमेंट के metadata को परिभाषित करता है?",
+    "options_en": ["meta", "head", "data", "info"],
+    "options_hi": ["meta", "head", "data", "info"],
+    "answer_en": "meta",
+    "answer_hi": "meta",
     "attempted": false,
     "selected": ""
   },
+
   {
     "num": 50,
-    "question_en": "Which HTML attribute specifies that an input field should have auto-capitalization enabled?",
-    "question_hi": "इनपुट फील्ड में ऑटो-कैपिटलाइजेशन एनेबल होना चाहिए यह निर्दिष्ट करने वाला HTML एट्रिब्यूट कौन सा है?",
-    "options_en": ["autocapitalize", "capitalize", "auto", "text-transform"],
-    "options_hi": ["autocapitalize", "capitalize", "auto", "text-transform"],
-    "answer_en": "autocapitalize",
-    "answer_hi": "autocapitalize",
+    "question_en": "Which HTML element defines the title shown in browser tab?",
+    "question_hi": "ब्राउज़र टैब में दिखने वाला शीर्षक किस HTML एलिमेंट द्वारा परिभाषित होता है?",
+    "options_en": ["title", "head", "header", "meta"],
+    "options_hi": ["title", "head", "header", "meta"],
+    "answer_en": "title",
+    "answer_hi": "title",
     "attempted": false,
     "selected": ""
   }
@@ -554,61 +599,67 @@ const questions = [
 
 
 
-let currentQuestion = 0; 
+let currentQuestion = 0;
 let language = "en";
-// let timeLeft = 180 * 60; // 180 minutes
-let timeLeft = 60 * 60; // 60 minutes
+let timeLeft = 60 * 60; 
 let timerInterval;
 
-// ----------------- Quiz Logic -----------------
+// ----------------- Load Question -----------------
 function loadQuestion(index) {
     const q = questions[index];
-    document.getElementById("question").textContent = `${q.num}. ${
-        language === "en" ? q.question_en : q.question_hi
-    }`;
-    document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
+    if (!q) return; //  undefined error fix
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
 
     const optionsElement = document.getElementById("options");
     optionsElement.innerHTML = "";
 
     const options = language === "en" ? q.options_en : q.options_hi;
 
-    options.forEach((option) => {
+    options.forEach(option => {
         const isSelected = q.selected === option;
-        const optionDiv = document.createElement("div");
-        optionDiv.className = "option-box";
-        optionDiv.style = `
+
+        const div = document.createElement("div");
+        div.className = "option-box";
+
+        div.style = `
             border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
             background-color: ${isSelected ? "#e7f1ff" : "white"};
             padding: 10px;
             border-radius: 8px;
             margin: 6px 0;
             cursor: pointer;
-            transition: all 0.2s;
         `;
 
-        optionDiv.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${isSelected ? "checked" : ""} style="margin-right:8px;">
+        div.innerHTML = `
+            <input type="radio" name="option" value="${option}" 
+            ${isSelected ? "checked" : ""} style="margin-right:8px;">
             ${option}
         `;
 
-        optionDiv.addEventListener("click", () => {
+        div.addEventListener("click", () => {
             markAttempted(index, option);
             loadQuestion(index);
         });
 
-        optionsElement.appendChild(optionDiv);
+        optionsElement.appendChild(div);
     });
 
     updateNavigation();
 }
 
+// ----------------- Attempt Mark -----------------
 function markAttempted(index, selectedAnswer) {
     questions[index].attempted = true;
     questions[index].selected = selectedAnswer;
     updateNavigation();
 }
 
+// ----------------- Next / Previous -----------------
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -628,216 +679,114 @@ function changeLanguage() {
     loadQuestion(currentQuestion);
 }
 
+// ----------------- Final Submit -----------------
 function submitQuiz() {
-    clearInterval(timerInterval);
-    let attempted = 0,
-        notAttempted = 0,
-        score = 0;
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
 
-    questions.forEach((q) => {
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
         if (q.attempted) {
             attempted++;
-            if (q.selected === q.answer_en || q.selected === q.answer_hi) score++;
-        } else notAttempted++;
+
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
     });
 
-    alert(
-        `Quiz submitted!\nAttempted: ${attempted}\nNot Attempted: ${notAttempted}\nScore: ${score}/${questions.length}`
-    );
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    let viewResult = confirm("Test submitted! Do you want to view result?");
+    if (viewResult) {
+        window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+    }
 }
 
+// ----------------- Navigation Circles -----------------
+function updateNavigation() {
+    const nav = document.getElementById("circleContainer");
+    nav.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        let color = "gray";
+        if (i === currentQuestion) color = "blue";
+        else if (q.attempted) color = "green";
+
+        nav.innerHTML += `
+            <div class="circle" style="background:${color};"
+            onclick="jumpToQuestion(${i})">${i + 1}</div>
+        `;
+    });
+}
+
+function jumpToQuestion(index) {
+    currentQuestion = index;
+    loadQuestion(index);
+}
+
+// ----------------- Timer -----------------
 function startTimer() {
     const timerElement = document.getElementById("timer");
-    clearInterval(timerInterval);
+
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert("Time's up!");
             submitQuiz();
         } else {
-            const hours = Math.floor(timeLeft / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = `Time Left: ${hours
-                .toString()
-                .padStart(2, "0")}:${minutes
-                .toString()
-                .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+            const hours = String(Math.floor(timeLeft / 3600)).padStart(2, "0");
+            const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, "0");
+            const seconds = String(timeLeft % 60).padStart(2, "0");
+
+            timerElement.textContent = `Time Left: ${hours}:${minutes}:${seconds}`;
             timeLeft--;
         }
     }, 1000);
 }
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
-// submit 
-function jumpToQuestion(index) {
-            currentQuestion = index;
-            loadQuestion(index);
-        }
-
-        function submitQuiz() {
-            let confirmation = confirm("Are you sure you want to submit the test?");
-            
-            if (!confirmation) {
-                return; // अगर यूज़र 'Cancel' करता है तो आगे नहीं बढ़ेंगे
-            }
-
-            let attempted = 0;
-            let notAttempted = 0;
-            let score = 0;
-            const results = [];
-
-            questions.forEach(q => {
-                if (q.attempted) {
-                    attempted++;
-                    if (q.selected === q.answer) {
-                        score++;
-                    }
-                } else {
-                    notAttempted++;
-                }
-                results.push({ question: q.question, selected: q.selected || "Not Answered", correct: q.answer });
-            });
-
-            localStorage.setItem("attempted", attempted);
-            localStorage.setItem("notAttempted", notAttempted);
-            localStorage.setItem("score", score);
-            localStorage.setItem("results", JSON.stringify(results));
-
-            // रिजल्ट देखने से पहले एक और कन्फर्मेशन ले सकते हैं
-            let viewResult = confirm("Test submitted successfully! Do you want to view your result?");
-            if (viewResult) {
-                window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
-            }
-        }
-        window.onload = () => {
-            loadQuestion(currentQuestion);
-        };
-
-
-function updateNavigation() {
-    const nav = document.getElementById("circleContainer");
-    nav.innerHTML = "";
-    questions.forEach((q, i) => {
-        let color = "gray";
-        if (i === currentQuestion) color = "blue";
-        else if (q.attempted) color = "green";
-        nav.innerHTML += `<div class='circle' style='background-color:${color}' onclick='loadQuestion(${i})'>${i + 1}</div>`;
-    });
-}
-
-// ----------------- Camera & Movement Logic -----------------
+// ----------------- Camera & Movement Detection -----------------
 let videoStream;
 let movementCount = 0;
 
 function startCamera() {
     const container = document.createElement("div");
     container.id = "camera-container";
-    container.style.position = "fixed";
-    container.style.top = "10px";
-    container.style.left = "10px"; // ✅ Left side
-    container.style.width = "130px";
-    container.style.height = "130px";
-    container.style.zIndex = "9999";
-    container.style.borderRadius = "50%";
-    container.style.overflow = "hidden";
-    container.style.border = "3px solid red";
-    container.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-    container.style.cursor = "grab";
-    container.style.minWidth = "80px";
-    container.style.minHeight = "80px";
-    container.style.maxWidth = "250px";
-    container.style.maxHeight = "250px";
-    container.style.background = "#000";
+    container.style = `
+        position:fixed; top:10px; left:10px; width:130px; height:130px;
+        border-radius:50%; overflow:hidden; border:3px solid red; z-index:9999;
+    `;
+
     document.body.appendChild(container);
 
     const video = document.createElement("video");
-    video.setAttribute("autoplay", true);
-    video.setAttribute("playsinline", true);
-    video.style.width = "100%";
-    video.style.height = "100%";
-    video.style.objectFit = "cover";
+    video.autoplay = true;
+    video.playsinline = true;
+    video.style = "width:100%; height:100%; object-fit:cover;";
     container.appendChild(video);
 
-    // ✅ Resize handle
-    const resizeHandle = document.createElement("div");
-    resizeHandle.style.position = "absolute";
-    resizeHandle.style.bottom = "2px";
-    resizeHandle.style.right = "2px";
-    resizeHandle.style.width = "15px";
-    resizeHandle.style.height = "15px";
-    resizeHandle.style.background = "rgba(255,255,255,0.7)";
-    resizeHandle.style.borderRadius = "4px";
-    resizeHandle.style.cursor = "se-resize";
-    container.appendChild(resizeHandle);
-
-    // ✅ Drag logic
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    container.addEventListener("mousedown", (e) => {
-        if (e.target === resizeHandle) return;
-        isDragging = true;
-        offsetX = e.clientX - container.offsetLeft;
-        offsetY = e.clientY - container.offsetTop;
-        container.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
-        x = Math.max(0, Math.min(window.innerWidth - container.offsetWidth, x));
-        y = Math.max(0, Math.min(window.innerHeight - container.offsetHeight, y));
-        container.style.left = `${x}px`;
-        container.style.top = `${y}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-        container.style.cursor = "grab";
-    });
-
-    // ✅ Resize logic
-    let isResizing = false;
-    let startWidth, startHeight, startX, startY;
-
-    resizeHandle.addEventListener("mousedown", (e) => {
-        e.stopPropagation();
-        isResizing = true;
-        startWidth = container.offsetWidth;
-        startHeight = container.offsetHeight;
-        startX = e.clientX;
-        startY = e.clientY;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isResizing) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        const newSize = Math.max(80, Math.min(250, Math.max(startWidth + dx, startHeight + dy)));
-        container.style.width = `${newSize}px`;
-        container.style.height = `${newSize}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isResizing = false;
-    });
-
-    // ✅ Camera stream
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
             video.srcObject = stream;
             videoStream = stream;
             detectMovement(video);
         })
-        .catch(err => {
-            console.error("Camera error:", err);
-            alert("Camera not accessible!");
-        });
+        .catch(() => alert("Camera access denied!"));
 }
 
 function detectMovement(video) {
@@ -845,51 +794,51 @@ function detectMovement(video) {
     const ctx = canvas.getContext("2d");
     canvas.width = 160;
     canvas.height = 160;
-    let lastImageData = null;
+
+    let lastData = null;
 
     setInterval(() => {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(video, 0, 0, 160, 160);
+        const data = ctx.getImageData(0, 0, 160, 160);
 
-        if (lastImageData) {
+        if (lastData) {
             let diff = 0;
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                diff += Math.abs(imageData.data[i] - lastImageData.data[i]);
+            for (let i = 0; i < data.data.length; i += 4) {
+                diff += Math.abs(data.data[i] - lastData.data[i]);
             }
 
             if (diff > 1000000) {
                 movementCount++;
-                if (movementCount === 1) {
-                    alert("⚠️ Alert 1: Face is not move");
-                } else if (movementCount === 2) {
-                    alert("⚠️ Alert 2: Head is not move");
-                } else if (movementCount === 3) {
-                    alert("⚠️ Alert 3: Test series is restarting...");
+
+                if (movementCount === 1) alert("⚠ Alert 1: No movement detected!");
+                if (movementCount === 2) alert("⚠ Alert 2: Head not moving!");
+                if (movementCount === 3) {
+                    alert("⚠ Alert 3: Restarting test...");
                     restartTest();
                 }
             }
         }
-        lastImageData = imageData;
+        lastData = data;
+
     }, 2000);
 }
 
 function restartTest() {
-    if (videoStream) {
-        videoStream.getTracks().forEach(track => track.stop());
-    }
-    const camContainer = document.getElementById("camera-container");
-    if (camContainer) camContainer.remove();
+    if (videoStream) videoStream.getTracks().forEach(t => t.stop());
+
+    const cam = document.getElementById("camera-container");
+    if (cam) cam.remove();
 
     movementCount = 0;
     currentQuestion = 0;
-    timeLeft = 180 * 60;
+    timeLeft = 60 * 60;
 
     questions.forEach(q => {
         q.attempted = false;
         q.selected = null;
     });
 
-    loadQuestion(currentQuestion);
+    loadQuestion(0);
     startTimer();
     startCamera();
 }
@@ -898,8 +847,5 @@ function restartTest() {
 window.onload = function () {
     loadQuestion(currentQuestion);
     startTimer();
-    startCamera(); // ✅ Camera starts with test
+    startCamera();
 };
-
-
-///////////////////////////////////////

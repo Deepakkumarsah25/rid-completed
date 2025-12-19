@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,15 @@
     <title>Quiz Application JEE</title>
     <title>CSS TEST</title>
     <link rel="stylesheet" href="/RTS/public/css/jee/jee.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <div class="main-container">
         <div class="quiz-container">
             <div class="question-header">
-                <h2>Online Test</h2>
+                <!-- <h2>Online Test</h2> -->
+                 <h2>Online Test</h2>
+
                 <div class="timer"> <span id="timer"></span> </div>
             </div>
             <select id="languageSelect" onchange="changeLanguage()" class="language-select">
@@ -27,6 +29,7 @@
                 <button class="btn" onclick="prevQuestion()">Previous</button>
                 <button class="btn btn-next" onclick="nextQuestion()">Next</button>
             </div>
+             <button class="btn btn-service" onclick="backToTestService()">Back to Test Service</button>
         </div>
         <div class="sidebar">
             <div class="sidebar-content">
@@ -42,7 +45,28 @@
         </div>
     </div>
 
-    <script src="/RTS/public/js/12th/Punjab Board/CBSE/Art/Economic/Test5.js"></script>
+     <script>
+  
+       
+        function backToTestService() {
+            alert('Redirecting to Test Service...');
+            // In a real implementation, this would redirect to the test service page
+            window.location.href = '/RTS/public/Deshbord/category/test/technical&coding/technical1.html';
+        }
+      
+    </script>
+    <script src="/RTS/public/js/12th/Punjab Board/CBSE/Art/Economic/Test1.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+

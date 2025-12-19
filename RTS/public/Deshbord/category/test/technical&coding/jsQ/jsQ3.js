@@ -1,611 +1,633 @@
-const questions = [
-  {
-    num: 1,
-    question_en: "What is the output of `console.log(typeof typeof 1)`?",
-    question_hi: "`console.log(typeof typeof 1)` का आउटपुट क्या है?",
-    options_en: ["string", "number", "undefined", "object"],
-    options_hi: ["string", "number", "undefined", "object"],
-    answer_en: "string",
-    answer_hi: "string",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 2,
-    question_en: "Which method returns the first element that satisfies a condition?",
-    question_hi: "कौन-सा मेथड पहला एलिमेंट लौटाता है जो कंडीशन को संतुष्ट करता है?",
-    options_en: ["find()", "filter()", "search()", "locate()"],
-    options_hi: ["find()", "filter()", "search()", "locate()"],
-    answer_en: "find()",
-    answer_hi: "find()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 3,
-    question_en: "What does the `rest` parameter (...) do in function parameters?",
-    question_hi: "फंक्शन पैरामीटर्स में `rest` पैरामीटर (...) क्या करता है?",
-    options_en: ["Collects multiple arguments into an array", "Spreads array elements", "Restricts parameters", "Creates optional parameters"],
-    options_hi: ["कई आर्गुमेंट्स को ऐरे में इकट्ठा करता है", "ऐरे एलिमेंट्स फैलाता है", "पैरामीटर्स रिस्ट्रिक्ट करता है", "ऑप्शनल पैरामीटर्स बनाता है"],
-    answer_en: "Collects multiple arguments into an array",
-    answer_hi: "कई आर्गुमेंट्स को ऐरे में इकट्ठा करता है",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 4,
-    question_en: "Which method returns a new array with elements from subarrays?",
-    question_hi: "कौन-सा मेथड सबअरे से एलिमेंट्स के साथ नया ऐरे लौटाता है?",
-    options_en: ["flat()", "concat()", "merge()", "join()"],
-    options_hi: ["flat()", "concat()", "merge()", "join()"],
-    answer_en: "flat()",
-    answer_hi: "flat()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 5,
-    question_en: "What is the purpose of `Object.freeze()`?",
-    question_hi: "`Object.freeze()` का उद्देश्य क्या है?",
-    options_en: ["Prevents modification of object properties", "Makes object read-only", "Freezes object execution", "Stops object methods"],
-    options_hi: ["ऑब्जेक्ट प्रॉपर्टीज में मॉडिफिकेशन रोकता है", "ऑब्जेक्ट को रीड-ओनली बनाता है", "ऑब्जेक्ट एक्जिक्यूशन फ्रीज करता है", "ऑब्जेक्ट मेथड्स रोकता है"],
-    answer_en: "Prevents modification of object properties",
-    answer_hi: "ऑब्जेक्ट प्रॉपर्टीज में मॉडिफिकेशन रोकता है",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 6,
-    question_en: "Which method checks if an array includes a certain value?",
-    question_hi: "कौन-सा मेथड चेक करता है कि ऐरे में कोई वैल्यू है?",
-    options_en: ["includes()", "contains()", "has()", "indexOf()"],
-    options_hi: ["includes()", "contains()", "has()", "indexOf()"],
-    answer_en: "includes()",
-    answer_hi: "includes()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 7,
-    question_en: "What is the result of `console.log(1 < 2 < 3)` and `console.log(3 > 2 > 1)`?",
-    question_hi: "`console.log(1 < 2 < 3)` और `console.log(3 > 2 > 1)` का रिजल्ट क्या है?",
-    options_en: ["true, false", "true, true", "false, false", "false, true"],
-    options_hi: ["true, false", "true, true", "false, false", "false, true"],
-    answer_en: "true, false",
-    answer_hi: "true, false",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 8,
-    question_en: "Which method creates a new array with all elements that pass the test?",
-    question_hi: "कौन-सा मेथड नया ऐरे बनाता है जिसमें टेस्ट पास करने वाले सभी एलिमेंट्स हों?",
-    options_en: ["filter()", "map()", "reduce()", "forEach()"],
-    options_hi: ["filter()", "map()", "reduce()", "forEach()"],
-    answer_en: "filter()",
-    answer_hi: "filter()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 9,
-    question_en: "What does `Object.seal()` do?",
-    question_hi: "`Object.seal()` क्या करता है?",
-    options_en: ["Prevents adding new properties", "Allows modifying existing properties", "Both A and B", "Makes object immutable"],
-    options_hi: ["नई प्रॉपर्टीज जोड़ने से रोकता है", "एक्सिस्टिंग प्रॉपर्टीज मॉडिफाई करने की अनुमति देता है", "A और B दोनों", "ऑब्जेक्ट को इम्यूटेबल बनाता है"],
-    answer_en: "Both A and B",
-    answer_hi: "A और B दोनों",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 10,
-    question_en: "Which method returns the last index of an element in an array?",
-    question_hi: "कौन-सा मेथड ऐरे में एलिमेंट का आखिरी इंडेक्स लौटाता है?",
-    options_en: ["lastIndexOf()", "findLastIndex()", "searchLast()", "indexOfLast()"],
-    options_hi: ["lastIndexOf()", "findLastIndex()", "searchLast()", "indexOfLast()"],
-    answer_en: "lastIndexOf()",
-    answer_hi: "lastIndexOf()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 11,
-    question_en: "What is the output of `console.log([] + [])`?",
-    question_hi: "`console.log([] + [])` का आउटपुट क्या है?",
-    options_en: ["''", "[]", "[object Object]", "0"],
-    options_hi: ["''", "[]", "[object Object]", "0"],
-    answer_en: "''",
-    answer_hi: "''",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 12,
-    question_en: "Which method checks if a string ends with specific characters?",
-    question_hi: "कौन-सा मेथड चेक करता है कि स्ट्रिंग विशेष करैक्टर्स से खत्म होती है?",
-    options_en: ["endsWith()", "startsWith()", "includes()", "match()"],
-    options_hi: ["endsWith()", "startsWith()", "includes()", "match()"],
-    answer_en: "endsWith()",
-    answer_hi: "endsWith()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 13,
-    question_en: "What is the purpose of `Symbol` in JavaScript?",
-    question_hi: "JavaScript में `Symbol` का उद्देश्य क्या है?",
-    options_en: ["Create unique identifiers", "Create private properties", "Both A and B", "Create mathematical symbols"],
-    options_hi: ["यूनिक आइडेंटिफायर बनाना", "प्राइवेट प्रॉपर्टीज बनाना", "A और B दोनों", "मैथमेटिकल सिंबल्स बनाना"],
-    answer_en: "Both A and B",
-    answer_hi: "A और B दोनों",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 14,
-    question_en: "Which method creates a new array with specified elements?",
-    question_hi: "कौन-सा मेथड निर्दिष्ट एलिमेंट्स के साथ नया ऐरे बनाता है?",
-    options_en: ["Array.of()", "Array.from()", "Array.create()", "Array.new()"],
-    options_hi: ["Array.of()", "Array.from()", "Array.create()", "Array.new()"],
-    answer_en: "Array.of()",
-    answer_hi: "Array.of()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 15,
-    question_en: "What does `Object.getPrototypeOf()` return?",
-    question_hi: "`Object.getPrototypeOf()` क्या लौटाता है?",
-    options_en: ["Prototype of specified object", "Properties of object", "Methods of object", "Class of object"],
-    options_hi: ["निर्दिष्ट ऑब्जेक्ट का प्रोटोटाइप", "ऑब्जेक्ट की प्रॉपर्टीज", "ऑब्जेक्ट की मेथड्स", "ऑब्जेक्ट की क्लास"],
-    answer_en: "Prototype of specified object",
-    answer_hi: "निर्दिष्ट ऑब्जेक्ट का प्रोटोटाइप",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 16,
-    question_en: "Which method returns the primitive value of an object?",
-    question_hi: "कौन-सा मेथड ऑब्जेक्ट की प्रिमिटिव वैल्यू लौटाता है?",
-    options_en: ["valueOf()", "toString()", "toValue()", "primitive()"],
-    options_hi: ["valueOf()", "toString()", "toValue()", "primitive()"],
-    answer_en: "valueOf()",
-    answer_hi: "valueOf()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 17,
-    question_en: "What is the output of `console.log(typeof [])`?",
-    question_hi: "`console.log(typeof [])` का आउटपुट क्या है?",
-    options_en: ["object", "array", "undefined", "null"],
-    options_hi: ["object", "array", "undefined", "null"],
-    answer_en: "object",
-    answer_hi: "object",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 18,
-    question_en: "Which method checks if an object has a specific property?",
-    question_hi: "कौन-सा मेथड चेक करता है कि ऑब्जेक्ट में विशिष्ट प्रॉपर्टी है?",
-    options_en: ["hasOwnProperty()", "hasProperty()", "contains()", "includes()"],
-    options_hi: ["hasOwnProperty()", "hasProperty()", "contains()", "includes()"],
-    answer_en: "hasOwnProperty()",
-    answer_hi: "hasOwnProperty()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 19,
-    question_en: "What is the purpose of `WeakMap`?",
-    question_hi: "`WeakMap` का उद्देश्य क्या है?",
-    options_en: ["Store key-value pairs with weak references", "Create weak arrays", "Make maps smaller", "Optimize memory usage"],
-    options_hi: ["वीक रेफरेंस के साथ की-वैल्यू पेयर्स स्टोर करना", "वीक ऐरे बनाना", "मैप्स को छोटा बनाना", "मेमोरी यूसेज ऑप्टिमाइज करना"],
-    answer_en: "Store key-value pairs with weak references",
-    answer_hi: "वीक रेफरेंस के साथ की-वैल्यू पेयर्स स्टोर करना",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 20,
-    question_en: "Which method creates a new function with specified `this` value?",
-    question_hi: "कौन-सा मेथड निर्दिष्ट `this` वैल्यू के साथ नया फंक्शन बनाता है?",
-    options_en: ["bind()", "call()", "apply()", "attach()"],
-    options_hi: ["bind()", "call()", "apply()", "attach()"],
-    answer_en: "bind()",
-    answer_hi: "bind()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 21,
-    question_en: "What is the result of `console.log(!![])`?",
-    question_hi: "`console.log(!![])` का रिजल्ट क्या है?",
-    options_en: ["true", "false", "undefined", "[]"],
-    options_hi: ["true", "false", "undefined", "[]"],
-    answer_en: "true",
-    answer_hi: "true",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 22,
-    question_en: "Which method returns array iterator with key/value pairs?",
-    question_hi: "कौन-सा मेथड की/वैल्यू पेयर्स के साथ ऐरे इटरेटर लौटाता है?",
-    options_en: ["entries()", "keys()", "values()", "pairs()"],
-    options_hi: ["entries()", "keys()", "values()", "pairs()"],
-    answer_en: "entries()",
-    answer_hi: "entries()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 23,
-    question_en: "What does `Object.assign()` do?",
-    question_hi: "`Object.assign()` क्या करता है?",
-    options_en: ["Copies properties from source to target object", "Assigns values to variables", "Creates new objects", "Merges arrays"],
-    options_hi: ["सोर्स से टारगेट ऑब्जेक्ट में प्रॉपर्टीज कॉपी करता है", "वेरिएबल्स को वैल्यूज असाइन करता है", "नए ऑब्जेक्ट्स बनाता है", "ऐरे मर्ज करता है"],
-    answer_en: "Copies properties from source to target object",
-    answer_hi: "सोर्स से टारगेट ऑब्जेक्ट में प्रॉपर्टीज कॉपी करता है",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 24,
-    question_en: "Which method checks if a value is an array?",
-    question_hi: "कौन-सा मेथड चेक करता है कि वैल्यू ऐरे है?",
-    options_en: ["Array.isArray()", "typeof", "instanceof", "isArray()"],
-    options_hi: ["Array.isArray()", "typeof", "instanceof", "isArray()"],
-    answer_en: "Array.isArray()",
-    answer_hi: "Array.isArray()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 25,
-    question_en: "What is the purpose of `Proxy` object?",
-    question_hi: "`Proxy` ऑब्जेक्ट का उद्देश्य क्या है?",
-    options_en: ["Create custom behavior for fundamental operations", "Create proxy servers", "Handle HTTP requests", "Manage object properties"],
-    options_hi: ["फंडामेंटल ऑपरेशन्स के लिए कस्टम बिहेवियर बनाना", "प्रॉक्सी सर्वर बनाना", "HTTP रिक्वेस्ट्स हैंडल करना", "ऑब्जेक्ट प्रॉपर्टीज मैनेज करना"],
-    answer_en: "Create custom behavior for fundamental operations",
-    answer_hi: "फंडामेंटल ऑपरेशन्स के लिए कस्टम बिहेवियर बनाना",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 26,
-    question_en: "Which method returns array iterator with keys?",
-    question_hi: "कौन-सा मेथड कीज़ के साथ ऐरे इटरेटर लौटाता है?",
-    options_en: ["keys()", "entries()", "values()", "indexes()"],
-    options_hi: ["keys()", "entries()", "values()", "indexes()"],
-    answer_en: "keys()",
-    answer_hi: "keys()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 27,
-    question_en: "What is the output of `console.log(0 == '0')`?",
-    question_hi: "`console.log(0 == '0')` का आउटपुट क्या है?",
-    options_en: ["true", "false", "undefined", "Error"],
-    options_hi: ["true", "false", "undefined", "Error"],
-    answer_en: "true",
-    answer_hi: "true",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 28,
-    question_en: "Which method creates a new array with results of calling function?",
-    question_hi: "कौन-सा मेथड फंक्शन कॉल के रिजल्ट्स के साथ नया ऐरे बनाता है?",
-    options_en: ["map()", "forEach()", "filter()", "reduce()"],
-    options_hi: ["map()", "forEach()", "filter()", "reduce()"],
-    answer_en: "map()",
-    answer_hi: "map()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 29,
-    question_en: "What does `Object.create()` do?",
-    question_hi: "`Object.create()` क्या करता है?",
-    options_en: ["Creates new object with specified prototype", "Creates empty object", "Copies object", "Initializes object"],
-    options_hi: ["निर्दिष्ट प्रोटोटाइप के साथ नया ऑब्जेक्ट बनाता है", "खाली ऑब्जेक्ट बनाता है", "ऑब्जेक्ट कॉपी करता है", "ऑब्जेक्ट इनिशियलाइज करता है"],
-    answer_en: "Creates new object with specified prototype",
-    answer_hi: "निर्दिष्ट प्रोटोटाइप के साथ नया ऑब्जेक्ट बनाता है",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 30,
-    question_en: "Which method checks if a string starts with specific characters?",
-    question_hi: "कौन-सा मेथड चेक करता है कि स्ट्रिंग विशेष करैक्टर्स से शुरू होती है?",
-    options_en: ["startsWith()", "endsWith()", "includes()", "match()"],
-    options_hi: ["startsWith()", "endsWith()", "includes()", "match()"],
-    answer_en: "startsWith()",
-    answer_hi: "startsWith()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 31,
-    question_en: "What is the purpose of `Reflect` object?",
-    question_hi: "`Reflect` ऑब्जेक्ट का उद्देश्य क्या है?",
-    options_en: ["Provide methods for interceptable JavaScript operations", "Reflect objects", "Create mirrors", "Handle reflections"],
-    options_hi: ["इंटरसेप्टेबल JavaScript ऑपरेशन्स के लिए मेथड्स प्रोवाइड करना", "ऑब्जेक्ट्स रिफ्लेक्ट करना", "मिरर बनाना", "रिफ्लेक्शन हैंडल करना"],
-    answer_en: "Provide methods for interceptable JavaScript operations",
-    answer_hi: "इंटरसेप्टेबल JavaScript ऑपरेशन्स के लिए मेथड्स प्रोवाइड करना",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 32,
-    question_en: "Which method returns array iterator with values?",
-    question_hi: "कौन-सा मेथड वैल्यूज के साथ ऐरे इटरेटर लौटाता है?",
-    options_en: ["values()", "keys()", "entries()", "items()"],
-    options_hi: ["values()", "keys()", "entries()", "items()"],
-    answer_en: "values()",
-    answer_hi: "values()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 33,
-    question_en: "What is the output of `console.log([] === [])`?",
-    question_hi: "`console.log([] === [])` का आउटपुट क्या है?",
-    options_en: ["false", "true", "undefined", "[]"],
-    options_hi: ["false", "true", "undefined", "[]"],
-    answer_en: "false",
-    answer_hi: "false",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 34,
-    question_en: "Which method executes reducer function on each element?",
-    question_hi: "कौन-सा मेथड प्रत्येक एलिमेंट पर रिड्यूसर फंक्शन चलाता है?",
-    options_en: ["reduce()", "map()", "filter()", "forEach()"],
-    options_hi: ["reduce()", "map()", "filter()", "forEach()"],
-    answer_en: "reduce()",
-    answer_hi: "reduce()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 35,
-    question_en: "What does `Object.defineProperty()` do?",
-    question_hi: "`Object.defineProperty()` क्या करता है?",
-    options_en: ["Defines new property directly on object", "Modifies existing property", "Deletes property", "Copies property"],
-    options_hi: ["ऑब्जेक्ट पर सीधे नई प्रॉपर्टी डिफाइन करता है", "एक्सिस्टिंग प्रॉपर्टी मॉडिफाई करता है", "प्रॉपर्टी डिलीट करता है", "प्रॉपर्टी कॉपी करता है"],
-    answer_en: "Defines new property directly on object",
-    answer_hi: "ऑब्जेक्ट पर सीधे नई प्रॉपर्टी डिफाइन करता है",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 36,
-    question_en: "Which method tests whether at least one element passes the test?",
-    question_hi: "कौन-सा मेथड टेस्ट करता है कि कम से कम एक एलिमेंट टेस्ट पास करता है?",
-    options_en: ["some()", "every()", "filter()", "find()"],
-    options_hi: ["some()", "every()", "filter()", "find()"],
-    answer_en: "some()",
-    answer_hi: "some()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 37,
-    question_en: "What is the purpose of `Intl` object?",
-    question_hi: "`Intl` ऑब्जेक्ट का उद्देश्य क्या है?",
-    options_en: ["Language sensitive string formatting", "Internationalization", "Both A and B", "Internal operations"],
-    options_hi: ["लैंग्वेज सेंसिटिव स्ट्रिंग फॉर्मेटिंग", "इंटरनेशनलाइजेशन", "A और B दोनों", "इंटरनल ऑपरेशन्स"],
-    answer_en: "Both A and B",
-    answer_hi: "A और B दोनों",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 38,
-    question_en: "Which method tests whether all elements pass the test?",
-    question_hi: "कौन-सा मेथड टेस्ट करता है कि सभी एलिमेंट्स टेस्ट पास करते हैं?",
-    options_en: ["every()", "some()", "filter()", "all()"],
-    options_hi: ["every()", "some()", "filter()", "all()"],
-    answer_en: "every()",
-    answer_hi: "every()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 39,
-    question_en: "What is the output of `console.log(+'')`?",
-    question_hi: "`console.log(+'')` का आउटपुट क्या है?",
-    options_en: ["0", "NaN", "undefined", "''"],
-    options_hi: ["0", "NaN", "undefined", "''"],
-    answer_en: "0",
-    answer_hi: "0",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 40,
-    question_en: "Which method creates array from array-like object?",
-    question_hi: "कौन-सा मेथड ऐरे-जैसी ऑब्जेक्ट से ऐरे बनाता है?",
-    options_en: ["Array.from()", "Array.of()", "Array.create()", "Array.new()"],
-    options_hi: ["Array.from()", "Array.of()", "Array.create()", "Array.new()"],
-    answer_en: "Array.from()",
-    answer_hi: "Array.from()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 41,
-    question_en: "What does `Object.getOwnPropertyNames()` return?",
-    question_hi: "`Object.getOwnPropertyNames()` क्या लौटाता है?",
-    options_en: ["Array of all property names", "Array of enumerable properties", "Object properties", "Property values"],
-    options_hi: ["सभी प्रॉपर्टी नामों का ऐरे", "एन्यूमरेबल प्रॉपर्टीज का ऐरे", "ऑब्जेक्ट प्रॉपर्टीज", "प्रॉपर्टी वैल्यूज"],
-    answer_en: "Array of all property names",
-    answer_hi: "सभी प्रॉपर्टी नामों का ऐरे",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 42,
-    question_en: "Which method returns string representation of array?",
-    question_hi: "कौन-सा मेथड ऐरे का स्ट्रिंग रिप्रेजेंटेशन लौटाता है?",
-    options_en: ["toString()", "String()", "join()", "valueOf()"],
-    options_hi: ["toString()", "String()", "join()", "valueOf()"],
-    answer_en: "toString()",
-    answer_hi: "toString()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 43,
-    question_en: "What is the purpose of `Set` object?",
-    question_hi: "`Set` ऑब्जेक्ट का उद्देश्य क्या है?",
-    options_en: ["Store unique values", "Store key-value pairs", "Create sets of objects", "Manage collections"],
-    options_hi: ["यूनिक वैल्यूज स्टोर करना", "की-वैल्यू पेयर्स स्टोर करना", "ऑब्जेक्ट्स के सेट बनाना", "कलेक्शन्स मैनेज करना"],
-    answer_en: "Store unique values",
-    answer_hi: "यूनिक वैल्यूज स्टोर करना",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 44,
-    question_en: "Which method fills array with static value?",
-    question_hi: "कौन-सा मेथड ऐरे को स्टेटिक वैल्यू से भरता है?",
-    options_en: ["fill()", "push()", "pop()", "set()"],
-    options_hi: ["fill()", "push()", "pop()", "set()"],
-    answer_en: "fill()",
-    answer_hi: "fill()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 45,
-    question_en: "What is the output of `console.log(typeof null)`?",
-    question_hi: "`console.log(typeof null)` का आउटपुट क्या है?",
-    options_en: ["object", "null", "undefined", "boolean"],
-    options_hi: ["object", "null", "undefined", "boolean"],
-    answer_en: "object",
-    answer_hi: "object",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 46,
-    question_en: "Which method copies array elements within array?",
-    question_hi: "कौन-सा मेथड ऐरे एलिमेंट्स को ऐरे के अंदर कॉपी करता है?",
-    options_en: ["copyWithin()", "slice()", "splice()", "copy()"],
-    options_hi: ["copyWithin()", "slice()", "splice()", "copy()"],
-    answer_en: "copyWithin()",
-    answer_hi: "copyWithin()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 47,
-    question_en: "What does `Object.values()` return?",
-    question_hi: "`Object.values()` क्या लौटाता है?",
-    options_en: ["Array of object's own property values", "Array of property names", "Object values", "Property descriptors"],
-    options_hi: ["ऑब्जेक्ट की अपनी प्रॉपर्टी वैल्यूज का ऐरे", "प्रॉपर्टी नामों का ऐरे", "ऑब्जेक्ट वैल्यूज", "प्रॉपर्टी डिस्क्रिप्टर्स"],
-    answer_en: "Array of object's own property values",
-    answer_hi: "ऑब्जेक्ट की अपनी प्रॉपर्टी वैल्यूज का ऐरे",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 48,
-    question_en: "Which method creates array from arguments?",
-    question_hi: "कौन-सा मेथड आर्गुमेंट्स से ऐरे बनाता है?",
-    options_en: ["Array.of()", "Array.from()", "Array.create()", "Array.new()"],
-    options_hi: ["Array.of()", "Array.from()", "Array.create()", "Array.new()"],
-    answer_en: "Array.of()",
-    answer_hi: "Array.of()",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 49,
-    question_en: "What is the purpose of `Map` object?",
-    question_hi: "`Map` ऑब्जेक्ट का उद्देश्य क्या है?",
-    options_en: ["Store key-value pairs", "Store unique values", "Create mappings", "Manage key collections"],
-    options_hi: ["की-वैल्यू पेयर्स स्टोर करना", "यूनिक वैल्यूज स्टोर करना", "मैपिंग्स बनाना", "की कलेक्शन्स मैनेज करना"],
-    answer_en: "Store key-value pairs",
-    answer_hi: "की-वैल्यू पेयर्स स्टोर करना",
-    attempted: false,
-    selected: ""
-  },
-  {
-    num: 50,
-    question_en: "Which method returns new array with elements in reverse order?",
-    question_hi: "कौन-सा मेथड रिवर्स ऑर्डर में एलिमेंट्स के साथ नया ऐरे लौटाता है?",
-    options_en: ["reverse()", "sort()", "flip()", "backwards()"],
-    options_hi: ["reverse()", "sort()", "flip()", "backwards()"],
-    answer_en: "reverse()",
-    answer_hi: "reverse()",
-    attempted: false,
-    selected: ""
-  }
-];
 
-let currentQuestion = 0; 
+  const questions= [
+    {
+      "num": 1,
+      "question_en": "JavaScript is a ____ language.",
+      "question_hi": "JavaScript एक ____ भाषा है।",
+      "options_en": ["Interpreted", "Compiled", "Assembly", "Machine"],
+      "options_hi": ["Interpreted", "Compiled", "Assembly", "Machine"],
+      "answer_en": "Interpreted",
+      "answer_hi": "Interpreted",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 2,
+      "question_en": "Which symbol is used for OR operator?",
+      "question_hi": "OR ऑपरेटर के लिए कौन सा symbol है?",
+      "options_en": ["||", "&&", "|", "!"],
+      "options_hi": ["||", "&&", "|", "!"],
+      "answer_en": "||",
+      "answer_hi": "||",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 3,
+      "question_en": "Which keyword is used to stop function execution?",
+      "question_hi": "Function execution रोकने के लिए कौन सा keyword है?",
+      "options_en": ["return", "break", "stop", "exit"],
+      "options_hi": ["return", "break", "stop", "exit"],
+      "answer_en": "return",
+      "answer_hi": "return",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 4,
+      "question_en": "Which method converts array to string?",
+      "question_hi": "Array को string में बदलने का method?",
+      "options_en": ["toString()", "join()", "Both A and B", "convert()"],
+      "options_hi": ["toString()", "join()", "Both A and B", "convert()"],
+      "answer_en": "Both A and B",
+      "answer_hi": "Both A and B",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 5,
+      "question_en": "NaN stands for?",
+      "question_hi": "NaN का मतलब क्या है?",
+      "options_en": ["Not a Number", "Negative Number", "New a Number", "None"],
+      "options_hi": ["Not a Number", "Negative Number", "New a Number", "None"],
+      "answer_en": "Not a Number",
+      "answer_hi": "Not a Number",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 6,
+      "question_en": "Which function checks NaN?",
+      "question_hi": "NaN check करने का function?",
+      "options_en": ["isNaN()", "Number()", "checkNaN()", "typeof"],
+      "options_hi": ["isNaN()", "Number()", "checkNaN()", "typeof"],
+      "answer_en": "isNaN()",
+      "answer_hi": "isNaN()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 7,
+      "question_en": "typeof null returns?",
+      "question_hi": "typeof null क्या return करता है?",
+      "options_en": ["object", "null", "undefined", "number"],
+      "options_hi": ["object", "null", "undefined", "number"],
+      "answer_en": "object",
+      "answer_hi": "object",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 8,
+      "question_en": "Which array method finds element?",
+      "question_hi": "Element खोजने का array method?",
+      "options_en": ["find()", "filter()", "map()", "reduce()"],
+      "options_hi": ["find()", "filter()", "map()", "reduce()"],
+      "answer_en": "find()",
+      "answer_hi": "find()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 9,
+      "question_en": "Which method returns index by condition?",
+      "question_hi": "Condition से index लौटाने वाला method?",
+      "options_en": ["findIndex()", "indexOf()", "search()", "locate()"],
+      "options_hi": ["findIndex()", "indexOf()", "search()", "locate()"],
+      "answer_en": "findIndex()",
+      "answer_hi": "findIndex()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 10,
+      "question_en": "Which statement selects multiple conditions?",
+      "question_hi": "Multiple condition select करने का statement?",
+      "options_en": ["switch", "if", "loop", "break"],
+      "options_hi": ["switch", "if", "loop", "break"],
+      "answer_en": "switch",
+      "answer_hi": "switch",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 11,
+      "question_en": "Which operator is NOT comparison?",
+      "question_hi": "कौन सा comparison operator नहीं है?",
+      "options_en": ["=", "==", "!=", "==="],
+      "options_hi": ["=", "==", "!=", "==="],
+      "answer_en": "=",
+      "answer_hi": "=",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 12,
+      "question_en": "Which method copies object?",
+      "question_hi": "Object copy करने का modern तरीका?",
+      "options_en": ["Object.assign()", "copy()", "clone()", "assign()"],
+      "options_hi": ["Object.assign()", "copy()", "clone()", "assign()"],
+      "answer_en": "Object.assign()",
+      "answer_hi": "Object.assign()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 13,
+      "question_en": "Spread operator symbol?",
+      "question_hi": "Spread operator का symbol?",
+      "options_en": ["...", "..", "***", "&&"],
+      "options_hi": ["...", "..", "***", "&&"],
+      "answer_en": "...",
+      "answer_hi": "...",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 14,
+      "question_en": "Rest operator is used in?",
+      "question_hi": "Rest operator कहां उपयोग होता है?",
+      "options_en": ["Function parameters", "Loop", "Condition", "Class"],
+      "options_hi": ["Function parameters", "Loop", "Condition", "Class"],
+      "answer_en": "Function parameters",
+      "answer_hi": "Function parameters",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 15,
+      "question_en": "Which method freezes object?",
+      "question_hi": "Object को freeze करने का method?",
+      "options_en": ["Object.freeze()", "Object.lock()", "Object.stop()", "Object.seal()"],
+      "options_hi": ["Object.freeze()", "Object.lock()", "Object.stop()", "Object.seal()"],
+      "answer_en": "Object.freeze()",
+      "answer_hi": "Object.freeze()",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 16,
+      "question_en": "Which method allows modification but no new property?",
+      "question_hi": "Modification allow लेकिन new property नहीं?",
+      "options_en": ["Object.seal()", "Object.freeze()", "Object.assign()", "Object.copy()"],
+      "options_hi": ["Object.seal()", "Object.freeze()", "Object.assign()", "Object.copy()"],
+      "answer_en": "Object.seal()",
+      "answer_hi": "Object.seal()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 17,
+      "question_en": "Which operator handles optional chaining?",
+      "question_hi": "Optional chaining operator कौन सा है?",
+      "options_en": ["?.", "??", "&&", "::"],
+      "options_hi": ["?.", "??", "&&", "::"],
+      "answer_en": "?.",
+      "answer_hi": "?.",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 18,
+      "question_en": "Nullish coalescing operator?",
+      "question_hi": "Nullish coalescing operator?",
+      "options_en": ["??", "||", "&&", "!="],
+      "options_hi": ["??", "||", "&&", "!="],
+      "answer_en": "??",
+      "answer_hi": "??",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 19,
+      "question_en": "Which creates new Promise?",
+      "question_hi": "नया Promise बनाने के लिए?",
+      "options_en": ["new Promise()", "Promise.create()", "Promise()", "makePromise()"],
+      "options_hi": ["new Promise()", "Promise.create()", "Promise()", "makePromise()"],
+      "answer_en": "new Promise()",
+      "answer_hi": "new Promise()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 20,
+      "question_en": "Which promise runs parallel?",
+      "question_hi": "Parallel promise execution?",
+      "options_en": ["Promise.all()", "Promise.then()", "Promise.catch()", "Promise.resolve()"],
+      "options_hi": ["Promise.all()", "Promise.then()", "Promise.catch()", "Promise.resolve()"],
+      "answer_en": "Promise.all()",
+      "answer_hi": "Promise.all()",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 21,
+      "question_en": "Which method delays execution?",
+      "question_hi": "Execution delay करने का method?",
+      "options_en": ["setTimeout()", "setInterval()", "delay()", "wait()"],
+      "options_hi": ["setTimeout()", "setInterval()", "delay()", "wait()"],
+      "answer_en": "setTimeout()",
+      "answer_hi": "setTimeout()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 22,
+      "question_en": "Which runs repeatedly?",
+      "question_hi": "बार-बार execute होने वाला?",
+      "options_en": ["setInterval()", "setTimeout()", "loop()", "repeat()"],
+      "options_hi": ["setInterval()", "setTimeout()", "loop()", "repeat()"],
+      "answer_en": "setInterval()",
+      "answer_hi": "setInterval()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 23,
+      "question_en": "Clear timeout method?",
+      "question_hi": "Timeout clear करने का method?",
+      "options_en": ["clearTimeout()", "stopTimeout()", "removeTimeout()", "endTimeout()"],
+      "options_hi": ["clearTimeout()", "stopTimeout()", "removeTimeout()", "endTimeout()"],
+      "answer_en": "clearTimeout()",
+      "answer_hi": "clearTimeout()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 24,
+      "question_en": "Which event handles keyboard input?",
+      "question_hi": "Keyboard input event?",
+      "options_en": ["keydown", "mouseover", "click", "load"],
+      "options_hi": ["keydown", "mouseover", "click", "load"],
+      "answer_en": "keydown",
+      "answer_hi": "keydown",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 25,
+      "question_en": "Which prevents default behaviour?",
+      "question_hi": "Default behaviour रोकने का method?",
+      "options_en": ["preventDefault()", "stop()", "block()", "disable()"],
+      "options_hi": ["preventDefault()", "stop()", "block()", "disable()"],
+      "answer_en": "preventDefault()",
+      "answer_hi": "preventDefault()",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 26,
+      "question_en": "Which stops event bubbling?",
+      "question_hi": "Event bubbling रोकने का?",
+      "options_en": ["stopPropagation()", "preventDefault()", "halt()", "break()"],
+      "options_hi": ["stopPropagation()", "preventDefault()", "halt()", "break()"],
+      "answer_en": "stopPropagation()",
+      "answer_hi": "stopPropagation()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 27,
+      "question_en": "Which keyword accesses current object?",
+      "question_hi": "Current object access keyword?",
+      "options_en": ["this", "self", "that", "object"],
+      "options_hi": ["this", "self", "that", "object"],
+      "answer_en": "this",
+      "answer_hi": "this",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 28,
+      "question_en": "Which creates deep copy (simple)?",
+      "question_hi": "Simple deep copy तरीका?",
+      "options_en": ["JSON.parse(JSON.stringify())", "Object.assign()", "spread", "copy()"],
+      "options_hi": ["JSON.parse(JSON.stringify())", "Object.assign()", "spread", "copy()"],
+      "answer_en": "JSON.parse(JSON.stringify())",
+      "answer_hi": "JSON.parse(JSON.stringify())",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 29,
+      "question_en": "Which checks property existence?",
+      "question_hi": "Property मौजूद है या नहीं?",
+      "options_en": ["in", "has()", "exists()", "check()"],
+      "options_hi": ["in", "has()", "exists()", "check()"],
+      "answer_en": "in",
+      "answer_hi": "in",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 30,
+      "question_en": "Which deletes object property?",
+      "question_hi": "Object property delete करने का keyword?",
+      "options_en": ["delete", "remove", "clear", "unset"],
+      "options_hi": ["delete", "remove", "clear", "unset"],
+      "answer_en": "delete",
+      "answer_hi": "delete",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 31,
+      "question_en": "Which type is function?",
+      "question_hi": "Function किस type का होता है?",
+      "options_en": ["Object", "Number", "String", "Boolean"],
+      "options_hi": ["Object", "Number", "String", "Boolean"],
+      "answer_en": "Object",
+      "answer_hi": "Object",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 32,
+      "question_en": "JavaScript is case-sensitive?",
+      "question_hi": "JavaScript case-sensitive है?",
+      "options_en": ["Yes", "No", "Sometimes", "Depends"],
+      "options_hi": ["Yes", "No", "Sometimes", "Depends"],
+      "answer_en": "Yes",
+      "answer_hi": "Yes",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 33,
+      "question_en": "Which operator gives power?",
+      "question_hi": "Power के लिए operator?",
+      "options_en": ["**", "^", "//", "pow"],
+      "options_hi": ["**", "^", "//", "pow"],
+      "answer_en": "**",
+      "answer_hi": "**",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 34,
+      "question_en": "Which keyword exits loop only?",
+      "question_hi": "सिर्फ loop से बाहर निकलने का?",
+      "options_en": ["break", "return", "exit", "stop"],
+      "options_hi": ["break", "return", "exit", "stop"],
+      "answer_en": "break",
+      "answer_hi": "break",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 35,
+      "question_en": "Which object controls browser window?",
+      "question_hi": "Browser window control करने वाला?",
+      "options_en": ["window", "document", "navigator", "screen"],
+      "options_hi": ["window", "document", "navigator", "screen"],
+      "answer_en": "window",
+      "answer_hi": "window",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 36,
+      "question_en": "Which gives screen resolution?",
+      "question_hi": "Screen resolution कौन देता है?",
+      "options_en": ["screen", "window", "navigator", "document"],
+      "options_hi": ["screen", "window", "navigator", "document"],
+      "answer_en": "screen",
+      "answer_hi": "screen",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 37,
+      "question_en": "Which method reloads page?",
+      "question_hi": "Page reload करने का method?",
+      "options_en": ["location.reload()", "window.refresh()", "page.reload()", "reload()"],
+      "options_hi": ["location.reload()", "window.refresh()", "page.reload()", "reload()"],
+      "answer_en": "location.reload()",
+      "answer_hi": "location.reload()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 38,
+      "question_en": "Which function converts value to integer?",
+      "question_hi": "Integer में बदलने वाला function?",
+      "options_en": ["parseInt()", "Number()", "parseFloat()", "int()"],
+      "options_hi": ["parseInt()", "Number()", "parseFloat()", "int()"],
+      "answer_en": "parseInt()",
+      "answer_hi": "parseInt()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 39,
+      "question_en": "Which compares value only?",
+      "question_hi": "केवल value compare करता है?",
+      "options_en": ["==", "===", "=", "!=="],
+      "options_hi": ["==", "===", "=", "!=="],
+      "answer_en": "==",
+      "answer_hi": "==",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 40,
+      "question_en": "Which operator negates condition?",
+      "question_hi": "Condition negate करने वाला operator?",
+      "options_en": ["!", "&&", "||", "~"],
+      "options_hi": ["!", "&&", "||", "~"],
+      "answer_en": "!",
+      "answer_hi": "!",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 41,
+      "question_en": "Which array method loops without return?",
+      "question_hi": "Return के बिना loop करने वाला?",
+      "options_en": ["forEach()", "map()", "filter()", "reduce()"],
+      "options_hi": ["forEach()", "map()", "filter()", "reduce()"],
+      "answer_en": "forEach()",
+      "answer_hi": "forEach()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 42,
+      "question_en": "Which array method returns new array?",
+      "question_hi": "नया array लौटाने वाला?",
+      "options_en": ["map()", "forEach()", "push()", "pop()"],
+      "options_hi": ["map()", "forEach()", "push()", "pop()"],
+      "answer_en": "map()",
+      "answer_hi": "map()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 43,
+      "question_en": "Which event works on input change?",
+      "question_hi": "Input change पर कौन सा event?",
+      "options_en": ["onchange", "onclick", "oninput", "Both A and B"],
+      "options_hi": ["onchange", "onclick", "oninput", "Both A and B"],
+      "answer_en": "oninput",
+      "answer_hi": "oninput",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 44,
+      "question_en": "Which keyword creates inheritance?",
+      "question_hi": "Inheritance का keyword?",
+      "options_en": ["extends", "super", "this", "inherit"],
+      "options_hi": ["extends", "super", "this", "inherit"],
+      "answer_en": "extends",
+      "answer_hi": "extends",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 45,
+      "question_en": "Which keyword refers parent class?",
+      "question_hi": "Parent class refer करने वाला keyword?",
+      "options_en": ["super", "this", "parent", "base"],
+      "options_hi": ["super", "this", "parent", "base"],
+      "answer_en": "super",
+      "answer_hi": "super",
+      "attempted": false,
+      "selected": ""
+    },
+
+    {
+      "num": 46,
+      "question_en": "Which handles async errors?",
+      "question_hi": "Async error handle करने का?",
+      "options_en": ["try-catch", "throw", "if", "switch"],
+      "options_hi": ["try-catch", "throw", "if", "switch"],
+      "answer_en": "try-catch",
+      "answer_hi": "try-catch",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 47,
+      "question_en": "Which keyword pauses async execution?",
+      "question_hi": "Async execution pause करने वाला?",
+      "options_en": ["await", "async", "wait", "then"],
+      "options_hi": ["await", "async", "wait", "then"],
+      "answer_en": "await",
+      "answer_hi": "await",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 48,
+      "question_en": "Which checks string contains?",
+      "question_hi": "String में word check करने का?",
+      "options_en": ["includes()", "index()", "has()", "contains()"],
+      "options_hi": ["includes()", "index()", "has()", "contains()"],
+      "answer_en": "includes()",
+      "answer_hi": "includes()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 49,
+      "question_en": "Which removes whitespace?",
+      "question_hi": "Whitespace हटाने का method?",
+      "options_en": ["trim()", "slice()", "cut()", "clean()"],
+      "options_hi": ["trim()", "slice()", "cut()", "clean()"],
+      "answer_en": "trim()",
+      "answer_hi": "trim()",
+      "attempted": false,
+      "selected": ""
+    },
+    {
+      "num": 50,
+      "question_en": "JavaScript supports OOP?",
+      "question_hi": "JavaScript OOP support करता है?",
+      "options_en": ["Yes", "No", "Only ES6", "Only classes"],
+      "options_hi": ["Yes", "No", "Only ES6", "Only classes"],
+      "answer_en": "Yes",
+      "answer_hi": "Yes",
+      "attempted": false,
+      "selected": ""
+    }
+  ]
+
+
+
+
+
+
+
+let currentQuestion = 0;
 let language = "en";
-// let timeLeft = 180 * 60; // 180 minutes
-let timeLeft = 60 * 60; // 60 minutes
+let timeLeft = 60 * 60; 
 let timerInterval;
 
-// ----------------- Quiz Logic -----------------
+// ----------------- Load Question -----------------
 function loadQuestion(index) {
     const q = questions[index];
-    document.getElementById("question").textContent = `${q.num}. ${
-        language === "en" ? q.question_en : q.question_hi
-    }`;
-    document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
+    if (!q) return; //  undefined error fix
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
 
     const optionsElement = document.getElementById("options");
     optionsElement.innerHTML = "";
 
     const options = language === "en" ? q.options_en : q.options_hi;
 
-    options.forEach((option) => {
+    options.forEach(option => {
         const isSelected = q.selected === option;
-        const optionDiv = document.createElement("div");
-        optionDiv.className = "option-box";
-        optionDiv.style = `
+
+        const div = document.createElement("div");
+        div.className = "option-box";
+
+        div.style = `
             border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
             background-color: ${isSelected ? "#e7f1ff" : "white"};
             padding: 10px;
             border-radius: 8px;
             margin: 6px 0;
             cursor: pointer;
-            transition: all 0.2s;
         `;
 
-        optionDiv.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${isSelected ? "checked" : ""} style="margin-right:8px;">
+        div.innerHTML = `
+            <input type="radio" name="option" value="${option}" 
+            ${isSelected ? "checked" : ""} style="margin-right:8px;">
             ${option}
         `;
 
-        optionDiv.addEventListener("click", () => {
+        div.addEventListener("click", () => {
             markAttempted(index, option);
             loadQuestion(index);
         });
 
-        optionsElement.appendChild(optionDiv);
+        optionsElement.appendChild(div);
     });
 
     updateNavigation();
 }
 
+// ----------------- Attempt Mark -----------------
 function markAttempted(index, selectedAnswer) {
     questions[index].attempted = true;
     questions[index].selected = selectedAnswer;
     updateNavigation();
 }
 
+// ----------------- Next / Previous -----------------
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -625,216 +647,114 @@ function changeLanguage() {
     loadQuestion(currentQuestion);
 }
 
+// ----------------- Final Submit -----------------
 function submitQuiz() {
-    clearInterval(timerInterval);
-    let attempted = 0,
-        notAttempted = 0,
-        score = 0;
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
 
-    questions.forEach((q) => {
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
         if (q.attempted) {
             attempted++;
-            if (q.selected === q.answer_en || q.selected === q.answer_hi) score++;
-        } else notAttempted++;
+
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
     });
 
-    alert(
-        `Quiz submitted!\nAttempted: ${attempted}\nNot Attempted: ${notAttempted}\nScore: ${score}/${questions.length}`
-    );
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    let viewResult = confirm("Test submitted! Do you want to view result?");
+    if (viewResult) {
+        window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+    }
 }
 
+// ----------------- Navigation Circles -----------------
+function updateNavigation() {
+    const nav = document.getElementById("circleContainer");
+    nav.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        let color = "gray";
+        if (i === currentQuestion) color = "blue";
+        else if (q.attempted) color = "green";
+
+        nav.innerHTML += `
+            <div class="circle" style="background:${color};"
+            onclick="jumpToQuestion(${i})">${i + 1}</div>
+        `;
+    });
+}
+
+function jumpToQuestion(index) {
+    currentQuestion = index;
+    loadQuestion(index);
+}
+
+// ----------------- Timer -----------------
 function startTimer() {
     const timerElement = document.getElementById("timer");
-    clearInterval(timerInterval);
+
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert("Time's up!");
             submitQuiz();
         } else {
-            const hours = Math.floor(timeLeft / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = `Time Left: ${hours
-                .toString()
-                .padStart(2, "0")}:${minutes
-                .toString()
-                .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+            const hours = String(Math.floor(timeLeft / 3600)).padStart(2, "0");
+            const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, "0");
+            const seconds = String(timeLeft % 60).padStart(2, "0");
+
+            timerElement.textContent = `Time Left: ${hours}:${minutes}:${seconds}`;
             timeLeft--;
         }
     }, 1000);
 }
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
-// submit 
-function jumpToQuestion(index) {
-            currentQuestion = index;
-            loadQuestion(index);
-        }
-
-        function submitQuiz() {
-            let confirmation = confirm("Are you sure you want to submit the test?");
-            
-            if (!confirmation) {
-                return; // अगर यूज़र 'Cancel' करता है तो आगे नहीं बढ़ेंगे
-            }
-
-            let attempted = 0;
-            let notAttempted = 0;
-            let score = 0;
-            const results = [];
-
-            questions.forEach(q => {
-                if (q.attempted) {
-                    attempted++;
-                    if (q.selected === q.answer) {
-                        score++;
-                    }
-                } else {
-                    notAttempted++;
-                }
-                results.push({ question: q.question, selected: q.selected || "Not Answered", correct: q.answer });
-            });
-
-            localStorage.setItem("attempted", attempted);
-            localStorage.setItem("notAttempted", notAttempted);
-            localStorage.setItem("score", score);
-            localStorage.setItem("results", JSON.stringify(results));
-
-            // रिजल्ट देखने से पहले एक और कन्फर्मेशन ले सकते हैं
-            let viewResult = confirm("Test submitted successfully! Do you want to view your result?");
-            if (viewResult) {
-                window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
-            }
-        }
-        window.onload = () => {
-            loadQuestion(currentQuestion);
-        };
-
-
-function updateNavigation() {
-    const nav = document.getElementById("circleContainer");
-    nav.innerHTML = "";
-    questions.forEach((q, i) => {
-        let color = "gray";
-        if (i === currentQuestion) color = "blue";
-        else if (q.attempted) color = "green";
-        nav.innerHTML += `<div class='circle' style='background-color:${color}' onclick='loadQuestion(${i})'>${i + 1}</div>`;
-    });
-}
-
-// ----------------- Camera & Movement Logic -----------------
+// ----------------- Camera & Movement Detection -----------------
 let videoStream;
 let movementCount = 0;
 
 function startCamera() {
     const container = document.createElement("div");
     container.id = "camera-container";
-    container.style.position = "fixed";
-    container.style.top = "10px";
-    container.style.left = "10px"; // ✅ Left side
-    container.style.width = "130px";
-    container.style.height = "130px";
-    container.style.zIndex = "9999";
-    container.style.borderRadius = "50%";
-    container.style.overflow = "hidden";
-    container.style.border = "3px solid red";
-    container.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-    container.style.cursor = "grab";
-    container.style.minWidth = "80px";
-    container.style.minHeight = "80px";
-    container.style.maxWidth = "250px";
-    container.style.maxHeight = "250px";
-    container.style.background = "#000";
+    container.style = `
+        position:fixed; top:10px; left:10px; width:130px; height:130px;
+        border-radius:50%; overflow:hidden; border:3px solid red; z-index:9999;
+    `;
+
     document.body.appendChild(container);
 
     const video = document.createElement("video");
-    video.setAttribute("autoplay", true);
-    video.setAttribute("playsinline", true);
-    video.style.width = "100%";
-    video.style.height = "100%";
-    video.style.objectFit = "cover";
+    video.autoplay = true;
+    video.playsinline = true;
+    video.style = "width:100%; height:100%; object-fit:cover;";
     container.appendChild(video);
 
-    // ✅ Resize handle
-    const resizeHandle = document.createElement("div");
-    resizeHandle.style.position = "absolute";
-    resizeHandle.style.bottom = "2px";
-    resizeHandle.style.right = "2px";
-    resizeHandle.style.width = "15px";
-    resizeHandle.style.height = "15px";
-    resizeHandle.style.background = "rgba(255,255,255,0.7)";
-    resizeHandle.style.borderRadius = "4px";
-    resizeHandle.style.cursor = "se-resize";
-    container.appendChild(resizeHandle);
-
-    // ✅ Drag logic
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    container.addEventListener("mousedown", (e) => {
-        if (e.target === resizeHandle) return;
-        isDragging = true;
-        offsetX = e.clientX - container.offsetLeft;
-        offsetY = e.clientY - container.offsetTop;
-        container.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
-        x = Math.max(0, Math.min(window.innerWidth - container.offsetWidth, x));
-        y = Math.max(0, Math.min(window.innerHeight - container.offsetHeight, y));
-        container.style.left = `${x}px`;
-        container.style.top = `${y}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-        container.style.cursor = "grab";
-    });
-
-    // ✅ Resize logic
-    let isResizing = false;
-    let startWidth, startHeight, startX, startY;
-
-    resizeHandle.addEventListener("mousedown", (e) => {
-        e.stopPropagation();
-        isResizing = true;
-        startWidth = container.offsetWidth;
-        startHeight = container.offsetHeight;
-        startX = e.clientX;
-        startY = e.clientY;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isResizing) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        const newSize = Math.max(80, Math.min(250, Math.max(startWidth + dx, startHeight + dy)));
-        container.style.width = `${newSize}px`;
-        container.style.height = `${newSize}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isResizing = false;
-    });
-
-    // ✅ Camera stream
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
             video.srcObject = stream;
             videoStream = stream;
             detectMovement(video);
         })
-        .catch(err => {
-            console.error("Camera error:", err);
-            alert("Camera not accessible!");
-        });
+        .catch(() => alert("Camera access denied!"));
 }
 
 function detectMovement(video) {
@@ -842,51 +762,51 @@ function detectMovement(video) {
     const ctx = canvas.getContext("2d");
     canvas.width = 160;
     canvas.height = 160;
-    let lastImageData = null;
+
+    let lastData = null;
 
     setInterval(() => {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(video, 0, 0, 160, 160);
+        const data = ctx.getImageData(0, 0, 160, 160);
 
-        if (lastImageData) {
+        if (lastData) {
             let diff = 0;
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                diff += Math.abs(imageData.data[i] - lastImageData.data[i]);
+            for (let i = 0; i < data.data.length; i += 4) {
+                diff += Math.abs(data.data[i] - lastData.data[i]);
             }
 
             if (diff > 1000000) {
                 movementCount++;
-                if (movementCount === 1) {
-                    alert("⚠️ Alert 1: Face is not move");
-                } else if (movementCount === 2) {
-                    alert("⚠️ Alert 2: Head is not move");
-                } else if (movementCount === 3) {
-                    alert("⚠️ Alert 3: Test series is restarting...");
+
+                if (movementCount === 1) alert("⚠ Alert 1: No movement detected!");
+                if (movementCount === 2) alert("⚠ Alert 2: Head not moving!");
+                if (movementCount === 3) {
+                    alert("⚠ Alert 3: Restarting test...");
                     restartTest();
                 }
             }
         }
-        lastImageData = imageData;
+        lastData = data;
+
     }, 2000);
 }
 
 function restartTest() {
-    if (videoStream) {
-        videoStream.getTracks().forEach(track => track.stop());
-    }
-    const camContainer = document.getElementById("camera-container");
-    if (camContainer) camContainer.remove();
+    if (videoStream) videoStream.getTracks().forEach(t => t.stop());
+
+    const cam = document.getElementById("camera-container");
+    if (cam) cam.remove();
 
     movementCount = 0;
     currentQuestion = 0;
-    timeLeft = 180 * 60;
+    timeLeft = 60 * 60;
 
     questions.forEach(q => {
         q.attempted = false;
         q.selected = null;
     });
 
-    loadQuestion(currentQuestion);
+    loadQuestion(0);
     startTimer();
     startCamera();
 }
@@ -895,8 +815,5 @@ function restartTest() {
 window.onload = function () {
     loadQuestion(currentQuestion);
     startTimer();
-    startCamera(); // ✅ Camera starts with test
+    startCamera();
 };
-
-
-///////////////////////////////////////

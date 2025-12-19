@@ -15,6 +15,7 @@
             </div>
             <select id="languageSelect" onchange="changeLanguage()" class="language-select">
                 <option value="en">English</option>
+                   <option value="hi">Hindi</option>
             </select>
             <p id="questionCounter"></p>
             <div id="question"></div>
@@ -24,6 +25,7 @@
                 <button class="btn" onclick="prevQuestion()">Previous</button>
                 <button class="btn btn-next" onclick="nextQuestion()">Next</button>
             </div>
+                 <button class="btn btn-service" onclick="backToTestService()">Back to Test Service</button>
         </div>
         <div class="sidebar">
             <div class="sidebar-content">
@@ -38,6 +40,16 @@
             </div>
         </div>
     </div>
+       <script>
+     
+      
+        function backToTestService() {
+            alert('Redirecting to Test Service...');
+            // In a real implementation, this would redirect to the test service page
+             window.location.href = '/RTS/public/Deshbord/category/test/technical&coding/technical1.html';
+        }
+      
+    </script>
     <script src="/RTS/public/Deshbord/category/test/technical&coding/html/htmlQ12.js"></script>
 </body>
 </html>

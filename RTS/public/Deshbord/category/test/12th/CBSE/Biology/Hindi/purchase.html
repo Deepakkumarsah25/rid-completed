@@ -1,1065 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RID Bharat</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-    <style>
-        /* Base Styles */
-        :root {
-            --header-color: #083d5d;
-            --white: #ffffff;
-            --text-color: #333333;
-            --dark-mode-bg: #121212;
-            --dark-mode-text: #e0e0e0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            padding-top: 110px;
-            background-color: #f0f5ff;
-            color: #333;
-        }
-
-        body.dark-mode {
-            background-color: var(--dark-mode-bg);
-            color: var(--dark-mode-text);
-        }
-
-        /* Main Header */
-        .main-header {
-            border-bottom: 1px solid var(--header-color);
-            backdrop-filter: blur(4px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.9);
-            width: 100%;
-            z-index: 999;
-        }
-
-        body.dark-mode .main-header {
-            background: rgba(18, 18, 18, 0.9);
-            border-bottom: 1px solid #444;
-        }
-
-        /* Top Info Bar */
-        .header-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--header-color);
-            color: var(--white);
-            padding: 5px 15px;
-            font-size: 11px;
-            height: 30px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .info-text {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .info-text p {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .info-text p::after {
-            content: "|";
-            margin-left: 15px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .info-text p:last-child::after {
-            content: none;
-        }
-
-        .header-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .header-links a {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        /* Main Navigation */
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-            max-height: 100%;
-        }
-
-        /* Toggle Button */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: var(--header-color);
-            z-index: 1000;
-            background: none;
-            border: none;
-        }
-
-        body.dark-mode .menu-toggle {
-            color: var(--white);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-            color: var(--header-color);
-            margin-left: 15px;
-        }
-
-        body.dark-mode .theme-toggle {
-            color: var(--white);
-        }
-
-        /* Navigation Menu */
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Search Box */
-        .search-box {
-            position: relative;
-            width: 350px;
-        }
-
-        .search-box input {
-            padding: 8px 35px 8px 12px;
-            border-radius: 20px;
-            border: none;
-            width: 100%;
-            height: 30px;
-            font-size: 14px;
-            outline: none;
-            box-shadow: 0 0 0 1px #065587;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-            background: white;
-        }
-
-        body.dark-mode .search-box input {
-            background-color: #333;
-            color: var(--white);
-        }
-
-        .search-box i {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #1a0202;
-            z-index: 3;
-            font-size: 16px;
-        }
-
-        /* Main Navigation Links */
-        .main-nav {
-            display: flex;
-            gap: 3px;
-            list-style: none;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-nav a {
-            color: var(--text-color);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            text-decoration: none;
-            padding: 10px 15px;
-        }
-
-        body.dark-mode .main-nav a {
-            color: var(--dark-mode-text);
-        }
-
-        /* Buttons */
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            padding: 8px 15px;
-            border-radius: 20px;
-            background-color: var(--header-color);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(95, 4, 4, 0.1);
-            border-radius: 4px;
-            padding: 10px 0;
-            min-width: 180px;
-            display: none;
-            z-index: 100;
-        }
-
-        body.dark-mode .dropdown-menu {
-            background-color: #333;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .main-nav li:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-menu li {
-            padding: 8px 15px;
-        }
-
-        .dropdown-menu a {
-            color: var(--text-color);
-            font-size: 14px;
-        }
-
-        body.dark-mode .dropdown-menu a {
-            color: var(--dark-mode-text);
-        }
-
-        /* Sidebar Styles */
-        .menu {
-            list-style: none;
-            padding: 0;
-        }
-
-        .menu li {
-            font-size: 15px;
-            margin: 12px 10px;
-            display: flex;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
-
-        .mainu {
-            margin: 12px 10px;
-            margin-top: -20px;
-        }
-
-        .menu i {
-            margin-right: 12px;
-            font-size: 22px;
-        }
-
-        .home-icon {
-            color: red;
-        }
-
-        .profile-icon {
-            color: #ffaa00;
-        }
-
-        .category-icon {
-            color: orange;
-        }
-
-        .purchase-icon {
-            color: green;
-        }
-
-        .feedback-icon {
-            color: black;
-        }
-
-        .refund-icon {
-            color: gold;
-        }
-
-        .privacy-icon {
-            color: gray;
-        }
-
-        .terms-icon {
-            color: darkgray;
-        }
-
-        .rate-icon {
-            color: orange;
-        }
-
-        .logout-icon {
-            color: red;
-        }
-
-        /* Hover Effect */
-        .menu li:hover {
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .menu li:hover i {
-            transform: scale(1.1);
-        }
-
-        .container {
-            display: flex;
-            margin-top: 100px;
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #f5f5f5;
-            height: 120vh;
-            position: fixed;
-            left: 0;
-            top: 172px;
-            padding-top: 50px;
-            box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            padding: 0px 2px;
-            cursor: pointer;
-            text-align: left;
-            transition: background 0.3s;
-        }
-
-        .sidebar ul li:hover {
-            background: rgba(28, 3, 3, 0.1);
-            border: 1px solid #08584e;
-            box-shadow: 1px 1px 4px #19d2bd;
-        }
-
-        /* Sidebar Toggle Button */
-        .sidebar-toggle {
-            display: none;
-            position: fixed;
-            top: 100px;
-            left: 15px;
-            font-size: 24px;
-            background: #f5f5f5;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        button:hover {
-            background-color: #f1f4f6;
-            cursor: pointer;
-            color: rgb(246, 6, 14);
-        }
-
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .sidebar ul li a.active {
-            background-color: rgb(255, 119, 0);
-        }
-
-        /* Main Content Styles */
-        .content-container {
-            width: calc(100% - 250px);
-            margin-left: 250px;
-            padding: 20px;
-            margin-top: 50px;
-            position: relative;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Header Banner with Book Container on Right */
-        .header-banner {
-            height: 150px;
-            background: linear-gradient(90deg, #000080, #1a1a8d);
-            position: relative;
-            margin-bottom: 120px;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding-right: 20px;
-            position: relative;
-        }
-
-        .test-card {
-            margin-top: 160px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 200px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .test-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .test-card h3 {
-            font-size: 1.1rem;
-            margin: 10px 0 5px;
-        }
-
-        .test-card p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin: 5px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .test-card .price {
-            font-weight: bold;
-            color: #d1d9e6;
-        }
-
-        .buy-button {
-            display: block;
-            width: 100px;
-            margin: 10px auto 5px;
-            padding: 10px;
-            background: #e63946;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .buy-button:hover {
-            background: #c1121f;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* Course Details */
-        .course-details {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 20px;
-            justify-content: center;
-            padding: 0 20px;
-            margin-top: 50px;
-        }
-
-        .detail-item {
-            background: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            color: #000080;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-size: 1.1rem;
-        }
-
-        .divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #000080, transparent);
-            margin: 30px auto;
-            width: 90%;
-            max-width: 800px;
-        }
-
-        /* Description Section */
-        .description-section {
-            margin: 40px 0;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            color: #000080;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            position: relative;
-            padding-bottom: 10px;
-            padding-left: 20px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 20px;
-            width: 80px;
-            height: 4px;
-            background: #000080;
-            border-radius: 2px;
-        }
-
-        .description-box {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            line-height: 1.8;
-            border-left: 4px solid #000080;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        /* Test Grid */
-        .test-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-            padding: 0 20px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .test-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .test-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .test-header {
-            background: linear-gradient(90deg, #000080, #2a2aa0);
-            color: white;
-            padding: 15px 20px;
-        }
-
-        .test-header h3 {
-            font-size: 1.1rem;
-            text-align: center;
-        }
-
-        .test-metrics {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 20px;
-            background: #f8f9ff;
-        }
-
-        .metric {
-            text-align: center;
-            padding: 10px;
-            flex: 1;
-        }
-
-        .metric-value {
-            font-weight: bold;
-            font-size: 1rem;
-            color: #000080;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        .test-action {
-            padding: 15px 20px;
-            text-align: center;
-            border-top: 1px solid #eee;
-        }
-
-        .start-button {
-            background: #000080;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            padding: 10px 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .start-button:hover {
-            background: #2a2aa0;
-            transform: scale(1.05);
-        }
-
-        /* RESPONSIVE STYLES */
-        @media (max-width: 1300px) {
-            .nav-menu {
-                gap: 15px;
-            }
-            
-            .search-box {
-                width: 300px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .nav-menu {
-                gap: 10px;
-            }
-            
-            .search-box {
-                width: 250px;
-            }
-            
-            .content-container {
-                width: calc(100% - 250px);
-                margin-left: 250px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            body {
-                padding-top: 90px;
-            }
-
-            .nav-container {
-                padding: 10px 15px;
-                height: auto;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 110px;
-                left: -100%;
-                width: 80%;
-                height: calc(100vh - 110px);
-                background: var(--white);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0;
-                transition: left 0.3s ease;
-                box-shadow: 2px 0 10px rgba(105, 3, 3, 0.1);
-                z-index: 998;
-                margin-left: 0;
-                overflow-y: auto;
-                gap: 0;
-            }
-
-            body.dark-mode .nav-menu {
-                background-color: var(--dark-mode-bg);
-                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            /* Hide desktop search box on mobile */
-            .nav-menu .search-box {
-                display: none;
-            }
-
-            .nav-buttons {
-                order: initial;
-                width: 100%;
-                flex-direction: column;
-                gap: 10px;
-                margin-left: 0;
-                padding: 15px;
-            }
-
-            /* Hide desktop navigation on mobile */
-            .main-nav {
-                display: none;
-            }
-
-            .info-text {
-                font-size: 10px;
-                gap: 10px;
-            }
-
-            .info-text p::after {
-                margin-left: 10px;
-            }
-
-            .header-links {
-                display: none;
-            }
-
-            /* Sidebar Responsive */
-            .sidebar {
-                transform: translateX(-100%);
-                height: calc(100vh - 60px);
-                top: 137px;
-                width: 80%;
-                max-width: 300px;
-            }
-
-            .sidebar.open {
-                transform: translateX(0);
-            }
-
-            .sidebar-toggle {
-                display: block;
-            }
-
-            .content-container {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 30px;
-                padding: 15px;
-            }
-
-            .header-banner {
-                margin-bottom: 180px;
-                justify-content: center;
-                padding-right: 0;
-                height: 200px;
-            }
-            
-            .test-card {
-                margin-top: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                width: 100%;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-
-            /* Mobile Styles */
-            .sidebar {
-                width: 80%;
-                max-width: 300px;
-                height: calc(100vh - 60px);
-                top: 106px;
-            }
-
-            .sidebar-toggle {
-                top: 80px;
-                left: 10px;
-                font-size: 20px;
-                padding: 8px 12px;
-            }
-
-            .header-banner {
-                margin-bottom: 180px;
-                height: 200px;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding-top: 20px;
-            }
-
-            .test-card {
-                width: 200px;
-                margin-top: 20px;
-            }
-            
-            .course-details {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .detail-item {
-                padding: 8px 15px;
-                font-size: 1rem;
-            }
-            
-            .test-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        @media (max-width: 576px) {
-            .header-info {
-                height: 25px;
-                font-size: 9px;
-            }
-
-            .logo img {
-                height: 40px;
-            }
-
-            .btn {
-                padding: 6px 12px;
-                font-size: 13px;
-            }
-
-            .info-text {
-                gap: 5px;
-            }
-
-            .info-text p::after {
-                margin-left: 5px;
-            }
-
-            /* Small Mobile Devices */
-            .sidebar {
-                width: 85%;
-            }
-
-            .menu li {
-                padding: 8px 10px;
-                font-size: 16px;
-            }
-
-            .menu i {
-                font-size: 16px;
-                margin-right: 10px;
-            }
-
-            .header-banner {
-                height: 220px;
-                margin-bottom: 200px;
-            }
-            
-            .test-card {
-                width: 180px;
-            }
-            
-            .section-title {
-                font-size: 24px;
-                padding-left: 10px;
-            }
-            
-            .section-title::after {
-                left: 10px;
-            }
-            
-            .test-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-banner {
-                height: 200px;
-                margin-bottom: 220px;
-            }
-            
-            .test-card {
-                width: 160px;
-                padding: 10px;
-            }
-            
-            .section-title {
-                font-size: 22px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+  <link rel="stylesheet" href="/RTS/public/css/purchase.css">
+  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+  <link rel="stylesheet" href="/RTS/public/css/footer.css">
 </head>
 
 <body>
-    <!-- Header/Navbar -->
-    <header class="main-header">
-        <!-- Top Info Bar -->
-        <div class="header-info">
-            <div class="info-text">
-                <p><span>RID (Research Innovation & Discovery) by TWSKAA Welfare Foundation</span></p>
-                <p><strong>Helpline:</strong> <span>+91-8307 87323</span></p>
-                <p><strong>Email:</strong> <span>supportrid5@gmail.com</span></p>
-            </div>
-            <div class="header-links">
-                <a href="#">Main Content</a>
-                <a href="#">+A</a>
-                <a href="#">A</a>
-                <a href="#">A-</a>
-                <a href="#">Feedback</a>
-                <a href="#">Support</a>
-            </div>
+  <header class="main-header">
+    <!-- Top Info Bar -->
+    <div class="header-info">
+      <div class="info-text">
+        <p><span>RID (Research Innovation & Discovery) by TWSKAA Welfare Foundation</span></p>
+        <p><strong>Helpline:</strong> <span>+91-8307 87323</span></p>
+        <p><strong>Email:</strong> <span>supportrid5@gmail.com</span></p>
+      </div>
+      <div class="header-links">
+        <a href="#">Main Content</a>
+        <a href="#">+A</a>
+        <a href="#">A</a>
+        <a href="#">A-</a>
+        <a href="#">Feedback</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
+      </div>
+
+      <!-- Menu Toggle Button for Mobile -->
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="text" placeholder="Search Anything..." id="searchInput">
+          <i class="fas fa-search"></i>
         </div>
 
-        <!-- Main Navigation -->
-        <div class="nav-container">
-            <div class="logo">
-                <!-- Fixed Logo - Using a placeholder logo -->
-                <img src="/RTS/public/Deshbord/category/test/technical&coding/img/final_logo copy.svg" alt="RID Bharat Logo">
-            </div>
+        <!-- Certificate and Profile Buttons -->
+        <div class="nav-buttons">
+          <a href="/Certificate-Verification/verify.html" class="btn">
+            <i class="fas fa-award"></i> Certificate
+          </a>
 
-            <div class="nav-menu" id="navMenu">
-                <!-- Search Box -->
-                <div class="search-box">
-                    <input type="text" placeholder="Search Anything...">
-                    <i class="fas fa-search"></i>
-                </div>
-
-                <!-- Certificate and Profile Buttons -->
-                <div class="nav-buttons">
-                    <a href="#" class="btn"><i class="fas fa-award"></i> Certificate</a>
-                    <a href="#" class="btn"><i class="fas fa-user"></i> Profile</a>
-                </div>
-
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+          <a href="/RTS/public/profile.html" class="btn"><i class="fas fa-user"></i> Profile</a>
         </div>
 
-        <!-- Desktop Navigation -->
-        <ul class="main-nav">
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
-            <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+        <!-- Mobile Navigation -->
+        <ul class="mobile-nav" id="mobileNav">
+          <!-- Mobile Search Box -->
+          <div class="mobile-search-box">
+            <input type="text" placeholder="Search Anything..." id="mobileSearchInput">
+            <i class="fas fa-search"></i>
+          </div>
 
-            <li>
-                <a href="#"><i class="fas fa-building"></i> Center <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fas fa-rocket"></i> Skill Center</a></li>
-                    <li><a href="#"><i class="fas fa-flask"></i> WIT Center</a></li>
-                    <li><a href="#"><i class="fas fa-microscope"></i> RID Center</a></li>
-                </ul>
-            </li>
-            <li><a href="/project_rid/public/contact/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
+          <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+          <li class="has-dropdown">
+            <a href="#"><i class="fas fa-building"></i> Center</a>
+            <ul class="mobile-dropdown">
+              <li><a href="#"><i class="fas fa-rocket"></i> Skill Center</a></li>
+              <li><a href="#"><i class="fas fa-flask"></i> WIT Center</a></li>
+              <li><a href="#"><i class="fas fa-microscope"></i> RID Center</a></li>
+            </ul>
+          </li>
+          <li><a href="/project_rid/public/contact/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
         </ul>
-    </header>
+      </div>
+    </div>
 
-    <!-- Sidebar -->
-    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-    <aside class="sidebar">
-        <h2 class="mainu">Main Menu</h2>
-        <ul class="menu">
-            <li><i class="fas fa-home home-icon"></i><a href="/dasborde_main/Deshbord.html">Home</a></li>
-            <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
-            <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a></li>
-            <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My Purchase</a></li>
-            <li><i class="fas fa-comment-dots feedback-icon"></i><a href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
-            <li><i class="fas fa-dollar-sign refund-icon"></i><a href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
-            <li><i class="fas fa-shield-alt privacy-icon"></i><a href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
-            <li><i class="fas fa-file-contract terms-icon"></i><a href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
-            <li><i class="fas fa-star-half-alt rate-icon"></i><a href="#">Rate Us</a></li>
-            <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="#">Logout</a></li>
+    <!-- Desktop Navigation -->
+    <ul class="main-nav">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
+      <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+
+      <li>
+        <a href="#"><i class="fas fa-building"></i> Center <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="fas fa-rocket"></i> Skill Center</a></li>
+          <li><a href="#"><i class="fas fa-flask"></i> WIT Center</a></li>
+          <li><a href="#"><i class="fas fa-microscope"></i> RID Center</a></li>
         </ul>
-    </aside>
+      </li>
+      <li><a href="/project_rid/public/contact/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+    </ul>
+  </header>
 
-    <!-- Purchase Section -->
-   <div class="content-container">
-        <div class="header-banner" role="banner">
-            <div class="test-card" aria-label="Course Information Card">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070" alt="HTML Course">
-                <h3>Addition</h3>
-                <p>Level: <span>Beginner</span></p>
-                <p>Price: <span class="price">$12</span></p>
-                <button class="buy-button" aria-label="Buy HTML Course">Buy now</button>
-            </div>
-        </div>
-      
-        <main>
-            
-            <div class="course-details">
-                <div class="detail-item">
-                    Validity: 3 months
-                </div>
-                <div class="detail-item">
-                    Language: English
-                </div>
-            </div>
-            
-            <div class="divider" aria-hidden="true"></div>
-            
-            <section class="description-section" aria-labelledby="description-title">
-                <h2 class="section-title" id="description-title">Description</h2>
-                <div class="description-box">
-                    <p>
-                        Reading is an essential skill that helps improve our knowledge, language, and imagination. It allows us
-                        to explore different worlds, understand diverse perspectives, and learn new ideas. When we read, we not
-                        only learn facts but also improve our vocabulary and comprehension skills. <br> <br>
+  <!----side bar wala contain suru -->
+  <button class="sidebar-toggle">☰</button>
+  <aside class="sidebar">
+    <h2 class="mainu">Main Menu</h2>
+    <ul class="menu">
+      <li><i class="fas fa-home home-icon"></i><a href="/RTS/public/Deshbord.html">Home</a></li>
+      <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
+      <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a>
+      </li>
+      <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My
+          Purchase</a></li>
+      <li><i class="fas fa-comment-dots feedback-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
+      <li><i class="fas fa-dollar-sign refund-icon"></i><a
+          href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
+      <li><i class="fas fa-shield-alt privacy-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
+      <li><i class="fas fa-file-contract terms-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
+      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a>
+      </li>
+      <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="/index.html">Logout</a></li>
+    </ul>
+  </aside><br>
 
-                        Books, newspapers, and articles offer a wide range of information, from history and science to current
-                        events. Reading regularly helps us stay informed and aware of what is happening around the world. It
-                        also enhances our critical thinking skills because we learn to analyze and evaluate the information
-                        presented. <br> <br>
-
-                        In addition, reading is a great way to relax and reduce stress. It provides an escape from daily
-                        routines and offers a peaceful break. Whether it's a novel, a magazine, or even a blog post, reading can
-                        be both entertaining and educational.
-                    </p>
-                </div>
-            </section>
-            
+  <main>
+    <!-- Mobile Search Container - NEW -->
+    <div class="mobile-search-container">
+      <div class="search-box">
+        <input type="text" placeholder="Search Anything..." id="mainMobileSearchInput">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
             <section class="description-section" aria-labelledby="tests-title">
                 <h2 class="section-title" id="tests-title">ALL TEST's</h2>
                 <div class="test-grid">
                     <!-- Test Item 1 -->
                     <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 1</h3>
+                            <h3>Test:1</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1076,7 +156,7 @@
                             </div>
                         </div>
                         <div class="test-action">
-                                   <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/1test.html">
+                            <a href="/RTS/public/Deshbord/category/test/10th/Mpboard/CBSE/maths/1-test.html">
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
@@ -1087,7 +167,7 @@
                     <!-- Test Item 2 -->
                     <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 2</h3>
+                            <h3>Test :2</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1104,7 +184,8 @@
                             </div>
                         </div>
                         <div class="test-action">
-                              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/2test.html">
+                          
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/2-test.html">
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
@@ -1115,7 +196,7 @@
                     <!-- Test Item 3 -->
                     <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 3</h3>
+                            <h3>Test : 3</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1132,7 +213,8 @@
                             </div>
                         </div>
                         <div class="test-action">
-                              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/3test.html">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/3-test.html">
+                            
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
@@ -1141,13 +223,13 @@
                     </div>
                     
                     <!-- Test Item 4 -->
-                    <div class="test-item">
+                     <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 4</h3>
+                            <h3>Test :4</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
-                                <div class="metric-value">100</div>
+                                <div class="metric-value">60</div>
                                 <div class="metric-label">Questions</div>
                             </div>
                             <div class="metric">
@@ -1160,7 +242,8 @@
                             </div>
                         </div>
                         <div class="test-action">
-                              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/4test.html">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/4-test.html">
+                            
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
@@ -1171,7 +254,7 @@
                     <!-- Test Item 5 -->
                     <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 5</h3>
+                            <h3>Test :5</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1188,18 +271,16 @@
                             </div>
                         </div>
                         <div class="test-action">
-                              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/5test.html">
+                                <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/5-test.html">
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- Test Item 6 -->
-                    <div class="test-item">
+                      <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 6</h3>
+                            <h3>Test :  6</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1216,18 +297,16 @@
                             </div>
                         </div>
                         <div class="test-action">
-                          <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/6test.html">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/6-test.html">
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- Test Item 7 -->
-                    <div class="test-item">
+                      <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 7</h3>
+                            <h3>Test :  7</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1244,18 +323,17 @@
                             </div>
                         </div>
                         <div class="test-action">
-                  <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/7test.html">
+                           <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/7-test.html">
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- Test Item 8 -->
+                     <!-- Test Item 8 -->
                     <div class="test-item">
                         <div class="test-header">
-                            <h3>Test : Hindi 8</h3>
+                            <h3>Test : 8</h3>
                         </div>
                         <div class="test-metrics">
                             <div class="metric">
@@ -1272,7 +350,816 @@
                             </div>
                         </div>
                         <div class="test-action">
-                              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/CBSE/Biology/Hindi/8test.html">
+                               <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/8-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test : 9</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                                <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/9-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                      <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  10</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/10-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  11</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/11-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  12</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/12-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  13</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/13-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  14</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/14-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  15</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/15-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  16</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/16-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  17</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/17-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  18</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/18-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  19</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/19-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  20</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/20-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  21</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/21-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  22</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/22-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  23</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/23-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  24</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/24-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  25</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/25-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  26</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/26-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  27</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/27-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  28</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/28-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  29</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/29-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  30</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/30-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  31</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/31-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  32</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/32-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  33</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/33-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>  
+                    <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  34</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/34-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  35</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/35-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  36</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/36-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  37</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/37-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  38</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/38-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  39</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/39-test.html">
+                                <button class="start-button">
+                                    <i class="fas fa-play-circle"></i> Start Test
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="test-item">
+                        <div class="test-header">
+                            <h3>Test :  40</h3>
+                        </div>
+                        <div class="test-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100</div>
+                                <div class="metric-label">Questions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">360</div>
+                                <div class="metric-label">Marks</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">60</div>
+                                <div class="metric-label">Minutes</div>
+                            </div>
+                        </div>
+                        <div class="test-action">
+                            <a href="/RTS/public/Deshbord/category/test/10th/CBSE/maths/40-test.html">
                                 <button class="start-button">
                                     <i class="fas fa-play-circle"></i> Start Test
                                 </button>
@@ -1282,116 +1169,239 @@
                 </div>
             </section>
         </main>
-    </div>
+  <main class="section-parts">
+        <section class="description-section" aria-labelledby="description-title">
+            <h2 class="section-title" id="description-title">Description</h2>
+            <div class="description-box">
+                <p>
+                    Reading is an essential skill that helps improve our knowledge, language, and imagination. It allows
+                    us
+                    to explore different worlds, understand diverse perspectives, and learn new ideas. When we read, we
+                    not
+                    only learn facts but also improve our vocabulary and comprehension skills. <br> <br>
 
-    <script>
-        // Mobile Menu Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menuToggle');
-            const navMenu = document.getElementById('navMenu');
-            
-            let isMenuOpen = false;
+                    Books, newspapers, and articles offer a wide range of information, from history and science to
+                    current
+                    events. Reading regularly helps us stay informed and aware of what is happening around the world. It
+                    also enhances our critical thinking skills because we learn to analyze and evaluate the information
+                    presented. <br> <br>
 
-            function toggleMobileMenu() {
-                isMenuOpen = !isMenuOpen;
-                
-                navMenu.classList.toggle('active', isMenuOpen);
-                
-                const icon = menuToggle.querySelector('i');
-                icon.classList.toggle('fa-bars', !isMenuOpen);
-                icon.classList.toggle('fa-times', isMenuOpen);
-                
-                document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-            }
+                    In addition, reading is a great way to relax and reduce stress. It provides an escape from daily
+                    routines and offers a peaceful break. Whether it's a novel, a magazine, or even a blog post, reading
+                    can
+                    be both entertaining and educational.
+                </p>
+            </div>
+        </section>
+    </main>
 
-            function closeMobileMenu() {
-                if (!isMenuOpen) return;
-                isMenuOpen = false;
-                navMenu.classList.remove('active');
-                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-                document.body.style.overflow = '';
-            }
+  <!----------------------------------------------------------Footer parts in desbord---------------------------------------------------------------->
+  <section class="footer">
+    <footer>
+      <div class="left">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
+        <p>
+          Mig, 72, Rajiv Nagar, A Sector, Aayodhya Bypass Bhopal,
+          Madhya Pradesh, India (462022)
+        </p>
+        <div>
+          <a href="mailto:ridorg.in@gmail.com">
+            <i class="fas fa-envelope"></i> ridorg.in@gmail.com | Email
+          </a>
+          <a href="tel:+91 9202707903">
+            <i class="fas fa-phone"></i> +91 9202707903 | Mobile
+          </a>
+        </div>
+      </div>
 
-            // Theme Toggle
-            const themeToggle = document.getElementById('themeToggle');
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                
-                const icon = themeToggle.querySelector('i');
-                if (document.body.classList.contains('dark-mode')) {
-                    icon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    icon.classList.replace('fa-sun', 'fa-moon');
-                }
-            });
+      <div class="links-head">
+        <h3>Research Topics</h3>
+        <hr>
+        <div class="links">
+          <div class="links-1">
+            <a href="#">Computers</a>
+            <a href="#">Tech National Affairs</a>
+            <a href="#">AI: Artificial Intelligence</a>
+            <a href="#">Race & Ethnicity</a>
+            <a href="#">Religion</a>
+            <a href="#">Age & Generations</a>
+            <a href="#">Gender & Equality</a>
+          </div>
+          <div class="links-2">
+            <a href="#">Space Engineering</a>
+            <a href="#">Economy & Work</a>
+            <a href="#">Science</a>
+            <a href="#">Internet & Technology</a>
+            <a href="#">News Habits & Media</a>
+            <a href="#">Methodological Research</a>
+          </div>
+        </div>
+      </div>
 
-            // Event Listeners
-            menuToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
+      <div class="links-social">
+        <h3>Social Links</h3>
+        <hr>
+        <div class="links">
+          <div class="links-1">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+            <a href="https://www.linkedin.com/in/rid-bharat-9a4517324">
+              <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+            </a>
+            <a href="https://youtube.com/@ridbharat">
+              <ion-icon name="logo-youtube"></ion-icon> YouTube
+            </a>
+          </div>
+          <div class="links-2">
+            <a href="https://www.instagram.com/ridbharat">
+              <ion-icon name="logo-instagram"></ion-icon> Instagram
+            </a>
+            <a href="mailto:ridorg.in@gmail.com">
+              <ion-icon name="mail-outline"></ion-icon> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-            document.addEventListener('click', function(e) {
-                if (isMenuOpen && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                    closeMobileMenu();
-                }
-            });
+    <p class="about-text">
+      <strong>ABOUT RESEARCH INNOVATION & DISCOVERY:</strong> RID Organization i.e. Research,
+      Innovation and Discovery Organization is an organization which is run by TWF (TWKSAA WELFARE FOUNDATION) NGO. The
+      main objective of which is that in the coming times, the discovery, publication and use of NEW (RID, PMS & TLR)
+      should be done first in Indian culture, civilization and language from this holy land of India.
+    </p>
 
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && isMenuOpen) {
-                    closeMobileMenu();
-                }
-            });
+    <section class="copyrightsection">
+      <p>Copyright ©2024, RID | TWF (TWKSAA Welfare Foundation). All Rights Reserved.</p>
+      <div class="link">
+        <a href="#">About</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Feedback</a>
+      </div>
+    </section>
+  </section>
 
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 992) {
-                    closeMobileMenu();
-                }
-            });
+  <!-- JavaScript Files -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sidebar toggle functionality
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
+      const sidebar = document.querySelector('.sidebar');
+
+      if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
         });
+      }
 
-        // Sidebar Functionality
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('open');
-            document.body.classList.toggle('no-scroll');
-        }
+      // Navbar toggle functionality
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.getElementById('navMenu');
+      const mobileNav = document.getElementById('mobileNav');
 
-        // Close sidebar when clicking on a link (for mobile)
-        document.querySelectorAll('.menu a').forEach(link => {
-            link.addEventListener('click', function () {
-                if (window.innerWidth <= 992) {
-                    document.querySelector('.sidebar').classList.remove('open');
-                    document.body.classList.remove('no-scroll');
-                }
-            });
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          mobileNav.classList.toggle('active');
         });
+      }
 
-        // Close sidebar when clicking outside (for mobile)
-        document.addEventListener('click', function (event) {
-            const sidebar = document.querySelector('.sidebar');
-            const toggleBtn = document.querySelector('.sidebar-toggle');
-
-            if (window.innerWidth <= 992 &&
-                !sidebar.contains(event.target) &&
-                event.target !== toggleBtn &&
-                !toggleBtn.contains(event.target)) {
-                sidebar.classList.remove('open');
-                document.body.classList.remove('no-scroll');
-            }
+      // Close mobile nav when a link is clicked
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          mobileNav.classList.remove('active');
         });
+      });
 
-        // Add hover effect to test cards
-        const testItems = document.querySelectorAll('.test-item');
-        testItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = '';
-            });
+      // Close sidebar when a link is clicked (on mobile)
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 992) {
+            sidebar.classList.remove('open');
+          }
         });
-    </script>
+      });
+    });
+
+    // serch war js code 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const inputs = [
+    document.getElementById("searchInput"),
+    document.getElementById("mobileSearchInput"),
+    document.getElementById("mainMobileSearchInput")
+  ].filter(Boolean);
+
+  const testItems = document.querySelectorAll(".test-item");
+
+  function normalize(text) {
+    return text.toLowerCase().replace(/\s|:|-/g, "");
+  }
+
+  function filterTests(value) {
+    const searchValue = normalize(value);
+
+    testItems.forEach(item => {
+      const title = item.querySelector(".test-header h3").textContent;
+      const normalizedTitle = normalize(title);
+
+      if (normalizedTitle.includes(searchValue) || normalizedTitle.includes("test" + searchValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", function () {
+      filterTests(this.value);
+    });
+  });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const inputs = [
+    document.getElementById("searchInput"),
+    document.getElementById("mobileSearchInput"),
+    document.getElementById("mainMobileSearchInput")
+  ].filter(Boolean);
+
+  const testItems = document.querySelectorAll(".test-item");
+
+  function normalize(text) {
+    return text.toLowerCase().replace(/\s|:|-/g, "");
+  }
+
+  function filterTests(value) {
+    const searchValue = normalize(value);
+
+    testItems.forEach(item => {
+      const title = item.querySelector(".test-header h3").textContent;
+      const normalizedTitle = normalize(title);
+
+      if (normalizedTitle.includes(searchValue) || normalizedTitle.includes("test" + searchValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", function () {
+      filterTests(this.value);
+    });
+  });
+
+});
+    
+  </script>
 </body>
+
 </html>
