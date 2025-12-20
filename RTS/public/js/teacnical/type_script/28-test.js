@@ -1099,10 +1099,7 @@ const questions =[
     "attempted": false,
     "selected": ""
   }
-
-
-
-]
+];
 
 
 

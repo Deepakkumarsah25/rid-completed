@@ -1,1104 +1,904 @@
-const questions = [
-    {
-        "num": 1,
-        "question_en": "What is TypeScript primarily used for?",
-        "question_hi": "TypeScript मुख्य रूप से किसके लिए उपयोग किया जाता है?",
-        "options_en": ["Adding static types to JavaScript", "Replacing JavaScript", "Creating web servers", "Database operations"],
-        "options_hi": ["JavaScript में स्टैटिक टाइप जोड़ना", "JavaScript को बदलना", "वेब सर्वर बनाना", "डेटाबेस ऑपरेशन"],
-        "answer_en": "Adding static types to JavaScript",
-        "answer_hi": "JavaScript में स्टैटिक टाइप जोड़ना",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 2,
-        "question_en": "Which company maintains TypeScript?",
-        "question_hi": "TypeScript को कौन सी कंपनी मेंटेन करती है?",
-        "options_en": ["Microsoft", "Google", "Facebook", "Mozilla"],
-        "options_hi": ["माइक्रोसॉफ्ट", "गूगल", "फेसबुक", "मोज़िला"],
-        "answer_en": "Microsoft",
-        "answer_hi": "माइक्रोसॉफ्ट",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 3,
-        "question_en": "What file extension is used for TypeScript files?",
-        "question_hi": "TypeScript फाइलों के लिए किस फाइल एक्सटेंशन का उपयोग किया जाता है?",
-        "options_en": [".ts", ".js", ".typescript", ".tsx"],
-        "options_hi": [".ts", ".js", ".typescript", ".tsx"],
-        "answer_en": ".ts",
-        "answer_hi": ".ts",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 4,
-        "question_en": "How do you compile TypeScript to JavaScript?",
-        "question_hi": "TypeScript को JavaScript में कैसे कंपाइल करते हैं?",
-        "options_en": ["tsc command", "node command", "npm run build", "typescript compile"],
-        "options_hi": ["tsc कमांड", "node कमांड", "npm run build", "typescript compile"],
-        "answer_en": "tsc command",
-        "answer_hi": "tsc कमांड",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 5,
-        "question_en": "What is the TypeScript compiler called?",
-        "question_hi": "TypeScript कंपाइलर को क्या कहा जाता है?",
-        "options_en": ["tsc", "typescriptc", "ts-compiler", "type-compiler"],
-        "options_hi": ["tsc", "typescriptc", "ts-compiler", "type-compiler"],
-        "answer_en": "tsc",
-        "answer_hi": "tsc",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 6,
-        "question_en": "Which of the following is a basic TypeScript type?",
-        "question_hi": "निम्नलिखित में से कौन सा एक बेसिक TypeScript टाइप है?",
-        "options_en": ["string", "array", "list", "dictionary"],
-        "options_hi": ["string", "array", "list", "dictionary"],
-        "answer_en": "string",
-        "answer_hi": "string",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 7,
-        "question_en": "How do you declare a variable with a type in TypeScript?",
-        "question_hi": "TypeScript में टाइप के साथ वेरिएबल कैसे डिक्लेयर करते हैं?",
-        "options_en": ["let name: string;", "string let name;", "let name string;", "var name: string;"],
-        "options_hi": ["let name: string;", "string let name;", "let name string;", "var name: string;"],
-        "answer_en": "let name: string;",
-        "answer_hi": "let name: string;",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 8,
-        "question_en": "What is the 'any' type used for?",
-        "question_hi": "'any' टाइप का उपयोग किसके लिए किया जाता है?",
-        "options_en": ["When you don't know the type", "Only for numbers", "Only for strings", "For all types"],
-        "options_hi": ["जब आप टाइप नहीं जानते", "केवल नंबर के लिए", "केवल स्ट्रिंग के लिए", "सभी टाइप के लिए"],
-        "answer_en": "When you don't know the type",
-        "answer_hi": "जब आप टाइप नहीं जानते",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 9,
-        "question_en": "How do you define an array of numbers?",
-        "question_hi": "नंबर की ऐरे कैसे डिफाइन करते हैं?",
-        "options_en": ["number[]", "Array<number>", "Both A and B", "NumberArray"],
-        "options_hi": ["number[]", "Array<number>", "A और B दोनों", "NumberArray"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 10,
-        "question_en": "What is a tuple in TypeScript?",
-        "question_hi": "TypeScript में टपल क्या है?",
-        "options_en": ["Array with fixed types", "Array with same types", "Object with keys", "Function type"],
-        "options_hi": ["फिक्स्ड टाइप वाली ऐरे", "समान टाइप वाली ऐरे", "कीज वाला ऑब्जेक्ट", "फंक्शन टाइप"],
-        "answer_en": "Array with fixed types",
-        "answer_hi": "फिक्स्ड टाइप वाली ऐरे",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 11,
-        "question_en": "How do you define a tuple type?",
-        "question_hi": "टपल टाइप कैसे डिफाइन करते हैं?",
-        "options_en": ["[string, number]", "tuple(string, number)", "Array<string, number>", "(string, number)"],
-        "options_hi": ["[string, number]", "tuple(string, number)", "Array<string, number>", "(string, number)"],
-        "answer_en": "[string, number]",
-        "answer_hi": "[string, number]",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 12,
-        "question_en": "What is an enum?",
-        "question_hi": "enum क्या है?",
-        "options_en": ["Named constants", "Array type", "Function type", "Class type"],
-        "options_hi": ["नामित कॉन्स्टेंट", "ऐरे टाइप", "फंक्शन टाइप", "क्लास टाइप"],
-        "answer_en": "Named constants",
-        "answer_hi": "नामित कॉन्स्टेंट",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 13,
-        "question_en": "How do you define an enum?",
-        "question_hi": "enum कैसे डिफाइन करते हैं?",
-        "options_en": ["enum Color { Red, Green, Blue }", "enum = Color { Red, Green, Blue }", "define enum Color {}", "Color enum { Red }"],
-        "options_hi": ["enum Color { Red, Green, Blue }", "enum = Color { Red, Green, Blue }", "define enum Color {}", "Color enum { Red }"],
-        "answer_en": "enum Color { Red, Green, Blue }",
-        "answer_hi": "enum Color { Red, Green, Blue }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 14,
-        "question_en": "What is the 'void' type?",
-        "question_hi": "'void' टाइप क्या है?",
-        "options_en": ["No return value", "Empty value", "Null value", "Undefined value"],
-        "options_hi": ["कोई रिटर्न वैल्यू नहीं", "खाली वैल्यू", "null वैल्यू", "undefined वैल्यू"],
-        "answer_en": "No return value",
-        "answer_hi": "कोई रिटर्न वैल्यू नहीं",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 15,
-        "question_en": "What is the 'never' type?",
-        "question_hi": "'never' टाइप क्या है?",
-        "options_en": ["Value that never occurs", "Null value", "Undefined value", "Any value"],
-        "options_hi": ["वैल्यू जो कभी नहीं आती", "null वैल्यू", "undefined वैल्यू", "कोई भी वैल्यू"],
-        "answer_en": "Value that never occurs",
-        "answer_hi": "वैल्यू जो कभी नहीं आती",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 16,
-        "question_en": "How do you define a function type?",
-        "question_hi": "फंक्शन टाइप कैसे डिफाइन करते हैं?",
-        "options_en": ["(a: number) => number", "function(a: number): number", "Both A and B", "None"],
-        "options_hi": ["(a: number) => number", "function(a: number): number", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 17,
-        "question_en": "What is type inference?",
-        "question_hi": "टाइप इन्फरेंस क्या है?",
-        "options_en": ["Automatic type detection", "Manual type declaration", "Type checking", "Type conversion"],
-        "options_hi": ["ऑटोमैटिक टाइप डिटेक्शन", "मैनुअल टाइप डिक्लेरेशन", "टाइप चेकिंग", "टाइप कन्वर्जन"],
-        "answer_en": "Automatic type detection",
-        "answer_hi": "ऑटोमैटिक टाइप डिटेक्शन",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 18,
-        "question_en": "How do you define an interface?",
-        "question_hi": "इंटरफेस कैसे डिफाइन करते हैं?",
-        "options_en": ["interface Person { name: string }", "interface = Person { name: string }", "define interface Person {}", "Person interface { name: string }"],
-        "options_hi": ["interface Person { name: string }", "interface = Person { name: string }", "define interface Person {}", "Person interface { name: string }"],
-        "answer_en": "interface Person { name: string }",
-        "answer_hi": "interface Person { name: string }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 19,
-        "question_en": "What is the difference between interface and type?",
-        "question_hi": "इंटरफेस और टाइप में क्या अंतर है?",
-        "options_en": ["interface can be extended", "type can use unions", "Both A and B", "No difference"],
-        "options_hi": ["इंटरफेस को एक्सटेंड किया जा सकता है", "टाइप यूनियन का उपयोग कर सकता है", "A और B दोनों", "कोई अंतर नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 20,
-        "question_en": "How do you make a property optional?",
-        "question_hi": "प्रॉपर्टी को ऑप्शनल कैसे बनाते हैं?",
-        "options_en": ["name?: string", "name: string?", "optional name: string", "name: optional string"],
-        "options_hi": ["name?: string", "name: string?", "optional name: string", "name: optional string"],
-        "answer_en": "name?: string",
-        "answer_hi": "name?: string",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 21,
-        "question_en": "What is a union type?",
-        "question_hi": "यूनियन टाइप क्या है?",
-        "options_en": ["Type that can be one of several types", "Combination of types", "Array type", "Object type"],
-        "options_hi": ["टाइप जो कई टाइप में से एक हो सकता है", "टाइप का कॉम्बिनेशन", "ऐरे टाइप", "ऑब्जेक्ट टाइप"],
-        "answer_en": "Type that can be one of several types",
-        "answer_hi": "टाइप जो कई टाइप में से एक हो सकता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 22,
-        "question_en": "How do you define a union type?",
-        "question_hi": "यूनियन टाइप कैसे डिफाइन करते हैं?",
-        "options_en": ["string | number", "string & number", "string or number", "string, number"],
-        "options_hi": ["string | number", "string & number", "string or number", "string, number"],
-        "answer_en": "string | number",
-        "answer_hi": "string | number",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 23,
-        "question_en": "What is an intersection type?",
-        "question_hi": "इंटरसेक्शन टाइप क्या है?",
-        "options_en": ["Combination of multiple types", "Union of types", "Array type", "Function type"],
-        "options_hi": ["एकाधिक टाइप का कॉम्बिनेशन", "टाइप का यूनियन", "ऐरे टाइप", "फंक्शन टाइप"],
-        "answer_en": "Combination of multiple types",
-        "answer_hi": "एकाधिक टाइप का कॉम्बिनेशन",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 24,
-        "question_en": "How do you define an intersection type?",
-        "question_hi": "इंटरसेक्शन टाइप कैसे डिफाइन करते हैं?",
-        "options_en": ["TypeA & TypeB", "TypeA | TypeB", "TypeA + TypeB", "TypeA and TypeB"],
-        "options_hi": ["TypeA & TypeB", "TypeA | TypeB", "TypeA + TypeB", "TypeA and TypeB"],
-        "answer_en": "TypeA & TypeB",
-        "answer_hi": "TypeA & TypeB",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 25,
-        "question_en": "What is type assertion?",
-        "question_hi": "टाइप असर्शन क्या है?",
-        "options_en": ["Telling compiler about type", "Type conversion", "Type checking", "Type declaration"],
-        "options_hi": ["कंपाइलर को टाइप के बारे में बताना", "टाइप कन्वर्जन", "टाइप चेकिंग", "टाइप डिक्लेरेशन"],
-        "answer_en": "Telling compiler about type",
-        "answer_hi": "कंपाइलर को टाइप के बारे में बताना",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 26,
-        "question_en": "How do you perform type assertion?",
-        "question_hi": "टाइप असर्शन कैसे करते हैं?",
-        "options_en": ["value as string", "<string>value", "Both A and B", "assert value is string"],
-        "options_hi": ["value as string", "<string>value", "A और B दोनों", "assert value is string"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 27,
-        "question_en": "What are generics?",
-        "question_hi": "जेनेरिक क्या हैं?",
-        "options_en": ["Reusable components", "Specific types", "Fixed types", "Basic types"],
-        "options_hi": ["पुन: प्रयोज्य कॉम्पोनेंट", "स्पेसिफिक टाइप", "फिक्स्ड टाइप", "बेसिक टाइप"],
-        "answer_en": "Reusable components",
-        "answer_hi": "पुन: प्रयोज्य कॉम्पोनेंट",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 28,
-        "question_en": "How do you define a generic function?",
-        "question_hi": "जेनेरिक फंक्शन कैसे डिफाइन करते हैं?",
-        "options_en": ["function identity<T>(arg: T): T", "function identity(arg: T): T", "function<T> identity(arg: T): T", "generic function identity<T>(arg: T): T"],
-        "options_hi": ["function identity<T>(arg: T): T", "function identity(arg: T): T", "function<T> identity(arg: T): T", "generic function identity<T>(arg: T): T"],
-        "answer_en": "function identity<T>(arg: T): T",
-        "answer_hi": "function identity<T>(arg: T): T",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 29,
-        "question_en": "What is a generic constraint?",
-        "question_hi": "जेनेरिक कंस्ट्रेंट क्या है?",
-        "options_en": ["Restricting generic types", "Making generics required", "Generic type checking", "All of above"],
-        "options_hi": ["जेनेरिक टाइप को रिस्ट्रिक्ट करना", "जेनेरिक को आवश्यक बनाना", "जेनेरिक टाइप चेकिंग", "उपरोक्त सभी"],
-        "answer_en": "Restricting generic types",
-        "answer_hi": "जेनेरिक टाइप को रिस्ट्रिक्ट करना",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 30,
-        "question_en": "How do you add a constraint?",
-        "question_hi": "कंस्ट्रेंट कैसे जोड़ते हैं?",
-        "options_en": ["<T extends constraint>", "<T: constraint>", "<T implements constraint>", "<T with constraint>"],
-        "options_hi": ["<T extends constraint>", "<T: constraint>", "<T implements constraint>", "<T with constraint>"],
-        "answer_en": "<T extends constraint>",
-        "answer_hi": "<T extends constraint>",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 31,
-        "question_en": "What are classes?",
-        "question_hi": "क्लास क्या हैं?",
-        "options_en": ["Blueprints for objects", "Functions", "Interfaces", "Types"],
-        "options_hi": ["ऑब्जेक्ट के लिए ब्लूप्रिंट", "फंक्शन", "इंटरफेस", "टाइप"],
-        "answer_en": "Blueprints for objects",
-        "answer_hi": "ऑब्जेक्ट के लिए ब्लूप्रिंट",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 32,
-        "question_en": "How do you define a class?",
-        "question_hi": "क्लास कैसे डिफाइन करते हैं?",
-        "options_en": ["class Person { }", "class = Person { }", "define class Person { }", "Person class { }"],
-        "options_hi": ["class Person { }", "class = Person { }", "define class Person { }", "Person class { }"],
-        "answer_en": "class Person { }",
-        "answer_hi": "class Person { }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 33,
-        "question_en": "What are access modifiers?",
-        "question_hi": "एक्सेस मॉडिफायर क्या हैं?",
-        "options_en": ["public, private, protected", "static, readonly", "abstract, sealed", "All of above"],
-        "options_hi": ["public, private, protected", "static, readonly", "abstract, sealed", "उपरोक्त सभी"],
-        "answer_en": "public, private, protected",
-        "answer_hi": "public, private, protected",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 34,
-        "question_en": "What does 'public' mean?",
-        "question_hi": "'public' का क्या अर्थ है?",
-        "options_en": ["Accessible from anywhere", "Only within class", "Only within class and subclasses", "Not accessible"],
-        "options_hi": ["कहीं से भी एक्सेसिबल", "केवल क्लास के भीतर", "केवल क्लास और सबक्लास के भीतर", "एक्सेसिबल नहीं"],
-        "answer_en": "Accessible from anywhere",
-        "answer_hi": "कहीं से भी एक्सेसिबल",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 35,
-        "question_en": "What does 'private' mean?",
-        "question_hi": "'private' का क्या अर्थ है?",
-        "options_en": ["Only within class", "Accessible from anywhere", "Only within class and subclasses", "Not accessible"],
-        "options_hi": ["केवल क्लास के भीतर", "कहीं से भी एक्सेसिबल", "केवल क्लास और सबक्लास के भीतर", "एक्सेसिबल नहीं"],
-        "answer_en": "Only within class",
-        "answer_hi": "केवल क्लास के भीतर",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 36,
-        "question_en": "What does 'protected' mean?",
-        "question_hi": "'protected' का क्या अर्थ है?",
-        "options_en": ["Only within class and subclasses", "Only within class", "Accessible from anywhere", "Not accessible"],
-        "options_hi": ["केवल क्लास और सबक्लास के भीतर", "केवल क्लास के भीतर", "कहीं से भी एक्सेसिबल", "एक्सेसिबल नहीं"],
-        "answer_en": "Only within class and subclasses",
-        "answer_hi": "केवल क्लास और सबक्लास के भीतर",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 37,
-        "question_en": "What is 'readonly'?",
-        "question_hi": "'readonly' क्या है?",
-        "options_en": ["Makes property immutable", "Makes property private", "Makes property optional", "Makes property public"],
-        "options_hi": ["प्रॉपर्टी को इम्यूटेबल बनाता है", "प्रॉपर्टी को प्राइवेट बनाता है", "प्रॉपर्टी को ऑप्शनल बनाता है", "प्रॉपर्टी को पब्लिक बनाता है"],
-        "answer_en": "Makes property immutable",
-        "answer_hi": "प्रॉपर्टी को इम्यूटेबल बनाता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 38,
-        "question_en": "What is a static property?",
-        "question_hi": "स्टैटिक प्रॉपर्टी क्या है?",
-        "options_en": ["Property on class itself", "Property on instances", "Immutable property", "Private property"],
-        "options_hi": ["क्लास पर प्रॉपर्टी", "इंस्टेंस पर प्रॉपर्टी", "इम्यूटेबल प्रॉपर्टी", "प्राइवेट प्रॉपर्टी"],
-        "answer_en": "Property on class itself",
-        "answer_hi": "क्लास पर प्रॉपर्टी",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 39,
-        "question_en": "How do you define a static property?",
-        "question_hi": "स्टैटिक प्रॉपर्टी कैसे डिफाइन करते हैं?",
-        "options_en": ["static count: number;", "count static: number;", "static: count number;", "count: static number;"],
-        "options_hi": ["static count: number;", "count static: number;", "static: count number;", "count: static number;"],
-        "answer_en": "static count: number;",
-        "answer_hi": "static count: number;",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 40,
-        "question_en": "What is an abstract class?",
-        "question_hi": "एब्स्ट्रैक्ट क्लास क्या है?",
-        "options_en": ["Cannot be instantiated", "No methods", "Only properties", "Final class"],
-        "options_hi": ["इंस्टेंटिएट नहीं की जा सकती", "कोई मेथड नहीं", "केवल प्रॉपर्टी", "फाइनल क्लास"],
-        "answer_en": "Cannot be instantiated",
-        "answer_hi": "इंस्टेंटिएट नहीं की जा सकती",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 41,
-        "question_en": "How do you define an abstract class?",
-        "question_hi": "एब्स्ट्रैक्ट क्लास कैसे डिफाइन करते हैं?",
-        "options_en": ["abstract class Animal { }", "class abstract Animal { }", "abstract: class Animal { }", "class Animal abstract { }"],
-        "options_hi": ["abstract class Animal { }", "class abstract Animal { }", "abstract: class Animal { }", "class Animal abstract { }"],
-        "answer_en": "abstract class Animal { }",
-        "answer_hi": "abstract class Animal { }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 42,
-        "question_en": "What is an abstract method?",
-        "question_hi": "एब्स्ट्रैक्ट मेथड क्या है?",
-        "options_en": ["No implementation", "Must be implemented", "Both A and B", "Concrete method"],
-        "options_hi": ["कोई इम्प्लीमेंटेशन नहीं", "इम्प्लीमेंट करना होगा", "A और B दोनों", "कंक्रीट मेथड"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 43,
-        "question_en": "How do you define an abstract method?",
-        "question_hi": "एब्स्ट्रैक्ट मेथड कैसे डिफाइन करते हैं?",
-        "options_en": ["abstract makeSound(): void;", "makeSound abstract(): void;", "abstract: makeSound(): void;", "makeSound(): abstract void;"],
-        "options_hi": ["abstract makeSound(): void;", "makeSound abstract(): void;", "abstract: makeSound(): void;", "makeSound(): abstract void;"],
-        "answer_en": "abstract makeSound(): void;",
-        "answer_hi": "abstract makeSound(): void;",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 44,
-        "question_en": "What is inheritance?",
-        "question_hi": "इनहेरिटेंस क्या है?",
-        "options_en": ["Creating new classes from existing", "Creating interfaces", "Creating types", "Creating functions"],
-        "options_hi": ["मौजूदा से नई क्लास बनाना", "इंटरफेस बनाना", "टाइप बनाना", "फंक्शन बनाना"],
-        "answer_en": "Creating new classes from existing",
-        "answer_hi": "मौजूदा से नई क्लास बनाना",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 45,
-        "question_en": "How do you implement inheritance?",
-        "question_hi": "इनहेरिटेंस कैसे इम्प्लीमेंट करते हैं?",
-        "options_en": ["class Dog extends Animal { }", "class Dog : Animal { }", "class Dog implements Animal { }", "class Dog -> Animal { }"],
-        "options_hi": ["class Dog extends Animal { }", "class Dog : Animal { }", "class Dog implements Animal { }", "class Dog -> Animal { }"],
-        "answer_en": "class Dog extends Animal { }",
-        "answer_hi": "class Dog extends Animal { }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 46,
-        "question_en": "What is method overriding?",
-        "question_hi": "मेथड ओवरराइडिंग क्या है?",
-        "options_en": ["Redefining method in subclass", "Creating new method", "Hiding method", "Deleting method"],
-        "options_hi": ["सबक्लास में मेथड को पुन: डिफाइन करना", "नई मेथड बनाना", "मेथड को छिपाना", "मेथड को डिलीट करना"],
-        "answer_en": "Redefining method in subclass",
-        "answer_hi": "सबक्लास में मेथड को पुन: डिफाइन करना",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 47,
-        "question_en": "What is the 'super' keyword?",
-        "question_hi": "'super' कीवर्ड क्या है?",
-        "options_en": ["Refers to parent class", "Refers to current class", "Refers to subclass", "Refers to interface"],
-        "options_hi": ["पैरेंट क्लास को रेफर करता है", "करंट क्लास को रेफर करता है", "सबक्लास को रेफर करता है", "इंटरफेस को रेफर करता है"],
-        "answer_en": "Refers to parent class",
-        "answer_hi": "पैरेंट क्लास को रेफर करता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 48,
-        "question_en": "What are modules?",
-        "question_hi": "मॉड्यूल क्या हैं?",
-        "options_en": ["Way to organize code", "Classes", "Functions", "Types"],
-        "options_hi": ["कोड को ऑर्गनाइज़ करने का तरीका", "क्लास", "फंक्शन", "टाइप"],
-        "answer_en": "Way to organize code",
-        "answer_hi": "कोड को ऑर्गनाइज़ करने का तरीका",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 49,
-        "question_en": "How do you export a function?",
-        "question_hi": "फंक्शन को कैसे एक्सपोर्ट करते हैं?",
-        "options_en": ["export function name() { }", "function export name() { }", "export: function name() { }", "function name() export { }"],
-        "options_hi": ["export function name() { }", "function export name() { }", "export: function name() { }", "function name() export { }"],
-        "answer_en": "export function name() { }",
-        "answer_hi": "export function name() { }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 50,
-        "question_en": "How do you import a function?",
-        "question_hi": "फंक्शन को कैसे इम्पोर्ट करते हैं?",
-        "options_en": ["import { name } from './module'", "import name from './module'", "from './module' import name", "import './module' as name"],
-        "options_hi": ["import { name } from './module'", "import name from './module'", "from './module' import name", "import './module' as name"],
-        "answer_en": "import { name } from './module'",
-        "answer_hi": "import { name } from './module'",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 51,
-        "question_en": "What is default export?",
-        "question_hi": "डिफॉल्ट एक्सपोर्ट क्या है?",
-        "options_en": ["Main export of module", "Optional export", "Hidden export", "Private export"],
-        "options_hi": ["मॉड्यूल का मुख्य एक्सपोर्ट", "ऑप्शनल एक्सपोर्ट", "हिडन एक्सपोर्ट", "प्राइवेट एक्सपोर्ट"],
-        "answer_en": "Main export of module",
-        "answer_hi": "मॉड्यूल का मुख्य एक्सपोर्ट",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 52,
-        "question_en": "How do you do default export?",
-        "question_hi": "डिफॉल्ट एक्सपोर्ट कैसे करते हैं?",
-        "options_en": ["export default function() { }", "default export function() { }", "export function default() { }", "function export default() { }"],
-        "options_hi": ["export default function() { }", "default export function() { }", "export function default() { }", "function export default() { }"],
-        "answer_en": "export default function() { }",
-        "answer_hi": "export default function() { }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 53,
-        "question_en": "How do you import default export?",
-        "question_hi": "डिफॉल्ट एक्सपोर्ट को कैसे इम्पोर्ट करते हैं?",
-        "options_en": ["import name from './module'", "import { name } from './module'", "import default name from './module'", "from './module' import default name"],
-        "options_hi": ["import name from './module'", "import { name } from './module'", "import default name from './module'", "from './module' import default name"],
-        "answer_en": "import name from './module'",
-        "answer_hi": "import name from './module'",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 54,
-        "question_en": "What are namespaces?",
-        "question_hi": "नेमस्पेस क्या हैं?",
-        "options_en": ["Logical grouping of code", "Physical file grouping", "Modules", "Classes"],
-        "options_hi": ["कोड का लॉजिकल ग्रुपिंग", "फिजिकल फाइल ग्रुपिंग", "मॉड्यूल", "क्लास"],
-        "answer_en": "Logical grouping of code",
-        "answer_hi": "कोड का लॉजिकल ग्रुपिंग",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 55,
-        "question_en": "How do you define a namespace?",
-        "question_hi": "नेमस्पेस कैसे डिफाइन करते हैं?",
-        "options_en": ["namespace MyNamespace { }", "namespace = MyNamespace { }", "define namespace MyNamespace { }", "MyNamespace namespace { }"],
-        "options_hi": ["namespace MyNamespace { }", "namespace = MyNamespace { }", "define namespace MyNamespace { }", "MyNamespace namespace { }"],
-        "answer_en": "namespace MyNamespace { }",
-        "answer_hi": "namespace MyNamespace { }",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 56,
-        "question_en": "What are decorators?",
-        "question_hi": "डेकोरेटर क्या हैं?",
-        "options_en": ["Special declarations", "Functions", "Classes", "Interfaces"],
-        "options_hi": ["स्पेशल डिक्लेरेशन", "फंक्शन", "क्लास", "इंटरफेस"],
-        "answer_en": "Special declarations",
-        "answer_hi": "स्पेशल डिक्लेरेशन",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 57,
-        "question_en": "What is the syntax for decorators?",
-        "question_hi": "डेकोरेटर के लिए सिंटैक्स क्या है?",
-        "options_en": ["@decorator", "#decorator", "$decorator", "&decorator"],
-        "options_hi": ["@decorator", "#decorator", "$decorator", "&decorator"],
-        "answer_en": "@decorator",
-        "answer_hi": "@decorator",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 58,
-        "question_en": "What are type guards?",
-        "question_hi": "टाइप गार्ड क्या हैं?",
-        "options_en": ["Runtime checks that narrow types", "Compile time checks", "Type declarations", "Type conversions"],
-        "options_hi": ["रनटाइम चेक जो टाइप को नैरो करते हैं", "कंपाइल टाइम चेक", "टाइप डिक्लेरेशन", "टाइप कन्वर्जन"],
-        "answer_en": "Runtime checks that narrow types",
-        "answer_hi": "रनटाइम चेक जो टाइप को नैरो करते हैं",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 59,
-        "question_en": "What is 'typeof' type guard?",
-        "question_hi": "'typeof' टाइप गार्ड क्या है?",
-        "options_en": ["Checks type using typeof", "Checks instance using instanceof", "Checks custom type", "All of above"],
-        "options_hi": ["typeof का उपयोग करके टाइप चेक करता है", "instanceof का उपयोग करके इंस्टेंस चेक करता है", "कस्टम टाइप चेक करता है", "उपरोक्त सभी"],
-        "answer_en": "Checks type using typeof",
-        "answer_hi": "typeof का उपयोग करके टाइप चेक करता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 60,
-        "question_en": "What is 'instanceof' type guard?",
-        "question_hi": "'instanceof' टाइप गार्ड क्या है?",
-        "options_en": ["Checks instance using instanceof", "Checks type using typeof", "Checks custom type", "All of above"],
-        "options_hi": ["instanceof का उपयोग करके इंस्टेंस चेक करता है", "typeof का उपयोग करके टाइप चेक करता है", "कस्टम टाइप चेक करता है", "उपरोक्त सभी"],
-        "answer_en": "Checks instance using instanceof",
-        "answer_hi": "instanceof का उपयोग करके इंस्टेंस चेक करता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 61,
-        "question_en": "What are utility types?",
-        "question_hi": "यूटिलिटी टाइप क्या हैं?",
-        "options_en": ["Built-in generic types", "Basic types", "Function types", "Class types"],
-        "options_hi": ["बिल्ट-इन जेनेरिक टाइप", "बेसिक टाइप", "फंक्शन टाइप", "क्लास टाइप"],
-        "answer_en": "Built-in generic types",
-        "answer_hi": "बिल्ट-इन जेनेरिक टाइप",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 62,
-        "question_en": "What does Partial<T> do?",
-        "question_hi": "Partial<T> क्या करता है?",
-        "options_en": ["Makes all properties optional", "Makes all properties required", "Makes properties readonly", "Picks specific properties"],
-        "options_hi": ["सभी प्रॉपर्टी को ऑप्शनल बनाता है", "सभी प्रॉपर्टी को आवश्यक बनाता है", "प्रॉपर्टी को रीडओनली बनाता है", "स्पेसिफिक प्रॉपर्टी को पिक करता है"],
-        "answer_en": "Makes all properties optional",
-        "answer_hi": "सभी प्रॉपर्टी को ऑप्शनल बनाता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 63,
-        "question_en": "What does Required<T> do?",
-        "question_hi": "Required<T> क्या करता है?",
-        "options_en": ["Makes all properties required", "Makes all properties optional", "Makes properties readonly", "Picks specific properties"],
-        "options_hi": ["सभी प्रॉपर्टी को आवश्यक बनाता है", "सभी प्रॉपर्टी को ऑप्शनल बनाता है", "प्रॉपर्टी को रीडओनली बनाता है", "स्पेसिफिक प्रॉपर्टी को पिक करता है"],
-        "answer_en": "Makes all properties required",
-        "answer_hi": "सभी प्रॉपर्टी को आवश्यक बनाता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 64,
-        "question_en": "What does Readonly<T> do?",
-        "question_hi": "Readonly<T> क्या करता है?",
-        "options_en": ["Makes all properties readonly", "Makes all properties optional", "Makes all properties required", "Picks specific properties"],
-        "options_hi": ["सभी प्रॉपर्टी को रीडओनली बनाता है", "सभी प्रॉपर्टी को ऑप्शनल बनाता है", "सभी प्रॉपर्टी को आवश्यक बनाता है", "स्पेसिफिक प्रॉपर्टी को पिक करता है"],
-        "answer_en": "Makes all properties readonly",
-        "answer_hi": "सभी प्रॉपर्टी को रीडओनली बनाता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 65,
-        "question_en": "What does Record<K, T> do?",
-        "question_hi": "Record<K, T> क्या करता है?",
-        "options_en": ["Creates object type with keys K and type T", "Creates record type", "Creates key-value pair", "All of above"],
-        "options_hi": ["K और टाइप T वाली कीज के साथ ऑब्जेक्ट टाइप बनाता है", "रिकॉर्ड टाइप बनाता है", "की-वैल्यू पेयर बनाता है", "उपरोक्त सभी"],
-        "answer_en": "Creates object type with keys K and type T",
-        "answer_hi": "K और टाइप T वाली कीज के साथ ऑब्जेक्ट टाइप बनाता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 66,
-        "question_en": "What does Pick<T, K> do?",
-        "question_hi": "Pick<T, K> क्या करता है?",
-        "options_en": ["Picks set of properties K from T", "Picks specific properties", "Both A and B", "None"],
-        "options_hi": ["T से K प्रॉपर्टी का सेट पिक करता है", "स्पेसिफिक प्रॉपर्टी को पिक करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 67,
-        "question_en": "What does Omit<T, K> do?",
-        "question_hi": "Omit<T, K> क्या करता है?",
-        "options_en": ["Omits set of properties K from T", "Removes specific properties", "Both A and B", "None"],
-        "options_hi": ["T से K प्रॉपर्टी का सेट ओमिट करता है", "स्पेसिफिक प्रॉपर्टी को रिमूव करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 68,
-        "question_en": "What is conditional types?",
-        "question_hi": "कंडीशनल टाइप क्या हैं?",
-        "options_en": ["Types that depend on conditions", "Types with if-else logic", "Both A and B", "None"],
-        "options_hi": ["ऐसे टाइप जो कंडीशन पर डिपेंड करते हैं", "if-else लॉजिक वाले टाइप", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 69,
-        "question_en": "What is the syntax for conditional types?",
-        "question_hi": "कंडीशनल टाइप के लिए सिंटैक्स क्या है?",
-        "options_en": ["T extends U ? X : Y", "if T extends U then X else Y", "T extends U -> X : Y", "T extends U : X else Y"],
-        "options_hi": ["T extends U ? X : Y", "if T extends U then X else Y", "T extends U -> X : Y", "T extends U : X else Y"],
-        "answer_en": "T extends U ? X : Y",
-        "answer_hi": "T extends U ? X : Y",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 70,
-        "question_en": "What are mapped types?",
-        "question_hi": "मैप्ड टाइप क्या हैं?",
-        "options_en": ["Types that transform properties", "Types that map values", "Both A and B", "None"],
-        "options_hi": ["ऐसे टाइप जो प्रॉपर्टी को ट्रांसफॉर्म करते हैं", "ऐसे टाइप जो वैल्यू को मैप करते हैं", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Types that transform properties",
-        "answer_hi": "ऐसे टाइप जो प्रॉपर्टी को ट्रांसफॉर्म करते हैं",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 71,
-        "question_en": "What is the 'keyof' operator?",
-        "question_hi": "'keyof' ऑपरेटर क्या है?",
-        "options_en": ["Gets keys of object type", "Gets values of object", "Checks if key exists", "Creates new keys"],
-        "options_hi": ["ऑब्जेक्ट टाइप की कीज प्राप्त करता है", "ऑब्जेक्ट की वैल्यू प्राप्त करता है", "चेक करता है कि की मौजूद है", "नई कीज बनाता है"],
-        "answer_en": "Gets keys of object type",
-        "answer_hi": "ऑब्जेक्ट टाइप की कीज प्राप्त करता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 72,
-        "question_en": "What is the 'typeof' operator in types?",
-        "question_hi": "टाइप में 'typeof' ऑपरेटर क्या है?",
-        "options_en": ["Gets type of value", "Gets value of type", "Checks type", "Creates type"],
-        "options_hi": ["वैल्यू का टाइप प्राप्त करता है", "टाइप की वैल्यू प्राप्त करता है", "टाइप चेक करता है", "टाइप बनाता है"],
-        "answer_en": "Gets type of value",
-        "answer_hi": "वैल्यू का टाइप प्राप्त करता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 73,
-        "question_en": "What are template literal types?",
-        "question_hi": "टेम्पलेट लिटरल टाइप क्या हैं?",
-        "options_en": ["String types with patterns", "Types for template strings", "Both A and B", "None"],
-        "options_hi": ["पैटर्न वाले स्ट्रिंग टाइप", "टेम्पलेट स्ट्रिंग के लिए टाइप", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 74,
-        "question_en": "What is the 'infer' keyword?",
-        "question_hi": "'infer' कीवर्ड क्या है?",
-        "options_en": ["Infers types in conditional types", "Infers function parameters", "Both A and B", "None"],
-        "options_hi": ["कंडीशनल टाइप में टाइप इन्फर करता है", "फंक्शन पैरामीटर इन्फर करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 75,
-        "question_en": "What are recursive types?",
-        "question_hi": "रिकर्सिव टाइप क्या हैं?",
-        "options_en": ["Types that reference themselves", "Types with recursive structures", "Both A and B", "None"],
-        "options_hi": ["ऐसे टाइप जो खुद को रेफरेंस करते हैं", "रिकर्सिव स्ट्रक्चर वाले टाइप", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 76,
-        "question_en": "What is the 'satisfies' operator?",
-        "question_hi": "'satisfies' ऑपरेटर क्या है?",
-        "options_en": ["Checks if value satisfies type", "Validates type constraints", "Both A and B", "None"],
-        "options_hi": ["चेक करता है कि वैल्यू टाइप को सैटिस्फाई करती है", "टाइप कंस्ट्रेंट को वैलिडेट करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 77,
-        "question_en": "What is 'as const' assertion?",
-        "question_hi": "'as const' असर्शन क्या है?",
-        "options_en": ["Makes values readonly literals", "Prevents widening of literal types", "Both A and B", "None"],
-        "options_hi": ["वैल्यू को रीडओनली लिटरल बनाता है", "लिटरल टाइप के विडेनिंग को रोकता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 78,
-        "question_en": "What are declaration files?",
-        "question_hi": "डिक्लेरेशन फाइल क्या हैं?",
-        "options_en": ["Files with type declarations", "Files with .d.ts extension", "Both A and B", "None"],
-        "options_hi": ["टाइप डिक्लेरेशन वाली फाइल", ".d.ts एक्सटेंशन वाली फाइल", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 79,
-        "question_en": "What is the 'declare' keyword?",
-        "question_hi": "'declare' कीवर्ड क्या है?",
-        "options_en": ["Declares types without implementation", "Used in declaration files", "Both A and B", "None"],
-        "options_hi": ["बिना इम्प्लीमेंटेशन के टाइप डिक्लेयर करता है", "डिक्लेरेशन फाइल में उपयोग होता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 80,
-        "question_en": "What is global declaration?",
-        "question_hi": "ग्लोबल डिक्लेरेशन क्या है?",
-        "options_en": ["Declaration available throughout project", "Declaration in global scope", "Both A and B", "None"],
-        "options_hi": ["पूरे प्रोजेक्ट में उपलब्ध डिक्लेरेशन", "ग्लोबल स्कोप में डिक्लेरेशन", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 81,
-        "question_en": "What is module declaration?",
-        "question_hi": "मॉड्यूल डिक्लेरेशन क्या है?",
-        "options_en": ["Declaration for external modules", "Describes shape of modules", "Both A and B", "None"],
-        "options_hi": ["एक्सटर्नल मॉड्यूल के लिए डिक्लेरेशन", "मॉड्यूल के शेप को डिस्क्राइब करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 82,
-        "question_en": "What is namespace declaration?",
-        "question_hi": "नेमस्पेस डिक्लेरेशन क्या है?",
-        "options_en": ["Declaration for namespaces", "Groups related declarations", "Both A and B", "None"],
-        "options_hi": ["नेमस्पेस के लिए डिक्लेरेशन", "रिलेटेड डिक्लेरेशन को ग्रुप करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 83,
-        "question_en": "What is the 'strict' compiler option?",
-        "question_hi": "'strict' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Enables all strict type checking", "Enables strict mode", "Both A and B", "None"],
-        "options_hi": ["सभी स्ट्रिक्ट टाइप चेकिंग को एनेबल करता है", "स्ट्रिक्ट मोड को एनेबल करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Enables all strict type checking",
-        "answer_hi": "सभी स्ट्रिक्ट टाइप चेकिंग को एनेबल करता है",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 84,
-        "question_en": "What does 'noImplicitAny' do?",
-        "question_hi": "'noImplicitAny' क्या करता है?",
-        "options_en": ["Disallows implicit 'any' types", "Requires explicit type annotations", "Both A and B", "None"],
-        "options_hi": ["इम्प्लिसिट 'any' टाइप को डिसअलाउ करता है", "एक्सप्लिसिट टाइप एनोटेशन की आवश्यकता होती है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 85,
-        "question_en": "What does 'strictNullChecks' do?",
-        "question_hi": "'strictNullChecks' क्या करता है?",
-        "options_en": ["Enforces null and undefined checks", "Requires handling of null/undefined", "Both A and B", "None"],
-        "options_hi": ["null और undefined चेक को एनफोर्स करता है", "null/undefined के हैंडलिंग की आवश्यकता होती है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 86,
-        "question_en": "What does 'noUnusedParameters' do?",
-        "question_hi": "'noUnusedParameters' क्या करता है?",
-        "options_en": ["Flags unused function parameters", "Requires all parameters to be used", "Both A and B", "None"],
-        "options_hi": ["अनउपयोगी फंक्शन पैरामीटर को फ्लैग करता है", "सभी पैरामीटर के उपयोग की आवश्यकता होती है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 87,
-        "question_en": "What does 'noImplicitReturns' do?",
-        "question_hi": "'noImplicitReturns' क्या करता है?",
-        "options_en": ["Requires explicit return types", "Flags functions that don't always return", "Both A and B", "None"],
-        "options_hi": ["एक्सप्लिसिट रिटर्न टाइप की आवश्यकता होती है", "ऐसे फंक्शन को फ्लैग करता है जो हमेशा रिटर्न नहीं करते", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 88,
-        "question_en": "What is the 'target' compiler option?",
-        "question_hi": "'target' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies ECMAScript target version", "Sets JavaScript version for output", "Both A and B", "None"],
-        "options_hi": ["ECMAScript टार्गेट वर्जन स्पेसिफाई करता है", "आउटपुट के लिए JavaScript वर्जन सेट करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 89,
-        "question_en": "What is the 'module' compiler option?",
-        "question_hi": "'module' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies module system", "Sets module code generation", "Both A and B", "None"],
-        "options_hi": ["मॉड्यूल सिस्टम स्पेसिफाई करता है", "मॉड्यूल कोड जनरेशन सेट करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 90,
-        "question_en": "What is the 'outDir' compiler option?",
-        "question_hi": "'outDir' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies output directory", "Sets where compiled files go", "Both A and B", "None"],
-        "options_hi": ["आउटपुट डायरेक्टरी स्पेसिफाई करता है", "सेट करता है कि कंपाइल्ड फाइल कहाँ जाए", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 91,
-        "question_en": "What is the 'rootDir' compiler option?",
-        "question_hi": "'rootDir' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies root directory of source files", "Sets where to find source files", "Both A and B", "None"],
-        "options_hi": ["सोर्स फाइल की रूट डायरेक्टरी स्पेसिफाई करता है", "सेट करता है कि सोर्स फाइल कहाँ खोजें", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 92,
-        "question_en": "What is the 'baseUrl' compiler option?",
-        "question_hi": "'baseUrl' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Base directory to resolve non-absolute module names", "Sets base path for module resolution", "Both A and B", "None"],
-        "options_hi": ["नॉन-एब्सोल्यूट मॉड्यूल नेम रेजोल्व करने के लिए बेस डायरेक्टरी", "मॉड्यूल रेजोल्यूशन के लिए बेस पाथ सेट करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 93,
-        "question_en": "What are path mappings?",
-        "question_hi": "पाथ मैपिंग क्या हैं?",
-        "options_en": ["Map module names to locations", "Alias for module paths", "Both A and B", "None"],
-        "options_hi": ["मॉड्यूल नेम को लोकेशन पर मैप करें", "मॉड्यूल पाथ के लिए अलियास", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 94,
-        "question_en": "What is the 'paths' compiler option?",
-        "question_hi": "'paths' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies path mapping", "Sets module aliases", "Both A and B", "None"],
-        "options_hi": ["पाथ मैपिंग स्पेसिफाई करता है", "मॉड्यूल अलियास सेट करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 95,
-        "question_en": "What is the 'types' compiler option?",
-        "question_hi": "'types' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies type packages to include", "Lists type declaration packages", "Both A and B", "None"],
-        "options_hi": ["इंक्लूड करने के लिए टाइप पैकेज स्पेसिफाई करता है", "टाइप डिक्लेरेशन पैकेज की लिस्ट बनाता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 96,
-        "question_en": "What is the 'typeRoots' compiler option?",
-        "question_hi": "'typeRoots' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Specifies directories for type definitions", "Sets where to find type declarations", "Both A and B", "None"],
-        "options_hi": ["टाइप डेफिनिशन के लिए डायरेक्टरी स्पेसिफाई करता है", "सेट करता है कि टाइप डिक्लेरेशन कहाँ खोजें", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 97,
-        "question_en": "What is the 'esModuleInterop' compiler option?",
-        "question_hi": "'esModuleInterop' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Enables better interoperability with CommonJS", "Allows default imports from CommonJS", "Both A and B", "None"],
-        "options_hi": ["CommonJS के साथ बेहतर इंटरऑपरेबिलिटी एनेबल करता है", "CommonJS से डिफॉल्ट इम्पोर्ट की अनुमति देता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 98,
-        "question_en": "What is the 'forceConsistentCasingInFileNames' option?",
-        "question_hi": "'forceConsistentCasingInFileNames' ऑप्शन क्या है?",
-        "options_en": ["Enforces consistent file name casing", "Requires consistent case in imports", "Both A and B", "None"],
-        "options_hi": ["कंसिस्टेंट फाइल नेम केसिंग एनफोर्स करता है", "इम्पोर्ट में कंसिस्टेंट केस की आवश्यकता होती है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 99,
-        "question_en": "What is the 'skipLibCheck' compiler option?",
-        "question_hi": "'skipLibCheck' कंपाइलर ऑप्शन क्या है?",
-        "options_en": ["Skips type checking of declaration files", "Speeds up compilation", "Both A and B", "None"],
-        "options_hi": ["डिक्लेरेशन फाइल की टाइप चेकिंग स्किप करता है", "कंपाइलेशन को स्पीड देता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    },
-    {
-        "num": 100,
-        "question_en": "What is the 'strictPropertyInitialization' option?",
-        "question_hi": "'strictPropertyInitialization' ऑप्शन क्या है?",
-        "options_en": ["Requires class properties to be initialized", "Checks property initialization in constructors", "Both A and B", "None"],
-        "options_hi": ["क्लास प्रॉपर्टी को इनिशियलाइज़ करने की आवश्यकता होती है", "कंस्ट्रक्टर में प्रॉपर्टी इनिशियलाइज़ेशन चेक करता है", "A और B दोनों", "कोई नहीं"],
-        "answer_en": "Both A and B",
-        "answer_hi": "A और B दोनों",
-        "attempted": false,
-        "selected": ""
-    }
+const questions =  [
+  {
+    "num": 1,
+    "question_en": "Which TypeScript type is used for storing whole numbers?",
+    "question_hi": "TypeScript में पूर्ण संख्याओं को संग्रहीत करने के लिए कौन-सा टाइप प्रयोग किया जाता है?",
+    "options_en": ["number", "integer", "int", "whole"],
+    "options_hi": ["number", "integer", "int", "whole"],
+    "answer_en": "number",
+    "answer_hi": "number"
+  },
+  {
+    "num": 2,
+    "question_en": "What type would you use for a variable that can be either true or false?",
+    "question_hi": "एक वेरिएबल के लिए आप कौन-सा टाइप प्रयोग करेंगे जो या तो true या false हो सकता है?",
+    "options_en": ["boolean", "bool", "logical", "truthy"],
+    "options_hi": ["boolean", "bool", "logical", "truthy"],
+    "answer_en": "boolean",
+    "answer_hi": "boolean"
+  },
+  {
+    "num": 3,
+    "question_en": "Which type is used for textual data in TypeScript?",
+    "question_hi": "TypeScript में टेक्स्चुअल डेटा के लिए कौन-सा टाइप प्रयोग किया जाता है?",
+    "options_en": ["string", "text", "char", "varchar"],
+    "options_hi": ["string", "text", "char", "varchar"],
+    "answer_en": "string",
+    "answer_hi": "string"
+  },
+  {
+    "num": 4,
+    "question_en": "What is the TypeScript type for floating-point numbers?",
+    "question_hi": "TypeScript में फ्लोटिंग-पॉइंट संख्याओं के लिए कौन-सा टाइप है?",
+    "options_en": ["number", "float", "decimal", "double"],
+    "options_hi": ["number", "float", "decimal", "double"],
+    "answer_en": "number",
+    "answer_hi": "number"
+  },
+  {
+    "num": 5,
+    "question_en": "Which TypeScript type represents the absence of a value?",
+    "question_hi": "TypeScript में कौन-सा टाइप किसी मान की अनुपस्थिति को दर्शाता है?",
+    "options_en": ["null", "undefined", "void", "none"],
+    "options_hi": ["null", "undefined", "void", "none"],
+    "answer_en": "undefined",
+    "answer_hi": "undefined"
+  },
+  {
+    "num": 6,
+    "question_en": "What type is used for arrays of numbers in TypeScript?",
+    "question_hi": "TypeScript में संख्याओं की arrays के लिए कौन-सा टाइप प्रयोग किया जाता है?",
+    "options_en": ["number[]", "Array<number>", "Both A and B", "num[]"],
+    "options_hi": ["number[]", "Array<number>", "A और B दोनों", "num[]"],
+    "answer_en": "Both A and B",
+    "answer_hi": "A और B दोनों"
+  },
+  {
+    "num": 7,
+    "question_en": "Which type allows any value without type checking?",
+    "question_hi": "कौन-सा टाइप बिना टाइप चेकिंग के किसी भी मान की अनुमति देता है?",
+    "options_en": ["any", "unknown", "object", "dynamic"],
+    "options_hi": ["any", "unknown", "object", "dynamic"],
+    "answer_en": "any",
+    "answer_hi": "any"
+  },
+  {
+    "num": 8,
+    "question_en": "What is the type of an object with key-value pairs in TypeScript?",
+    "question_hi": "TypeScript में key-value pairs वाले ऑब्जेक्ट का टाइप क्या है?",
+    "options_en": ["object", "Record", "Map", "Dictionary"],
+    "options_hi": ["object", "Record", "Map", "Dictionary"],
+    "answer_en": "object",
+    "answer_hi": "object"
+  },
+  {
+    "num": 9,
+    "question_en": "Which type represents values that will never occur?",
+    "question_hi": "कौन-सा टाइप ऐसे मानों को दर्शाता है जो कभी नहीं होंगे?",
+    "options_en": ["never", "void", "null", "undefined"],
+    "options_hi": ["never", "void", "null", "undefined"],
+    "answer_en": "never",
+    "answer_hi": "never"
+  },
+  {
+    "num": 10,
+    "question_en": "What type is used for functions that don't return a value?",
+    "question_hi": "ऐसे फंक्शन्स के लिए कौन-सा टाइप प्रयोग किया जाता है जो कोई मान वापस नहीं करते?",
+    "options_en": ["void", "null", "undefined", "empty"],
+    "options_hi": ["void", "null", "undefined", "empty"],
+    "answer_en": "void",
+    "answer_hi": "void"
+  },
+  {
+    "num": 11,
+    "question_en": "Which type can hold both integers and floating-point numbers?",
+    "question_hi": "कौन-सा टाइप पूर्णांक और फ्लोटिंग-पॉइंट दोनों प्रकार की संख्याएँ रख सकता है?",
+    "options_en": ["number", "int", "float", "numeric"],
+    "options_hi": ["number", "int", "float", "numeric"],
+    "answer_en": "number",
+    "answer_hi": "number"
+  },
+  {
+    "num": 12,
+    "question_en": "What is the type for representing a single character in TypeScript?",
+    "question_hi": "TypeScript में एकल वर्ण को दर्शाने के लिए कौन-सा टाइप है?",
+    "options_en": ["string", "char", "character", "text"],
+    "options_hi": ["string", "char", "character", "text"],
+    "answer_en": "string",
+    "answer_hi": "string"
+  },
+  {
+    "num": 13,
+    "question_en": "Which type is the type-safe counterpart of 'any'?",
+    "question_hi": "'any' का टाइप-सेफ समकक्ष कौन-सा टाइप है?",
+    "options_en": ["unknown", "object", "void", "never"],
+    "options_hi": ["unknown", "object", "void", "never"],
+    "answer_en": "unknown",
+    "answer_hi": "unknown"
+  },
+  {
+    "num": 14,
+    "question_en": "What is the type of 'null' in TypeScript?",
+    "question_hi": "TypeScript में 'null' का टाइप क्या है?",
+    "options_en": ["null", "object", "undefined", "any"],
+    "options_hi": ["null", "object", "undefined", "any"],
+    "answer_en": "null",
+    "answer_hi": "null"
+  },
+  {
+    "num": 15,
+    "question_en": "Which type is used for arbitrarily large integers?",
+    "question_hi": "मनमाने ढंग से बड़े पूर्णांकों के लिए कौन-सा टाइप प्रयोग किया जाता है?",
+    "options_en": ["bigint", "number", "long", "int64"],
+    "options_hi": ["bigint", "number", "long", "int64"],
+    "answer_en": "bigint",
+    "answer_hi": "bigint"
+  },
+  {
+    "num": 16,
+    "question_en": "What type represents non-primitive types?",
+    "question_hi": "गैर-प्रिमिटिव टाइप्स को कौन-सा टाइप दर्शाता है?",
+    "options_en": ["object", "any", "class", "interface"],
+    "options_hi": ["object", "any", "class", "interface"],
+    "answer_en": "object",
+    "answer_hi": "object"
+  },
+  {
+    "num": 17,
+    "question_en": "What is the difference between 'string' and 'String' in TypeScript?",
+    "question_hi": "TypeScript में 'string' और 'String' में क्या अंतर है?",
+    "options_en": ["string is primitive, String is object wrapper", "They are the same", "String is primitive", "string is object wrapper"],
+    "options_hi": ["string प्रिमिटिव है, String ऑब्जेक्ट रैपर है", "वे समान हैं", "String प्रिमिटिव है", "string ऑब्जेक्ट रैपर है"],
+    "answer_en": "string is primitive, String is object wrapper",
+    "answer_hi": "string प्रिमिटिव है, String ऑब्जेक्ट रैपर है"
+  },
+  {
+    "num": 18,
+    "question_en": "Which type would you use for a variable that can be a string or number?",
+    "question_hi": "एक वेरिएबल के लिए आप कौन-सा टाइप प्रयोग करेंगे जो स्ट्रिंग या नंबर हो सकता है?",
+    "options_en": ["string | number", "string & number", "string or number", "string, number"],
+    "options_hi": ["string | number", "string & number", "string or number", "string, number"],
+    "answer_en": "string | number",
+    "answer_hi": "string | number"
+  },
+  {
+    "num": 19,
+    "question_en": "What is a literal type in TypeScript?",
+    "question_hi": "TypeScript में लिटरल टाइप क्या है?",
+    "options_en": ["A type that represents a specific value", "A type for strings only", "A type for numbers only", "A type for constants"],
+    "options_hi": ["एक विशिष्ट मान को दर्शाने वाला टाइप", "केवल स्ट्रिंग्स के लिए टाइप", "केवल नंबर्स के लिए टाइप", "कॉन्स्टेंट्स के लिए टाइप"],
+    "answer_en": "A type that represents a specific value",
+    "answer_hi": "एक विशिष्ट मान को दर्शाने वाला टाइप"
+  },
+  {
+    "num": 20,
+    "question_en": "How do you define a variable that can only be 'red', 'green', or 'blue'?",
+    "question_hi": "आप एक वेरिएबल को कैसे डिफाइन करेंगे जो केवल 'red', 'green', या 'blue' हो सकता है?",
+    "options_en": ["type Color = 'red' | 'green' | 'blue'", "let color: red|green|blue", "enum Color {red, green, blue}", "All of the above"],
+    "options_hi": ["type Color = 'red' | 'green' | 'blue'", "let color: red|green|blue", "enum Color {red, green, blue}", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 21,
+    "question_en": "What is the type of an empty array in TypeScript?",
+    "question_hi": "TypeScript में खाली array का टाइप क्या है?",
+    "options_en": ["any[]", "never[]", "unknown[]", "Depends on context"],
+    "options_hi": ["any[]", "never[]", "unknown[]", "संदर्भ पर निर्भर करता है"],
+    "answer_en": "any[]",
+    "answer_hi": "any[]"
+  },
+  {
+    "num": 22,
+    "question_en": "Which type is inferred for: let x = 42;",
+    "question_hi": "let x = 42; के लिए कौन-सा टाइप इंफर किया जाएगा?",
+    "options_en": ["number", "any", "unknown", "42"],
+    "options_hi": ["number", "any", "unknown", "42"],
+    "answer_en": "number",
+    "answer_hi": "number"
+  },
+  {
+    "num": 23,
+    "question_en": "What is the type of: const y = 'hello';",
+    "question_hi": "const y = 'hello'; का टाइप क्या है?",
+    "options_en": ["string", "'hello'", "any", "const"],
+    "options_hi": ["string", "'hello'", "any", "const"],
+    "answer_en": "'hello'",
+    "answer_hi": "'hello'"
+  },
+  {
+    "num": 24,
+    "question_en": "How do you define a tuple type for coordinates (x, y)?",
+    "question_hi": "कोऑर्डिनेट्स (x, y) के लिए ट्यूपल टाइप कैसे डिफाइन करते हैं?",
+    "options_en": ["[number, number]", "tuple(number, number)", "Array<number, number>", "(number, number)"],
+    "options_hi": ["[number, number]", "tuple(number, number)", "Array<number, number>", "(number, number)"],
+    "answer_en": "[number, number]",
+    "answer_hi": "[number, number]"
+  },
+  {
+    "num": 25,
+    "question_en": "What is the type of enum values in TypeScript?",
+    "question_hi": "TypeScript में enum मानों का टाइप क्या है?",
+    "options_en": ["number or string", "only number", "only string", "any"],
+    "options_hi": ["number या string", "केवल number", "केवल string", "any"],
+    "answer_en": "number or string",
+    "answer_hi": "number या string"
+  },
+  {
+    "num": 26,
+    "question_en": "What type would you use for a function parameter that is optional?",
+    "question_hi": "ऐसे फंक्शन पैरामीटर के लिए आप कौन-सा टाइप प्रयोग करेंगे जो वैकल्पिक है?",
+    "options_en": ["param?: type", "param: type | undefined", "Both A and B", "param: optional type"],
+    "options_hi": ["param?: type", "param: type | undefined", "A और B दोनों", "param: optional type"],
+    "answer_en": "Both A and B",
+    "answer_hi": "A और B दोनों"
+  },
+  {
+    "num": 27,
+    "question_en": "What is the type of 'undefined' in TypeScript?",
+    "question_hi": "TypeScript में 'undefined' का टाइप क्या है?",
+    "options_en": ["undefined", "void", "null", "any"],
+    "options_hi": ["undefined", "void", "null", "any"],
+    "answer_en": "undefined",
+    "answer_hi": "undefined"
+  },
+  {
+    "num": 28,
+    "question_en": "Which type represents a collection of key-value pairs?",
+    "question_hi": "key-value pairs के संग्रह को कौन-सा टाइप दर्शाता है?",
+    "options_en": ["object", "Record<string, any>", "{ [key: string]: any }", "All of the above"],
+    "options_hi": ["object", "Record<string, any>", "{ [key: string]: any }", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 29,
+    "question_en": "What is the difference between 'any' and 'unknown'?",
+    "question_hi": "'any' और 'unknown' में क्या अंतर है?",
+    "options_en": ["unknown is type-safe, any bypasses type checking", "They are identical", "any is newer", "unknown allows any operation"],
+    "options_hi": ["unknown टाइप-सेफ है, any टाइप चेकिंग को बायपास करता है", "वे समान हैं", "any नया है", "unknown कोई भी ऑपरेशन अनुमति देता है"],
+    "answer_en": "unknown is type-safe, any bypasses type checking",
+    "answer_hi": "unknown टाइप-सेफ है, any टाइप चेकिंग को बायपास करता है"
+  },
+  {
+    "num": 30,
+    "question_en": "What type would you use for a variable that might be null?",
+    "question_hi": "ऐसे वेरिएबल के लिए आप कौन-सा टाइप प्रयोग करेंगे जो null हो सकता है?",
+    "options_en": ["type | null", "Nullable<type>", "Both A and B", "type?"],
+    "options_hi": ["type | null", "Nullable<type>", "A और B दोनों", "type?"],
+    "answer_en": "Both A and B",
+    "answer_hi": "A और B दोनों"
+  },
+  {
+    "num": 31,
+    "question_en": "What is the type of a function that takes no arguments and returns nothing?",
+    "question_hi": "ऐसे फंक्शन का टाइप क्या है जो कोई आर्गुमेंट नहीं लेता और कुछ भी रिटर्न नहीं करता?",
+    "options_en": ["() => void", "Function", "() => undefined", "empty"],
+    "options_hi": ["() => void", "Function", "() => undefined", "empty"],
+    "answer_en": "() => void",
+    "answer_hi": "() => void"
+  },
+  {
+    "num": 32,
+    "question_en": "How do you define an array of mixed types?",
+    "question_hi": "मिश्रित टाइप्स की array कैसे डिफाइन करते हैं?",
+    "options_en": ["(string | number)[]", "Array<string | number>", "mixed[]", "Both A and B"],
+    "options_hi": ["(string | number)[]", "Array<string | number>", "mixed[]", "A और B दोनों"],
+    "answer_en": "Both A and B",
+    "answer_hi": "A और B दोनों"
+  },
+  {
+    "num": 33,
+    "question_en": "What is the type of: let z = true;",
+    "question_hi": "let z = true; का टाइप क्या है?",
+    "options_en": ["boolean", "true", "false", "any"],
+    "options_hi": ["boolean", "true", "false", "any"],
+    "answer_en": "boolean",
+    "answer_hi": "boolean"
+  },
+  {
+    "num": 34,
+    "question_en": "Which type is used for creating custom types?",
+    "question_hi": "कस्टम टाइप्स बनाने के लिए कौन-सा टाइप प्रयोग किया जाता है?",
+    "options_en": ["type", "interface", "class", "All of the above"],
+    "options_hi": ["type", "interface", "class", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 35,
+    "question_en": "What is the difference between 'type' and 'interface'?",
+    "question_hi": "'type' और 'interface' में क्या अंतर है?",
+    "options_en": ["interface can be extended, type can use unions", "They are the same", "type is newer", "interface is for classes only"],
+    "options_hi": ["interface को एक्सटेंड किया जा सकता है, type यूनियन्स प्रयोग कर सकता है", "वे समान हैं", "type नया है", "interface केवल क्लासेस के लिए है"],
+    "answer_en": "interface can be extended, type can use unions",
+    "answer_hi": "interface को एक्सटेंड किया जा सकता है, type यूनियन्स प्रयोग कर सकता है"
+  },
+  {
+    "num": 36,
+    "question_en": "What type would you use for a dictionary with string keys and number values?",
+    "question_hi": "स्ट्रिंग keys और नंबर values वाले डिक्शनरी के लिए आप कौन-सा टाइप प्रयोग करेंगे?",
+    "options_en": ["Record<string, number>", "{ [key: string]: number }", "Map<string, number>", "Both A and B"],
+    "options_hi": ["Record<string, number>", "{ [key: string]: number }", "Map<string, number>", "A और B दोनों"],
+    "answer_en": "Both A and B",
+    "answer_hi": "A और B दोनों"
+  },
+  {
+    "num": 37,
+    "question_en": "What is the type of a Promise that resolves to a string?",
+    "question_hi": "ऐसे Promise का टाइप क्या है जो एक स्ट्रिंग में रिजॉल्व होता है?",
+    "options_en": ["Promise<string>", "Promise<String>", "Async<string>", "Future<string>"],
+    "options_hi": ["Promise<string>", "Promise<String>", "Async<string>", "Future<string>"],
+    "answer_en": "Promise<string>",
+    "answer_hi": "Promise<string>"
+  },
+  {
+    "num": 38,
+    "question_en": "How do you make all properties of a type optional?",
+    "question_hi": "एक टाइप की सभी प्रॉपर्टीज़ को वैकल्पिक कैसे बनाते हैं?",
+    "options_en": ["Partial<Type>", "Optional<Type>", "Type?", "MakeOptional<Type>"],
+    "options_hi": ["Partial<Type>", "Optional<Type>", "Type?", "MakeOptional<Type>"],
+    "answer_en": "Partial<Type>",
+    "answer_hi": "Partial<Type>"
+  },
+  {
+    "num": 39,
+    "question_en": "What is the type of: const arr = [1, 2, 3];",
+    "question_hi": "const arr = [1, 2, 3]; का टाइप क्या है?",
+    "options_en": ["number[]", "[1, 2, 3]", "Array<number>", "Both A and C"],
+    "options_hi": ["number[]", "[1, 2, 3]", "Array<number>", "A और C दोनों"],
+    "answer_en": "Both A and C",
+    "answer_hi": "A और C दोनों"
+  },
+  {
+    "num": 40,
+    "question_en": "Which type represents a value that can be one of several types?",
+    "question_hi": "कौन-सा टाइप ऐसे मान को दर्शाता है जो कई टाइप्स में से एक हो सकता है?",
+    "options_en": ["Union type", "Intersection type", "Either type", "Multiple type"],
+    "options_hi": ["यूनियन टाइप", "इंटरसेक्शन टाइप", "Either टाइप", "मल्टीपल टाइप"],
+    "answer_en": "Union type",
+    "answer_hi": "यूनियन टाइप"
+  },
+  {
+    "num": 41,
+    "question_en": "What is the syntax for union types?",
+    "question_hi": "यूनियन टाइप्स के लिए सिंटैक्स क्या है?",
+    "options_en": ["Type1 | Type2", "Type1 & Type2", "Type1 || Type2", "Type1 or Type2"],
+    "options_hi": ["Type1 | Type2", "Type1 & Type2", "Type1 || Type2", "Type1 or Type2"],
+    "answer_en": "Type1 | Type2",
+    "answer_hi": "Type1 | Type2"
+  },
+  {
+    "num": 42,
+    "question_en": "What is an intersection type?",
+    "question_hi": "इंटरसेक्शन टाइप क्या है?",
+    "options_en": ["Combines multiple types into one", "Finds common types", "Type for AND operations", "All of the above"],
+    "options_hi": ["कई टाइप्स को एक में जोड़ता है", "सामान्य टाइप्स ढूँढता है", "AND ऑपरेशन्स के लिए टाइप", "उपरोक्त सभी"],
+    "answer_en": "Combines multiple types into one",
+    "answer_hi": "कई टाइप्स को एक में जोड़ता है"
+  },
+  {
+    "num": 43,
+    "question_en": "What is the syntax for intersection types?",
+    "question_hi": "इंटरसेक्शन टाइप्स के लिए सिंटैक्स क्या है?",
+    "options_en": ["Type1 & Type2", "Type1 | Type2", "Type1 && Type2", "Type1 and Type2"],
+    "options_hi": ["Type1 & Type2", "Type1 | Type2", "Type1 && Type2", "Type1 and Type2"],
+    "answer_en": "Type1 & Type2",
+    "answer_hi": "Type1 & Type2"
+  },
+  {
+    "num": 44,
+    "question_en": "What is type inference?",
+    "question_hi": "टाइप इंफरेंस क्या है?",
+    "options_en": ["TypeScript automatically determines types", "Manual type declaration", "Runtime type checking", "Type conversion"],
+    "options_hi": ["TypeScript स्वचालित रूप से टाइप्स निर्धारित करता है", "मैन्युअल टाइप डिक्लेरेशन", "रनटाइम टाइप चेकिंग", "टाइप कन्वर्जन"],
+    "answer_en": "TypeScript automatically determines types",
+    "answer_hi": "TypeScript स्वचालित रूप से टाइप्स निर्धारित करता है"
+  },
+  {
+    "num": 45,
+    "question_en": "What is type assertion?",
+    "question_hi": "टाइप एसर्शन क्या है?",
+    "options_en": ["Telling TypeScript the type of a value", "Type checking", "Type conversion", "Type validation"],
+    "options_hi": ["TypeScript को एक मान का टाइप बताना", "टाइप चेकिंग", "टाइप कन्वर्जन", "टाइप वैलिडेशन"],
+    "answer_en": "Telling TypeScript the type of a value",
+    "answer_hi": "TypeScript को एक मान का टाइप बताना"
+  },
+  {
+    "num": 46,
+    "question_en": "What are the two syntaxes for type assertion?",
+    "question_hi": "टाइप एसर्शन के लिए दो सिंटैक्स कौन-से हैं?",
+    "options_en": ["value as Type and <Type>value", "assert(value, Type)", "cast(value, Type)", "Both A and B"],
+    "options_hi": ["value as Type और <Type>value", "assert(value, Type)", "cast(value, Type)", "A और B दोनों"],
+    "answer_en": "value as Type and <Type>value",
+    "answer_hi": "value as Type और <Type>value"
+  },
+  {
+    "num": 47,
+    "question_en": "What is the 'never' type used for?",
+    "question_hi": "'never' टाइप किसके लिए प्रयोग किया जाता है?",
+    "options_en": ["Functions that never return", "Unreachable code", "Infinite loops", "All of the above"],
+    "options_hi": ["ऐसे फंक्शन्स जो कभी रिटर्न नहीं करते", "अप्राप्य कोड", "अनंत लूप्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 48,
+    "question_en": "How do you define a readonly array?",
+    "question_hi": "रीडओनली array कैसे डिफाइन करते हैं?",
+    "options_en": ["readonly number[]", "ReadonlyArray<number>", "const number[]", "Both A and B"],
+    "options_hi": ["readonly number[]", "ReadonlyArray<number>", "const number[]", "A और B दोनों"],
+    "answer_en": "Both A and B",
+    "answer_hi": "A और B दोनों"
+  },
+  {
+    "num": 49,
+    "question_en": "What is the type of a class constructor?",
+    "question_hi": "क्लास कंस्ट्रक्टर का टाइप क्या है?",
+    "options_en": ["new (...args: any[]) => any", "Function", "Constructor", "Class"],
+    "options_hi": ["new (...args: any[]) => any", "Function", "Constructor", "Class"],
+    "answer_en": "new (...args: any[]) => any",
+    "answer_hi": "new (...args: any[]) => any"
+  },
+  {
+    "num": 50,
+    "question_en": "What is the 'keyof' operator?",
+    "question_hi": "'keyof' ऑपरेटर क्या है?",
+    "options_en": ["Gets keys of a type", "Checks if key exists", "Creates key types", "All of the above"],
+    "options_hi": ["एक टाइप की keys प्राप्त करता है", "चेक करता है कि key मौजूद है या नहीं", "key टाइप्स बनाता है", "उपरोक्त सभी"],
+    "answer_en": "Gets keys of a type",
+    "answer_hi": "एक टाइप की keys प्राप्त करता है"
+  },
+  {
+    "num": 51,
+    "question_en": "What is the 'typeof' operator in types?",
+    "question_hi": "टाइप्स में 'typeof' ऑपरेटर क्या है?",
+    "options_en": ["Gets type of a value", "Runtime type checking", "Type declaration", "Type comparison"],
+    "options_hi": ["एक मान का टाइप प्राप्त करता है", "रनटाइम टाइप चेकिंग", "टाइप डिक्लेरेशन", "टाइप तुलना"],
+    "answer_en": "Gets type of a value",
+    "answer_hi": "एक मान का टाइप प्राप्त करता है"
+  },
+  {
+    "num": 52,
+    "question_en": "What is a mapped type?",
+    "question_hi": "मैप्ड टाइप क्या है?",
+    "options_en": ["Creates new type by transforming properties", "Maps values to types", "Array mapping", "Object mapping"],
+    "options_hi": ["प्रॉपर्टीज़ को ट्रांसफॉर्म करके नया टाइप बनाता है", "मानों को टाइप्स में मैप करता है", "ऐरे मैपिंग", "ऑब्जेक्ट मैपिंग"],
+    "answer_en": "Creates new type by transforming properties",
+    "answer_hi": "प्रॉपर्टीज़ को ट्रांसफॉर्म करके नया टाइप बनाता है"
+  },
+  {
+    "num": 53,
+    "question_en": "What is conditional type?",
+    "question_hi": "कंडीशनल टाइप क्या है?",
+    "options_en": ["Type that depends on condition", "If-else for types", "Type conditions", "All of the above"],
+    "options_hi": ["टाइप जो कंडीशन पर निर्भर करता है", "टाइप्स के लिए If-else", "टाइप कंडीशन्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 54,
+    "question_en": "What is template literal type?",
+    "question_hi": "टेम्पलेट लिटरल टाइप क्या है?",
+    "options_en": ["String template types", "Template strings in types", "Dynamic string types", "All of the above"],
+    "options_hi": ["स्ट्रिंग टेम्पलेट टाइप्स", "टाइप्स में टेम्पलेट स्ट्रिंग्स", "डायनेमिक स्ट्रिंग टाइप्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 55,
+    "question_en": "What is the 'in' operator in types?",
+    "question_hi": "टाइप्स में 'in' ऑपरेटर क्या है?",
+    "options_en": ["Checks if property exists in type", "Iterates over keys", "Property existence", "All of the above"],
+    "options_hi": ["चेक करता है कि प्रॉपर्टी टाइप में मौजूद है या नहीं", "keys पर इटरेट करता है", "प्रॉपर्टी अस्तित्व", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 56,
+    "question_en": "What is indexed access type?",
+    "question_hi": "इंडेक्स्ड एक्सेस टाइप क्या है?",
+    "options_en": ["Access type properties by index", "Array-like type access", "Type indexing", "All of the above"],
+    "options_hi": ["इंडेक्स द्वारा टाइप प्रॉपर्टीज़ एक्सेस करना", "ऐरे-जैसा टाइप एक्सेस", "टाइप इंडेक्सिंग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 57,
+    "question_en": "How do you extract property type from an object type?",
+    "question_hi": "ऑब्जेक्ट टाइप से प्रॉपर्टी टाइप कैसे निकालते हैं?",
+    "options_en": ["Type['property']", "Type.property", "propertyof Type", "extract<Type, 'property'>"],
+    "options_hi": ["Type['property']", "Type.property", "propertyof Type", "extract<Type, 'property'>"],
+    "answer_en": "Type['property']",
+    "answer_hi": "Type['property']"
+  },
+  {
+    "num": 58,
+    "question_en": "What is the 'as const' assertion?",
+    "question_hi": "'as const' एसर्शन क्या है?",
+    "options_en": ["Makes values readonly and literal", "Creates constants", "Const type assertion", "All of the above"],
+    "options_hi": ["मानों को रीडओनली और लिटरल बनाता है", "कॉन्स्टेंट्स बनाता है", "कॉन्स्ट टाइप एसर्शन", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 59,
+    "question_en": "What are utility types?",
+    "question_hi": "यूटिलिटी टाइप्स क्या हैं?",
+    "options_en": ["Built-in types for common transformations", "Utility functions for types", "Type helpers", "All of the above"],
+    "options_hi": ["सामान्य ट्रांसफॉर्मेशन्स के लिए बिल्ट-इन टाइप्स", "टाइप्स के लिए यूटिलिटी फंक्शन्स", "टाइप हेल्पर्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 60,
+    "question_en": "What does Pick<Type, Keys> do?",
+    "question_hi": "Pick<Type, Keys> क्या करता है?",
+    "options_en": ["Selects subset of properties", "Picks specified keys", "Creates new type with selected keys", "All of the above"],
+    "options_hi": ["प्रॉपर्टीज़ का सबसेट सेलेक्ट करता है", "निर्दिष्ट keys पिक करता है", "चुनी हुई keys के साथ नया टाइप बनाता है", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 61,
+    "question_en": "What does Omit<Type, Keys> do?",
+    "question_hi": "Omit<Type, Keys> क्या करता है?",
+    "options_en": ["Removes specified keys", "Omits properties", "Creates type without specified keys", "All of the above"],
+    "options_hi": ["निर्दिष्ट keys हटाता है", "प्रॉपर्टीज़ ओमिट करता है", "निर्दिष्ट keys के बिना टाइप बनाता है", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 62,
+    "question_en": "What is the 'satisfies' operator?",
+    "question_hi": "'satisfies' ऑपरेटर क्या है?",
+    "options_en": ["Checks type satisfies constraint", "Type validation operator", "Ensures type compatibility", "All of the above"],
+    "options_hi": ["चेक करता है कि टाइप कंस्ट्रेंट को संतुष्ट करता है", "टाइप वैलिडेशन ऑपरेटर", "टाइप संगतता सुनिश्चित करता है", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 63,
+    "question_en": "What is structural typing?",
+    "question_hi": "स्ट्रक्चरल टाइपिंग क्या है?",
+    "options_en": ["Type compatibility based on structure", "Duck typing", "Shape-based typing", "All of the above"],
+    "options_hi": ["संरचना के आधार पर टाइप संगतता", "डक टाइपिंग", "आकार-आधारित टाइपिंग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 64,
+    "question_en": "What are excess property checks?",
+    "question_hi": "एक्सेस प्रॉपर्टी चेक्स क्या हैं?",
+    "options_en": ["Checks for extra properties in object literals", "Property validation", "Extra property warnings", "All of the above"],
+    "options_hi": ["ऑब्जेक्ट लिटरल्स में अतिरिक्त प्रॉपर्टीज़ की जाँच", "प्रॉपर्टी वैलिडेशन", "अतिरिक्त प्रॉपर्टी चेतावनियाँ", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 65,
+    "question_en": "What is type narrowing?",
+    "question_hi": "टाइप नैरोइंग क्या है?",
+    "options_en": ["Reducing type to more specific type", "Type refinement", "Conditional type checking", "All of the above"],
+    "options_hi": ["टाइप को अधिक विशिष्ट टाइप में कम करना", "टाइप रिफाइनमेंट", "कंडीशनल टाइप चेकिंग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 66,
+    "question_en": "What is discriminated union?",
+    "question_hi": "डिस्क्रिमिनेटेड यूनियन क्या है?",
+    "options_en": ["Union type with common discriminant property", "Tagged union", "Variant type", "All of the above"],
+    "options_hi": ["सामान्य विभेदक प्रॉपर्टी वाला यूनियन टाइप", "टैग्ड यूनियन", "वेरिएंट टाइप", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 67,
+    "question_en": "What are type guards?",
+    "question_hi": "टाइप गार्ड्स क्या हैं?",
+    "options_en": ["Expressions that narrow types", "Runtime type checks", "Type predicates", "All of the above"],
+    "options_hi": ["एक्सप्रेशन्स जो टाइप्स को संकीर्ण करते हैं", "रनटाइम टाइप चेक्स", "टाइप प्रेडिकेट्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 68,
+    "question_en": "What is the 'instanceof' type guard?",
+    "question_hi": "'instanceof' टाइप गार्ड क्या है?",
+    "options_en": ["Checks class instance", "Class type guard", "Constructor checking", "All of the above"],
+    "options_hi": ["क्लास इंस्टेंस चेक करता है", "क्लास टाइप गार्ड", "कंस्ट्रक्टर चेकिंग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 69,
+    "question_en": "What are user-defined type guards?",
+    "question_hi": "यूजर-डिफाइंड टाइप गार्ड्स क्या हैं?",
+    "options_en": ["Custom functions that act as type guards", "User type predicates", "Custom type narrowing", "All of the above"],
+    "options_hi": ["कस्टम फंक्शन्स जो टाइप गार्ड्स के रूप में कार्य करते हैं", "यूजर टाइप प्रेडिकेट्स", "कस्टम टाइप नैरोइंग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 70,
+    "question_en": "What is type predicate?",
+    "question_hi": "टाइप प्रेडिकेट क्या है?",
+    "options_en": ["Function that returns type predicate", "Type assertion function", "User-defined type guard", "All of the above"],
+    "options_hi": ["फंक्शन जो टाइप प्रेडिकेट रिटर्न करता है", "टाइप एसर्शन फंक्शन", "यूजर-डिफाइंड टाइप गार्ड", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 71,
+    "question_en": "What is 'this' type?",
+    "question_hi": "'this' टाइप क्या है?",
+    "options_en": ["Type representing current instance", "Polymorphic this type", "Self-referential type", "All of the above"],
+    "options_hi": ["वर्तमान इंस्टेंस को दर्शाने वाला टाइप", "पॉलीमॉर्फिक this टाइप", "स्व-संदर्भित टाइप", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 72,
+    "question_en": "What are generic type constraints?",
+    "question_hi": "जेनेरिक टाइप कंस्ट्रेंट्स क्या हैं?",
+    "options_en": ["Restrictions on generic type parameters", "Type bounds", "Constraint expressions", "All of the above"],
+    "options_hi": ["जेनेरिक टाइप पैरामीटर्स पर प्रतिबंध", "टाइप बाउंड्स", "कंस्ट्रेंट एक्सप्रेशन्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 73,
+    "question_en": "What is default type parameter?",
+    "question_hi": "डिफ़ॉल्ट टाइप पैरामीटर क्या है?",
+    "options_en": ["Default type for generic parameter", "Optional type parameter", "Type parameter with default", "All of the above"],
+    "options_hi": ["जेनेरिक पैरामीटर के लिए डिफ़ॉल्ट टाइप", "ऑप्शनल टाइप पैरामीटर", "डिफ़ॉल्ट के साथ टाइप पैरामीटर", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 74,
+    "question_en": "What are conditional types with 'infer'?",
+    "question_hi": "'infer' के साथ कंडीशनल टाइप्स क्या हैं?",
+    "options_en": ["Conditional types that infer types", "Type inference in conditions", "Infer keyword usage", "All of the above"],
+    "options_hi": ["कंडीशनल टाइप्स जो टाइप्स इंफर करते हैं", "कंडीशन्स में टाइप इंफरेंस", "Infer कीवर्ड उपयोग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 75,
+    "question_en": "What is mapped type with 'as' clause?",
+    "question_hi": "'as' क्लॉज के साथ मैप्ड टाइप क्या है?",
+    "options_en": ["Mapped type that remaps keys", "Key transformation in mapped types", "Renaming properties", "All of the above"],
+    "options_hi": ["मैप्ड टाइप जो keys को रीमैप करता है", "मैप्ड टाइप्स में key ट्रांसफॉर्मेशन", "प्रॉपर्टीज़ का नाम बदलना", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 76,
+    "question_en": "What are recursive types?",
+    "question_hi": "रिकर्सिव टाइप्स क्या हैं?",
+    "options_en": ["Types that reference themselves", "Self-referential types", "Types with recursion", "All of the above"],
+    "options_hi": ["टाइप्स जो स्वयं को रेफर करते हैं", "स्व-संदर्भित टाइप्स", "रिकर्सन वाले टाइप्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 77,
+    "question_en": "What is type widening?",
+    "question_hi": "टाइप विडेनिंग क्या है?",
+    "options_en": ["Inferring broader type from literal", "Type generalization", "Literal to general type", "All of the above"],
+    "options_hi": ["लिटरल से व्यापक टाइप इंफर करना", "टाइप जनरलाइज़ेशन", "लिटरल से सामान्य टाइप", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 78,
+    "question_en": "What are branded types?",
+    "question_hi": "ब्रांडेड टाइप्स क्या हैं?",
+    "options_en": ["Types with unique brand property", "Nominal typing simulation", "Type branding pattern", "All of the above"],
+    "options_hi": ["अद्वितीय ब्रांड प्रॉपर्टी वाले टाइप्स", "नॉमिनल टाइपिंग सिमुलेशन", "टाइप ब्रांडिंग पैटर्न", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 79,
+    "question_en": "What is 'unique symbol' type?",
+    "question_hi": "'unique symbol' टाइप क्या है?",
+    "options_en": ["Type for unique symbol values", "Unique symbol literal", "Symbol with unique type", "All of the above"],
+    "options_hi": ["अद्वितीय सिंबल मानों के लिए टाइप", "अद्वितीय सिंबल लिटरल", "अद्वितीय टाइप वाला सिंबल", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 80,
+    "question_en": "What are declaration files (.d.ts)?",
+    "question_hi": "डिक्लेरेशन फाइल्स (.d.ts) क्या हैं?",
+    "options_en": ["Files with type declarations", "Type definition files", "Ambient declarations", "All of the above"],
+    "options_hi": ["टाइप डिक्लेरेशन्स वाली फाइलें", "टाइप डेफिनिशन फाइल्स", "एम्बिएंट डिक्लेरेशन्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 81,
+    "question_en": "What is module augmentation?",
+    "question_hi": "मॉड्यूल ऑग्मेंटेशन क्या है?",
+    "options_en": ["Extending module declarations", "Adding to existing modules", "Module type extension", "All of the above"],
+    "options_hi": ["मॉड्यूल डिक्लेरेशन्स का विस्तार", "मौजूदा मॉड्यूल्स में जोड़ना", "मॉड्यूल टाइप एक्सटेंशन", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 82,
+    "question_en": "What are ambient declarations?",
+    "question_hi": "एम्बिएंट डिक्लेरेशन्स क्या हैं?",
+    "options_en": ["Declarations without implementations", "External type declarations", "Declare keyword usage", "All of the above"],
+    "options_hi": ["इम्प्लीमेंटेशन के बिना डिक्लेरेशन्स", "एक्सटर्नल टाइप डिक्लेरेशन्स", "Declare कीवर्ड उपयोग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 83,
+    "question_en": "What are global augmentations?",
+    "question_hi": "ग्लोबल ऑग्मेंटेशन्स क्या हैं?",
+    "options_en": ["Extending global scope", "Adding to global types", "Global type extensions", "All of the above"],
+    "options_hi": ["ग्लोबल स्कोप का विस्तार", "ग्लोबल टाइप्स में जोड़ना", "ग्लोबल टाइप एक्सटेंशन्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 84,
+    "question_en": "What is 'override' modifier?",
+    "question_hi": "'override' मॉडिफायर क्या है?",
+    "options_en": ["Indicates method overrides parent", "Override keyword", "Method override", "All of the above"],
+    "options_hi": ["इंगित करता है कि मेथड पैरेंट को ओवरराइड करती है", "ओवरराइड कीवर्ड", "मेथड ओवरराइड", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 85,
+    "question_en": "What are abstract classes?",
+    "question_hi": "अब्सट्रैक्ट क्लासेस क्या हैं?",
+    "options_en": ["Classes that can't be instantiated", "Base classes", "Classes with abstract methods", "All of the above"],
+    "options_hi": ["क्लासेस जिन्हें इंस्टेंटिएट नहीं किया जा सकता", "बेस क्लासेस", "अब्सट्रैक्ट मेथड्स वाली क्लासेस", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 86,
+    "question_en": "What are private fields?",
+    "question_hi": "प्राइवेट फील्ड्स क्या हैं?",
+    "options_en": ["Fields accessible only in class", "# prefixed fields", "Private class members", "All of the above"],
+    "options_hi": ["फील्ड्स जो केवल क्लास में एक्सेसिबल हैं", "# प्रीफिक्स्ड फील्ड्स", "प्राइवेट क्लास मेंबर्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 87,
+    "question_en": "What is 'implements' clause?",
+    "question_hi": "'implements' क्लॉज क्या है?",
+    "options_en": ["Ensures class implements interface", "Interface implementation", "Class contract", "All of the above"],
+    "options_hi": ["सुनिश्चित करता है कि क्लास इंटरफेस इम्प्लीमेंट करती है", "इंटरफेस इम्प्लीमेंटेशन", "क्लास कॉन्ट्रैक्ट", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 88,
+    "question_en": "What is 'extends' clause?",
+    "question_hi": "'extends' क्लॉज क्या है?",
+    "options_en": ["Class inheritance", "Extending classes/interfaces", "Inheritance mechanism", "All of the above"],
+    "options_hi": ["क्लास इनहेरिटेंस", "क्लासेस/इंटरफेस का विस्तार", "इनहेरिटेंस मैकेनिज्म", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 89,
+    "question_en": "What are decorators?",
+    "question_hi": "डेकोरेटर्स क्या हैं?",
+    "options_en": ["Special declarations that modify code", "Metadata annotations", "Class/method decorators", "All of the above"],
+    "options_hi": ["विशेष डिक्लेरेशन्स जो कोड को मॉडिफाई करते हैं", "मेटाडेटा एनोटेशन्स", "क्लास/मेथड डेकोरेटर्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 90,
+    "question_en": "What are mixins?",
+    "question_hi": "मिक्सिन्स क्या हैं?",
+    "options_en": ["Pattern for combining classes", "Class composition", "Reusable components", "All of the above"],
+    "options_hi": ["क्लासेस को कॉम्बाइन करने का पैटर्न", "क्लास कंपोजिशन", "रीयूजेबल कंपोनेंट्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 91,
+    "question_en": "What is namespace?",
+    "question_hi": "नेमस्पेस क्या है?",
+    "options_en": ["Organizational unit for code", "Code grouping", "Logical container", "All of the above"],
+    "options_hi": ["कोड के लिए संगठनात्मक इकाई", "कोड ग्रुपिंग", "लॉजिकल कंटेनर", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 92,
+    "question_en": "What is type erasure?",
+    "question_hi": "टाइप इरेज़र क्या है?",
+    "options_en": ["Removal of type annotations at runtime", "Type information removal", "Compilation type removal", "All of the above"],
+    "options_hi": ["रनटाइम पर टाइप एनोटेशन्स का हटाया जाना", "टाइप इंफॉर्मेशन रिमूवल", "कंपाइलेशन टाइप रिमूवल", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 93,
+    "question_en": "What are generic functions?",
+    "question_hi": "जेनेरिक फंक्शन्स क्या हैं?",
+    "options_en": ["Functions with type parameters", "Generic typed functions", "Type-parameterized functions", "All of the above"],
+    "options_hi": ["टाइप पैरामीटर्स वाले फंक्शन्स", "जेनेरिक टाइप्ड फंक्शन्स", "टाइप-पैरामीटराइज्ड फंक्शन्स", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 94,
+    "question_en": "What are generic interfaces?",
+    "question_hi": "जेनेरिक इंटरफेस क्या हैं?",
+    "options_en": ["Interfaces with type parameters", "Generic typed interfaces", "Type-parameterized interfaces", "All of the above"],
+    "options_hi": ["टाइप पैरामीटर्स वाले इंटरफेस", "जेनेरिक टाइप्ड इंटरफेस", "टाइप-पैरामीटराइज्ड इंटरफेस", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 95,
+    "question_en": "What are generic classes?",
+    "question_hi": "जेनेरिक क्लासेस क्या हैं?",
+    "options_en": ["Classes with type parameters", "Generic typed classes", "Type-parameterized classes", "All of the above"],
+    "options_hi": ["टाइप पैरामीटर्स वाली क्लासेस", "जेनेरिक टाइप्ड क्लासेस", "टाइप-पैरामीटराइज्ड क्लासेस", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 96,
+    "question_en": "What is type compatibility?",
+    "question_hi": "टाइप संगतता क्या है?",
+    "options_en": ["When one type can be used in place of another", "Type substitution", "Assignment compatibility", "All of the above"],
+    "options_hi": ["जब एक टाइप दूसरे के स्थान पर प्रयोग किया जा सकता है", "टाइप प्रतिस्थापन", "असाइनमेंट संगतता", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 97,
+    "question_en": "What is covariance?",
+    "question_hi": "कोवेरिएंस क्या है?",
+    "options_en": ["Preserving subtype relationship", "Type relationship preservation", "Subtype compatibility", "All of the above"],
+    "options_hi": ["सबटाइप रिलेशनशिप को संरक्षित करना", "टाइप रिलेशनशिप प्रिज़र्वेशन", "सबटाइप संगतता", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 98,
+    "question_en": "What is contravariance?",
+    "question_hi": "कॉन्ट्रावेरिएंस क्या है?",
+    "options_en": ["Reversing subtype relationship", "Inverse type compatibility", "Function parameter compatibility", "All of the above"],
+    "options_hi": ["सबटाइप रिलेशनशिप को उलटना", "उलटी टाइप संगतता", "फंक्शन पैरामीटर संगतता", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 99,
+    "question_en": "What is bivariance?",
+    "question_hi": "बाइवेरिएंस क्या है?",
+    "options_en": ["Both covariance and contravariance", "Dual variance", "Two-way type compatibility", "All of the above"],
+    "options_hi": ["दोनों कोवेरिएंस और कॉन्ट्रावेरिएंस", "दोहरी वेरिएंस", "दो-तरफ़ा टाइप संगतता", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  },
+  {
+    "num": 100,
+    "question_en": "What is invariance?",
+    "question_hi": "इनवेरिएंस क्या है?",
+    "options_en": ["Exact type match required", "No variance", "Strict type compatibility", "All of the above"],
+    "options_hi": ["सटीक टाइप मैच आवश्यक", "कोई वेरिएंस नहीं", "सख्त टाइप संगतता", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी"
+  }
 ];
 
 let currentQuestion = 0;

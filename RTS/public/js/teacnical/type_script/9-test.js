@@ -1,4 +1,4 @@
-const typescriptQuestionsBatch3 = [
+const questions = [
     {
         "num": 1,
         "question_en": "What is the purpose of TypeScript's strict mode?",

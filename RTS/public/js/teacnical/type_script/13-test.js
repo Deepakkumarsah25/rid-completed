@@ -1,12 +1,12 @@
 const questions = [
     {
         "num": 1,
-        "question_en": "What is TypeScript primarily used for?",
-        "question_hi": "TypeScript मुख्य रूप से किसके लिए उपयोग किया जाता है?",
-        "options_en": ["Adding static types to JavaScript", "Creating HTML pages", "Styling web pages", "Database management"],
-        "options_hi": ["JavaScript में static types जोड़ना", "HTML पेज बनाना", "वेब पेज स्टाइल करना", "डेटाबेस प्रबंधन"],
-        "answer_en": "Adding static types to JavaScript",
-        "answer_hi": "JavaScript में static types जोड़ना",
+        "question_en": "Which TypeScript type represents no value returned from a function?",
+        "question_hi": "TypeScript में function से कोई value return न होने पर कौन सा type उपयोग होता है?",
+        "options_en": ["void", "never", "any", "unknown"],
+        "options_hi": ["void", "never", "any", "unknown"],
+        "answer_en": "void",
+        "answer_hi": "void",
         "attempted": false,
         "selected": ""
     },
@@ -408,12 +408,12 @@ const questions = [
     },
     {
         "num": 38,
-        "question_en": "Which TypeScript type represents no value returned from a function?",
-        "question_hi": "TypeScript में function से कोई value return न होने पर कौन सा type उपयोग होता है?",
-        "options_en": ["void", "never", "any", "unknown"],
-        "options_hi": ["void", "never", "any", "unknown"],
-        "answer_en": "void",
-        "answer_hi": "void",
+        "question_en": "What is TypeScript primarily used for?",
+        "question_hi": "TypeScript मुख्य रूप से किसके लिए उपयोग किया जाता है?",
+        "options_en": ["Adding static types to JavaScript", "Creating HTML pages", "Styling web pages", "Database management"],
+        "options_hi": ["JavaScript में static types जोड़ना", "HTML पेज बनाना", "वेब पेज स्टाइल करना", "डेटाबेस प्रबंधन"],
+        "answer_en": "Adding static types to JavaScript",
+        "answer_hi": "JavaScript में static types जोड़ना",
         "attempted": false,
         "selected": ""
     },
