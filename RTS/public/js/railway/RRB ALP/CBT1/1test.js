@@ -1,604 +1,571 @@
 const questions = [
   {
     "num": 1,
-    "question_en": "Which one of the following is an example of a regressive tax?",
-    "question_hi": "निम्नलिखित में से कौन प्रतिगामी कर का उदाहरण है?",
-    "options_en": ["Income tax", "Property tax", "Sales tax", "Corporate tax"],
-    "options_hi": ["आयकर", "संपत्ति कर", "विक्री कर", "कॉरपोरेट कर"],
-    "answer_en": "Sales tax",
-    "answer_hi": "बिक्री कर",
+    "question_en": "Under which Act was the Railway Board established in India?",
+    "question_hi": "भारत में रेलवे बोर्ड की स्थापना किस अधिनियम के तहत हुई थी?",
+    "options_en": ["Railway Act, 1890", "Indian Railway Board Act, 1905", "Railways Act, 1989", "Indian Railways Act, 1908"],
+    "options_hi": ["रेलवे अधिनियम, 1890", "भारतीय रेलवे बोर्ड अधिनियम, 1905", "रेलवे अधिनियम, 1989", "भारतीय रेलवे अधिनियम, 1908"],
+    "answer_en": "Indian Railway Board Act, 1905",
+    "answer_hi": "भारतीय रेलवे बोर्ड अधिनियम, 1905",
     "attempted": false,
     "selected": ""
   },
-{
-    num: 2,
-    question_en: "Which gas is most abundant in the Earth's atmosphere?",
-    question_hi: "पृथ्वी के वायुमंडल में कौन सा गैस सबसे प्रचुर मात्रा में है?",
-    options_en: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
-    options_hi: ["ऑक्सीजन", "नाइट्रोजन", "कार्बन डाइऑक्साइड", "हाइड्रोजन"],
-    answer_en: "Nitrogen",
-    answer_hi: "नाइट्रोजन",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 3,
-    question_en: "Which of the following is not a primary color?",
-    question_hi: "निम्नलिखित में से कौन सा प्राथमिक रंग नहीं है?",
-    options_en: ["Red", "Blue", "Green", "Yellow"],
-    options_hi: ["लाल", "नीला", "हरा", "पीला"],
-    answer_en: "Yellow",
-    answer_hi: "पीला",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 4,
-    question_en: "What is the unit of electric current?",
-    question_hi: "विधुत धारा की इकाई क्या है?",
-    options_en: ["Volt", "Ohm", "Watt", "Ampere"],
-    options_hi: ["वोल्ट", "ओम", "वाट", "एम्पियर"],
-    answer_en: "Ampere",
-    answer_hi: "एम्पियर",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 5,
-    question_en: "Which instrument is used to measure temperature?",
-    question_hi: "तापमान मापने के लिए किस यंत्र का उपयोग किया जाता है?",
-    options_en: ["Barometer", "Thermometer", "Ammeter", "Hygrometer"],
-    options_hi: ["बारोमीटर", "थर्मामीटर", "ऐममीटर", "हाइग्रोमीटर"],
-    answer_en: "Thermometer",
-    answer_hi: "थर्मामीटर",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 6,
-    question_en: "What is the boiling point of water at sea level?",
-    question_hi: "समुद्र तल पर पानी का उबालने का तापमान क्या है?",
-    options_en: ["90°C", "100°C", "110°C", "120°C"],
-    options_hi: ["90°C", "100°C", "110°C", "120°C"],
-    answer_en: "100°C",
-    answer_hi: "100°C",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 7,
-    question_en: "Which planet is known as the Red Planet?",
-    question_hi: "कौन सा ग्रह लाल ग्रह के रूप में जाना जाता है?",
-    options_en: ["Earth", "Mars", "Jupiter", "Venus"],
-    options_hi: ["पृथ्वी", "मंगल", "बृहस्पति", "शुक्र"],
-    answer_en: "Mars",
-    answer_hi: "मंगल",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 8,
-    question_en: "Sound travels fastest in which medium?",
-    question_hi: "ध्वनि किस माध्यम में सबसे तेज यात्रा करती है?",
-    options_en: ["Air", "Water", "Steel", "Vacuum"],
-    options_hi: ["हवा", "पानी", "इस्पात", "शून्य"],
-    answer_en: "Steel",
-    answer_hi: "इस्पात",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 9,
-    question_en: "What is the chemical formula of water?",
-    question_hi: "पानी का रासायनिक सूत्र क्या है?",
-    options_en: ["H2O", "CO2", "O2", "NaCl"],
-    options_hi: ["H2O", "CO2", "O2", "NaCl"],
-    answer_en: "H2O",
-    answer_hi: "H2O",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 10,
-    question_en: "Which organ pumps blood throughout the human body?",
-    question_hi: "मानव शरीर में खून को पूरे शरीर में पंप करने वाला अंग कौन सा है?",
-    options_en: ["Lungs", "Liver", "Heart", "Kidneys"],
-    options_hi: ["फेफड़े", "जिगर", "दिल", "गुर्दे"],
-    answer_en: "Heart",
-    answer_hi: "दिल",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 11,
-    question_en: "Which metal is liquid at room temperature?",
-    question_hi: "कौन सा धातु कमरे के तापमान पर तरल होता है?",
-    options_en: ["Iron", "Mercury", "Aluminium", "Copper"],
-    options_hi: ["लोहा", "पारा", "एल्युमिनियम", "तांबा"],
-    answer_en: "Mercury",
-    answer_hi: "पारा",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 12,
-    question_en: "What is the SI unit of force?",
-    question_hi: "बल की एसआई इकाई क्या है?",
-    options_en: ["Watt", "Newton", "Joule", "Pascal"],
-    options_hi: ["वाट", "न्यूटन", "जूल", "पास्कल"],
-    answer_en: "Newton",
-    answer_hi: "न्यूटन",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 13,
-    question_en: "What type of mirror is used in rear-view mirrors of vehicles?",
-    question_hi: "वाहनों के रियर व्यू मिरर में किस प्रकार का आईना उपयोग होता है?",
-    options_en: ["Concave", "Convex", "Plane", "None"],
-    options_hi: ["कंकाव", "उत्तल", "समतल", "कोई नहीं"],
-    answer_en: "Convex",
-    answer_hi: "उत्तल",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 14,
-    question_en: "What is the main function of the CPU in a computer?",
-    question_hi: "कंप्यूटर में सीपीयू का मुख्य कार्य क्या है?",
-    options_en: ["Store data", "Process data", "Print data", "Display data"],
-    options_hi: ["डेटा संग्रहित करें", "डेटा संसाधित करें", "डेटा प्रिंट करें", "डेटा प्रदर्शित करें"],
-    answer_en: "Process data",
-    answer_hi: "डेटा संसाधित करें",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 15,
-    question_en: "Which part of the plant conducts photosynthesis?",
-    question_hi: "पौधे का कौन सा भाग प्रकाश संश्लेषण करता है?",
-    options_en: ["Root", "Stem", "Leaf", "Flower"],
-    options_hi: ["मूल", "तना", "पत्ता", "फूल"],
-    answer_en: "Leaf",
-    answer_hi: "पत्ता",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 16,
-    question_en: "How many bones are there in an adult human body?",
-    question_hi: "वयस्क मानव शरीर में कितनी हड्डियाँ होती हैं?",
-    options_en: ["206", "208", "201", "212"],
-    options_hi: ["206", "208", "201", "212"],
-    answer_en: "206",
-    answer_hi: "206",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 17,
-    question_en: "Which vitamin is produced in the human body when exposed to sunlight?",
-    question_hi: "कौन सा विटामिन मानव शरीर में सूर्य की रोशनी से उत्पन्न होता है?",
-    options_en: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
-    options_hi: ["विटामिन A", "विटामिन B", "विटामिन C", "विटामिन D"],
-    answer_en: "Vitamin D",
-    answer_hi: "विटामिन D",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 18,
-    question_en: "Which planet is closest to the Sun?",
-    question_hi: "कौन सा ग्रह सूर्य के सबसे पास है?",
-    options_en: ["Venus", "Earth", "Mercury", "Mars"],
-    options_hi: ["शुक्र", "पृथ्वी", "बुध", "मंगल"],
-    answer_en: "Mercury",
-    answer_hi: "बुध",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 19,
-    question_en: "Who invented the light bulb?",
-    question_hi: "विद्युत बल्ब का आविष्कार किसने किया था?",
-    options_en: ["Alexander Graham Bell", "Isaac Newton", "Thomas Edison", "Nikola Tesla"],
-    options_hi: ["अलेक्जेंडर ग्राहम बेल", "आइज़क न्यूटन", "थॉमस एडीसन", "निकोला टेस्ला"],
-    answer_en: "Thomas Edison",
-    answer_hi: "थॉमस एडीसन",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 20,
-    question_en: "Which gas is used in fire extinguishers?",
-    question_hi: "आग बुझाने वाले यंत्रों में कौन सा गैस उपयोग किया जाता है?",
-    options_en: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-    options_hi: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "हाइड्रोजन"],
-    answer_en: "Carbon dioxide",
-    answer_hi: "कार्बन डाइऑक्साइड",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 21,
-    question_en: "Which one is a renewable source of energy?",
-    question_hi: "इनमें से कौन सा ऊर्जा का नवीकरणीय स्रोत है?",
-    options_en: ["Coal", "Petroleum", "Solar energy", "Natural gas"],
-    options_hi: ["कोयला", "पेट्रोलियम", "सौर ऊर्जा", "प्राकृतिक गैस"],
-    answer_en: "Solar energy",
-    answer_hi: "सौर ऊर्जा",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 22,
-    question_en: "The sun rises in which direction?",
-    question_hi: "सूर्य किस दिशा में उगता है?",
-    options_en: ["North", "South", "East", "West"],
-    options_hi: ["उत्तर", "दक्षिण", "पूर्व", "पश्चिम"],
-    answer_en: "East",
-    answer_hi: "पूर्व",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 23,
-    question_en: "What does CPU stand for?",
-    question_hi: "CPU का क्या मतलब है?",
-    options_en: ["Central Power Unit", "Central Processing Unit", "Control Processing Unit", "Computer Power Unit"],
-    options_hi: ["सेंट्रल पावर यूनिट", "सेंट्रल प्रोसेसिंग यूनिट", "कंट्रोल प्रोसेसिंग यूनिट", "कंप्यूटर पावर यूनिट"],
-    answer_en: "Central Processing Unit",
-    answer_hi: "सेंट्रल प्रोसेसिंग यूनिट",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 24,
-    question_en: "Which of the following is not a programming language?",
-    question_hi: "निम्नलिखित में से कौन सी प्रोग्रामिंग भाषा नहीं है?",
-    options_en: ["Python", "HTML", "Java", "C++"],
-    options_hi: ["पाइथन", "HTML", "जावा", "C++"],
-    answer_en: "HTML",
-    answer_hi: "HTML",
-    attempted: false,
-    selected: ""
-},
-{
-    num: 25,
-    question_en: "What is the value of Pi (approximately)?",
-    question_hi: "पाई का मान (लगभग) क्या है?",
-    options_en: ["2.14", "3.14", "4.13", "1.34"],
-    options_hi: ["2.14", "3.14", "4.13", "1.34"],
-    answer_en: "3.14",
-    answer_hi: "3.14",
-    attempted: false,
-    selected: ""
-    },
-    
   {
-    num: 26,
-    question_en: "Which of the following is an example of a public good?",
-    question_hi: "निम्नलिखित में से कौन एक सार्वजनिक वस्तु का उदाहरण है?",
-    options_en: ["Electricity", "National defense", "Mobile service", "Food grains"],
-    options_hi: ["बिजली", "राष्ट्रीय रक्षा", "मोबाइल सेवा", "अनाज"],
-    answer_en: "National defense",
-    answer_hi: "राष्ट्रीय रक्षा",
-    attempted: false,
-    selected: ""
+    "num": 2,
+    "question_en": "What is the permissible maximum axle load for Broad Gauge (BG) tracks in India?",
+    "question_hi": "भारत में ब्रॉड गेज (BG) ट्रैक के लिए अनुमेय अधिकतम एक्सल लोड क्या है?",
+    "options_en": ["20.32 tonnes", "22.82 tonnes", "25.00 tonnes", "28.00 tonnes"],
+    "options_hi": ["20.32 टन", "22.82 टन", "25.00 टन", "28.00 टन"],
+    "answer_en": "22.82 tonnes",
+    "answer_hi": "22.82 टन",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 27,
-    question_en: "What does fiscal deficit mean?",
-    question_hi: "राजकोषीय घाटे का क्या अर्थ है?",
-    options_en: [
-      "Total expenditure exceeds total revenue",
-      "Total income exceeds total expenditure",
-      "Revenue is equal to expenditure",
-      "Only revenue deficit exists"
-    ],
-    options_hi: [
-      "कुल व्यय कुल राजस्व से अधिक होता है",
-      "कुल आय कुल व्यय से अधिक होती है",
-      "राजस्व और व्यय समान होते हैं",
-      "केवल राजस्व घाटा होता है"
-    ],
-    answer_en: "Total expenditure exceeds total revenue",
-    answer_hi: "कुल व्यय कुल राजस्व से अधिक होता है",
-    attempted: false,
-    selected: ""
+    "num": 3,
+    "question_en": "Which railway zone has the highest route kilometers in India?",
+    "question_hi": "भारत में किस रेलवे जोन के पास सबसे अधिक रूट किलोमीटर है?",
+    "options_en": ["Northern Railway", "Western Railway", "Southern Railway", "Central Railway"],
+    "options_hi": ["उत्तरी रेलवे", "पश्चिम रेलवे", "दक्षिण रेलवे", "मध्य रेलवे"],
+    "answer_en": "Northern Railway",
+    "answer_hi": "उत्तरी रेलवे",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 28,
-    question_en: "Which among the following is considered the most liquid asset?",
-    question_hi: "निम्नलिखित में से किसे सबसे तरल संपत्ति माना जाता है?",
-    options_en: ["Real estate", "Gold", "Cash", "Stock"],
-    options_hi: ["अचल संपत्ति", "सोना", "नकद", "शेयर"],
-    answer_en: "Cash",
-    answer_hi: "नकद",
-    attempted: false,
-    selected: ""
+    "num": 4,
+    "question_en": "What is the purpose of a 'Fish Plate' in railway track?",
+    "question_hi": "रेलवे ट्रैक में 'फिश प्लेट' का उद्देश्य क्या है?",
+    "options_en": ["To join two rails", "To provide insulation", "To measure rail temperature", "To connect track to sleepers"],
+    "options_hi": ["दो रेलों को जोड़ना", "इन्सुलेशन प्रदान करना", "रेल तापमान मापना", "ट्रैक को स्लीपर से जोड़ना"],
+    "answer_en": "To join two rails",
+    "answer_hi": "दो रेलों को जोड़ना",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 29,
-    question_en: "Which type of unemployment occurs due to mismatch of skills?",
-    question_hi: "कौशल की असमानता के कारण कौन सी बेरोज़गारी होती है?",
-    options_en: ["Structural", "Frictional", "Seasonal", "Cyclical"],
-    options_hi: ["संरचनात्मक", "घर्षणात्मक", "मौसमी", "चक्रीय"],
-    answer_en: "Structural",
-    answer_hi: "संरचनात्मक",
-    attempted: false,
-    selected: ""
+    "num": 5,
+    "question_en": "What is the standard length of a Broad Gauge (BG) rail in India?",
+    "question_hi": "भारत में ब्रॉड गेज (BG) रेल की मानक लंबाई क्या है?",
+    "options_en": ["12 meters", "13 meters", "18 meters", "24 meters"],
+    "options_hi": ["12 मीटर", "13 मीटर", "18 मीटर", "24 मीटर"],
+    "answer_en": "13 meters",
+    "answer_hi": "13 मीटर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 30,
-    question_en: "Which of the following is not included in the calculation of GDP?",
-    question_hi: "निम्नलिखित में से कौन GDP की गणना में शामिल नहीं होता?",
-    options_en: ["Value of production", "Illegal activities", "Government spending", "Exports"],
-    options_hi: ["उत्पादन का मूल्य", "अवैध गतिविधियाँ", "सरकारी खर्च", "निर्यात"],
-    answer_en: "Illegal activities",
-    answer_hi: "अवैध गतिविधियाँ",
-    attempted: false,
-    selected: ""
+    "num": 6,
+    "question_en": "Which signaling system uses 'Absolute Block System' in Indian Railways?",
+    "question_hi": "भारतीय रेलवे में 'एब्सोल्यूट ब्लॉक सिस्टम' किस सिग्नलिंग प्रणाली में प्रयोग होता है?",
+    "options_en": ["Automatic Block System", "Token Block System", "Track Circuiting", "Centralized Traffic Control"],
+    "options_hi": ["ऑटोमैटिक ब्लॉक सिस्टम", "टोकन ब्लॉक सिस्टम", "ट्रैक सर्किटिंग", "केंद्रीकृत यातायात नियंत्रण"],
+    "answer_en": "Token Block System",
+    "answer_hi": "टोकन ब्लॉक सिस्टम",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 31,
-    question_en: "What is meant by ‘depreciation’ in economics?",
-    question_hi: "अर्थशास्त्र में ‘मूल्यह्रास’ का क्या अर्थ है?",
-    options_en: [
-      "Decrease in value of currency",
-      "Decrease in value of capital assets",
-      "Increase in production",
-      "Decrease in GDP"
-    ],
-    options_hi: [
-      "मुद्रा के मूल्य में कमी",
-      "पूंजी संपत्तियों के मूल्य में कमी",
-      "उत्पादन में वृद्धि",
-      "GDP में कमी"
-    ],
-    answer_en: "Decrease in value of capital assets",
-    answer_hi: "पूंजी संपत्तियों के मूल्य में कमी",
-    attempted: false,
-    selected: ""
-  },
-  
-  {
-    num: 32,
-    question_en: "Which institution releases the Consumer Price Index in India?",
-    question_hi: "भारत में उपभोक्ता मूल्य सूचकांक कौन जारी करता है?",
-    options_en: ["RBI", "Finance Ministry", "CSO", "Labour Bureau"],
-    options_hi: ["RBI", "वित्त मंत्रालय", "सीएसओ", "श्रम ब्यूरो"],
-    answer_en: "Labour Bureau",
-    answer_hi: "श्रम ब्यूरो",
-    attempted: false,
-    selected: ""
+    "num": 7,
+    "question_en": "What is the function of a 'Bogie' in a railway coach?",
+    "question_hi": "रेलवे कोच में 'बोगी' का कार्य क्या है?",
+    "options_en": ["To provide seating", "To connect coaches", "To support wheels and suspension", "To control braking"],
+    "options_hi": ["बैठने की व्यवस्था प्रदान करना", "कोच को जोड़ना", "पहियों और सस्पेंशन को सहारा देना", "ब्रेकिंग नियंत्रित करना"],
+    "answer_en": "To support wheels and suspension",
+    "answer_hi": "पहियों और सस्पेंशन को सहारा देना",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 33,
-    question_en: "Monopoly is a market structure characterized by:",
-    question_hi: "एकाधिकार वह बाजार संरचना है जिसमें होता है:",
-    options_en: ["Many sellers", "One seller", "Few buyers", "Free entry and exit"],
-    options_hi: ["कई विक्रेता", "एक विक्रेता", "कुछ खरीदार", "मुक्त प्रवेश और निकास"],
-    answer_en: "One seller",
-    answer_hi: "एक विक्रेता",
-    attempted: false,
-    selected: ""
+    "num": 8,
+    "question_en": "Which material is commonly used for railway sleepers in modern tracks?",
+    "question_hi": "आधुनिक ट्रैक में रेलवे स्लीपर के लिए आमतौर पर किस सामग्री का उपयोग किया जाता है?",
+    "options_en": ["Wooden", "Cast Iron", "Steel", "Concrete"],
+    "options_hi": ["लकड़ी", "कास्ट आयरन", "स्टील", "कंक्रीट"],
+    "answer_en": "Concrete",
+    "answer_hi": "कंक्रीट",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 34,
-    question_en: "Which sector has the largest contribution to India’s GDP?",
-    question_hi: "भारत की GDP में सबसे अधिक योगदान किस क्षेत्र का है?",
-    options_en: ["Agriculture", "Industry", "Services", "Mining"],
-    options_hi: ["कृषि", "उद्योग", "सेवाएं", "खनन"],
-    answer_en: "Services",
-    answer_hi: "सेवाएं",
-    attempted: false,
-    selected: ""
+    "num": 9,
+    "question_en": "What does 'PWI' stand for in Indian Railways?",
+    "question_hi": "भारतीय रेलवे में 'PWI' का क्या अर्थ है?",
+    "options_en": ["Permanent Way Inspector", "Power and Water Inspector", "Public Works Inspector", "Passenger Welfare Inspector"],
+    "options_hi": ["परमानेंट वे इंस्पेक्टर", "पावर और वाटर इंस्पेक्टर", "पब्लिक वर्क्स इंस्पेक्टर", "यात्री कल्याण इंस्पेक्टर"],
+    "answer_en": "Permanent Way Inspector",
+    "answer_hi": "परमानेंट वे इंस्पेक्टर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 35,
-    question_en: "Which one of the following is an example of a regressive tax?",
-    question_hi: "निम्नलिखित में से कौन प्रतिगामी कर का उदाहरण है?",
-    options_en: ["Income tax", "Property tax", "Sales tax", "Corporate tax"],
-    options_hi: ["आयकर", "संपत्ति कर", "विक्री कर", "कॉरपोरेट कर"],
-    answer_en: "Sales tax",
-    answer_hi: "विक्री कर",
-    attempted: false,
-    selected: ""
+    "num": 10,
+    "question_en": "What is the gauge of 'Konkan Railway'?",
+    "question_hi": "'कोंकण रेलवे' का गेज क्या है?",
+    "options_en": ["Broad Gauge (1676 mm)", "Metre Gauge (1000 mm)", "Narrow Gauge (762 mm)", "Standard Gauge (1435 mm)"],
+    "options_hi": ["ब्रॉड गेज (1676 मिमी)", "मीटर गेज (1000 मिमी)", "नैरो गेज (762 मिमी)", "स्टैंडर्ड गेज (1435 मिमी)"],
+    "answer_en": "Broad Gauge (1676 mm)",
+    "answer_hi": "ब्रॉड गेज (1676 मिमी)",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 36,
-    question_en: "Which of the following is used to control inflation?",
-    question_hi: "मुद्रास्फीति को नियंत्रित करने के लिए निम्न में से क्या उपयोग किया जाता है?",
-    options_en: ["Lowering interest rates", "Reducing money supply", "Increasing subsidies", "Increasing public spending"],
-    options_hi: ["ब्याज दरों को कम करना", "मुद्रा आपूर्ति को घटाना", "सब्सिडी बढ़ाना", "सरकारी खर्च बढ़ाना"],
-    answer_en: "Reducing money supply",
-    answer_hi: "मुद्रा आपूर्ति को घटाना",
-    attempted: false,
-    selected: ""
+    "num": 11,
+    "question_en": "Which committee recommended the formation of Railway Board?",
+    "question_hi": "किस समिति ने रेलवे बोर्ड के गठन की सिफारिश की थी?",
+    "options_en": ["Acworth Committee", "Kerr Committee", "Rao Committee", "Mallya Committee"],
+    "options_hi": ["एकवर्थ समिति", "कर समिति", "राव समिति", "मल्ल्या समिति"],
+    "answer_en": "Acworth Committee",
+    "answer_hi": "एकवर्थ समिति",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 37,
-    question_en: "Dumping in economics refers to:",
-    question_hi: "अर्थशास्त्र में डंपिंग का तात्पर्य है:",
-    options_en: ["Importing low-quality goods", "Exporting goods at a price lower than home market", "Illegal trade", "Selling fake goods"],
-    options_hi: ["निम्न गुणवत्ता वाली वस्तुओं का आयात", "वस्तुओं का निर्यात घरेलू बाजार से कम कीमत पर", "अवैध व्यापार", "नकली वस्तुओं की बिक्री"],
-    answer_en: "Exporting goods at a price lower than home market",
-    answer_hi: "वस्तुओं का निर्यात घरेलू बाजार से कम कीमत पर",
-    attempted: false,
-    selected: ""
+    "num": 12,
+    "question_en": "What is the minimum radius of curvature for Broad Gauge main line?",
+    "question_hi": "ब्रॉड गेज मुख्य लाइन के लिए न्यूनतम वक्रता त्रिज्या क्या है?",
+    "options_en": ["175 meters", "218 meters", "300 meters", "400 meters"],
+    "options_hi": ["175 मीटर", "218 मीटर", "300 मीटर", "400 मीटर"],
+    "answer_en": "218 meters",
+    "answer_hi": "218 मीटर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 38,
-    question_en: "Which is not a function of the Reserve Bank of India?",
-    question_hi: "निम्नलिखित में से कौन भारतीय रिजर्व बैंक का कार्य नहीं है?",
-    options_en: ["Monetary policy implementation", "Issuing currency", "Lending to public", "Regulating banks"],
-    options_hi: ["मौद्रिक नीति लागू करना", "मुद्रा जारी करना", "जनता को ऋण देना", "बैंकों को विनियमित करना"],
-    answer_en: "Lending to public",
-    answer_hi: "जनता को ऋण देना",
-    attempted: false,
-    selected: ""
+    "num": 13,
+    "question_en": "Which type of bearing is commonly used in modern railway coaches?",
+    "question_hi": "आधुनिक रेलवे कोच में आमतौर पर किस प्रकार का बेयरिंग प्रयोग होता है?",
+    "options_en": ["Plain Bearing", "Roller Bearing", "Ball Bearing", "Tapered Bearing"],
+    "options_hi": ["प्लेन बेयरिंग", "रोलर बेयरिंग", "बॉल बेयरिंग", "टेपर्ड बेयरिंग"],
+    "answer_en": "Roller Bearing",
+    "answer_hi": "रोलर बेयरिंग",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 39,
-    question_en: "Which Indian economist is associated with the Green Revolution?",
-    question_hi: "ग्रीन रेवोल्यूशन से संबंधित भारतीय अर्थशास्त्री कौन हैं?",
-    options_en: ["Amartya Sen", "C. Rangarajan", "M.S. Swaminathan", "Montek Singh Ahluwalia"],
-    options_hi: ["अमर्त्य सेन", "सी. रंगराजन", "एम. एस. स्वामीनाथन", "मोंटेक सिंह अहलूवालिया"],
-    answer_en: "M.S. Swaminathan",
-    answer_hi: "एम. एस. स्वामीनाथन",
-    attempted: false,
-    selected: ""
+    "num": 14,
+    "question_en": "What is the purpose of 'Check Rails' in railway track?",
+    "question_hi": "रेलवे ट्रैक में 'चेक रेल्स' का उद्देश्य क्या है?",
+    "options_en": ["To prevent derailment", "To increase speed", "To reduce noise", "To measure wear"],
+    "options_hi": ["पटरी से उतरने को रोकना", "गति बढ़ाना", "शोर कम करना", "घिसाव मापना"],
+    "answer_en": "To prevent derailment",
+    "answer_hi": "पटरी से उतरने को रोकना",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 40,
-    question_en: "Which term is used for the buying and selling of government securities in the open market?",
-    question_hi: "सरकारी प्रतिभूतियों की खुले बाजार में खरीद और बिक्री को क्या कहते हैं?",
-    options_en: ["Bank Rate", "Open Market Operations", "Repo Rate", "CRR"],
-    options_hi: ["बैंक दर", "ओपन मार्केट ऑपरेशंस", "रेपो रेट", "सीआरआर"],
-    answer_en: "Open Market Operations",
-    answer_hi: "ओपन मार्केट ऑपरेशंस",
-    attempted: false,
-    selected: ""
+    "num": 15,
+    "question_en": "Which signaling system is used in Delhi Metro?",
+    "question_hi": "दिल्ली मेट्रो में किस सिग्नलिंग सिस्टम का उपयोग किया जाता है?",
+    "options_en": ["Absolute Block", "Automatic Train Control (ATC)", "Token System", "Manual Block"],
+    "options_hi": ["एब्सोल्यूट ब्लॉक", "ऑटोमैटिक ट्रेन कंट्रोल (एटीसी)", "टोकन सिस्टम", "मैन्युअल ब्लॉक"],
+    "answer_en": "Automatic Train Control (ATC)",
+    "answer_hi": "ऑटोमैटिक ट्रेन कंट्रोल (एटीसी)",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 41,
-    question_en: "The term 'Laissez-faire' is associated with which type of economy?",
-    question_hi: "'लेसे फेयर' शब्द किस प्रकार की अर्थव्यवस्था से जुड़ा है?",
-    options_en: ["Socialist", "Capitalist", "Mixed", "Command"],
-    options_hi: ["समाजवादी", "पूंजीवादी", "मिश्रित", "आदेश आधारित"],
-    answer_en: "Capitalist",
-    answer_hi: "पूंजीवादी",
-    attempted: false,
-    selected: ""
+    "num": 16,
+    "question_en": "What is 'Rail Fracture' commonly caused by?",
+    "question_hi": "'रेल फ्रैक्चर' आमतौर पर किसके कारण होता है?",
+    "options_en": ["Overloading", "Thermal Stresses", "Corrosion", "All of the above"],
+    "options_hi": ["अधिभार", "थर्मल तनाव", "जंग", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 42,
-    question_en: "Which is the largest component of the money supply in India?",
-    question_hi: "भारत में मुद्रा आपूर्ति का सबसे बड़ा घटक कौन सा है?",
-    options_en: ["Currency with public", "Demand deposits with banks", "Time deposits", "RBI reserves"],
-    options_hi: ["जनता के पास नकद", "बैंकों में मांग जमा", "समय जमा", "RBI का भंडार"],
-    answer_en: "Time deposits",
-    answer_hi: "समय जमा",
-    attempted: false,
-    selected: ""
+    "num": 17,
+    "question_en": "Which test is conducted to determine rail steel quality?",
+    "question_hi": "रेल स्टील की गुणवत्ता निर्धारित करने के लिए कौन सा परीक्षण किया जाता है?",
+    "options_en": ["Brinell Hardness Test", "Tensile Test", "Charpy Impact Test", "All of these"],
+    "options_hi": ["ब्रिनेल हार्डनेस टेस्ट", "टेंसाइल टेस्ट", "चार्पी इम्पैक्ट टेस्ट", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 43,
-    question_en: "Which of the following is not an objective of economic planning?",
-    question_hi: "निम्नलिखित में से कौन आर्थिक योजना का उद्देश्य नहीं है?",
-    options_en: ["Increase in national income", "Full employment", "Price stability", "Military expansion"],
-    options_hi: ["राष्ट्रीय आय में वृद्धि", "पूर्ण रोजगार", "मूल्य स्थिरता", "सैन्य विस्तार"],
-    answer_en: "Military expansion",
-    answer_hi: "सैन्य विस्तार",
-    attempted: false,
-    selected: ""
+    "num": 18,
+    "question_en": "What is the maximum permissible speed on Broad Gauge in India?",
+    "question_hi": "भारत में ब्रॉड गेज पर अधिकतम अनुमेय गति क्या है?",
+    "options_en": ["130 km/h", "150 km/h", "160 km/h", "180 km/h"],
+    "options_hi": ["130 किमी/घंटा", "150 किमी/घंटा", "160 किमी/घंटा", "180 किमी/घंटा"],
+    "answer_en": "160 km/h",
+    "answer_hi": "160 किमी/घंटा",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 44,
-    question_en: "Which term describes a period of negative economic growth?",
-    question_hi: "नकारात्मक आर्थिक विकास की अवधि को क्या कहा जाता है?",
-    options_en: ["Boom", "Recession", "Inflation", "Recovery"],
-    options_hi: ["बूम", "मंदी", "मुद्रास्फीति", "पुनर्प्राप्ति"],
-    answer_en: "Recession",
-    answer_hi: "मंदी",
-    attempted: false,
-    selected: ""
+    "num": 19,
+    "question_en": "Which system provides continuous track-to-train communication?",
+    "question_hi": "कौन सी प्रणाली निरंतर ट्रैक-से-ट्रेन संचार प्रदान करती है?",
+    "options_en": ["GPS", "RFID", "GSM-R", "Wi-Fi"],
+    "options_hi": ["जीपीएस", "आरएफआईडी", "जीएसएम-आर", "वाई-फाई"],
+    "answer_en": "GSM-R",
+    "answer_hi": "जीएसएम-आर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 45,
-    question_en: "When was the Goods and Services Tax (GST) implemented in India?",
-    question_hi: "भारत में वस्तु एवं सेवा कर (GST) कब लागू किया गया?",
-    options_en: ["1st July 2016", "1st July 2017", "1st April 2016", "1st January 2018"],
-    options_hi: ["1 जुलाई 2016", "1 जुलाई 2017", "1 अप्रैल 2016", "1 जनवरी 2018"],
-    answer_en: "1st July 2017",
-    answer_hi: "1 जुलाई 2017",
-    attempted: false,
-    selected: ""
-  },
-  
-  {
-    num: 46,
-    question_en: "What is the full form of FDI?",
-    question_hi: "FDI का पूरा नाम क्या है?",
-    options_en: [
-      "Foreign Deposit Investment",
-      "Foreign Direct Investment",
-      "Foreign Demand Investment",
-      "Foreign Development Investment"
-    ],
-    options_hi: [
-      "फॉरेन डिपॉजिट इन्वेस्टमेंट",
-      "फॉरेन डायरेक्ट इन्वेस्टमेंट",
-      "फॉरेन डिमांड इन्वेस्टमेंट",
-      "फॉरेन डेवलपमेंट इन्वेस्टमेंट"
-    ],
-    answer_en: "Foreign Direct Investment",
-    answer_hi: "फॉरेन डायरेक्ट इन्वेस्टमेंट",
-    attempted: false,
-    selected: ""
+    "num": 20,
+    "question_en": "What does 'LHB' stand for in railway coaches?",
+    "question_hi": "रेलवे कोच में 'LHB' का क्या अर्थ है?",
+    "options_en": ["Light High-speed Bogie", "Linke Hofmann Busch", "Low Height Body", "Lightweight Hybrid Body"],
+    "options_hi": ["लाइट हाई-स्पीड बोगी", "लिंके हॉफमैन बुश", "लो हाइट बॉडी", "लाइटवेट हाइब्रिड बॉडी"],
+    "answer_en": "Linke Hofmann Busch",
+    "answer_hi": "लिंके हॉफमैन बुश",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 47,
-    question_en: "Which indicator shows the average income of a country?",
-    question_hi: "देश की औसत आय को कौन सा सूचकांक दर्शाता है?",
-    options_en: ["GDP", "GNP", "Per capita income", "Net National Product"],
-    options_hi: ["GDP", "GNP", "प्रति व्यक्ति आय", "शुद्ध राष्ट्रीय उत्पाद"],
-    answer_en: "Per capita income",
-    answer_hi: "प्रति व्यक्ति आय",
-    attempted: false,
-    selected: ""
+    "num": 21,
+    "question_en": "Which braking system is used in modern trains?",
+    "question_hi": "आधुनिक ट्रेनों में किस ब्रेकिंग सिस्टम का उपयोग किया जाता है?",
+    "options_en": ["Vacuum Brake", "Air Brake", "Electro-pneumatic Brake", "Regenerative Brake"],
+    "options_hi": ["वैक्यूम ब्रेक", "एयर ब्रेक", "इलेक्ट्रो-न्यूमैटिक ब्रेक", "रीजेनरेटिव ब्रेक"],
+    "answer_en": "Electro-pneumatic Brake",
+    "answer_hi": "इलेक्ट्रो-न्यूमैटिक ब्रेक",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 48,
-    question_en: "In economics, utility means:",
-    question_hi: "अर्थशास्त्र में उपयोगिता का अर्थ है:",
-    options_en: ["Usefulness", "Pleasure or satisfaction", "Profit", "Value in exchange"],
-    options_hi: ["उपयोगिता", "आनंद या संतोष", "लाभ", "विनिमय मूल्य"],
-    answer_en: "Pleasure or satisfaction",
-    answer_hi: "आनंद या संतोष",
-    attempted: false,
-    selected: ""
+    "num": 22,
+    "question_en": "What is the purpose of 'Ballast' in railway track?",
+    "question_hi": "रेलवे ट्रैक में 'बैलास्ट' का उद्देश्य क्या है?",
+    "options_en": ["Load distribution", "Drainage", "Track stability", "All of these"],
+    "options_hi": ["लोड वितरण", "जल निकासी", "ट्रैक स्थिरता", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 49,
-    question_en: "Which Five-Year Plan in India was based on the 'Gadgil formula'?",
-    question_hi: "भारत में किस पंचवर्षीय योजना में 'गाडगिल फॉर्मूला' अपनाया गया था?",
-    options_en: ["Second", "Third", "Fourth", "Fifth"],
-    options_hi: ["द्वितीय", "तृतीय", "चतुर्थ", "पंचम"],
-    answer_en: "Fourth",
-    answer_hi: "चतुर्थ",
-    attempted: false,
-    selected: ""
+    "num": 23,
+    "question_en": "Which organization sets technical standards for Indian Railways?",
+    "question_hi": "भारतीय रेलवे के लिए तकनीकी मानक कौन सा संगठन निर्धारित करता है?",
+    "options_en": ["RDSO", "Railway Board", "CRIS", "IRCTC"],
+    "options_hi": ["आरडीएसओ", "रेलवे बोर्ड", "क्रिस", "आईआरसीटीसी"],
+    "answer_en": "RDSO",
+    "answer_hi": "आरडीएसओ",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 50,
-    question_en: "Which bank is known as the banker’s bank?",
-    question_hi: "कौन सा बैंक बैंकों का बैंक कहलाता है?",
-    options_en: ["SBI", "RBI", "ICICI", "PNB"],
-    options_hi: ["एसबीआई", "आरबीआई", "आईसीआईसीआई", "पीएनबी"],
-    answer_en: "RBI",
-    answer_hi: "आरबीआई",
-    attempted: false,
-    selected: ""
-  }
-];
+    "num": 24,
+    "question_en": "What is 'Rail Corrugation'?",
+    "question_hi": "'रेल कॉर्रुगेशन' क्या है?",
+    "options_en": ["Rail wear pattern", "Rail manufacturing defect", "Rail alignment error", "Rail welding issue"],
+    "options_hi": ["रेल वियर पैटर्न", "रेल निर्माण दोष", "रेल संरेखण त्रुटि", "रेल वेल्डिंग समस्या"],
+    "answer_en": "Rail wear pattern",
+    "answer_hi": "रेल वियर पैटर्न",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 25,
+    "question_en": "Which welding method is used for rail joints?",
+    "question_hi": "रेल जोड़ों के लिए किस वेल्डिंग विधि का उपयोग किया जाता है?",
+    "options_en": ["Arc Welding", "Thermit Welding", "Gas Welding", "Resistance Welding"],
+    "options_hi": ["आर्क वेल्डिंग", "थर्मिट वेल्डिंग", "गैस वेल्डिंग", "प्रतिरोध वेल्डिंग"],
+    "answer_en": "Thermit Welding",
+    "answer_hi": "थर्मिट वेल्डिंग",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 26,
+    "question_en": "What is 'Track Circuiting'?",
+    "question_hi": "'ट्रैक सर्किटिंग' क्या है?",
+    "options_en": ["Method to detect train presence", "Track electrification", "Track maintenance schedule", "Signal wiring system"],
+    "options_hi": ["ट्रेन उपस्थिति का पता लगाने की विधि", "ट्रैक विद्युतीकरण", "ट्रैक रखरखाव अनुसूची", "सिग्नल वायरिंग सिस्टम"],
+    "answer_en": "Method to detect train presence",
+    "answer_hi": "ट्रेन उपस्थिति का पता लगाने की विधि",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 27,
+    "question_en": "Which type of rail section is used in heavy haul tracks?",
+    "question_hi": "भारी ढुलाई ट्रैक में किस प्रकार के रेल सेक्शन का उपयोग किया जाता है?",
+    "options_en": ["Flat-footed", "Bull-headed", "Double-headed", "Grooved"],
+    "options_hi": ["फ्लैट-फुटेड", "बुल-हेडेड", "डबल-हेडेड", "ग्रूव्ड"],
+    "answer_en": "Flat-footed",
+    "answer_hi": "फ्लैट-फुटेड",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 28,
+    "question_en": "What is the purpose of 'Switch and Crossing'?",
+    "question_hi": "'स्विच और क्रॉसिंग' का उद्देश्य क्या है?",
+    "options_en": ["To change tracks", "To increase speed", "To reduce noise", "To measure wear"],
+    "options_hi": ["ट्रैक बदलना", "गति बढ़ाना", "शोर कम करना", "घिसाव मापना"],
+    "answer_en": "To change tracks",
+    "answer_hi": "ट्रैक बदलना",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 29,
+    "question_en": "Which maintenance activity is known as 'Tamping'?",
+    "question_hi": "किस रखरखाव गतिविधि को 'टैम्पिंग' कहा जाता है?",
+    "options_en": ["Rail grinding", "Track alignment", "Ballast compaction", "Sleeper replacement"],
+    "options_hi": ["रेल ग्राइंडिंग", "ट्रैक संरेखण", "बैलास्ट संघनन", "स्लीपर प्रतिस्थापन"],
+    "answer_en": "Ballast compaction",
+    "answer_hi": "बैलास्ट संघनन",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 30,
+    "question_en": "What does 'UIC' stand for in railway terminology?",
+    "question_hi": "रेलवे शब्दावली में 'UIC' का क्या अर्थ है?",
+    "options_en": ["Universal International Committee", "Union Internationale des Chemins de fer", "United International Commission", "Universal Interface Control"],
+    "options_hi": ["यूनिवर्सल इंटरनेशनल कमेटी", "यूनियन इंटरनेशनेल डेस शेमिन डे फेर", "यूनाइटेड इंटरनेशनल कमीशन", "यूनिवर्सल इंटरफेस कंट्रोल"],
+    "answer_en": "Union Internationale des Chemins de fer",
+    "answer_hi": "यूनियन इंटरनेशनेल डेस शेमिन डे फेर",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 31,
+    "question_en": "Which railway project is India's first high-speed rail corridor?",
+    "question_hi": "भारत की पहली हाई-स्पीड रेल कॉरिडोर कौन सी रेलवे परियोजना है?",
+    "options_en": ["Delhi-Mumbai", "Mumbai-Ahmedabad", "Chennai-Bangalore", "Delhi-Kolkata"],
+    "options_hi": ["दिल्ली-मुंबई", "मुंबई-अहमदाबाद", "चेन्नई-बैंगलोर", "दिल्ली-कोलकाता"],
+    "answer_en": "Mumbai-Ahmedabad",
+    "answer_hi": "मुंबई-अहमदाबाद",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 32,
+    "question_en": "What is 'Creep' in railway track?",
+    "question_hi": "रेलवे ट्रैक में 'क्रीप' क्या है?",
+    "options_en": ["Longitudinal movement of rail", "Vertical settlement", "Lateral displacement", "Thermal expansion"],
+    "options_hi": ["रेल की अनुदैर्ध्य गति", "ऊर्ध्वाधर निपटान", "पार्श्व विस्थापन", "थर्मल विस्तार"],
+    "answer_en": "Longitudinal movement of rail",
+    "answer_hi": "रेल की अनुदैर्ध्य गति",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 33,
+    "question_en": "Which test determines rail steel fatigue strength?",
+    "question_hi": "कौन सा परीक्षण रेल स्टील की फटीग स्ट्रेंथ निर्धारित करता है?",
+    "options_en": ["Fatigue Test", "Hardness Test", "Impact Test", "Tensile Test"],
+    "options_hi": ["फटीग टेस्ट", "हार्डनेस टेस्ट", "इम्पैक्ट टेस्ट", "टेंसाइल टेस्ट"],
+    "answer_en": "Fatigue Test",
+    "answer_hi": "फटीग टेस्ट",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 34,
+    "question_en": "What is the function of 'Rail Fastening'?",
+    "question_hi": "'रेल फास्टनिंग' का कार्य क्या है?",
+    "options_en": ["To fix rail to sleeper", "To join two rails", "To align track", "To measure gauge"],
+    "options_hi": ["रेल को स्लीपर से जोड़ना", "दो रेलों को जोड़ना", "ट्रैक संरेखित करना", "गेज मापना"],
+    "answer_en": "To fix rail to sleeper",
+    "answer_hi": "रेल को स्लीपर से जोड़ना",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 35,
+    "question_en": "Which organization publishes 'Indian Railway Schedule'?",
+    "question_hi": "'इंडियन रेलवे शेड्यूल' कौन सा संगठन प्रकाशित करता है?",
+    "options_en": ["CRIS", "IRCTC", "Railway Board", "RDSO"],
+    "options_hi": ["क्रिस", "आईआरसीटीसी", "रेलवे बोर्ड", "आरडीएसओ"],
+    "answer_en": "CRIS",
+    "answer_hi": "क्रिस",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 36,
+    "question_en": "What is 'Rail Flaw Detection'?",
+    "question_hi": "'रेल फ्लॉ डिटेक्शन' क्या है?",
+    "options_en": ["Finding defects in rails", "Measuring rail wear", "Checking alignment", "Testing rail steel"],
+    "options_hi": ["रेल में दोष ढूंढना", "रेल वियर मापना", "संरेखण जांचना", "रेल स्टील परीक्षण"],
+    "answer_en": "Finding defects in rails",
+    "answer_hi": "रेल में दोष ढूंढना",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 37,
+    "question_en": "Which type of turnout is used for high-speed routes?",
+    "question_hi": "उच्च गति मार्गों के लिए किस प्रकार का टर्नआउट प्रयोग किया जाता है?",
+    "options_en": ["Curved turnout", "Symmetrical turnout", "Tongue and crossing", "High-speed turnout"],
+    "options_hi": ["वक्र टर्नआउट", "सममित टर्नआउट", "टंग एंड क्रॉसिंग", "हाई-स्पीड टर्नआउट"],
+    "answer_en": "High-speed turnout",
+    "answer_hi": "हाई-स्पीड टर्नआउट",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 38,
+    "question_en": "What is 'Track modulus'?",
+    "question_hi": "'ट्रैक मापांक' क्या है?",
+    "options_en": ["Track stiffness measure", "Track length", "Track curvature", "Track gauge"],
+    "options_hi": ["ट्रैक कठोरता माप", "ट्रैक लंबाई", "ट्रैक वक्रता", "ट्रैक गेज"],
+    "answer_en": "Track stiffness measure",
+    "answer_hi": "ट्रैक कठोरता माप",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 39,
+    "question_en": "Which welding defect is critical in rail welding?",
+    "question_hi": "रेल वेल्डिंग में कौन सा वेल्डिंग दोष महत्वपूर्ण है?",
+    "options_en": ["Porosity", "Cracks", "Undercut", "All of these"],
+    "options_hi": ["छिद्रता", "दरारें", "अंडरकट", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 40,
+    "question_en": "What is 'Rail Cant'?",
+    "question_hi": "'रेल कैंट' क्या है?",
+    "options_en": ["Rail inclination", "Rail height", "Rail length", "Rail weight"],
+    "options_hi": ["रेल झुकाव", "रेल ऊंचाई", "रेल लंबाई", "रेल वजन"],
+    "answer_en": "Rail inclination",
+    "answer_hi": "रेल झुकाव",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 41,
+    "question_en": "Which organization manages railway computer reservations?",
+    "question_hi": "रेलवे कंप्यूटर आरक्षण का प्रबंधन कौन सा संगठन करता है?",
+    "options_en": ["IRCTC", "CRIS", "RDSO", "CORE"],
+    "options_hi": ["आईआरसीटीसी", "क्रिस", "आरडीएसओ", "कोर"],
+    "answer_en": "CRIS",
+    "answer_hi": "क्रिस",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 42,
+    "question_en": "What is 'Track Geometry'?",
+    "question_hi": "'ट्रैक ज्योमेट्री' क्या है?",
+    "options_en": ["Track dimensions and alignment", "Track material", "Track construction", "Track maintenance"],
+    "options_hi": ["ट्रैक आयाम और संरेखण", "ट्रैक सामग्री", "ट्रैक निर्माण", "ट्रैक रखरखाव"],
+    "answer_en": "Track dimensions and alignment",
+    "answer_hi": "ट्रैक आयाम और संरेखण",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 43,
+    "question_en": "Which rail section is designated as 52 kg/m?",
+    "question_hi": "कौन सा रेल सेक्शन 52 किग्रा/मीटर के रूप में निर्दिष्ट है?",
+    "options_en": ["90 R", "110 R", "113 R", "136 R"],
+    "options_hi": ["90 आर", "110 आर", "113 आर", "136 आर"],
+    "answer_en": "90 R",
+    "answer_hi": "90 आर",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 44,
+    "question_en": "What is 'Rail Profile'?",
+    "question_hi": "'रेल प्रोफाइल' क्या है?",
+    "options_en": ["Cross-sectional shape", "Longitudinal shape", "Surface texture", "Material composition"],
+    "options_hi": ["क्रॉस-सेक्शनल आकार", "अनुदैर्ध्य आकार", "सतह बनावट", "सामग्री संरचना"],
+    "answer_en": "Cross-sectional shape",
+    "answer_hi": "क्रॉस-सेक्शनल आकार",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 45,
+    "question_en": "Which maintenance machine is used for track alignment?",
+    "question_hi": "ट्रैक संरेखण के लिए किस रखरखाव मशीन का उपयोग किया जाता है?",
+    "options_en": ["Tamping machine", "Ballast regulator", "Track lining machine", "Rail grinder"],
+    "options_hi": ["टैम्पिंग मशीन", "बैलास्ट रेगुलेटर", "ट्रैक लाइनिंग मशीन", "रेल ग्राइंडर"],
+    "answer_en": "Track lining machine",
+    "answer_hi": "ट्रैक लाइनिंग मशीन",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 46,
+    "question_en": "What is 'Track Circuit Interference'?",
+    "question_hi": "'ट्रैक सर्किट इंटरफेरेंस' क्या है?",
+    "options_en": ["Signal failure due to external factors", "Track alignment issue", "Rail joint problem", "Sleeper defect"],
+    "options_hi": ["बाहरी कारकों के कारण सिग्नल विफलता", "ट्रैक संरेखण समस्या", "रेल जोड़ समस्या", "स्लीपर दोष"],
+    "answer_en": "Signal failure due to external factors",
+    "answer_hi": "बाहरी कारकों के कारण सिग्नल विफलता",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 47,
+    "question_en": "Which standard specifies rail steel composition?",
+    "question_hi": "कौन सा मानक रेल स्टील संरचना निर्दिष्ट करता है?",
+    "options_en": ["IS 3443", "IS 5512", "IS 3444", "IS 3512"],
+    "options_hi": ["आईएस 3443", "आईएस 5512", "आईएस 3444", "आईएस 3512"],
+    "answer_en": "IS 3443",
+    "answer_hi": "आईएस 3443",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 48,
+    "question_en": "What is 'Rail Lubrication' for?",
+    "question_hi": "'रेल लुब्रिकेशन' किस लिए है?",
+    "options_en": ["Reduce rail-wheel wear", "Increase friction", "Prevent corrosion", "Improve conductivity"],
+    "options_hi": ["रेल-व्हील वियर कम करना", "घर्षण बढ़ाना", "जंग रोकना", "चालकता सुधारना"],
+    "answer_en": "Reduce rail-wheel wear",
+    "answer_hi": "रेल-व्हील वियर कम करना",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 49,
+    "question_en": "Which organization certifies railway equipment?",
+    "question_hi": "रेलवे उपकरणों का प्रमाणन कौन सा संगठन करता है?",
+    "options_en": ["RDSO", "BIS", "AERB", "DGCA"],
+    "options_hi": ["आरडीएसओ", "बीआईएस", "एईआरबी", "डीजीसीए"],
+    "answer_en": "RDSO",
+    "answer_hi": "आरडीएसओ",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 50,
+    "question_en": "What is 'Track Buckling'?",
+    "question_hi": "'ट्रैक बकलिंग' क्या है?",
+    "options_en": ["Lateral displacement due to heat", "Vertical settlement", "Longitudinal movement", "Gauge variation"],
+    "options_hi": ["गर्मी के कारण पार्श्व विस्थापन", "ऊर्ध्वाधर निपटान", "अनुदैर्ध्य गति", "गेज भिन्नता"],
+    "answer_en": "Lateral displacement due to heat",
+    "answer_hi": "गर्मी के कारण पार्श्व विस्थापन",
+    "attempted": false,
+    "selected": ""
+  }];
 
 
-let currentQuestion = 0; 
+// --------------------------- GLOBAL VARS -----------------------------
+let currentQuestion = 0;
 let language = "en";
-// let timeLeft = 180 * 60; // 180 minutes
-let timeLeft = 60 * 60; // 60 minutes
-
+let timeLeft = 60 * 60;   // 60 minutes timer
 let timerInterval;
 
-// ----------------- Quiz Logic -----------------
+// --------------------------- LOAD QUESTION ----------------------------
 function loadQuestion(index) {
     const q = questions[index];
-    document.getElementById("question").textContent = `${q.num}. ${
-        language === "en" ? q.question_en : q.question_hi
-    }`;
-    document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
 
     const optionsElement = document.getElementById("options");
     optionsElement.innerHTML = "";
@@ -608,6 +575,7 @@ function loadQuestion(index) {
     options.forEach((option) => {
         const isSelected = q.selected === option;
         const optionDiv = document.createElement("div");
+
         optionDiv.className = "option-box";
         optionDiv.style = `
             border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
@@ -616,12 +584,11 @@ function loadQuestion(index) {
             border-radius: 8px;
             margin: 6px 0;
             cursor: pointer;
-            transition: all 0.2s;
         `;
 
         optionDiv.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${isSelected ? "checked" : ""} style="margin-right:8px;">
-            ${option}
+            <input type="radio" name="option"
+            value="${option}" ${isSelected ? "checked" : ""} /> ${option}
         `;
 
         optionDiv.addEventListener("click", () => {
@@ -635,12 +602,14 @@ function loadQuestion(index) {
     updateNavigation();
 }
 
+// --------------------------- MARK ATTEMPT ----------------------------
 function markAttempted(index, selectedAnswer) {
     questions[index].attempted = true;
     questions[index].selected = selectedAnswer;
     updateNavigation();
 }
 
+// --------------------------- NEXT / PREV -----------------------------
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -655,230 +624,150 @@ function prevQuestion() {
     }
 }
 
+// --------------------------- LANGUAGE CHANGE -------------------------
 function changeLanguage() {
     language = document.getElementById("languageSelect").value;
     loadQuestion(currentQuestion);
 }
 
-function submitQuiz() {
-    clearInterval(timerInterval);
-    let attempted = 0,
-        notAttempted = 0,
-        score = 0;
-
-    questions.forEach((q) => {
-        if (q.attempted) {
-            attempted++;
-            if (q.selected === q.answer_en || q.selected === q.answer_hi) score++;
-        } else notAttempted++;
-    });
-
-    alert(
-        `Quiz submitted!\nAttempted: ${attempted}\nNot Attempted: ${notAttempted}\nScore: ${score}/${questions.length}`
-    );
-}
-
+// --------------------------- TIMER -------------------------------
 function startTimer() {
     const timerElement = document.getElementById("timer");
     clearInterval(timerInterval);
+
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            alert("Time's up!");
+            alert("⏳ Time Over!");
             submitQuiz();
-        } else {
-            const hours = Math.floor(timeLeft / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = `Time Left: ${hours
-                .toString()
-                .padStart(2, "0")}:${minutes
-                .toString()
-                .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-            timeLeft--;
+            return;
         }
+
+        const h = Math.floor(timeLeft / 3600);
+        const m = Math.floor((timeLeft % 3600) / 60);
+        const s = timeLeft % 60;
+
+        timerElement.textContent =
+            `Time Left: ${h.toString().padStart(2, "0")}:${m
+                .toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+
+        timeLeft--;
     }, 1000);
 }
 
+// --------------------------- SUBMIT QUIZ ---------------------
+function submitQuiz() {
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
+
+    clearInterval(timerInterval);
+
+    // Calculate time spent
+    const totalTimeSpent = (60 * 60) - timeLeft;
+    const mins = Math.floor(totalTimeSpent / 60);
+    const secs = totalTimeSpent % 60;
+
+    // Save to localStorage
+    localStorage.setItem("timeTaken", `${mins} min ${secs} sec`);
+
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
+        if (q.attempted) {
+            attempted++;
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
+    });
+
+    // Save result data
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    // Stop camera stream if active
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Redirect
+    window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+}
+
+// --------------------------- NAVIGATION ------------------------------
 function updateNavigation() {
     const nav = document.getElementById("circleContainer");
     nav.innerHTML = "";
+
     questions.forEach((q, i) => {
         let color = "gray";
         if (i === currentQuestion) color = "blue";
         else if (q.attempted) color = "green";
-        nav.innerHTML += `<div class='circle' style='background-color:${color}' onclick='loadQuestion(${i})'>${i + 1}</div>`;
+
+        const circle = document.createElement("div");
+        circle.className = "circle";
+        circle.style.background = color;
+        circle.textContent = i + 1;
+        circle.onclick = () => jumpToQuestion(i);
+        nav.appendChild(circle);
     });
 }
 
-// ----------------- Camera & Movement Logic -----------------
+function jumpToQuestion(i) {
+    currentQuestion = i;
+    loadQuestion(i);
+}
+
+// --------------------------- CAMERA ----------------------
 let videoStream;
-let movementCount = 0;
 
 function startCamera() {
     const container = document.createElement("div");
     container.id = "camera-container";
     container.style.position = "fixed";
     container.style.top = "10px";
-    container.style.left = "10px"; // ✅ Left side
+    container.style.left = "10px";
     container.style.width = "130px";
     container.style.height = "130px";
-    container.style.zIndex = "9999";
     container.style.borderRadius = "50%";
     container.style.overflow = "hidden";
-    container.style.border = "3px solid red";
-    container.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-    container.style.cursor = "grab";
-    container.style.minWidth = "80px";
-    container.style.minHeight = "80px";
-    container.style.maxWidth = "250px";
-    container.style.maxHeight = "250px";
     container.style.background = "#000";
+    container.style.border = "3px solid red";
+    container.style.zIndex = "9999";
     document.body.appendChild(container);
 
     const video = document.createElement("video");
-    video.setAttribute("autoplay", true);
-    video.setAttribute("playsinline", true);
+    video.autoplay = true;
+    video.playsInline = true;
     video.style.width = "100%";
     video.style.height = "100%";
     video.style.objectFit = "cover";
     container.appendChild(video);
 
-    // ✅ Resize handle
-    const resizeHandle = document.createElement("div");
-    resizeHandle.style.position = "absolute";
-    resizeHandle.style.bottom = "2px";
-    resizeHandle.style.right = "2px";
-    resizeHandle.style.width = "15px";
-    resizeHandle.style.height = "15px";
-    resizeHandle.style.background = "rgba(255,255,255,0.7)";
-    resizeHandle.style.borderRadius = "4px";
-    resizeHandle.style.cursor = "se-resize";
-    container.appendChild(resizeHandle);
-
-    // ✅ Drag logic
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    container.addEventListener("mousedown", (e) => {
-        if (e.target === resizeHandle) return;
-        isDragging = true;
-        offsetX = e.clientX - container.offsetLeft;
-        offsetY = e.clientY - container.offsetTop;
-        container.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
-        x = Math.max(0, Math.min(window.innerWidth - container.offsetWidth, x));
-        y = Math.max(0, Math.min(window.innerHeight - container.offsetHeight, y));
-        container.style.left = `${x}px`;
-        container.style.top = `${y}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-        container.style.cursor = "grab";
-    });
-
-    // ✅ Resize logic
-    let isResizing = false;
-    let startWidth, startHeight, startX, startY;
-
-    resizeHandle.addEventListener("mousedown", (e) => {
-        e.stopPropagation();
-        isResizing = true;
-        startWidth = container.offsetWidth;
-        startHeight = container.offsetHeight;
-        startX = e.clientX;
-        startY = e.clientY;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isResizing) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        const newSize = Math.max(80, Math.min(250, Math.max(startWidth + dx, startHeight + dy)));
-        container.style.width = `${newSize}px`;
-        container.style.height = `${newSize}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isResizing = false;
-    });
-
-    // ✅ Camera stream
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
             video.srcObject = stream;
             videoStream = stream;
-            detectMovement(video);
         })
-        .catch(err => {
-            console.error("Camera error:", err);
-            alert("Camera not accessible!");
-        });
+        .catch(() => alert("Camera not accessible!"));
 }
 
-function detectMovement(video) {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = 160;
-    canvas.height = 160;
-    let lastImageData = null;
-
-    setInterval(() => {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-        if (lastImageData) {
-            let diff = 0;
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                diff += Math.abs(imageData.data[i] - lastImageData.data[i]);
-            }
-
-            if (diff > 1000000) {
-                movementCount++;
-                if (movementCount === 1) {
-                    alert("⚠️ Alert 1: Face is not move");
-                } else if (movementCount === 2) {
-                    alert("⚠️ Alert 2: Head is not move");
-                } else if (movementCount === 3) {
-                    alert("⚠️ Alert 3: Test series is restarting...");
-                    restartTest();
-                }
-            }
-        }
-        lastImageData = imageData;
-    }, 2000);
-}
-
-function restartTest() {
-    if (videoStream) {
-        videoStream.getTracks().forEach(track => track.stop());
-    }
-    const camContainer = document.getElementById("camera-container");
-    if (camContainer) camContainer.remove();
-
-    movementCount = 0;
-    currentQuestion = 0;
-    timeLeft = 180 * 60;
-
-    questions.forEach(q => {
-        q.attempted = false;
-        q.selected = null;
-    });
-
-    loadQuestion(currentQuestion);
-    startTimer();
-    startCamera();
-}
-
-// ----------------- Page Load -----------------
+// --------------------------- PAGE LOAD --------------------------
 window.onload = function () {
     loadQuestion(currentQuestion);
     startTimer();
-    startCamera(); // ✅ Camera starts with test
+    startCamera();
 };

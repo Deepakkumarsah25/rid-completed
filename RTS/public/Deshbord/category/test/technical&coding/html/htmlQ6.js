@@ -378,17 +378,28 @@
     "attempted": false,
     "selected": ""
   },
-  {
-    "num": 35,
-    "question_en": "Which tag is used to add comments in HTML?",
-    "question_hi": "HTML में कमेंट जोड़ने के लिए कौन सा टैग उपयोग होता है?",
-    "options_en": ["<!-- comment -->", "// comment", "# comment", "<comment>"],
-    "options_hi": ["<!-- comment -->", "// comment", "# comment", "<comment>"],
-    "answer_en": "<!-- comment -->",
-    "answer_hi": "<!-- comment -->",
-    "attempted": false,
-    "selected": ""
-  },
+ {
+  "num": 35,
+  "question_en": "Which tag is used to add comments in HTML?",
+  "question_hi": "HTML में कमेंट जोड़ने के लिए कौन सा टैग उपयोग होता है?",
+  "options_en": [
+    "&lt;!-- comment --&gt;",
+    "// comment",
+    "# comment",
+    "&lt;comment&gt;"
+  ],
+  "options_hi": [
+    "&lt;!-- comment --&gt;",
+    "// comment",
+    "# comment",
+    "&lt;comment&gt;"
+  ],
+  "answer_en": "&lt;!-- comment --&gt;",
+  "answer_hi": "&lt;!-- comment --&gt;",
+  "attempted": false,
+  "selected": ""
+}
+,
   {
     "num": 36,
     "question_en": "Which tag is used to define bold text semantically?",

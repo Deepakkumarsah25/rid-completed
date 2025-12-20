@@ -1,575 +1,572 @@
 const questions = [
   {
-    num: 1,
-    question_en: "Which of the following is the longest river in India?",
-    question_hi: "निम्नलिखित में से भारत की सबसे लंबी नदी कौन सी है?",
-    options_en: ["Ganga", "Yamuna", "Brahmaputra", "Godavari"],
-    options_hi: ["गंगा", "यमुना", "ब्रह्मपुत्र", "गोदावरी"],
-    answer_en: "Ganga",
-    answer_hi: "गंगा",
-    attempted: false,
-    selected: ""
+    "num": 1,
+    "question_en": "What is the minimum Charpy V-notch impact energy required for Grade 880 rail steel at -20°C?",
+    "question_hi": "-20°C पर ग्रेड 880 रेल स्टील के लिए आवश्यक न्यूनतम चार्पी वी-नॉच इम्पैक्ट एनर्जी क्या है?",
+    "options_en": ["15 J", "27 J", "35 J", "45 J"],
+    "options_hi": ["15 जे", "27 जे", "35 जे", "45 जे"],
+    "answer_en": "27 J",
+    "answer_hi": "27 जे",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 2,
-    question_en: "Who is known as the 'Father of the Indian Constitution'?",
-    question_hi: "भारतीय संविधान के जनक के रूप में किसे जाना जाता है?",
-    options_en: ["Mahatma Gandhi", "Jawaharlal Nehru", "B.R. Ambedkar", "Sardar Patel"],
-    options_hi: ["महात्मा गांधी", "जवाहरलाल नेहरू", "बी.आर. अंबेडकर", "सरदार पटेल"],
-    answer_en: "B.R. Ambedkar",
-    answer_hi: "बी.आर. अंबेडकर",
-    attempted: false,
-    selected: ""
+    "num": 2,
+    "question_en": "Which mathematical model describes the wheel-rail contact stress distribution?",
+    "question_hi": "कौन सा गणितीय मॉडल व्हील-रेल संपर्क तनाव वितरण का वर्णन करता है?",
+    "options_en": ["Hertzian contact theory", "Boussinesq theory", "Saint-Venant principle", "Navier-Stokes equations"],
+    "options_hi": ["हर्ट्जियन संपर्क सिद्धांत", "बूसिनेस्क सिद्धांत", "सेंट-वेनेंट सिद्धांत", "नेवियर-स्टोक्स समीकरण"],
+    "answer_en": "Hertzian contact theory",
+    "answer_hi": "हर्ट्जियन संपर्क सिद्धांत",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 3,
-    question_en: "What is the chemical symbol for Gold?",
-    question_hi: "सोने का रासायनिक प्रतीक क्या है?",
-    options_en: ["Au", "Ag", "Gd", "Go"],
-    options_hi: ["Au", "Ag", "Gd", "Go"],
-    answer_en: "Au",
-    answer_hi: "Au",
-    attempted: false,
-    selected: ""
+    "num": 3,
+    "question_en": "What is the maximum permissible dynamic augment for freight wagons at 100 km/h?",
+    "question_hi": "100 किमी/घंटा पर मालगाड़ियों के लिए अधिकतम अनुमेय डायनामिक ऑगमेंट क्या है?",
+    "options_en": ["10% of static load", "15% of static load", "20% of static load", "25% of static load"],
+    "options_hi": ["स्टैटिक लोड का 10%", "स्टैटिक लोड का 15%", "स्टैटिक लोड का 20%", "स्टैटिक लोड का 25%"],
+    "answer_en": "20% of static load",
+    "answer_hi": "स्टैटिक लोड का 20%",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 4,
-    question_en: "Which planet is known as the 'Red Planet'?",
-    question_hi: "किस ग्रह को 'लाल ग्रह' के नाम से जाना जाता है?",
-    options_en: ["Venus", "Mars", "Jupiter", "Saturn"],
-    options_hi: ["शुक्र", "मंगल", "बृहस्पति", "शनि"],
-    answer_en: "Mars",
-    answer_hi: "मंगल",
-    attempted: false,
-    selected: ""
+    "num": 4,
+    "question_en": "Which European standard is equivalent to Indian IRS-T-12 for rail welding?",
+    "question_hi": "रेल वेल्डिंग के लिए भारतीय IRS-T-12 के समतुल्य कौन सा यूरोपीय मानक है?",
+    "options_en": ["EN 14587-1", "EN 14730", "EN 13479", "EN 13674-1"],
+    "options_hi": ["EN 14587-1", "EN 14730", "EN 13479", "EN 13674-1"],
+    "answer_en": "EN 14587-1",
+    "answer_hi": "EN 14587-1",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 5,
-    question_en: "The sum of angles in a triangle is:",
-    question_hi: "त्रिभुज में कोणों का योग होता है:",
-    options_en: ["90 degrees", "180 degrees", "270 degrees", "360 degrees"],
-    options_hi: ["90 डिग्री", "180 डिग्री", "270 डिग्री", "360 डिग्री"],
-    answer_en: "180 degrees",
-    answer_hi: "180 डिग्री",
-    attempted: false,
-    selected: ""
+    "num": 5,
+    "question_en": "What is the fatigue limit (endurance limit) for Grade 1080 rail steel?",
+    "question_hi": "ग्रेड 1080 रेल स्टील के लिए फटीग लिमिट (एनड्योरेंस लिमिट) क्या है?",
+    "options_en": ["350 MPa", "450 MPa", "550 MPa", "650 MPa"],
+    "options_hi": ["350 एमपीए", "450 एमपीए", "550 एमपीए", "650 एमपीए"],
+    "answer_en": "450 MPa",
+    "answer_hi": "450 एमपीए",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 6,
-    question_en: "Which gas is most abundant in the Earth's atmosphere?",
-    question_hi: "पृथ्वी के वायुमंडल में सबसे अधिक मात्रा में कौन सी गैस पाई जाती है?",
-    options_en: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    options_hi: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "हाइड्रोजन"],
-    answer_en: "Nitrogen",
-    answer_hi: "नाइट्रोजन",
-    attempted: false,
-    selected: ""
+    "num": 6,
+    "question_en": "Which type of finite element analysis is used for bogie frame design?",
+    "question_hi": "बोगी फ्रेम डिजाइन के लिए किस प्रकार की फाइनाइट एलिमेंट एनालिसिस का उपयोग किया जाता है?",
+    "options_en": ["Static stress analysis", "Modal analysis", "Fatigue analysis", "All of the above"],
+    "options_hi": ["स्टैटिक स्ट्रेस एनालिसिस", "मोडल एनालिसिस", "फटीग एनालिसिस", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 7,
-    question_en: "The largest ocean in the world is:",
-    question_hi: "दुनिया का सबसे बड़ा महासागर है:",
-    options_en: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-    options_hi: ["अटलांटिक महासागर", "हिंद महासागर", "आर्कटिक महासागर", "प्रशांत महासागर"],
-    answer_en: "Pacific Ocean",
-    answer_hi: "प्रशांत महासागर",
-    attempted: false,
-    selected: ""
+    "num": 7,
+    "question_en": "What is the critical speed for hunting instability in railway vehicles?",
+    "question_hi": "रेलवे वाहनों में हंटिंग अस्थिरता के लिए क्रिटिकल स्पीड क्या है?",
+    "options_en": ["Speed where damping becomes zero", "Speed where stiffness becomes zero", "Speed at resonance", "Speed where creep forces peak"],
+    "options_hi": ["वह गति जहां डैम्पिंग शून्य हो जाती है", "वह गति जहां स्टिफनेस शून्य हो जाती है", "रेजोनेंस पर गति", "वह गति जहां क्रीप फोर्स पीक करते हैं"],
+    "answer_en": "Speed where damping becomes zero",
+    "answer_hi": "वह गति जहां डैम्पिंग शून्य हो जाती है",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 8,
-    question_en: "Which of the following is not a primary color?",
-    question_hi: "निम्नलिखित में से कौन सा प्राथमिक रंग नहीं है?",
-    options_en: ["Red", "Blue", "Green", "Yellow"],
-    options_hi: ["लाल", "नीला", "हरा", "पीला"],
-    answer_en: "Yellow",
-    answer_hi: "पीला",
-    attempted: false,
-    selected: ""
+    "num": 8,
+    "question_en": "Which standard specifies the acceptance criteria for ultrasonic testing of rails?",
+    "question_hi": "रेलों के अल्ट्रासोनिक परीक्षण के स्वीकृति मानदंड कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IS 3658", "ASTM E164", "EN 16729", "IRS-T-37"],
+    "options_hi": ["आईएस 3658", "ASTM E164", "EN 16729", "IRS-T-37"],
+    "answer_en": "IRS-T-37",
+    "answer_hi": "IRS-T-37",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 9,
-    question_en: "The capital of Australia is:",
-    question_hi: "ऑस्ट्रेलिया की राजधानी है:",
-    options_en: ["Sydney", "Melbourne", "Canberra", "Perth"],
-    options_hi: ["सिडनी", "मेलबोर्न", "कैनबरा", "पर्थ"],
-    answer_en: "Canberra",
-    answer_hi: "कैनबरा",
-    attempted: false,
-    selected: ""
+    "num": 9,
+    "question_en": "What is the minimum yield strength requirement for Grade 1280 heat-treated rails?",
+    "question_hi": "ग्रेड 1280 हीट-ट्रीटेड रेल के लिए न्यूनतम यील्ड स्ट्रेंथ आवश्यकता क्या है?",
+    "options_en": ["880 MPa", "1080 MPa", "1280 MPa", "1480 MPa"],
+    "options_hi": ["880 एमपीए", "1080 एमपीए", "1280 एमपीए", "1480 एमपीए"],
+    "answer_en": "880 MPa",
+    "answer_hi": "880 एमपीए",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 10,
-    question_en: "Which device is used to measure electric current?",
-    question_hi: "विद्युत धारा मापने के लिए किस उपकरण का उपयोग किया जाता है?",
-    options_en: ["Voltmeter", "Ammeter", "Ohmmeter", "Barometer"],
-    options_hi: ["वोल्टमीटर", "एमीटर", "ओममीटर", "बैरोमीटर"],
-    answer_en: "Ammeter",
-    answer_hi: "एमीटर",
-    attempted: false,
-    selected: ""
-  },
-  // Continue with more questions...
-  {
-    num: 11,
-    question_en: "What is the square root of 144?",
-    question_hi: "144 का वर्गमूल क्या है?",
-    options_en: ["10", "12", "14", "16"],
-    options_hi: ["10", "12", "14", "16"],
-    answer_en: "12",
-    answer_hi: "12",
-    attempted: false,
-    selected: ""
+    "num": 10,
+    "question_en": "Which type of track stiffness is critical for high-speed railway design?",
+    "question_hi": "हाई-स्पीड रेलवे डिजाइन के लिए किस प्रकार की ट्रैक स्टिफनेस महत्वपूर्ण है?",
+    "options_en": ["Vertical stiffness", "Lateral stiffness", "Longitudinal stiffness", "Torsional stiffness"],
+    "options_hi": ["ऊर्ध्वाधर कठोरता", "पार्श्व कठोरता", "अनुदैर्ध्य कठोरता", "टोर्सनल कठोरता"],
+    "answer_en": "Vertical stiffness",
+    "answer_hi": "ऊर्ध्वाधर कठोरता",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 12,
-    question_en: "Which of the following is not a metal?",
-    question_hi: "निम्नलिखित में से कौन सी धातु नहीं है?",
-    options_en: ["Gold", "Silver", "Sulfur", "Iron"],
-    options_hi: ["सोना", "चांदी", "सल्फर", "लोहा"],
-    answer_en: "Sulfur",
-    answer_hi: "सल्फर",
-    attempted: false,
-    selected: ""
+    "num": 11,
+    "question_en": "What is the maximum permissible carbon equivalent for weldable rail steel?",
+    "question_hi": "वेल्डेबल रेल स्टील के लिए अधिकतम अनुमेय कार्बन समतुल्य क्या है?",
+    "options_en": ["0.42%", "0.52%", "0.62%", "0.72%"],
+    "options_hi": ["0.42%", "0.52%", "0.62%", "0.72%"],
+    "answer_en": "0.52%",
+    "answer_hi": "0.52%",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 13,
-    question_en: "The first woman Prime Minister of India was:",
-    question_hi: "भारत की पहली महिला प्रधानमंत्री थीं:",
-    options_en: ["Indira Gandhi", "Sonia Gandhi", "Pratibha Patil", "Sarojini Naidu"],
-    options_hi: ["इंदिरा गांधी", "सोनिया गांधी", "प्रतिभा पाटिल", "सरोजिनी नायडू"],
-    answer_en: "Indira Gandhi",
-    answer_hi: "इंदिरा गांधी",
-    attempted: false,
-    selected: ""
+    "num": 12,
+    "question_en": "Which computational method is used for pantograph-catenary interaction analysis?",
+    "question_hi": "पैंटोग्राफ-कैटेनरी इंटरैक्शन विश्लेषण के लिए किस कम्प्यूटेशनल विधि का उपयोग किया जाता है?",
+    "options_en": ["Multi-body dynamics", "Finite element method", "Computational fluid dynamics", "Discrete element method"],
+    "options_hi": ["मल्टी-बॉडी डायनामिक्स", "फाइनाइट एलिमेंट मेथड", "कम्प्यूटेशनल फ्लूइड डायनामिक्स", "डिस्क्रीट एलिमेंट मेथड"],
+    "answer_en": "Multi-body dynamics",
+    "answer_hi": "मल्टी-बॉडी डायनामिक्स",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 14,
-    question_en: "Which is the largest mammal in the world?",
-    question_hi: "दुनिया का सबसे बड़ा स्तनपायी कौन सा है?",
-    options_en: ["Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
-    options_hi: ["हाथी", "नीली व्हेल", "जिराफ", "ध्रुवीय भालू"],
-    answer_en: "Blue Whale",
-    answer_hi: "नीली व्हेल",
-    attempted: false,
-    selected: ""
+    "num": 13,
+    "question_en": "What is the minimum track modulus required for 300 km/h operation?",
+    "question_hi": "300 किमी/घंटा संचालन के लिए आवश्यक न्यूनतम ट्रैक मापांक क्या है?",
+    "options_en": ["20 MPa", "30 MPa", "40 MPa", "50 MPa"],
+    "options_hi": ["20 एमपीए", "30 एमपीए", "40 एमपीए", "50 एमपीए"],
+    "answer_en": "40 MPa",
+    "answer_hi": "40 एमपीए",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 15,
-    question_en: "The study of earthquakes is called:",
-    question_hi: "भूकंप का अध्ययन कहलाता है:",
-    options_en: ["Geology", "Seismology", "Meteorology", "Volcanology"],
-    options_hi: ["भूविज्ञान", "भूकंप विज्ञान", "मौसम विज्ञान", "ज्वालामुखी विज्ञान"],
-    answer_en: "Seismology",
-    answer_hi: "भूकंप विज्ञान",
-    attempted: false,
-    selected: ""
-  },
-  
-  
-  {
-    num: 16,
-    question_en: "Which of the following is NOT a programming language?",
-    question_hi: "निम्नलिखित में से कौन सी प्रोग्रामिंग भाषा नहीं है?",
-    options_en: ["Python", "Java", "HTML", "Photoshop"],
-    options_hi: ["पायथन", "जावा", "HTML", "फोटोशॉप"],
-    answer_en: "Photoshop",
-    answer_hi: "फोटोशॉप",
-    attempted: false,
-    selected: ""
+    "num": 14,
+    "question_en": "Which non-destructive testing method detects hydrogen flakes in rail steel?",
+    "question_hi": "रेल स्टील में हाइड्रोजन फ्लेक्स का पता लगाने के लिए किस नॉन-डिस्ट्रक्टिव टेस्टिंग विधि का उपयोग किया जाता है?",
+    "options_en": ["Ultrasonic testing", "Magnetic particle testing", "Eddy current testing", "Acoustic emission"],
+    "options_hi": ["अल्ट्रासोनिक टेस्टिंग", "मैग्नेटिक पार्टिकल टेस्टिंग", "एडी करंट टेस्टिंग", "अकौस्टिक एमिशन"],
+    "answer_en": "Ultrasonic testing",
+    "answer_hi": "अल्ट्रासोनिक टेस्टिंग",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 17,
-    question_en: "The largest desert in the world is:",
-    question_hi: "दुनिया का सबसे बड़ा रेगिस्तान है:",
-    options_en: ["Sahara", "Gobi", "Arabian", "Antarctica"],
-    options_hi: ["सहारा", "गोबी", "अरब", "अंटार्कटिका"],
-    answer_en: "Antarctica",
-    answer_hi: "अंटार्कटिका",
-    attempted: false,
-    selected: ""
+    "num": 15,
+    "question_en": "What is the maximum permissible track irregularity PSD value for high-speed lines?",
+    "question_hi": "हाई-स्पीड लाइनों के लिए अधिकतम अनुमेय ट्रैक अनियमितता PSD मान क्या है?",
+    "options_en": ["0.5 mm²/m", "1.0 mm²/m", "1.5 mm²/m", "2.0 mm²/m"],
+    "options_hi": ["0.5 मिमी²/मी", "1.0 मिमी²/मी", "1.5 मिमी²/मी", "2.0 मिमी²/मी"],
+    "answer_en": "1.0 mm²/m",
+    "answer_hi": "1.0 मिमी²/मी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 18,
-    question_en: "What is the value of π (pi) approximately?",
-    question_hi: "π (पाई) का मान लगभग कितना होता है?",
-    options_en: ["3.14", "2.71", "1.62", "4.13"],
-    options_hi: ["3.14", "2.71", "1.62", "4.13"],
-    answer_en: "3.14",
-    answer_hi: "3.14",
-    attempted: false,
-    selected: ""
+    "num": 16,
+    "question_en": "Which steel microstructure provides best wear resistance for rails?",
+    "question_hi": "रेल के लिए सबसे अच्छी वियर रेजिस्टेंस कौन सी स्टील माइक्रोस्ट्रक्चर प्रदान करती है?",
+    "options_en": ["Pearlite", "Bainite", "Martensite", "Austenite"],
+    "options_hi": ["पर्लाइट", "बेनाइट", "मार्टेंसाइट", "ऑस्टेनाइट"],
+    "answer_en": "Pearlite",
+    "answer_hi": "पर्लाइट",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 19,
-    question_en: "Who invented the telephone?",
-    question_hi: "टेलीफोन का आविष्कार किसने किया?",
-    options_en: ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Albert Einstein"],
-    options_hi: ["थॉमस एडिसन", "अलेक्जेंडर ग्राहम बेल", "निकोला टेस्ला", "अल्बर्ट आइंस्टीन"],
-    answer_en: "Alexander Graham Bell",
-    answer_hi: "अलेक्जेंडर ग्राहम बेल",
-    attempted: false,
-    selected: ""
+    "num": 17,
+    "question_en": "What is the minimum required braking distance for 160 km/h trains?",
+    "question_hi": "160 किमी/घंटा ट्रेनों के लिए आवश्यक न्यूनतम ब्रेकिंग दूरी क्या है?",
+    "options_en": ["800 m", "1000 m", "1200 m", "1400 m"],
+    "options_hi": ["800 मी", "1000 मी", "1200 मी", "1400 मी"],
+    "answer_en": "1200 m",
+    "answer_hi": "1200 मी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 20,
-    question_en: "Which gas is responsible for the greenhouse effect?",
-    question_hi: "ग्रीनहाउस प्रभाव के लिए कौन सी गैस जिम्मेदार है?",
-    options_en: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    options_hi: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "हाइड्रोजन"],
-    answer_en: "Carbon Dioxide",
-    answer_hi: "कार्बन डाइऑक्साइड",
-    attempted: false,
-    selected: ""
+    "num": 18,
+    "question_en": "Which standard specifies the design of railway overhead equipment?",
+    "question_hi": "रेलवे ओवरहेड उपकरण के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS-E-10", "EN 50119", "UIC 794", "IEC 60913"],
+    "options_hi": ["IRS-E-10", "EN 50119", "UIC 794", "IEC 60913"],
+    "answer_en": "EN 50119",
+    "answer_hi": "EN 50119",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 21,
-    question_en: "The chemical formula of water is:",
-    question_hi: "पानी का रासायनिक सूत्र है:",
-    options_en: ["H2O", "CO2", "NaCl", "O2"],
-    options_hi: ["H2O", "CO2", "NaCl", "O2"],
-    answer_en: "H2O",
-    answer_hi: "H2O",
-    attempted: false,
-    selected: ""
+    "num": 19,
+    "question_en": "What is the critical flaw size for rail head checking initiation?",
+    "question_hi": "रेल हेड चेकिंग प्रारंभ के लिए क्रिटिकल फ्लॉ साइज क्या है?",
+    "options_en": ["0.1 mm", "0.5 mm", "1.0 mm", "2.0 mm"],
+    "options_hi": ["0.1 मिमी", "0.5 मिमी", "1.0 मिमी", "2.0 मिमी"],
+    "answer_en": "0.5 mm",
+    "answer_hi": "0.5 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 22,
-    question_en: "Which of the following is a prime number?",
-    question_hi: "निम्नलिखित में से कौन सी अभाज्य संख्या है?",
-    options_en: ["9", "15", "17", "21"],
-    options_hi: ["9", "15", "17", "21"],
-    answer_en: "17",
-    answer_hi: "17",
-    attempted: false,
-    selected: ""
+    "num": 20,
+    "question_en": "Which fatigue life prediction method is used for railway components?",
+    "question_hi": "रेलवे घटकों के लिए किस फटीग लाइफ प्रिडिक्शन विधि का उपयोग किया जाता है?",
+    "options_en": ["Miner's rule", "Paris law", "Coffin-Manson", "All of the above"],
+    "options_hi": ["माइनर्स रूल", "पेरिस लॉ", "कॉफिन-मैनसन", "उपरोक्त सभी"],
+    "answer_en": "All of the above",
+    "answer_hi": "उपरोक्त सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 23,
-    question_en: "The currency of Japan is:",
-    question_hi: "जापान की मुद्रा है:",
-    options_en: ["Yen", "Dollar", "Euro", "Pound"],
-    options_hi: ["येन", "डॉलर", "यूरो", "पाउंड"],
-    answer_en: "Yen",
-    answer_hi: "येन",
-    attempted: false,
-    selected: ""
+    "num": 21,
+    "question_en": "What is the maximum permissible contact wire stagger for 25 kV AC system?",
+    "question_hi": "25 केवी एसी सिस्टम के लिए अधिकतम अनुमेय कॉन्टैक्ट वायर स्टैगर क्या है?",
+    "options_en": ["200 mm", "300 mm", "400 mm", "500 mm"],
+    "options_hi": ["200 मिमी", "300 मिमी", "400 मिमी", "500 मिमी"],
+    "answer_en": "300 mm",
+    "answer_hi": "300 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 24,
-    question_en: "Which organ purifies blood in the human body?",
-    question_hi: "मानव शरीर में कौन सा अंग रक्त को शुद्ध करता है?",
-    options_en: ["Heart", "Liver", "Kidney", "Lungs"],
-    options_hi: ["हृदय", "यकृत", "गुर्दा", "फेफड़े"],
-    answer_en: "Kidney",
-    answer_hi: "गुर्दा",
-    attempted: false,
-    selected: ""
+    "num": 22,
+    "question_en": "Which material property most affects rail rolling contact fatigue?",
+    "question_hi": "कौन सा मटेरियल प्रॉपर्टी रेल रोलिंग कॉन्टैक्ट फटीग को सबसे अधिक प्रभावित करता है?",
+    "options_en": ["Hardness", "Toughness", "Yield strength", "Fatigue limit"],
+    "options_hi": ["हार्डनेस", "टफनेस", "यील्ड स्ट्रेंथ", "फटीग लिमिट"],
+    "answer_en": "Hardness",
+    "answer_hi": "हार्डनेस",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 25,
-    question_en: "The largest bone in the human body is:",
-    question_hi: "मानव शरीर की सबसे बड़ी हड्डी है:",
-    options_en: ["Femur", "Tibia", "Humerus", "Skull"],
-    options_hi: ["फीमर", "टिबिया", "ह्यूमरस", "खोपड़ी"],
-    answer_en: "Femur",
-    answer_hi: "फीमर",
-    attempted: false,
-    selected: ""
+    "num": 23,
+    "question_en": "What is the minimum concrete strength for prestressed concrete sleepers?",
+    "question_hi": "प्री-स्ट्रेस्ड कंक्रीट स्लीपरों के लिए न्यूनतम कंक्रीट स्ट्रेंथ क्या है?",
+    "options_en": ["40 MPa", "50 MPa", "60 MPa", "70 MPa"],
+    "options_hi": ["40 एमपीए", "50 एमपीए", "60 एमपीए", "70 एमपीए"],
+    "answer_en": "60 MPa",
+    "answer_hi": "60 एमपीए",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 26,
-    question_en: "Which of the following is a non-renewable energy source?",
-    question_hi: "निम्नलिखित में से कौन सा गैर-नवीकरणीय ऊर्जा स्रोत है?",
-    options_en: ["Solar", "Wind", "Coal", "Hydro"],
-    options_hi: ["सौर", "पवन", "कोयला", "जल"],
-    answer_en: "Coal",
-    answer_hi: "कोयला",
-    attempted: false,
-    selected: ""
+    "num": 24,
+    "question_en": "Which vibration frequency range is critical for passenger comfort?",
+    "question_hi": "यात्री आराम के लिए कौन सा वाइब्रेशन फ्रिक्वेंसी रेंज महत्वपूर्ण है?",
+    "options_en": ["1-10 Hz", "10-100 Hz", "100-1000 Hz", "1-5 kHz"],
+    "options_hi": ["1-10 हर्ट्ज", "10-100 हर्ट्ज", "100-1000 हर्ट्ज", "1-5 किलोहर्ट्ज"],
+    "answer_en": "1-10 Hz",
+    "answer_hi": "1-10 हर्ट्ज",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 27,
-    question_en: "The smallest planet in the solar system is:",
-    question_hi: "सौरमंडल का सबसे छोटा ग्रह है:",
-    options_en: ["Earth", "Mars", "Mercury", "Venus"],
-    options_hi: ["पृथ्वी", "मंगल", "बुध", "शुक्र"],
-    answer_en: "Mercury",
-    answer_hi: "बुध",
-    attempted: false,
-    selected: ""
+    "num": 25,
+    "question_en": "What is the maximum permissible cant gradient for high-speed tracks?",
+    "question_hi": "हाई-स्पीड ट्रैक के लिए अधिकतम अनुमेय कैंट ग्रेडिएंट क्या है?",
+    "options_en": ["1:400", "1:500", "1:750", "1:1000"],
+    "options_hi": ["1:400", "1:500", "1:750", "1:1000"],
+    "answer_en": "1:750",
+    "answer_hi": "1:750",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 28,
-    question_en: "Which country is known as the 'Land of the Rising Sun'?",
-    question_hi: "किस देश को 'उगते सूरज की भूमि' के नाम से जाना जाता है?",
-    options_en: ["China", "Japan", "India", "Thailand"],
-    options_hi: ["चीन", "जापान", "भारत", "थाईलैंड"],
-    answer_en: "Japan",
-    answer_hi: "जापान",
-    attempted: false,
-    selected: ""
+    "num": 26,
+    "question_en": "Which standard specifies the wheel profile for Indian Railways?",
+    "question_hi": "भारतीय रेलवे के लिए व्हील प्रोफाइल कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS-R-40", "UIC 510-2", "EN 13715", "AAR S-660"],
+    "options_hi": ["IRS-R-40", "UIC 510-2", "EN 13715", "AAR S-660"],
+    "answer_en": "IRS-R-40",
+    "answer_hi": "IRS-R-40",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 29,
-    question_en: "The first Indian to win a Nobel Prize was:",
-    question_hi: "नोबेल पुरस्कार जीतने वाले पहले भारतीय थे:",
-    options_en: ["Rabindranath Tagore", "C.V. Raman", "Mother Teresa", "Amartya Sen"],
-    options_hi: ["रबींद्रनाथ टैगोर", "सी.वी. रमन", "मदर टेरेसा", "अमर्त्य सेन"],
-    answer_en: "Rabindranath Tagore",
-    answer_hi: "रबींद्रनाथ टैगोर",
-    attempted: false,
-    selected: ""
+    "num": 27,
+    "question_en": "What is the minimum required adhesion coefficient for acceleration?",
+    "question_hi": "त्वरण के लिए आवश्यक न्यूनतम आसंजन गुणांक क्या है?",
+    "options_en": ["0.10", "0.20", "0.30", "0.40"],
+    "options_hi": ["0.10", "0.20", "0.30", "0.40"],
+    "answer_en": "0.20",
+    "answer_hi": "0.20",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 30,
-    question_en: "The SI unit of electric current is:",
-    question_hi: "विद्युत धारा की SI इकाई है:",
-    options_en: ["Volt", "Ampere", "Ohm", "Watt"],
-    options_hi: ["वोल्ट", "एम्पीयर", "ओम", "वॉट"],
-    answer_en: "Ampere",
-    answer_hi: "एम्पीयर",
-    attempted: false,
-    selected: ""
-  },
- 
-  {
-    num: 31,
-    question_en: "Which of the following is NOT a natural satellite?",
-    question_hi: "निम्नलिखित में से कौन सा प्राकृतिक उपग्रह नहीं है?",
-    options_en: ["Moon", "Phobos", "ISS (International Space Station)", "Europa"],
-    options_hi: ["चंद्रमा", "फोबोस", "ISS (अंतर्राष्ट्रीय अंतरिक्ष स्टेशन)", "यूरोपा"],
-    answer_en: "ISS (International Space Station)",
-    answer_hi: "ISS (अंतर्राष्ट्रीय अंतरिक्ष स्टेशन)",
-    attempted: false,
-    selected: ""
+    "num": 28,
+    "question_en": "Which finite element type is used for rail stress analysis?",
+    "question_hi": "रेल स्ट्रेस एनालिसिस के लिए किस फाइनाइट एलिमेंट प्रकार का उपयोग किया जाता है?",
+    "options_en": ["Beam elements", "Solid elements", "Shell elements", "Contact elements"],
+    "options_hi": ["बीम एलिमेंट्स", "सॉलिड एलिमेंट्स", "शेल एलिमेंट्स", "कॉन्टैक्ट एलिमेंट्स"],
+    "answer_en": "Solid elements",
+    "answer_hi": "सॉलिड एलिमेंट्स",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 32,
-    question_en: "The largest state in India by area is:",
-    question_hi: "क्षेत्रफल के हिसाब से भारत का सबसे बड़ा राज्य है:",
-    options_en: ["Maharashtra", "Uttar Pradesh", "Rajasthan", "Madhya Pradesh"],
-    options_hi: ["महाराष्ट्र", "उत्तर प्रदेश", "राजस्थान", "मध्य प्रदेश"],
-    answer_en: "Rajasthan",
-    answer_hi: "राजस्थान",
-    attempted: false,
-    selected: ""
+    "num": 29,
+    "question_en": "What is the maximum temperature for stress-free rail laying?",
+    "question_hi": "स्ट्रेस-फ्री रेल लेटिंग के लिए अधिकतम तापमान क्या है?",
+    "options_en": ["27°C", "32°C", "37°C", "42°C"],
+    "options_hi": ["27°C", "32°C", "37°C", "42°C"],
+    "answer_en": "32°C",
+    "answer_hi": "32°C",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 33,
-    question_en: "When was the first passenger train run in India?",
-    question_hi: "भारत में पहली यात्री ट्रेन कब चली थी?",
-    options_en: ["1851", "1853", "1855", "1857"],
-    options_hi: ["1851", "1853", "1855", "1857"],
-    answer_en: "1853",
-    answer_hi: "1853",
-    attempted: false,
-    selected: ""
+    "num": 30,
+    "question_en": "Which crack growth rate equation is used for rail fatigue analysis?",
+    "question_hi": "रेल फटीग विश्लेषण के लिए किस क्रैक ग्रोथ रेट समीकरण का उपयोग किया जाता है?",
+    "options_en": ["Paris law", "Walker equation", "Forman equation", "All of these"],
+    "options_hi": ["पेरिस लॉ", "वॉकर समीकरण", "फॉर्मन समीकरण", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 34,
-    question_en: "Which is the fastest train in India as of 2023?",
-    question_hi: "2023 तक भारत की सबसे तेज़ ट्रेन कौन सी है?",
-    options_en: ["Rajdhani Express", "Shatabdi Express", "Gatimaan Express", "Vande Bharat Express"],
-    options_hi: ["राजधानी एक्सप्रेस", "शताब्दी एक्सप्रेस", "गतिमान एक्सप्रेस", "वंदे भारत एक्सप्रेस"],
-    answer_en: "Vande Bharat Express",
-    answer_hi: "वंदे भारत एक्सप्रेस",
-    attempted: false,
-    selected: ""
+    "num": 31,
+    "question_en": "What is the minimum ballast compaction required for high-speed lines?",
+    "question_hi": "हाई-स्पीड लाइनों के लिए आवश्यक न्यूनतम बैलास्ट कम्पैक्शन क्या है?",
+    "options_en": ["95% Proctor", "97% Proctor", "98% Proctor", "100% Proctor"],
+    "options_hi": ["95% प्रोक्टर", "97% प्रोक्टर", "98% प्रोक्टर", "100% प्रोक्टर"],
+    "answer_en": "98% Proctor",
+    "answer_hi": "98% प्रोक्टर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 35,
-    question_en: "What is the color of the Indian Railways logo?",
-    question_hi: "भारतीय रेलवे के लोगो का रंग क्या है?",
-    options_en: ["Blue and White", "Red and White", "Blue and Yellow", "Red and Yellow"],
-    options_hi: ["नीला और सफेद", "लाल और सफेद", "नीला और पीला", "लाल और पीला"],
-    answer_en: "Blue and White",
-    answer_hi: "नीला और सफेद",
-    attempted: false,
-    selected: ""
+    "num": 32,
+    "question_en": "Which standard specifies the testing of rail fastenings?",
+    "question_hi": "रेल फास्टनिंग्स के परीक्षण को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS-T-39", "EN 13146", "ASTM A370", "IS 10329"],
+    "options_hi": ["IRS-T-39", "EN 13146", "ASTM A370", "आईएस 10329"],
+    "answer_en": "EN 13146",
+    "answer_hi": "EN 13146",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 36,
-    question_en: "Which zone is the largest in Indian Railways?",
-    question_hi: "भारतीय रेलवे में सबसे बड़ा जोन कौन सा है?",
-    options_en: ["Northern Railway", "Western Railway", "Southern Railway", "Central Railway"],
-    options_hi: ["उत्तरी रेलवे", "पश्चिमी रेलवे", "दक्षिणी रेलवे", "मध्य रेलवे"],
-    answer_en: "Northern Railway",
-    answer_hi: "उत्तरी रेलवे",
-    attempted: false,
-    selected: ""
+    "num": 33,
+    "question_en": "What is the maximum permissible rail head wear before reprofiling?",
+    "question_hi": "रीप्रोफाइलिंग से पहले अधिकतम अनुमेय रेल हेड वियर क्या है?",
+    "options_en": ["3 mm", "5 mm", "7 mm", "10 mm"],
+    "options_hi": ["3 मिमी", "5 मिमी", "7 मिमी", "10 मिमी"],
+    "answer_en": "5 mm",
+    "answer_hi": "5 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 37,
-    question_en: "Complete the series: 2, 6, 12, 20, __",
-    question_hi: "श्रृंखला पूरी करें: 2, 6, 12, 20, __",
-    options_en: ["28", "30", "32", "36"],
-    options_hi: ["28", "30", "32", "36"],
-    answer_en: "30",
-    answer_hi: "30",
-    attempted: false,
-    selected: ""
+    "num": 34,
+    "question_en": "Which material model is used for rail plastic deformation analysis?",
+    "question_hi": "रेल प्लास्टिक डिफॉर्मेशन विश्लेषण के लिए किस मटेरियल मॉडल का उपयोग किया जाता है?",
+    "options_en": ["Linear elastic", "Elasto-plastic", "Visco-elastic", "Hyper-elastic"],
+    "options_hi": ["लीनियर इलास्टिक", "इलास्टो-प्लास्टिक", "विस्को-इलास्टिक", "हाइपर-इलास्टिक"],
+    "answer_en": "Elasto-plastic",
+    "answer_hi": "इलास्टो-प्लास्टिक",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 38,
-    question_en: "If all cats are dogs and some dogs are tigers, then:",
-    question_hi: "यदि सभी बिल्लियाँ कुत्ते हैं और कुछ कुत्ते बाघ हैं, तो:",
-    options_en: ["All cats are tigers", "Some cats are tigers", "No conclusion", "All tigers are cats"],
-    options_hi: ["सभी बिल्लियाँ बाघ हैं", "कुछ बिल्लियाँ बाघ हैं", "कोई निष्कर्ष नहीं", "सभी बाघ बिल्लियाँ हैं"],
-    answer_en: "Some cats are tigers",
-    answer_hi: "कुछ बिल्लियाँ बाघ हैं",
-    attempted: false,
-    selected: ""
+    "num": 35,
+    "question_en": "What is the minimum required wheel-rail friction coefficient for braking?",
+    "question_hi": "ब्रेकिंग के लिए आवश्यक न्यूनतम व्हील-रेल घर्षण गुणांक क्या है?",
+    "options_en": ["0.10", "0.15", "0.20", "0.25"],
+    "options_hi": ["0.10", "0.15", "0.20", "0.25"],
+    "answer_en": "0.15",
+    "answer_hi": "0.15",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 39,
-    question_en: "Which number is opposite to 3 in a standard dice?",
-    question_hi: "एक सामान्य पासे में 3 के विपरीत कौन सी संख्या होती है?",
-    options_en: ["1", "2", "4", "6"],
-    options_hi: ["1", "2", "4", "6"],
-    answer_en: "4",
-    answer_hi: "4",
-    attempted: false,
-    selected: ""
+    "num": 36,
+    "question_en": "Which standard specifies the design of railway vehicle bodies?",
+    "question_hi": "रेलवे वाहन निकायों के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["EN 12663", "IRS-T-40", "UIC 566", "AAR S-204"],
+    "options_hi": ["EN 12663", "IRS-T-40", "UIC 566", "AAR S-204"],
+    "answer_en": "EN 12663",
+    "answer_hi": "EN 12663",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 40,
-    question_en: "The headquarters of Indian Railways is located at:",
-    question_hi: "भारतीय रेलवे का मुख्यालय स्थित है:",
-    options_en: ["Mumbai", "Kolkata", "New Delhi", "Chennai"],
-    options_hi: ["मुंबई", "कोलकाता", "नई दिल्ली", "चेन्नई"],
-    answer_en: "New Delhi",
-    answer_hi: "नई दिल्ली",
-    attempted: false,
-    selected: ""
+    "num": 37,
+    "question_en": "What is the maximum permissible track settlement after tamping?",
+    "question_hi": "टैम्पिंग के बाद अधिकतम अनुमेय ट्रैक सेटलमेंट क्या है?",
+    "options_en": ["2 mm", "5 mm", "10 mm", "15 mm"],
+    "options_hi": ["2 मिमी", "5 मिमी", "10 मिमी", "15 मिमी"],
+    "answer_en": "5 mm",
+    "answer_hi": "5 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 41,
-    question_en: "Which of these is NOT a type of passenger train in India?",
-    question_hi: "यह में से कौन सी भारत में यात्री ट्रेन का प्रकार नहीं है?",
-    options_en: ["Duronto", "Garib Rath", "Vanikaran", "Rajdhani"],
-    options_hi: ["दुरंतो", "गरीब रथ", "वणिकरण", "राजधानी"],
-    answer_en: "Vanikaran",
-    answer_hi: "वणिकरण",
-    attempted: false,
-    selected: ""
+    "num": 38,
+    "question_en": "Which non-linear effect is critical in wheel-rail contact mechanics?",
+    "question_hi": "व्हील-रेल संपर्क यांत्रिकी में कौन सा नॉन-लीनियर प्रभाव महत्वपूर्ण है?",
+    "options_en": ["Geometric non-linearity", "Material non-linearity", "Contact non-linearity", "All of these"],
+    "options_hi": ["ज्यामितीय अरैखिकता", "सामग्री अरैखिकता", "संपर्क अरैखिकता", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 42,
-    question_en: "The longest railway platform in India is at:",
-    question_hi: "भारत में सबसे लंबा रेलवे प्लेटफॉर्म कहाँ है?",
-    options_en: ["Howrah", "Ghaziabad", "Gorakhpur", "Kharagpur"],
-    options_hi: ["हावड़ा", "गाज़ियाबाद", "गोरखपुर", "खड़गपुर"],
-    answer_en: "Gorakhpur",
-    answer_hi: "गोरखपुर",
-    attempted: false,
-    selected: ""
+    "num": 39,
+    "question_en": "What is the minimum required rail web thickness for 60E1 profile?",
+    "question_hi": "60E1 प्रोफाइल के लिए आवश्यक न्यूनतम रेल वेब मोटाई क्या है?",
+    "options_en": ["16.5 mm", "18.0 mm", "19.5 mm", "21.0 mm"],
+    "options_hi": ["16.5 मिमी", "18.0 मिमी", "19.5 मिमी", "21.0 मिमी"],
+    "answer_en": "19.5 mm",
+    "answer_hi": "19.5 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 43,
-    question_en: "Which city is known as the 'Manchester of India'?",
-    question_hi: "किस शहर को 'भारत का मैनचेस्टर' कहा जाता है?",
-    options_en: ["Mumbai", "Ahmedabad", "Surat", "Kanpur"],
-    options_hi: ["मुंबई", "अहमदाबाद", "सूरत", "कानपुर"],
-    answer_en: "Ahmedabad",
-    answer_hi: "अहमदाबाद",
-    attempted: false,
-    selected: ""
+    "num": 40,
+    "question_en": "Which standard specifies the testing of railway axles?",
+    "question_hi": "रेलवे एक्सल के परीक्षण को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["EN 13103", "IRS-T-38", "AAR M-101", "UIC 515-3"],
+    "options_hi": ["EN 13103", "IRS-T-38", "AAR M-101", "UIC 515-3"],
+    "answer_en": "EN 13103",
+    "answer_hi": "EN 13103",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 44,
-    question_en: "The first metro rail in India was started in:",
-    question_hi: "भारत में पहली मेट्रो रेल कहाँ शुरू हुई थी?",
-    options_en: ["Delhi", "Kolkata", "Mumbai", "Chennai"],
-    options_hi: ["दिल्ली", "कोलकाता", "मुंबई", "चेन्नई"],
-    answer_en: "Kolkata",
-    answer_hi: "कोलकाता",
-    attempted: false,
-    selected: ""
+    "num": 41,
+    "question_en": "What is the maximum permissible rail head plastic flow?",
+    "question_hi": "अधिकतम अनुमेय रेल हेड प्लास्टिक फ्लो क्या है?",
+    "options_en": ["1 mm", "2 mm", "3 mm", "4 mm"],
+    "options_hi": ["1 मिमी", "2 मिमी", "3 मिमी", "4 मिमी"],
+    "answer_en": "2 mm",
+    "answer_hi": "2 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 45,
-    question_en: "Which state has the highest railway route length?",
-    question_hi: "किस राज्य में रेलवे मार्ग की लंबाई सबसे अधिक है?",
-    options_en: ["Maharashtra", "Uttar Pradesh", "Rajasthan", "Madhya Pradesh"],
-    options_hi: ["महाराष्ट्र", "उत्तर प्रदेश", "राजस्थान", "मध्य प्रदेश"],
-    answer_en: "Uttar Pradesh",
-    answer_hi: "उत्तर प्रदेश",
-    attempted: false,
-    selected: ""
+    "num": 42,
+    "question_en": "Which computational fluid dynamics model is used for train aerodynamics?",
+    "question_hi": "ट्रेन एरोडायनामिक्स के लिए किस कम्प्यूटेशनल फ्लूइड डायनामिक्स मॉडल का उपयोग किया जाता है?",
+    "options_en": ["RANS", "LES", "DES", "All of these"],
+    "options_hi": ["RANS", "LES", "DES", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 46,
-    question_en: "The train that connects North East India to the rest of the country is:",
-    question_hi: "वह ट्रेन जो उत्तर पूर्व भारत को देश के बाकी हिस्सों से जोड़ती है:",
-    options_en: ["Rajdhani Express", "Sampark Kranti", "Dibrugarh Rajdhani", "Shatabdi Express"],
-    options_hi: ["राजधानी एक्सप्रेस", "संपर्क क्रांति", "डिब्रूगढ़ राजधानी", "शताब्दी एक्सप्रेस"],
-    answer_en: "Dibrugarh Rajdhani",
-    answer_hi: "डिब्रूगढ़ राजधानी",
-    attempted: false,
-    selected: ""
+    "num": 43,
+    "question_en": "What is the minimum required rail head radius after grinding?",
+    "question_hi": "ग्राइंडिंग के बाद आवश्यक न्यूनतम रेल हेड त्रिज्या क्या है?",
+    "options_en": ["8 mm", "10 mm", "12 mm", "14 mm"],
+    "options_hi": ["8 मिमी", "10 मिमी", "12 मिमी", "14 मिमी"],
+    "answer_en": "10 mm",
+    "answer_hi": "10 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 47,
-    question_en: "Which of these is a mountain railway in India?",
-    question_hi: "यह में से कौन सी भारत में एक पर्वतीय रेलवे है?",
-    options_en: ["Konkan Railway", "Nilgiri Mountain Railway", "Kalka-Shimla Railway", "Both B and C"],
-    options_hi: ["कोंकण रेलवे", "नीलगिरि पर्वतीय रेलवे", "कालका-शिमला रेलवे", "B और C दोनों"],
-    answer_en: "Both B and C",
-    answer_hi: "B और C दोनों",
-    attempted: false,
-    selected: ""
+    "num": 44,
+    "question_en": "Which standard specifies the design of railway bridges for high-speed?",
+    "question_hi": "हाई-स्पीड के लिए रेलवे पुलों के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["EN 1991-2", "IRS Bridge Code", "UIC 776-1R", "All of these"],
+    "options_hi": ["EN 1991-2", "आईआरएस ब्रिज कोड", "UIC 776-1R", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 48,
-    question_en: "The first electric train in India ran between:",
-    question_hi: "भारत में पहली इलेक्ट्रिक ट्रेन कहाँ चली थी?",
-    options_en: ["Delhi to Kolkata", "Mumbai to Pune", "Bombay VT to Kurla", "Chennai to Bangalore"],
-    options_hi: ["दिल्ली से कोलकाता", "मुंबई से पुणे", "बॉम्बे VT से कुर्ला", "चेन्नई से बैंगलोर"],
-    answer_en: "Bombay VT to Kurla",
-    answer_hi: "बॉम्बे VT से कुर्ला",
-    attempted: false,
-    selected: ""
+    "num": 45,
+    "question_en": "What is the maximum permissible wheel polygonization order?",
+    "question_hi": "अधिकतम अनुमेय व्हील पॉलीगोनाइजेशन ऑर्डर क्या है?",
+    "options_en": ["10th order", "20th order", "30th order", "40th order"],
+    "options_hi": ["10वां ऑर्डर", "20वां ऑर्डर", "30वां ऑर्डर", "40वां ऑर्डर"],
+    "answer_en": "20th order",
+    "answer_hi": "20वां ऑर्डर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 49,
-    question_en: "The railway budget was merged with general budget in:",
-    question_hi: "रेल बजट को सामान्य बजट में कब मिला दिया गया था?",
-    options_en: ["2014", "2016", "2017", "2018"],
-    options_hi: ["2014", "2016", "2017", "2018"],
-    answer_en: "2017",
-    answer_hi: "2017",
-    attempted: false,
-    selected: ""
+    "num": 46,
+    "question_en": "Which material testing method determines rail steel cleanliness?",
+    "question_hi": "रेल स्टील क्लीनलाइनेस निर्धारित करने के लिए किस मटेरियल टेस्टिंग विधि का उपयोग किया जाता है?",
+    "options_en": ["Spectroscopy", "Metallography", "Ultrasonic testing", "Magnetic particle testing"],
+    "options_hi": ["स्पेक्ट्रोस्कोपी", "मेटलोग्राफी", "अल्ट्रासोनिक टेस्टिंग", "मैग्नेटिक पार्टिकल टेस्टिंग"],
+    "answer_en": "Metallography",
+    "answer_hi": "मेटलोग्राफी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 50,
-    question_en: "Which of these is a luxury tourist train in India?",
-    question_hi: "यह में से कौन सी भारत में एक लग्जरी टूरिस्ट ट्रेन है?",
-    options_en: ["Deccan Odyssey", "Garib Rath", "Jan Shatabdi", "Duronto Express"],
-    options_hi: ["डेक्कन ओडिसी", "गरीब रथ", "जन शताब्दी", "दुरंतो एक्सप्रेस"],
-    answer_en: "Deccan Odyssey",
-    answer_hi: "डेक्कन ओडिसी",
-    attempted: false,
-    selected: ""
+    "num": 47,
+    "question_en": "What is the minimum required rail web height for 60 kg/m rail?",
+    "question_hi": "60 किग्रा/मीटर रेल के लिए आवश्यक न्यूनतम रेल वेब ऊंचाई क्या है?",
+    "options_en": ["140 mm", "150 mm", "160 mm", "170 mm"],
+    "options_hi": ["140 मिमी", "150 मिमी", "160 मिमी", "170 मिमी"],
+    "answer_en": "150 mm",
+    "answer_hi": "150 मिमी",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 48,
+    "question_en": "Which standard specifies the testing of railway wheels?",
+    "question_hi": "रेलवे पहियों के परीक्षण को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["EN 13979-1", "IRS-T-41", "AAR S-660", "UIC 812-3"],
+    "options_hi": ["EN 13979-1", "IRS-T-41", "AAR S-660", "UIC 812-3"],
+    "answer_en": "EN 13979-1",
+    "answer_hi": "EN 13979-1",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 49,
+    "question_en": "What is the maximum permissible rail head running band width?",
+    "question_hi": "अधिकतम अनुमेय रेल हेड रनिंग बैंड चौड़ाई क्या है?",
+    "options_en": ["30 mm", "40 mm", "50 mm", "60 mm"],
+    "options_hi": ["30 मिमी", "40 मिमी", "50 मिमी", "60 मिमी"],
+    "answer_en": "50 mm",
+    "answer_hi": "50 मिमी",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 50,
+    "question_en": "Which international standard is harmonized with Indian railway standards?",
+    "question_hi": "कौन सा अंतर्राष्ट्रीय मानक भारतीय रेलवे मानकों के साथ समन्वित है?",
+    "options_en": ["UIC standards", "EN standards", "AAR standards", "All of these"],
+    "options_hi": ["UIC मानक", "EN मानक", "AAR मानक", "ये सभी"],
+    "answer_en": "All of these",
+    "answer_hi": "ये सभी",
+    "attempted": false,
+    "selected": ""
   }
 ];
 
 
-let currentQuestion = 0; 
+// --------------------------- GLOBAL VARS -----------------------------
+let currentQuestion = 0;
 let language = "en";
-// let timeLeft = 180 * 60; // 180 minutes
-let timeLeft = 60 * 60; // 60 minutes
-
+let timeLeft = 60 * 60;   // 60 minutes timer
 let timerInterval;
 
-// ----------------- Quiz Logic -----------------
+// --------------------------- LOAD QUESTION ----------------------------
 function loadQuestion(index) {
     const q = questions[index];
-    document.getElementById("question").textContent = `${q.num}. ${
-        language === "en" ? q.question_en : q.question_hi
-    }`;
-    document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
 
     const optionsElement = document.getElementById("options");
     optionsElement.innerHTML = "";
@@ -579,6 +576,7 @@ function loadQuestion(index) {
     options.forEach((option) => {
         const isSelected = q.selected === option;
         const optionDiv = document.createElement("div");
+
         optionDiv.className = "option-box";
         optionDiv.style = `
             border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
@@ -587,12 +585,11 @@ function loadQuestion(index) {
             border-radius: 8px;
             margin: 6px 0;
             cursor: pointer;
-            transition: all 0.2s;
         `;
 
         optionDiv.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${isSelected ? "checked" : ""} style="margin-right:8px;">
-            ${option}
+            <input type="radio" name="option"
+            value="${option}" ${isSelected ? "checked" : ""} /> ${option}
         `;
 
         optionDiv.addEventListener("click", () => {
@@ -606,12 +603,14 @@ function loadQuestion(index) {
     updateNavigation();
 }
 
+// --------------------------- MARK ATTEMPT ----------------------------
 function markAttempted(index, selectedAnswer) {
     questions[index].attempted = true;
     questions[index].selected = selectedAnswer;
     updateNavigation();
 }
 
+// --------------------------- NEXT / PREV -----------------------------
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -626,230 +625,150 @@ function prevQuestion() {
     }
 }
 
+// --------------------------- LANGUAGE CHANGE -------------------------
 function changeLanguage() {
     language = document.getElementById("languageSelect").value;
     loadQuestion(currentQuestion);
 }
 
-function submitQuiz() {
-    clearInterval(timerInterval);
-    let attempted = 0,
-        notAttempted = 0,
-        score = 0;
-
-    questions.forEach((q) => {
-        if (q.attempted) {
-            attempted++;
-            if (q.selected === q.answer_en || q.selected === q.answer_hi) score++;
-        } else notAttempted++;
-    });
-
-    alert(
-        `Quiz submitted!\nAttempted: ${attempted}\nNot Attempted: ${notAttempted}\nScore: ${score}/${questions.length}`
-    );
-}
-
+// --------------------------- TIMER -------------------------------
 function startTimer() {
     const timerElement = document.getElementById("timer");
     clearInterval(timerInterval);
+
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            alert("Time's up!");
+            alert("⏳ Time Over!");
             submitQuiz();
-        } else {
-            const hours = Math.floor(timeLeft / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = `Time Left: ${hours
-                .toString()
-                .padStart(2, "0")}:${minutes
-                .toString()
-                .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-            timeLeft--;
+            return;
         }
+
+        const h = Math.floor(timeLeft / 3600);
+        const m = Math.floor((timeLeft % 3600) / 60);
+        const s = timeLeft % 60;
+
+        timerElement.textContent =
+            `Time Left: ${h.toString().padStart(2, "0")}:${m
+                .toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+
+        timeLeft--;
     }, 1000);
 }
 
+// --------------------------- SUBMIT QUIZ ---------------------
+function submitQuiz() {
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
+
+    clearInterval(timerInterval);
+
+    // Calculate time spent
+    const totalTimeSpent = (60 * 60) - timeLeft;
+    const mins = Math.floor(totalTimeSpent / 60);
+    const secs = totalTimeSpent % 60;
+
+    // Save to localStorage
+    localStorage.setItem("timeTaken", `${mins} min ${secs} sec`);
+
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
+        if (q.attempted) {
+            attempted++;
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
+    });
+
+    // Save result data
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    // Stop camera stream if active
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Redirect
+    window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+}
+
+// --------------------------- NAVIGATION ------------------------------
 function updateNavigation() {
     const nav = document.getElementById("circleContainer");
     nav.innerHTML = "";
+
     questions.forEach((q, i) => {
         let color = "gray";
         if (i === currentQuestion) color = "blue";
         else if (q.attempted) color = "green";
-        nav.innerHTML += `<div class='circle' style='background-color:${color}' onclick='loadQuestion(${i})'>${i + 1}</div>`;
+
+        const circle = document.createElement("div");
+        circle.className = "circle";
+        circle.style.background = color;
+        circle.textContent = i + 1;
+        circle.onclick = () => jumpToQuestion(i);
+        nav.appendChild(circle);
     });
 }
 
-// ----------------- Camera & Movement Logic -----------------
+function jumpToQuestion(i) {
+    currentQuestion = i;
+    loadQuestion(i);
+}
+
+// --------------------------- CAMERA ----------------------
 let videoStream;
-let movementCount = 0;
 
 function startCamera() {
     const container = document.createElement("div");
     container.id = "camera-container";
     container.style.position = "fixed";
     container.style.top = "10px";
-    container.style.left = "10px"; // ✅ Left side
+    container.style.left = "10px";
     container.style.width = "130px";
     container.style.height = "130px";
-    container.style.zIndex = "9999";
     container.style.borderRadius = "50%";
     container.style.overflow = "hidden";
-    container.style.border = "3px solid red";
-    container.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-    container.style.cursor = "grab";
-    container.style.minWidth = "80px";
-    container.style.minHeight = "80px";
-    container.style.maxWidth = "250px";
-    container.style.maxHeight = "250px";
     container.style.background = "#000";
+    container.style.border = "3px solid red";
+    container.style.zIndex = "9999";
     document.body.appendChild(container);
 
     const video = document.createElement("video");
-    video.setAttribute("autoplay", true);
-    video.setAttribute("playsinline", true);
+    video.autoplay = true;
+    video.playsInline = true;
     video.style.width = "100%";
     video.style.height = "100%";
     video.style.objectFit = "cover";
     container.appendChild(video);
 
-    // ✅ Resize handle
-    const resizeHandle = document.createElement("div");
-    resizeHandle.style.position = "absolute";
-    resizeHandle.style.bottom = "2px";
-    resizeHandle.style.right = "2px";
-    resizeHandle.style.width = "15px";
-    resizeHandle.style.height = "15px";
-    resizeHandle.style.background = "rgba(255,255,255,0.7)";
-    resizeHandle.style.borderRadius = "4px";
-    resizeHandle.style.cursor = "se-resize";
-    container.appendChild(resizeHandle);
-
-    // ✅ Drag logic
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    container.addEventListener("mousedown", (e) => {
-        if (e.target === resizeHandle) return;
-        isDragging = true;
-        offsetX = e.clientX - container.offsetLeft;
-        offsetY = e.clientY - container.offsetTop;
-        container.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
-        x = Math.max(0, Math.min(window.innerWidth - container.offsetWidth, x));
-        y = Math.max(0, Math.min(window.innerHeight - container.offsetHeight, y));
-        container.style.left = `${x}px`;
-        container.style.top = `${y}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-        container.style.cursor = "grab";
-    });
-
-    // ✅ Resize logic
-    let isResizing = false;
-    let startWidth, startHeight, startX, startY;
-
-    resizeHandle.addEventListener("mousedown", (e) => {
-        e.stopPropagation();
-        isResizing = true;
-        startWidth = container.offsetWidth;
-        startHeight = container.offsetHeight;
-        startX = e.clientX;
-        startY = e.clientY;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isResizing) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        const newSize = Math.max(80, Math.min(250, Math.max(startWidth + dx, startHeight + dy)));
-        container.style.width = `${newSize}px`;
-        container.style.height = `${newSize}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isResizing = false;
-    });
-
-    // ✅ Camera stream
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
             video.srcObject = stream;
             videoStream = stream;
-            detectMovement(video);
         })
-        .catch(err => {
-            console.error("Camera error:", err);
-            alert("Camera not accessible!");
-        });
+        .catch(() => alert("Camera not accessible!"));
 }
 
-function detectMovement(video) {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = 160;
-    canvas.height = 160;
-    let lastImageData = null;
-
-    setInterval(() => {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-        if (lastImageData) {
-            let diff = 0;
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                diff += Math.abs(imageData.data[i] - lastImageData.data[i]);
-            }
-
-            if (diff > 1000000) {
-                movementCount++;
-                if (movementCount === 1) {
-                    alert("⚠️ Alert 1: Face is not move");
-                } else if (movementCount === 2) {
-                    alert("⚠️ Alert 2: Head is not move");
-                } else if (movementCount === 3) {
-                    alert("⚠️ Alert 3: Test series is restarting...");
-                    restartTest();
-                }
-            }
-        }
-        lastImageData = imageData;
-    }, 2000);
-}
-
-function restartTest() {
-    if (videoStream) {
-        videoStream.getTracks().forEach(track => track.stop());
-    }
-    const camContainer = document.getElementById("camera-container");
-    if (camContainer) camContainer.remove();
-
-    movementCount = 0;
-    currentQuestion = 0;
-    timeLeft = 180 * 60;
-
-    questions.forEach(q => {
-        q.attempted = false;
-        q.selected = null;
-    });
-
-    loadQuestion(currentQuestion);
-    startTimer();
-    startCamera();
-}
-
-// ----------------- Page Load -----------------
+// --------------------------- PAGE LOAD --------------------------
 window.onload = function () {
     loadQuestion(currentQuestion);
     startTimer();
-    startCamera(); // ✅ Camera starts with test
+    startCamera();
 };

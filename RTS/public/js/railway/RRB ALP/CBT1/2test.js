@@ -1,583 +1,572 @@
 const questions = [
   {
-    num: 1,
-    question_en: "What is the basic economic problem?",
-    question_hi: "मूलभूत आर्थिक समस्या क्या है?",
-    options_en: ["Scarcity of resources", "Unemployment", "Inflation", "Deflation"],
-    options_hi: ["संसाधनों की कमी", "बेरोज़गारी", "मुद्रास्फीति", "मूल्यह्रास"],
-    answer_en: "Scarcity of resources",
-    answer_hi: "संसाधनों की कमी",
-    attempted: false,
-    selected: ""
+    "num": 1,
+    "question_en": "What is the minimum radius of curvature permitted for high-speed tracks (160 km/h) on Indian Railways?",
+    "question_hi": "भारतीय रेलवे पर हाई-स्पीड ट्रैक्स (160 किमी/घंटा) के लिए अनुमत न्यूनतम वक्रता त्रिज्या क्या है?",
+    "options_en": ["875 meters", "1450 meters", "2200 meters", "3000 meters"],
+    "options_hi": ["875 मीटर", "1450 मीटर", "2200 मीटर", "3000 मीटर"],
+    "answer_en": "1450 meters",
+    "answer_hi": "1450 मीटर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 2,
-    question_en: "Stagflation is a period of:",
-    question_hi: "स्टैगफ्लेशन एक समयावधि है:",
-    options_en: ["High growth & inflation", "High unemployment & inflation", "Low growth & low prices", "High income & growth"],
-    options_hi: ["उच्च विकास और मुद्रास्फीति", "उच्च बेरोज़गारी और मुद्रास्फीति", "कम विकास और कम कीमतें", "उच्च आय और विकास"],
-    answer_en: "High unemployment & inflation",
-    answer_hi: "उच्च बेरोज़गारी और मुद्रास्फीति",
-    attempted: false,
-    selected: ""
+    "num": 2,
+    "question_en": "Which type of rail steel has the highest tensile strength as per Indian standards?",
+    "question_hi": "भारतीय मानकों के अनुसार किस प्रकार के रेल स्टील में उच्चतम तन्य शक्ति होती है?",
+    "options_en": ["Grade 880", "Grade 1080", "Grade 1170", "Grade 1280"],
+    "options_hi": ["ग्रेड 880", "ग्रेड 1080", "ग्रेड 1170", "ग्रेड 1280"],
+    "answer_en": "Grade 1280",
+    "answer_hi": "ग्रेड 1280",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 3,
-    question_en: "The production function shows:",
-    question_hi: "उत्पादन फलन क्या दर्शाता है?",
-    options_en: ["Relationship between input and output", "Relationship between wages and labor", "Investment and savings", "Demand and supply"],
-    options_hi: ["इनपुट और आउटपुट के बीच संबंध", "वेतन और श्रम के बीच संबंध", "निवेश और बचत", "मांग और आपूर्ति"],
-    answer_en: "Relationship between input and output",
-    answer_hi: "इनपुट और आउटपुट के बीच संबंध",
-    attempted: false,
-    selected: ""
+    "num": 3,
+    "question_en": "What is the maximum permissible gradient for high-speed railway lines in India?",
+    "question_hi": "भारत में हाई-स्पीड रेलवे लाइनों के लिए अधिकतम अनुमेय ग्रेडिएंट क्या है?",
+    "options_en": ["1 in 100", "1 in 150", "1 in 200", "1 in 400"],
+    "options_hi": ["1:100", "1:150", "1:200", "1:400"],
+    "answer_en": "1 in 400",
+    "answer_hi": "1:400",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 4,
-    question_en: "Who bears the burden of indirect tax?",
-    question_hi: "अप्रत्यक्ष कर का बोझ कौन उठाता है?",
-    options_en: ["Producer", "Government", "Consumer", "Investor"],
-    options_hi: ["उत्पादक", "सरकार", "उपभोक्ता", "निवेशक"],
-    answer_en: "Consumer",
-    answer_hi: "उपभोक्ता",
-    attempted: false,
-    selected: ""
+    "num": 4,
+    "question_en": "Which signaling system uses 'Frequency Shift Keying' technology on Indian Railways?",
+    "question_hi": "भारतीय रेलवे पर 'फ़्रीक्वेंसी शिफ्ट कीइंग' तकनीक का उपयोग किस सिग्नलिंग सिस्टम में किया जाता है?",
+    "options_en": ["Absolute Block", "Automatic Block", "Coded Track Circuit", "Axle Counter"],
+    "options_hi": ["एब्सोल्यूट ब्लॉक", "ऑटोमैटिक ब्लॉक", "कोडेड ट्रैक सर्किट", "एक्सल काउंटर"],
+    "answer_en": "Coded Track Circuit",
+    "answer_hi": "कोडेड ट्रैक सर्किट",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 5,
-    question_en: "Main aim of devaluation is:",
-    question_hi: "मुद्राप्रतिक्षेप का मुख्य उद्देश्य है:",
-    options_en: ["Reduce imports", "Encourage exports", "Reduce inflation", "Increase FDI"],
-    options_hi: ["आयात को कम करना", "निर्यात को बढ़ावा देना", "मुद्रास्फीति को कम करना", "प्रत्यक्ष विदेशी निवेश को बढ़ाना"],
-    answer_en: "Encourage exports",
-    answer_hi: "निर्यात को बढ़ावा देना",
-    attempted: false,
-    selected: ""
+    "num": 5,
+    "question_en": "What is the maximum cant deficiency allowed for 160 km/h speed on Indian Railways?",
+    "question_hi": "भारतीय रेलवे पर 160 किमी/घंटा गति के लिए अनुमत अधिकतम कैंट डेफिशिएंसी क्या है?",
+    "options_en": ["75 mm", "100 mm", "125 mm", "150 mm"],
+    "options_hi": ["75 मिमी", "100 मिमी", "125 मिमी", "150 मिमी"],
+    "answer_en": "100 mm",
+    "answer_hi": "100 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 6,
-    question_en: "Goods whose demand increases with income are called:",
-    question_hi: "जिन वस्तुओं की मांग आय के साथ बढ़ती है उन्हें क्या कहा जाता है?",
-    options_en: ["Inferior goods", "Luxury goods", "Normal goods", "Giffen goods"],
-    options_hi: ["अवमूल्य वस्तुएं", "ऐश्वर्य वस्तुएं", "सामान्य वस्तुएं", "गिफेन वस्तुएं"],
-    answer_en: "Normal goods",
-    answer_hi: "सामान्य वस्तुएं",
-    attempted: false,
-    selected: ""
+    "num": 6,
+    "question_en": "Which type of rail fastening system is used in 'Pandrol' clips?",
+    "question_hi": "'पैंड्रोल' क्लिप में किस प्रकार की रेल फास्टनिंग सिस्टम का उपयोग किया जाता है?",
+    "options_en": ["Baseplate system", "Direct fixation", "Elastic rail clip", "Bolt and nut system"],
+    "options_hi": ["बेसप्लेट सिस्टम", "डायरेक्ट फिक्सेशन", "इलास्टिक रेल क्लिप", "बोल्ट और नट सिस्टम"],
+    "answer_en": "Elastic rail clip",
+    "answer_hi": "इलास्टिक रेल क्लिप",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 7,
-    question_en: "Price increase leads to:",
-    question_hi: "कीमत में वृद्धि से क्या होता है?",
-    options_en: ["Rise in supply", "Fall in consumer surplus", "Fall in production", "Rise in wages"],
-    options_hi: ["आपूर्ति में वृद्धि", "उपभोक्ता अधिशेष में कमी", "उत्पादन में कमी", "वेतन में वृद्धि"],
-    answer_en: "Fall in consumer surplus",
-    answer_hi: "उपभोक्ता अधिशेष में कमी",
-    attempted: false,
-    selected: ""
+    "num": 7,
+    "question_en": "What is the minimum track circuit current required for reliable operation in signaling?",
+    "question_hi": "सिग्नलिंग में विश्वसनीय संचालन के लिए आवश्यक न्यूनतम ट्रैक सर्किट करंट क्या है?",
+    "options_en": ["0.5 A", "1.0 A", "1.5 A", "2.0 A"],
+    "options_hi": ["0.5 ए", "1.0 ए", "1.5 ए", "2.0 ए"],
+    "answer_en": "1.0 A",
+    "answer_hi": "1.0 ए",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 8,
-    question_en: "Long-term fiscal policy stabilizes:",
-    question_hi: "दीर्घकालिक राजकोषीय नीति क्या स्थिर करती है?",
-    options_en: ["Employment", "Exports", "Tax revenue to national income ratio", "Imports"],
-    options_hi: ["रोज़गार", "निर्यात", "कर राजस्व और राष्ट्रीय आय का अनुपात", "आयात"],
-    answer_en: "Tax revenue to national income ratio",
-    answer_hi: "कर राजस्व और राष्ट्रीय आय का अनुपात",
-    attempted: false,
-    selected: ""
+    "num": 8,
+    "question_en": "Which mathematical model is used for railway track settlement prediction?",
+    "question_hi": "रेलवे ट्रैक सेटलमेंट भविष्यवाणी के लिए किस गणितीय मॉडल का उपयोग किया जाता है?",
+    "options_en": ["Terzaghi's model", "Meyerhof's model", "Hertz theory", "Boussinesq theory"],
+    "options_hi": ["टेर्जाघी मॉडल", "मेयरहोफ मॉडल", "हर्ट्ज सिद्धांत", "बूसिनेस्क सिद्धांत"],
+    "answer_en": "Boussinesq theory",
+    "answer_hi": "बूसिनेस्क सिद्धांत",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 9,
-    question_en: "Inflation occurs when:",
-    question_hi: "मुद्रास्फीति कब होती है?",
-    options_en: ["Prices fall continuously", "Money value increases", "Prices increase over time", "Supply exceeds demand"],
-    options_hi: ["कीमतें लगातार गिरती हैं", "मुद्रा का मूल्य बढ़ता है", "कीमतें समय के साथ बढ़ती हैं", "आपूर्ति मांग से अधिक होती है"],
-    answer_en: "Prices increase over time",
-    answer_hi: "कीमतें समय के साथ बढ़ती हैं",
-    attempted: false,
-    selected: ""
+    "num": 9,
+    "question_en": "What is the standard wheel diameter for Indian Railways broad gauge locomotives?",
+    "question_hi": "भारतीय रेलवे ब्रॉड गेज लोकोमोटिव के लिए मानक पहिया व्यास क्या है?",
+    "options_en": ["914 mm", "1016 mm", "1092 mm", "1238 mm"],
+    "options_hi": ["914 मिमी", "1016 मिमी", "1092 मिमी", "1238 मिमी"],
+    "answer_en": "1092 mm",
+    "answer_hi": "1092 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 10,
-    question_en: "Which organization regulates mutual funds in India?",
-    question_hi: "भारत में म्यूचुअल फंड को कौन नियंत्रित करता है?",
-    options_en: ["RBI", "IRDA", "SEBI", "NABARD"],
-    options_hi: ["भारतीय रिज़र्व बैंक", "बीमा नियामक", "सेबी", "नाबार्ड"],
-    answer_en: "SEBI",
-    answer_hi: "सेबी",
-    attempted: false,
-    selected: ""
+    "num": 10,
+    "question_en": "Which type of bearing arrangement is used in modern LHB coaches?",
+    "question_hi": "आधुनिक LHB कोच में किस प्रकार की बेयरिंग व्यवस्था का उपयोग किया जाता है?",
+    "options_en": ["SKF TBU", "FAG H-Unit", "Timken AP", "NSK cartridge"],
+    "options_hi": ["SKF TBU", "FAG H-Unit", "Timken AP", "NSK कार्ट्रिज"],
+    "answer_en": "SKF TBU",
+    "answer_hi": "SKF TBU",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 11,
-    question_en: "Which curve shows the relationship between inflation and unemployment?",
-    question_hi: "कौन सा वक्र मुद्रास्फीति और बेरोजगारी के बीच संबंध को दर्शाता है?",
-    options_en: ["Laffer Curve", "Phillips Curve", "IS Curve", "LM Curve"],
-    options_hi: ["लाफर वक्र", "फिलिप्स वक्र", "आईएस वक्र", "एलएम वक्र"],
-    answer_en: "Phillips Curve",
-    answer_hi: "फिलिप्स वक्र",
-    attempted: false,
-    selected: ""
+    "num": 11,
+    "question_en": "What is the minimum approach visibility required for color light signals?",
+    "question_hi": "कलर लाइट सिग्नल के लिए आवश्यक न्यूनतम एप्रोच विजिबिलिटी क्या है?",
+    "options_en": ["180 meters", "400 meters", "800 meters", "1200 meters"],
+    "options_hi": ["180 मीटर", "400 मीटर", "800 मीटर", "1200 मीटर"],
+    "answer_en": "400 meters",
+    "answer_hi": "400 मीटर",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 12,
-    question_en: "GDP at factor cost is equal to:",
-    question_hi: "कारक लागत पर GDP बराबर होता है:",
-    options_en: [
-      "GDP at market prices - Indirect taxes + Subsidies",
-      "GDP at market prices + Indirect taxes",
-      "GNP - Net exports",
-      "GNP + Indirect taxes"
-    ],
-    options_hi: [
-      "बाजार मूल्य पर GDP - अप्रत्यक्ष कर + सब्सिडी",
-      "बाजार मूल्य पर GDP + अप्रत्यक्ष कर",
-      "GNP - शुद्ध निर्यात",
-      "GNP + अप्रत्यक्ष कर"
-    ],
-    answer_en: "GDP at market prices - Indirect taxes + Subsidies",
-    answer_hi: "बाजार मूल्य पर GDP - अप्रत्यक्ष कर + सब्सिडी",
-    attempted: false,
-    selected: ""
+    "num": 12,
+    "question_en": "Which standard specifies the requirements for rail-welding by thermit process?",
+    "question_hi": "थर्मिट प्रक्रिया द्वारा रेल-वेल्डिंग की आवश्यकताओं को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IS 3000", "IRS-T-12", "RDSO/TRC-54", "UIC 860"],
+    "options_hi": ["IS 3000", "IRS-T-12", "RDSO/TRC-54", "UIC 860"],
+    "answer_en": "IRS-T-12",
+    "answer_hi": "IRS-T-12",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 13,
-    question_en: "Which sector is called the 'tertiary sector'?",
-    question_hi: "कौन सा क्षेत्र 'तृतीयक क्षेत्र' कहलाता है?",
-    options_en: ["Agriculture", "Manufacturing", "Services", "Mining"],
-    options_hi: ["कृषि", "उत्पादन", "सेवाएँ", "खनन"],
-    answer_en: "Services",
-    answer_hi: "सेवाएँ",
-    attempted: false,
-    selected: ""
+    "num": 13,
+    "question_en": "What is the maximum permissible lateral force on rail for 25-tonne axle load?",
+    "question_hi": "25-टन एक्सल लोड के लिए रेल पर अधिकतम अनुमेय पार्श्व बल क्या है?",
+    "options_en": ["4.5 tonnes", "5.0 tonnes", "5.5 tonnes", "6.0 tonnes"],
+    "options_hi": ["4.5 टन", "5.0 टन", "5.5 टन", "6.0 टन"],
+    "answer_en": "5.5 tonnes",
+    "answer_hi": "5.5 टन",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 14,
-    question_en: "Disguised unemployment mostly occurs in:",
-    question_hi: "प्रच्छन्न बेरोज़गारी मुख्यतः किस क्षेत्र में होती है?",
-    options_en: ["Industrial sector", "Service sector", "Agricultural sector", "Private sector"],
-    options_hi: ["औद्योगिक क्षेत्र", "सेवा क्षेत्र", "कृषि क्षेत्र", "निजी क्षेत्र"],
-    answer_en: "Agricultural sector",
-    answer_hi: "कृषि क्षेत्र",
-    attempted: false,
-    selected: ""
+    "num": 14,
+    "question_en": "Which technology is used in 'Kavach' Train Collision Avoidance System?",
+    "question_hi": "'कवच' ट्रेन टक्कर रोधी प्रणाली में किस तकनीक का उपयोग किया जाता है?",
+    "options_en": ["GSM-R", "RFID", "LTE-R", "UWB"],
+    "options_hi": ["GSM-R", "RFID", "LTE-R", "UWB"],
+    "answer_en": "UWB",
+    "answer_hi": "UWB",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 15,
-    question_en: "The economic planning in India is based on which model?",
-    question_hi: "भारत में आर्थिक योजना किस मॉडल पर आधारित है?",
-    options_en: ["Capitalist model", "Socialist model", "Mixed economy model", "Laissez-faire model"],
-    options_hi: ["पूंजीवादी मॉडल", "समाजवादी मॉडल", "मिश्रित अर्थव्यवस्था मॉडल", "नियंत्रण मुक्त मॉडल"],
-    answer_en: "Mixed economy model",
-    answer_hi: "मिश्रित अर्थव्यवस्था मॉडल",
-    attempted: false,
-    selected: ""
+    "num": 15,
+    "question_en": "What is the standard spacing between sleepers for 52 kg/m rail on Indian Railways?",
+    "question_hi": "भारतीय रेलवे पर 52 किग्रा/मीटर रेल के लिए स्लीपरों के बीच मानक दूरी क्या है?",
+    "options_en": ["600 mm", "650 mm", "700 mm", "750 mm"],
+    "options_hi": ["600 मिमी", "650 मिमी", "700 मिमी", "750 मिमी"],
+    "answer_en": "650 mm",
+    "answer_hi": "650 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 16,
-    question_en: "Which tax is levied on the income of individuals?",
-    question_hi: "व्यक्तियों की आय पर कौन सा कर लगाया जाता है?",
-    options_en: ["Excise duty", "Income tax", "Customs duty", "Wealth tax"],
-    options_hi: ["उत्पाद शुल्क", "आयकर", "सीमा शुल्क", "संपत्ति कर"],
-    answer_en: "Income tax",
-    answer_hi: "आयकर",
-    attempted: false,
-    selected: ""
+    "num": 16,
+    "question_en": "Which type of bridge is most suitable for high-speed railway lines?",
+    "question_hi": "हाई-स्पीड रेलवे लाइनों के लिए किस प्रकार का पुल सबसे उपयुक्त है?",
+    "options_en": ["Steel truss", "RCC slab", "Pre-stressed concrete", "Composite steel-concrete"],
+    "options_hi": ["स्टील ट्रस", "आरसीसी स्लैब", "प्री-स्ट्रेस्ड कंक्रीट", "कम्पोजिट स्टील-कंक्रीट"],
+    "answer_en": "Pre-stressed concrete",
+    "answer_hi": "प्री-स्ट्रेस्ड कंक्रीट",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 17,
-    question_en: "Bank rate is the rate at which:",
-    question_hi: "बैंक दर वह दर है जिस पर:",
-    options_en: ["RBI lends to public", "Commercial banks lend to RBI", "RBI lends to commercial banks", "Banks lend to public"],
-    options_hi: ["RBI जनता को उधार देता है", "वाणिज्यिक बैंक RBI को उधार देते हैं", "RBI वाणिज्यिक बैंकों को उधार देता है", "बैंक जनता को उधार देते हैं"],
-    answer_en: "RBI lends to commercial banks",
-    answer_hi: "RBI वाणिज्यिक बैंकों को उधार देता है",
-    attempted: false,
-    selected: ""
+    "num": 17,
+    "question_en": "What is the minimum ballast cushion required under concrete sleepers?",
+    "question_hi": "कंक्रीट स्लीपरों के नीचे आवश्यक न्यूनतम बैलास्ट कुशन क्या है?",
+    "options_en": ["150 mm", "200 mm", "250 mm", "300 mm"],
+    "options_hi": ["150 मिमी", "200 मिमी", "250 मिमी", "300 मिमी"],
+    "answer_en": "250 mm",
+    "answer_hi": "250 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 18,
-    question_en: "Who prepares the National Income estimates in India?",
-    question_hi: "भारत में राष्ट्रीय आय का अनुमान कौन तैयार करता है?",
-    options_en: ["RBI", "Finance Ministry", "CSO", "NITI Aayog"],
-    options_hi: ["RBI", "वित्त मंत्रालय", "CSO", "नीति आयोग"],
-    answer_en: "CSO",
-    answer_hi: "CSO",
-    attempted: false,
-    selected: ""
+    "num": 18,
+    "question_en": "Which standard specifies the testing procedure for rail steel?",
+    "question_hi": "रेल स्टील के परीक्षण प्रक्रिया को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IS 3443", "IS 5512", "IS 1590", "IS 228"],
+    "options_hi": ["आईएस 3443", "आईएस 5512", "आईएस 1590", "आईएस 228"],
+    "answer_en": "IS 5512",
+    "answer_hi": "आईएस 5512",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 19,
-    question_en: "Which of the following is not a direct tax?",
-    question_hi: "निम्नलिखित में से कौन-सा प्रत्यक्ष कर नहीं है?",
-    options_en: ["Wealth Tax", "Corporate Tax", "Income Tax", "Excise Duty"],
-    options_hi: ["संपत्ति कर", "कॉरपोरेट कर", "आय कर", "उत्पाद शुल्क"],
-    answer_en: "Excise Duty",
-    answer_hi: "उत्पाद शुल्क",
-    attempted: false,
-    selected: ""
+    "num": 19,
+    "question_en": "What is the maximum allowable track twist over 3 meters for high-speed lines?",
+    "question_hi": "हाई-स्पीड लाइनों के लिए 3 मीटर पर अधिकतम अनुमेय ट्रैक ट्विस्ट क्या है?",
+    "options_en": ["2 mm", "3 mm", "4 mm", "5 mm"],
+    "options_hi": ["2 मिमी", "3 मिमी", "4 मिमी", "5 मिमी"],
+    "answer_en": "3 mm",
+    "answer_hi": "3 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 20,
-    question_en: "Main source of revenue for Government of India is:",
-    question_hi: "भारत सरकार का मुख्य राजस्व स्रोत है:",
-    options_en: ["Excise duty", "Corporation tax", "GST", "Income tax"],
-    options_hi: ["उत्पाद शुल्क", "कॉरपोरेट कर", "जीएसटी", "आयकर"],
-    answer_en: "GST",
-    answer_hi: "जीएसटी",
-    attempted: false,
-    selected: ""
+    "num": 20,
+    "question_en": "Which type of rail grinding is done for correcting rail profile?",
+    "question_hi": "रेल प्रोफाइल सुधार के लिए किस प्रकार की रेल ग्राइंडिंग की जाती है?",
+    "options_en": ["Preventive grinding", "Corrective grinding", "Production grinding", "Spot grinding"],
+    "options_hi": ["प्रिवेंटिव ग्राइंडिंग", "करेक्टिव ग्राइंडिंग", "प्रोडक्शन ग्राइंडिंग", "स्पॉट ग्राइंडिंग"],
+    "answer_en": "Corrective grinding",
+    "answer_hi": "करेक्टिव ग्राइंडिंग",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 21,
-    question_en: "Inflation is measured by:",
-    question_hi: "भारत में मुद्रास्फीति किससे मापी जाती है?",
-    options_en: ["WPI", "CPI", "National Income", "GNP"],
-    options_hi: ["डब्ल्यूपीआई", "सीपीआई", "राष्ट्रीय आय", "सकल राष्ट्रीय उत्पाद"],
-    answer_en: "CPI",
-    answer_hi: "सीपीआई",
-    attempted: false,
-    selected: ""
+    "num": 21,
+    "question_en": "What is the standard flange way clearance for broad gauge tracks?",
+    "question_hi": "ब्रॉड गेज ट्रैक के लिए मानक फ्लेंज वे क्लीयरेंस क्या है?",
+    "options_en": ["38 mm", "44 mm", "51 mm", "57 mm"],
+    "options_hi": ["38 मिमी", "44 मिमी", "51 मिमी", "57 मिमी"],
+    "answer_en": "44 mm",
+    "answer_hi": "44 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 22,
-    question_en: "Narasimham Committee is related to:",
-    question_hi: "नरसिंहम समिति किससे संबंधित है?",
-    options_en: ["Industrial reforms", "Financial sector reforms", "Tax reforms", "Public sector"],
-    options_hi: ["औद्योगिक सुधार", "वित्तीय क्षेत्र सुधार", "कर सुधार", "सार्वजनिक क्षेत्र"],
-    answer_en: "Financial sector reforms",
-    answer_hi: "वित्तीय क्षेत्र सुधार",
-    attempted: false,
-    selected: ""
+    "num": 22,
+    "question_en": "Which organization developed the 'Train 18' (Vande Bharat Express)?",
+    "question_hi": "'ट्रेन 18' (वंदे भारत एक्सप्रेस) किस संगठन द्वारा विकसित किया गया था?",
+    "options_en": ["ICF Chennai", "RCF Kapurthala", "MCF Rae Bareli", "BHEL"],
+    "options_hi": ["आईसीएफ चेन्नई", "आरसीएफ कपूरथला", "एमसीएफ रायबरेली", "भेल"],
+    "answer_en": "ICF Chennai",
+    "answer_hi": "आईसीएफ चेन्नई",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 23,
-    question_en: "Which of the following is a capital expenditure?",
-    question_hi: "निम्नलिखित में से कौन-सा पूंजीगत व्यय है?",
-    options_en: ["Wages", "Interest payments", "Purchase of defense equipment", "Pensions"],
-    options_hi: ["वेतन", "ब्याज भुगतान", "रक्षा उपकरणों की खरीद", "पेंशन"],
-    answer_en: "Purchase of defense equipment",
-    answer_hi: "रक्षा उपकरणों की खरीद",
-    attempted: false,
-    selected: ""
+    "num": 23,
+    "question_en": "What is the maximum permissible wheel flat length before requiring wheel turning?",
+    "question_hi": "व्हील टर्निंग की आवश्यकता से पहले अधिकतम अनुमेय व्हील फ्लैट लंबाई क्या है?",
+    "options_en": ["25 mm", "50 mm", "75 mm", "100 mm"],
+    "options_hi": ["25 मिमी", "50 मिमी", "75 मिमी", "100 मिमी"],
+    "answer_en": "50 mm",
+    "answer_hi": "50 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 24,
-    question_en: "Balance of Trade means:",
-    question_hi: "व्यापार संतुलन का अर्थ है:",
-    options_en: ["Export - Import", "Import - Export", "FDI", "Remittances"],
-    options_hi: ["निर्यात - आयात", "आयात - निर्यात", "एफडीआई", "विदेशी प्रेषण"],
-    answer_en: "Export - Import",
-    answer_hi: "निर्यात - आयात",
-    attempted: false,
-    selected: ""
+    "num": 24,
+    "question_en": "Which type of turnout design is used for speeds above 100 km/h?",
+    "question_hi": "100 किमी/घंटा से अधिक गति के लिए किस प्रकार के टर्नआउट डिजाइन का उपयोग किया जाता है?",
+    "options_en": ["1 in 8.5", "1 in 12", "1 in 16", "1 in 20"],
+    "options_hi": ["1:8.5", "1:12", "1:16", "1:20"],
+    "answer_en": "1 in 20",
+    "answer_hi": "1:20",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 25,
-    question_en: "Who publishes Human Development Index?",
-    question_hi: "मानव विकास सूचकांक कौन प्रकाशित करता है?",
-    options_en: ["World Bank", "UNICEF", "UNDP", "IMF"],
-    options_hi: ["विश्व बैंक", "यूनिसेफ", "यूएनडीपी", "आईएमएफ"],
-    answer_en: "UNDP",
-    answer_hi: "यूएनडीपी",
-    attempted: false,
-    selected: ""
+    "num": 25,
+    "question_en": "What is the minimum rail web thickness required for 60 kg/m rail?",
+    "question_hi": "60 किग्रा/मीटर रेल के लिए आवश्यक न्यूनतम रेल वेब मोटाई क्या है?",
+    "options_en": ["16.5 mm", "18.0 mm", "19.5 mm", "21.0 mm"],
+    "options_hi": ["16.5 मिमी", "18.0 मिमी", "19.5 मिमी", "21.0 मिमी"],
+    "answer_en": "19.5 mm",
+    "answer_hi": "19.5 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 26,
-    question_en: "What is the main objective of the Second Five-Year Plan in India?",
-    question_hi: "भारत की दूसरी पंचवर्षीय योजना का मुख्य उद्देश्य क्या था?",
-    options_en: ["Industrialization", "Agricultural development", "Infrastructure development", "None of the above"],
-    options_hi: ["औद्योगिकीकरण", "कृषि विकास", "बुनियादी ढांचा विकास", "उपरोक्त में से कोई नहीं"],
-    answer_en: "Industrialization",
-    answer_hi: "औद्योगिकीकरण",
-    attempted: false,
-    selected: ""
+    "num": 26,
+    "question_en": "Which standard specifies the design of railway bridges?",
+    "question_hi": "रेलवे पुलों के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS Bridge Code", "IRC 6", "IS 800", "IS 456"],
+    "options_hi": ["आईआरएस ब्रिज कोड", "आईआरसी 6", "आईएस 800", "आईएस 456"],
+    "answer_en": "IRS Bridge Code",
+    "answer_hi": "आईआरएस ब्रिज कोड",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 27,
-    question_en: "Which tax is levied on the income of individuals?",
-    question_hi: "व्यक्तियों की आय पर कौन सा कर लगाया जाता है?",
-    options_en: ["Income Tax", "Sales Tax", "Excise Duty", "Wealth Tax"],
-    options_hi: ["आयकर", "विक्रय कर", "उत्पाद शुल्क", "संपत्ति कर"],
-    answer_en: "Income Tax",
-    answer_hi: "आयकर",
-    attempted: false,
-    selected: ""
+    "num": 27,
+    "question_en": "What is the maximum permissible variation in track gauge for high-speed lines?",
+    "question_hi": "हाई-स्पीड लाइनों के लिए ट्रैक गेज में अधिकतम अनुमेय भिन्नता क्या है?",
+    "options_en": ["+3 mm, -0 mm", "+5 mm, -0 mm", "+5 mm, -2 mm", "+7 mm, -2 mm"],
+    "options_hi": ["+3 मिमी, -0 मिमी", "+5 मिमी, -0 मिमी", "+5 मिमी, -2 मिमी", "+7 मिमी, -2 मिमी"],
+    "answer_en": "+3 mm, -0 mm",
+    "answer_hi": "+3 मिमी, -0 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 28,
-    question_en: "What is the primary function of the Reserve Bank of India (RBI)?",
-    question_hi: "भारतीय रिज़र्व बैंक (RBI) का मुख्य कार्य क्या है?",
-    options_en: ["Monetary policy regulation", "Fiscal policy formulation", "Tax collection", "Public welfare schemes"],
-    options_hi: ["मुद्रास्फीति नीति का नियमन", "राजकोषीय नीति का निर्माण", "कर संग्रहण", "सार्वजनिक कल्याण योजनाएं"],
-    answer_en: "Monetary policy regulation",
-    answer_hi: "मुद्रास्फीति नीति का नियमन",
-    attempted: false,
-    selected: ""
+    "num": 28,
+    "question_en": "Which material is used for manufacturing 'Koni' dampers in railway coaches?",
+    "question_hi": "रेलवे कोच में 'कोनी' डैंपर्स के निर्माण के लिए किस सामग्री का उपयोग किया जाता है?",
+    "options_en": ["Natural rubber", "Synthetic rubber", "Polyurethane", "Hydraulic fluid"],
+    "options_hi": ["प्राकृतिक रबर", "सिंथेटिक रबर", "पॉलीयूरेथेन", "हाइड्रॉलिक फ्लूइड"],
+    "answer_en": "Hydraulic fluid",
+    "answer_hi": "हाइड्रॉलिक फ्लूइड",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 29,
-    question_en: "Which of the following is a direct tax?",
-    question_hi: "निम्नलिखित में से कौन सा प्रत्यक्ष कर है?",
-    options_en: ["Income Tax", "Sales Tax", "Excise Duty", "Customs Duty"],
-    options_hi: ["आयकर", "विक्रय कर", "उत्पाद शुल्क", "सीमा शुल्क"],
-    answer_en: "Income Tax",
-    answer_hi: "आयकर",
-    attempted: false,
-    selected: ""
+    "num": 29,
+    "question_en": "What is the standard length of rail panels for high-speed tracks?",
+    "question_hi": "हाई-स्पीड ट्रैक के लिए रेल पैनल की मानक लंबाई क्या है?",
+    "options_en": ["13 m", "26 m", "39 m", "260 m"],
+    "options_hi": ["13 मी", "26 मी", "39 मी", "260 मी"],
+    "answer_en": "260 m",
+    "answer_hi": "260 मी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 30,
-    question_en: "What does GDP stand for?",
-    question_hi: "GDP का पूरा नाम क्या है?",
-    options_en: ["Gross Domestic Product", "Gross Development Product", "General Domestic Product", "Gross Direct Product"],
-    options_hi: ["सकल घरेलू उत्पाद", "सकल विकास उत्पाद", "सामान्य घरेलू उत्पाद", "सकल प्रत्यक्ष उत्पाद"],
-    answer_en: "Gross Domestic Product",
-    answer_hi: "सकल घरेलू उत्पाद",
-    attempted: false,
-    selected: ""
+    "num": 30,
+    "question_en": "Which technology is used in 'Train Protection Warning System' (TPWS)?",
+    "question_hi": "'ट्रेन प्रोटेक्शन वार्निंग सिस्टम' (TPWS) में किस तकनीक का उपयोग किया जाता है?",
+    "options_en": ["GPS", "Balise", "RFID", "Lidar"],
+    "options_hi": ["जीपीएस", "बालिस", "आरएफआईडी", "लिडार"],
+    "answer_en": "Balise",
+    "answer_hi": "बालिस",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 31,
-    question_en: "Which committee recommended the introduction of Goods and Services Tax (GST) in India?",
-    question_hi: "भारत में वस्तु और सेवा कर (GST) की शुरुआत की सिफारिश किस समिति ने की थी?",
-    options_en: ["Kelkar Committee", "Shome Committee", "Rangarajan Committee", "Narasimham Committee"],
-    options_hi: ["केलकर समिति", "शोम समिति", "रंगराजन समिति", "नरसिंह समिति"],
-    answer_en: "Kelkar Committee",
-    answer_hi: "केलकर समिति",
-    attempted: false,
-    selected: ""
+    "num": 31,
+    "question_en": "What is the minimum rail head hardness required for heavy haul operations?",
+    "question_hi": "भारी ढुलाई संचालन के लिए आवश्यक न्यूनतम रेल हेड हार्डनेस क्या है?",
+    "options_en": ["250 BHN", "300 BHN", "350 BHN", "400 BHN"],
+    "options_hi": ["250 BHN", "300 BHN", "350 BHN", "400 BHN"],
+    "answer_en": "350 BHN",
+    "answer_hi": "350 BHN",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 32,
-    question_en: "What is the main objective of the National Rural Employment Guarantee Act (NREGA)?",
-    question_hi: "राष्ट्रीय ग्रामीण रोजगार गारंटी अधिनियम (NREGA) का मुख्य उद्देश्य क्या है?",
-    options_en: ["Providing employment to rural households", "Promoting industrial growth", "Enhancing agricultural productivity", "None of the above"],
-    options_hi: ["ग्रामीण परिवारों को रोजगार प्रदान करना", "औद्योगिक विकास को बढ़ावा देना", "कृषि उत्पादकता को बढ़ाना", "उपरोक्त में से कोई नहीं"],
-    answer_en: "Providing employment to rural households",
-    answer_hi: "ग्रामीण परिवारों को रोजगार प्रदान करना",
-    attempted: false,
-    selected: ""
+    "num": 32,
+    "question_en": "Which standard specifies the design of railway tunnels?",
+    "question_hi": "रेलवे सुरंगों के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS Tunnel Code", "IRC 112", "IS 4995", "RDSO/2009"],
+    "options_hi": ["आईआरएस टनल कोड", "आईआरसी 112", "आईएस 4995", "आरडीएसओ/2009"],
+    "answer_en": "IRS Tunnel Code",
+    "answer_hi": "आईआरएस टनल कोड",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 33,
-    question_en: "Which of the following is a tool of monetary policy?",
-    question_hi: "निम्नलिखित में से कौन सा मौद्रिक नीति का उपकरण है?",
-    options_en: ["Open Market Operations", "Income Tax", "Excise Duty", "Customs Duty"],
-    options_hi: ["खुली बाजार संचालन", "आयकर", "उत्पाद शुल्क", "सीमा शुल्क"],
-    answer_en: "Open Market Operations",
-    answer_hi: "खुली बाजार संचालन",
-    attempted: false,
-    selected: ""
+    "num": 33,
+    "question_en": "What is the maximum permissible rail end batter in welded rails?",
+    "question_hi": "वेल्डेड रेल में अधिकतम अनुमेय रेल एंड बैटर क्या है?",
+    "options_en": ["0.5 mm", "1.0 mm", "1.5 mm", "2.0 mm"],
+    "options_hi": ["0.5 मिमी", "1.0 मिमी", "1.5 मिमी", "2.0 मिमी"],
+    "answer_en": "1.0 mm",
+    "answer_hi": "1.0 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 34,
-    question_en: "What is the main objective of the Pradhan Mantri Jan Dhan Yojana?",
-    question_hi: "प्रधानमंत्री जन धन योजना का मुख्य उद्देश्य क्या है?",
-    options_en: ["Financial inclusion", "Promoting digital payments", "Providing loans to farmers", "None of the above"],
-    options_hi: ["वित्तीय समावेशन", "डिजिटल भुगतान को बढ़ावा देना", "किसानों को ऋण प्रदान करना", "उपरोक्त में से कोई नहीं"],
-    answer_en: "Financial inclusion",
-    answer_hi: "वित्तीय समावेशन",
-    attempted: false,
-    selected: ""
+    "num": 34,
+    "question_en": "Which type of foundation is used for high-rise railway bridges?",
+    "question_hi": "हाई-राइज रेलवे पुलों के लिए किस प्रकार की फाउंडेशन का उपयोग किया जाता है?",
+    "options_en": ["Spread footing", "Pile foundation", "Raft foundation", "Well foundation"],
+    "options_hi": ["स्प्रेड फुटिंग", "पाइल फाउंडेशन", "राफ्ट फाउंडेशन", "वेल फाउंडेशन"],
+    "answer_en": "Pile foundation",
+    "answer_hi": "पाइल फाउंडेशन",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 35,
-    question_en: "Which of the following is a feature of a mixed economy?",
-    question_hi: "निम्नलिखित में से कौन सा मिश्रित अर्थव्यवस्था की विशेषता है?",
-    options_en: ["Coexistence of public and private sectors", "Government controls all industries", "Private sector dominates the economy", "None of the above"],
-    options_hi: ["सार्वजनिक और निजी क्षेत्रों का सह-अस्तित्व", "सरकार सभी उद्योगों को नियंत्रित करती है", "निजी क्षेत्र अर्थव्यवस्था पर हावी है", "उपरोक्त में से कोई नहीं"],
-    answer_en: "Coexistence of public and private sectors",
-    answer_hi: "सार्वजनिक और निजी क्षेत्रों का सह-अस्तित्व",
-    attempted: false,
-    selected: ""
+    "num": 35,
+    "question_en": "What is the standard coefficient of friction for brake blocks in Indian Railways?",
+    "question_hi": "भारतीय रेलवे में ब्रेक ब्लॉक के लिए मानक घर्षण गुणांक क्या है?",
+    "options_en": ["0.15", "0.25", "0.35", "0.45"],
+    "options_hi": ["0.15", "0.25", "0.35", "0.45"],
+    "answer_en": "0.25",
+    "answer_hi": "0.25",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 36,
-    question_en: "What is the primary objective of the National Bank for Agriculture and Rural Development (NABARD)?",
-    question_hi: "राष्ट्रीय कृषि और ग्रामीण विकास बैंक (NABARD) का मुख्य उद्देश्य क्या है?",
-    options_en: ["Promoting rural development", "Regulating financial markets", "Providing loans to industries", "None of the above"],
-    options_hi: ["ग्रामीण विकास को बढ़ावा देना", "वित्तीय बाजारों को नियंत्रित करना", "उद्योगों को ऋण प्रदान करना", "उपरोक्त में से कोई नहीं"],
-    answer_en: "Promoting rural development",
-    answer_hi: "ग्रामीण विकास को बढ़ावा देना",
-    attempted: false,
-    selected: ""
+    "num": 36,
+    "question_en": "Which standard specifies the requirements for railway ballast?",
+    "question_hi": "रेलवे बैलास्ट की आवश्यकताओं को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS-GE-1", "IS 383", "IS 2386", "RDSO/TRS-0013"],
+    "options_hi": ["IRS-GE-1", "IS 383", "IS 2386", "RDSO/TRS-0013"],
+    "answer_en": "IRS-GE-1",
+    "answer_hi": "IRS-GE-1",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 37,
-    question_en: "Which of the following is a component of fiscal policy?",
-    question_hi: "निम्नलिखित में से कौन सा राजकोषीय नीति का घटक है?",
-    options_en: ["Government spending", "Interest rates", "Money supply", "All of the above"],
-    options_hi: ["सरकारी खर्च", "ब्याज दरें", "मुद्रा आपूर्ति", "उपरोक्त सभी"],
-    answer_en: "Government spending",
-    answer_hi: "सरकारी खर्च",
-    attempted: false,
-    selected: ""
+    "num": 37,
+    "question_en": "What is the minimum curve radius for station yards on high-speed lines?",
+    "question_hi": "हाई-स्पीड लाइनों पर स्टेशन यार्ड के लिए न्यूनतम वक्र त्रिज्या क्या है?",
+    "options_en": ["600 m", "800 m", "1000 m", "1200 m"],
+    "options_hi": ["600 मी", "800 मी", "1000 मी", "1200 मी"],
+    "answer_en": "1200 m",
+    "answer_hi": "1200 मी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 38,
-    question_en: "What is the unit of electric potential?",
-    question_hi: "विद्युत पोटेंशियल की इकाई क्या है?",
-    options_en: ["Volt", "Ampere", "Ohm", "Watt"],
-    options_hi: ["वोल्ट", "एंपियर", "ओम", "वाट"],
-    answer_en: "Volt",
-    answer_hi: "वोल्ट",
-    attempted: false,
-    selected: ""
+    "num": 38,
+    "question_en": "Which technology is used for 'Hot Box Detection' in Indian Railways?",
+    "question_hi": "भारतीय रेलवे में 'हॉट बॉक्स डिटेक्शन' के लिए किस तकनीक का उपयोग किया जाता है?",
+    "options_en": ["Infrared sensors", "Ultrasonic testing", "Vibration analysis", "Acoustic emission"],
+    "options_hi": ["इन्फ्रारेड सेंसर्स", "अल्ट्रासोनिक टेस्टिंग", "वाइब्रेशन एनालिसिस", "अकौस्टिक एमिशन"],
+    "answer_en": "Infrared sensors",
+    "answer_hi": "इन्फ्रारेड सेंसर्स",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 39,
-    question_en: "In an electrical circuit, what does the resistor do?",
-    question_hi: "एक विद्युत सर्किट में रेज़िस्टर क्या करता है?",
-    options_en: ["Resists the flow of current", "Stores energy", "Amplifies signals", "None of the above"],
-    options_hi: ["धारा के प्रवाह का विरोध करता है", "ऊर्जा संचित करता है", "सिग्नल्स को बढ़ाता है", "इनमें से कोई नहीं"],
-    answer_en: "Resists the flow of current",
-    answer_hi: "धारा के प्रवाह का विरोध करता है",
-    attempted: false,
-    selected: ""
+    "num": 39,
+    "question_en": "What is the maximum permissible vertical wear on rail head before replacement?",
+    "question_hi": "प्रतिस्थापन से पहले रेल हेड पर अधिकतम अनुमेय ऊर्ध्वाधर वियर क्या है?",
+    "options_en": ["5% of height", "8% of height", "10% of height", "12% of height"],
+    "options_hi": ["ऊंचाई का 5%", "ऊंचाई का 8%", "ऊंचाई का 10%", "ऊंचाई का 12%"],
+    "answer_en": "8% of height",
+    "answer_hi": "ऊंचाई का 8%",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 40,
-    question_en: "The efficiency of a motor is given by which formula?",
-    question_hi: "मोटर की दक्षता कौन से सूत्र द्वारा दी जाती है?",
-    options_en: ["(Output Power/Input Power) x 100", "Output Power x Input Power", "Input Power / Output Power", "None of the above"],
-    options_hi: ["(आउटपुट पावर/इनपुट पावर) x 100", "आउटपुट पावर x इनपुट पावर", "इनपुट पावर / आउटपुट पावर", "इनमें से कोई नहीं"],
-    answer_en: "(Output Power/Input Power) x 100",
-    answer_hi: "(आउटपुट पावर/इनपुट पावर) x 100",
-    attempted: false,
-    selected: ""
+    "num": 40,
+    "question_en": "Which type of steel is used for manufacturing rail clips?",
+    "question_hi": "रेल क्लिप के निर्माण के लिए किस प्रकार के स्टील का उपयोग किया जाता है?",
+    "options_en": ["Mild steel", "Spring steel", "Stainless steel", "Alloy steel"],
+    "options_hi": ["माइल्ड स्टील", "स्प्रिंग स्टील", "स्टेनलेस स्टील", "मिश्र धातु स्टील"],
+    "answer_en": "Spring steel",
+    "answer_hi": "स्प्रिंग स्टील",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 41,
-    question_en: "Which of the following is a characteristic of a parallel circuit?",
-    question_hi: "निम्नलिखित में से कौन सा परवलय सर्किट की विशेषता है?",
-    options_en: ["All components share the same voltage", "All components share the same current", "The voltage is divided between components", "None of the above"],
-    options_hi: ["सभी घटक एक ही वोल्टेज साझा करते हैं", "सभी घटक एक ही धारा साझा करते हैं", "वोल्टेज घटकों के बीच विभाजित होता है", "इनमें से कोई नहीं"],
-    answer_en: "All components share the same voltage",
-    answer_hi: "सभी घटक एक ही वोल्टेज साझा करते हैं",
-    attempted: false,
-    selected: ""
+    "num": 41,
+    "question_en": "What is the standard wheel conicity used in Indian Railways?",
+    "question_hi": "भारतीय रेलवे में प्रयुक्त मानक पहिया कोनिसिटी क्या है?",
+    "options_en": ["1:10", "1:20", "1:40", "1:100"],
+    "options_hi": ["1:10", "1:20", "1:40", "1:100"],
+    "answer_en": "1:20",
+    "answer_hi": "1:20",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 42,
-    question_en: "In the context of fluid mechanics, Bernoulli's principle is based on which conservation law?",
-    question_hi: "तरल यांत्रिकी के संदर्भ में, बर्नौली का सिद्धांत किस संरक्षण नियम पर आधारित है?",
-    options_en: ["Conservation of Energy", "Conservation of Mass", "Conservation of Momentum", "Conservation of Charge"],
-    options_hi: ["ऊर्जा का संरक्षण", "द्रव्यमान का संरक्षण", "संवेग का संरक्षण", "आवेश का संरक्षण"],
-    answer_en: "Conservation of Energy",
-    answer_hi: "ऊर्जा का संरक्षण",
-    attempted: false,
-    selected: ""
+    "num": 42,
+    "question_en": "Which standard specifies the design of railway station buildings?",
+    "question_hi": "रेलवे स्टेशन भवनों के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS Station Code", "NBC 2016", "IS 875", "RDSO/2004"],
+    "options_hi": ["आईआरएस स्टेशन कोड", "एनबीसी 2016", "आईएस 875", "आरडीएसओ/2004"],
+    "answer_en": "IRS Station Code",
+    "answer_hi": "आईआरएस स्टेशन कोड",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 43,
-    question_en: "Which is the best conductor of electricity?",
-    question_hi: "विद्युत का सर्वोत्तम चालक कौन सा है?",
-    options_en: ["Copper", "Aluminum", "Iron", "Gold"],
-    options_hi: ["तांबा", "एल्युमिनियम", "लोहा", "सोना"],
-    answer_en: "Copper",
-    answer_hi: "तांबा",
-    attempted: false,
-    selected: ""
+    "num": 43,
+    "question_en": "What is the minimum ballast shoulder width for high-speed tracks?",
+    "question_hi": "हाई-स्पीड ट्रैक के लिए न्यूनतम बैलास्ट शोल्डर चौड़ाई क्या है?",
+    "options_en": ["300 mm", "400 mm", "500 mm", "600 mm"],
+    "options_hi": ["300 मिमी", "400 मिमी", "500 मिमी", "600 मिमी"],
+    "answer_en": "500 mm",
+    "answer_hi": "500 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 44,
-    question_en: "What is the principle of a transformer based on?",
-    question_hi: "ट्रांसफार्मर का सिद्धांत किस पर आधारित है?",
-    options_en: ["Faraday's Law of Induction", "Ohm's Law", "Newton's Law", "None of the above"],
-    options_hi: ["फैरेडे का प्रेरण सिद्धांत", "ओहम का नियम", "न्यूटन का नियम", "इनमें से कोई नहीं"],
-    answer_en: "Faraday's Law of Induction",
-    answer_hi: "फैरेडे का प्रेरण सिद्धांत",
-    attempted: false,
-    selected: ""
+    "num": 44,
+    "question_en": "Which type of welding is used for rail head repair?",
+    "question_hi": "रेल हेड मरम्मत के लिए किस प्रकार की वेल्डिंग का उपयोग किया जाता है?",
+    "options_en": ["Thermit welding", "Flash butt welding", "Arc welding", "Deposition welding"],
+    "options_hi": ["थर्मिट वेल्डिंग", "फ्लैश बट वेल्डिंग", "आर्क वेल्डिंग", "डिपोजिशन वेल्डिंग"],
+    "answer_en": "Deposition welding",
+    "answer_hi": "डिपोजिशन वेल्डिंग",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 45,
-    question_en: "What is the unit of electrical power?",
-    question_hi: "विद्युत शक्ति की इकाई क्या है?",
-    options_en: ["Watt", "Volt", "Ampere", "Ohm"],
-    options_hi: ["वाट", "वोल्ट", "एंपियर", "ओम"],
-    answer_en: "Watt",
-    answer_hi: "वाट",
-    attempted: false,
-    selected: ""
+    "num": 45,
+    "question_en": "What is the standard rail section used for metro railways in India?",
+    "question_hi": "भारत में मेट्रो रेलवे के लिए प्रयुक्त मानक रेल सेक्शन क्या है?",
+    "options_en": ["52 kg/m", "60 kg/m", "UIC 60", "90 R"],
+    "options_hi": ["52 किग्रा/मी", "60 किग्रा/मी", "UIC 60", "90 आर"],
+    "answer_en": "UIC 60",
+    "answer_hi": "UIC 60",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 46,
-    question_en: "What is the working principle of a hydraulic brake?",
-    question_hi: "हाइड्रोलिक ब्रेक का कार्य सिद्धांत क्या है?",
-    options_en: ["Pascal's Law", "Bernoulli's Law", "Ohm's Law", "Newton's Law"],
-    options_hi: ["पैसकल का सिद्धांत", "बर्नौली का सिद्धांत", "ओहम का नियम", "न्यूटन का नियम"],
-    answer_en: "Pascal's Law",
-    answer_hi: "पैसकल का सिद्धांत",
-    attempted: false,
-    selected: ""
+    "num": 46,
+    "question_en": "Which standard specifies the testing of railway sleepers?",
+    "question_hi": "रेलवे स्लीपरों के परीक्षण को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IS 10329", "IS 1343", "RDSO/TRS-0022", "IRS-T-39"],
+    "options_hi": ["आईएस 10329", "आईएस 1343", "आरडीएसओ/TRS-0022", "IRS-T-39"],
+    "answer_en": "IS 10329",
+    "answer_hi": "आईएस 10329",
+    "attempted": false,
+    "selected": ""
   },
   {
-    num: 47,
-    question_en: "What is the main advantage of using AC over DC?",
-    question_hi: "एसी का उपयोग डीसी पर करने का मुख्य लाभ क्या है?",
-    options_en: ["Easier to transmit over long distances", "More efficient for low power consumption", "Better for energy storage", "None of the above"],
-    options_hi: ["लंबी दूरी पर प्रसारित करना आसान", "न्यूनतम ऊर्जा खपत के लिए अधिक प्रभावी", "ऊर्जा भंडारण के लिए बेहतर", "इनमें से कोई नहीं"],
-    answer_en: "Easier to transmit over long distances",
-    answer_hi: "लंबी दूरी पर प्रसारित करना आसान",
-    attempted: false,
-    selected: ""
+    "num": 47,
+    "question_en": "What is the maximum permissible track alignment error for high-speed lines?",
+    "question_hi": "हाई-स्पीड लाइनों के लिए अधिकतम अनुमेय ट्रैक संरेखण त्रुटि क्या है?",
+    "options_en": ["±2 mm", "±3 mm", "±5 mm", "±10 mm"],
+    "options_hi": ["±2 मिमी", "±3 मिमी", "±5 मिमी", "±10 मिमी"],
+    "answer_en": "±2 mm",
+    "answer_hi": "±2 मिमी",
+    "attempted": false,
+    "selected": ""
   },
   {
-  num: 48,
-  question_en: "What is the SI unit of force?",
-  question_hi: "बल की SI इकाई क्या है?",
-  options_en: ["Newton", "Joule", "Watt", "Pascal"],
-  options_hi: ["न्यूटन", "जूल", "वाट", "पास्कल"],
-  answer_en: "Newton",
-  answer_hi: "न्यूटन",
-  attempted: false,
-  selected: ""
-},
-{
-  num: 49,
-  question_en: "Which law states that every action has an equal and opposite reaction?",
-  question_hi: "कौन सा नियम कहता है कि प्रत्येक क्रिया की एक समान और विपरीत प्रतिक्रिया होती है?",
-  options_en: ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravitation"],
-  options_hi: ["न्यूटन का पहला नियम", "न्यूटन का दूसरा नियम", "न्यूटन का तीसरा नियम", "गुरुत्वाकर्षण का नियम"],
-  answer_en: "Newton's Third Law",
-  answer_hi: "न्यूटन का तीसरा नियम",
-  attempted: false,
-  selected: ""
-},
-{
-  num: 50,
-  question_en: "What is the chemical symbol for gold?",
-  question_hi: "सोने का रासायनिक प्रतीक क्या है?",
-  options_en: ["Au", "Ag", "Fe", "Hg"],
-  options_hi: ["Au", "Ag", "Fe", "Hg"],
-  answer_en: "Au",
-  answer_hi: "Au",
-  attempted: false,
-  selected: ""
-}
+    "num": 48,
+    "question_en": "Which technology is used for 'Automatic Train Operation' (ATO) in metros?",
+    "question_hi": "मेट्रो में 'ऑटोमैटिक ट्रेन ऑपरेशन' (ATO) के लिए किस तकनीक का उपयोग किया जाता है?",
+    "options_en": ["CBTC", "ATP", "CTC", "Interlocking"],
+    "options_hi": ["CBTC", "ATP", "CTC", "इंटरलॉकिंग"],
+    "answer_en": "CBTC",
+    "answer_hi": "CBTC",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 49,
+    "question_en": "What is the minimum rail head radius allowed before reprofiling?",
+    "question_hi": "रीप्रोफाइलिंग से पहले अनुमत न्यूनतम रेल हेड त्रिज्या क्या है?",
+    "options_en": ["8 mm", "10 mm", "12 mm", "14 mm"],
+    "options_hi": ["8 मिमी", "10 मिमी", "12 मिमी", "14 मिमी"],
+    "answer_en": "10 mm",
+    "answer_hi": "10 मिमी",
+    "attempted": false,
+    "selected": ""
+  },
+  {
+    "num": 50,
+    "question_en": "Which standard specifies the design of railway electrification?",
+    "question_hi": "रेलवे विद्युतीकरण के डिजाइन को कौन सा मानक निर्दिष्ट करता है?",
+    "options_en": ["IRS-E-10", "IS 5613", "RDSO/TRD-42", "UIC 600"],
+    "options_hi": ["IRS-E-10", "IS 5613", "RDSO/TRD-42", "UIC 600"],
+    "answer_en": "IRS-E-10",
+    "answer_hi": "IRS-E-10",
+    "attempted": false,
+    "selected": ""
+  }
+];
 
-   
-      ];
 
-   
-let currentQuestion = 0; 
+// --------------------------- GLOBAL VARS -----------------------------
+let currentQuestion = 0;
 let language = "en";
-// let timeLeft = 180 * 60; // 180 minutes
-let timeLeft = 60 * 60; // 60 minutes
-
+let timeLeft = 60 * 60;   // 60 minutes timer
 let timerInterval;
 
-// ----------------- Quiz Logic -----------------
+// --------------------------- LOAD QUESTION ----------------------------
 function loadQuestion(index) {
     const q = questions[index];
-    document.getElementById("question").textContent = `${q.num}. ${
-        language === "en" ? q.question_en : q.question_hi
-    }`;
-    document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
+
+    document.getElementById("question").textContent =
+        `${q.num}. ${language === "en" ? q.question_en : q.question_hi}`;
+
+    document.getElementById("questionCounter").textContent =
+        `Question ${index + 1} of ${questions.length}`;
 
     const optionsElement = document.getElementById("options");
     optionsElement.innerHTML = "";
@@ -587,6 +576,7 @@ function loadQuestion(index) {
     options.forEach((option) => {
         const isSelected = q.selected === option;
         const optionDiv = document.createElement("div");
+
         optionDiv.className = "option-box";
         optionDiv.style = `
             border: 2px solid ${isSelected ? "#007bff" : "#ccc"};
@@ -595,12 +585,11 @@ function loadQuestion(index) {
             border-radius: 8px;
             margin: 6px 0;
             cursor: pointer;
-            transition: all 0.2s;
         `;
 
         optionDiv.innerHTML = `
-            <input type="radio" name="option" value="${option}" ${isSelected ? "checked" : ""} style="margin-right:8px;">
-            ${option}
+            <input type="radio" name="option"
+            value="${option}" ${isSelected ? "checked" : ""} /> ${option}
         `;
 
         optionDiv.addEventListener("click", () => {
@@ -614,12 +603,14 @@ function loadQuestion(index) {
     updateNavigation();
 }
 
+// --------------------------- MARK ATTEMPT ----------------------------
 function markAttempted(index, selectedAnswer) {
     questions[index].attempted = true;
     questions[index].selected = selectedAnswer;
     updateNavigation();
 }
 
+// --------------------------- NEXT / PREV -----------------------------
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -634,230 +625,150 @@ function prevQuestion() {
     }
 }
 
+// --------------------------- LANGUAGE CHANGE -------------------------
 function changeLanguage() {
     language = document.getElementById("languageSelect").value;
     loadQuestion(currentQuestion);
 }
 
-function submitQuiz() {
-    clearInterval(timerInterval);
-    let attempted = 0,
-        notAttempted = 0,
-        score = 0;
-
-    questions.forEach((q) => {
-        if (q.attempted) {
-            attempted++;
-            if (q.selected === q.answer_en || q.selected === q.answer_hi) score++;
-        } else notAttempted++;
-    });
-
-    alert(
-        `Quiz submitted!\nAttempted: ${attempted}\nNot Attempted: ${notAttempted}\nScore: ${score}/${questions.length}`
-    );
-}
-
+// --------------------------- TIMER -------------------------------
 function startTimer() {
     const timerElement = document.getElementById("timer");
     clearInterval(timerInterval);
+
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            alert("Time's up!");
+            alert("⏳ Time Over!");
             submitQuiz();
-        } else {
-            const hours = Math.floor(timeLeft / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = `Time Left: ${hours
-                .toString()
-                .padStart(2, "0")}:${minutes
-                .toString()
-                .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-            timeLeft--;
+            return;
         }
+
+        const h = Math.floor(timeLeft / 3600);
+        const m = Math.floor((timeLeft % 3600) / 60);
+        const s = timeLeft % 60;
+
+        timerElement.textContent =
+            `Time Left: ${h.toString().padStart(2, "0")}:${m
+                .toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+
+        timeLeft--;
     }, 1000);
 }
 
+// --------------------------- SUBMIT QUIZ ---------------------
+function submitQuiz() {
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
+
+    clearInterval(timerInterval);
+
+    // Calculate time spent
+    const totalTimeSpent = (60 * 60) - timeLeft;
+    const mins = Math.floor(totalTimeSpent / 60);
+    const secs = totalTimeSpent % 60;
+
+    // Save to localStorage
+    localStorage.setItem("timeTaken", `${mins} min ${secs} sec`);
+
+    let attempted = 0;
+    let notAttempted = 0;
+    let score = 0;
+    const results = [];
+
+    questions.forEach(q => {
+        if (q.attempted) {
+            attempted++;
+            if (q.selected === q.answer_en || q.selected === q.answer_hi) {
+                score++;
+            }
+        } else {
+            notAttempted++;
+        }
+
+        results.push({
+            question: language === "en" ? q.question_en : q.question_hi,
+            selected: q.selected || "Not Answered",
+            correct: language === "en" ? q.answer_en : q.answer_hi
+        });
+    });
+
+    // Save result data
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    // Stop camera stream if active
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Redirect
+    window.location.href = "/RTS/public/Deshbord/category/test/submit-test.html";
+}
+
+// --------------------------- NAVIGATION ------------------------------
 function updateNavigation() {
     const nav = document.getElementById("circleContainer");
     nav.innerHTML = "";
+
     questions.forEach((q, i) => {
         let color = "gray";
         if (i === currentQuestion) color = "blue";
         else if (q.attempted) color = "green";
-        nav.innerHTML += `<div class='circle' style='background-color:${color}' onclick='loadQuestion(${i})'>${i + 1}</div>`;
+
+        const circle = document.createElement("div");
+        circle.className = "circle";
+        circle.style.background = color;
+        circle.textContent = i + 1;
+        circle.onclick = () => jumpToQuestion(i);
+        nav.appendChild(circle);
     });
 }
 
-// ----------------- Camera & Movement Logic -----------------
+function jumpToQuestion(i) {
+    currentQuestion = i;
+    loadQuestion(i);
+}
+
+// --------------------------- CAMERA ----------------------
 let videoStream;
-let movementCount = 0;
 
 function startCamera() {
     const container = document.createElement("div");
     container.id = "camera-container";
     container.style.position = "fixed";
     container.style.top = "10px";
-    container.style.left = "10px"; // ✅ Left side
+    container.style.left = "10px";
     container.style.width = "130px";
     container.style.height = "130px";
-    container.style.zIndex = "9999";
     container.style.borderRadius = "50%";
     container.style.overflow = "hidden";
-    container.style.border = "3px solid red";
-    container.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-    container.style.cursor = "grab";
-    container.style.minWidth = "80px";
-    container.style.minHeight = "80px";
-    container.style.maxWidth = "250px";
-    container.style.maxHeight = "250px";
     container.style.background = "#000";
+    container.style.border = "3px solid red";
+    container.style.zIndex = "9999";
     document.body.appendChild(container);
 
     const video = document.createElement("video");
-    video.setAttribute("autoplay", true);
-    video.setAttribute("playsinline", true);
+    video.autoplay = true;
+    video.playsInline = true;
     video.style.width = "100%";
     video.style.height = "100%";
     video.style.objectFit = "cover";
     container.appendChild(video);
 
-    // ✅ Resize handle
-    const resizeHandle = document.createElement("div");
-    resizeHandle.style.position = "absolute";
-    resizeHandle.style.bottom = "2px";
-    resizeHandle.style.right = "2px";
-    resizeHandle.style.width = "15px";
-    resizeHandle.style.height = "15px";
-    resizeHandle.style.background = "rgba(255,255,255,0.7)";
-    resizeHandle.style.borderRadius = "4px";
-    resizeHandle.style.cursor = "se-resize";
-    container.appendChild(resizeHandle);
-
-    // ✅ Drag logic
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    container.addEventListener("mousedown", (e) => {
-        if (e.target === resizeHandle) return;
-        isDragging = true;
-        offsetX = e.clientX - container.offsetLeft;
-        offsetY = e.clientY - container.offsetTop;
-        container.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
-        x = Math.max(0, Math.min(window.innerWidth - container.offsetWidth, x));
-        y = Math.max(0, Math.min(window.innerHeight - container.offsetHeight, y));
-        container.style.left = `${x}px`;
-        container.style.top = `${y}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-        container.style.cursor = "grab";
-    });
-
-    // ✅ Resize logic
-    let isResizing = false;
-    let startWidth, startHeight, startX, startY;
-
-    resizeHandle.addEventListener("mousedown", (e) => {
-        e.stopPropagation();
-        isResizing = true;
-        startWidth = container.offsetWidth;
-        startHeight = container.offsetHeight;
-        startX = e.clientX;
-        startY = e.clientY;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isResizing) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        const newSize = Math.max(80, Math.min(250, Math.max(startWidth + dx, startHeight + dy)));
-        container.style.width = `${newSize}px`;
-        container.style.height = `${newSize}px`;
-    });
-
-    document.addEventListener("mouseup", () => {
-        isResizing = false;
-    });
-
-    // ✅ Camera stream
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
             video.srcObject = stream;
             videoStream = stream;
-            detectMovement(video);
         })
-        .catch(err => {
-            console.error("Camera error:", err);
-            alert("Camera not accessible!");
-        });
+        .catch(() => alert("Camera not accessible!"));
 }
 
-function detectMovement(video) {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = 160;
-    canvas.height = 160;
-    let lastImageData = null;
-
-    setInterval(() => {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-        if (lastImageData) {
-            let diff = 0;
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                diff += Math.abs(imageData.data[i] - lastImageData.data[i]);
-            }
-
-            if (diff > 1000000) {
-                movementCount++;
-                if (movementCount === 1) {
-                    alert("⚠️ Alert 1: Face is not move");
-                } else if (movementCount === 2) {
-                    alert("⚠️ Alert 2: Head is not move");
-                } else if (movementCount === 3) {
-                    alert("⚠️ Alert 3: Test series is restarting...");
-                    restartTest();
-                }
-            }
-        }
-        lastImageData = imageData;
-    }, 2000);
-}
-
-function restartTest() {
-    if (videoStream) {
-        videoStream.getTracks().forEach(track => track.stop());
-    }
-    const camContainer = document.getElementById("camera-container");
-    if (camContainer) camContainer.remove();
-
-    movementCount = 0;
-    currentQuestion = 0;
-    timeLeft = 180 * 60;
-
-    questions.forEach(q => {
-        q.attempted = false;
-        q.selected = null;
-    });
-
-    loadQuestion(currentQuestion);
-    startTimer();
-    startCamera();
-}
-
-// ----------------- Page Load -----------------
+// --------------------------- PAGE LOAD --------------------------
 window.onload = function () {
     loadQuestion(currentQuestion);
     startTimer();
-    startCamera(); // ✅ Camera starts with test
+    startCamera();
 };

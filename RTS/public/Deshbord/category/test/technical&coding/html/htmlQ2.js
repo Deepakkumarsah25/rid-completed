@@ -1,446 +1,413 @@
 
 const questions = [
-    {
-      "num": 1,
-      "question_en": "Who is the inventor of HTML?",
-      "question_hi": "HTML के आविष्कारक कौन हैं?",
-      "options_en": ["Tim Berners-Lee", "Bill Gates", "Dennis Ritchie", "James Gosling"],
-      "options_hi": ["Tim Berners-Lee", "Bill Gates", "Dennis Ritchie", "James Gosling"],
-      "answer_en": "Tim Berners-Lee",
-      "answer_hi": "Tim Berners-Lee"
-    },
-    {
-      "num": 2,
-      "question_en": "HTML files are saved with which extension?",
-      "question_hi": "HTML फाइल किस एक्सटेंशन में सेव होती है?",
-      "options_en": [".html", ".htm", "Both A and B", ".web"],
-      "options_hi": [".html", ".htm", "Both A and B", ".web"],
-      "answer_en": "Both A and B",
-      "answer_hi": "Both A and B"
-    },
-    {
-      "num": 3,
-      "question_en": "Which tag is used to make text bold?",
-      "question_hi": "टेक्स्ट को bold करने के लिए कौन सा टैग है?",
-      "options_en": ["<b>", "<strong>", "<bold>", "Both <b> and <strong>"],
-      "options_hi": ["<b>", "<strong>", "<bold>", "Both <b> and <strong>"],
-      "answer_en": "Both <b> and <strong>",
-      "answer_hi": "Both <b> and <strong>"
-    },
-    {
-      "num": 4,
-      "question_en": "Which tag is used to make text italic?",
-      "question_hi": "टेक्स्ट को italic बनाने के लिए कौन सा टैग है?",
-      "options_en": ["<i>", "<em>", "Both <i> and <em>", "<italic>"],
-      "options_hi": ["<i>", "<em>", "Both <i> and <em>", "<italic>"],
-      "answer_en": "Both <i> and <em>",
-      "answer_hi": "Both <i> and <em>"
-    },
-    {
-      "num": 5,
-      "question_en": "Which tag is used to underline text?",
-      "question_hi": "टेक्स्ट को underline करने के लिए कौन सा टैग है?",
-      "options_en": ["<u>", "<underline>", "<line>", "<ins>"],
-      "options_hi": ["<u>", "<underline>", "<line>", "<ins>"],
-      "answer_en": "<u>",
-      "answer_hi": "<u>"
-    },
+     {
+    "num": 1,
+    "question_en": "Who is the inventor of HTML?",
+    "question_hi": "HTML के आविष्कारक कौन हैं?",
+    "options_en": ["Tim Berners-Lee", "Bill Gates", "Dennis Ritchie", "James Gosling"],
+    "options_hi": ["Tim Berners-Lee", "Bill Gates", "Dennis Ritchie", "James Gosling"],
+    "answer_en": "Tim Berners-Lee",
+    "answer_hi": "Tim Berners-Lee"
+  },
+  {
+    "num": 2,
+    "question_en": "HTML files are saved with which extension?",
+    "question_hi": "HTML फाइल किस एक्सटेंशन में सेव होती है?",
+    "options_en": [".html", ".htm", "Both A and B", ".web"],
+    "options_hi": [".html", ".htm", "Both A and B", ".web"],
+    "answer_en": "Both A and B",
+    "answer_hi": "Both A and B"
+  },
+  {
+    "num": 3,
+    "question_en": "Which tag is used to make text bold?",
+    "question_hi": "टेक्स्ट को bold करने के लिए कौन सा टैग है?",
+    "options_en": ["&lt;b&gt;", "&lt;strong&gt;", "&lt;bold&gt;", "Both &lt;b&gt; and &lt;strong&gt;"],
+    "options_hi": ["&lt;b&gt;", "&lt;strong&gt;", "&lt;bold&gt;", "Both &lt;b&gt; and &lt;strong&gt;"],
+    "answer_en": "Both &lt;b&gt; and &lt;strong&gt;",
+    "answer_hi": "Both &lt;b&gt; and &lt;strong&gt;"
+  },
+  {
+    "num": 4,
+    "question_en": "Which tag is used to make text italic?",
+    "question_hi": "टेक्स्ट को italic बनाने के लिए कौन सा टैग है?",
+    "options_en": ["&lt;i&gt;", "&lt;em&gt;", "Both &lt;i&gt; and &lt;em&gt;", "&lt;italic&gt;"],
+    "options_hi": ["&lt;i&gt;", "&lt;em&gt;", "Both &lt;i&gt; and &lt;em&gt;", "&lt;italic&gt;"],
+    "answer_en": "Both &lt;i&gt; and &lt;em&gt;",
+    "answer_hi": "Both &lt;i&gt; and &lt;em&gt;"
+  },
+  {
+    "num": 5,
+    "question_en": "Which tag is used to underline text?",
+    "question_hi": "टेक्स्ट को underline करने के लिए कौन सा टैग है?",
+    "options_en": ["&lt;u&gt;", "&lt;underline&gt;", "&lt;line&gt;", "&lt;ins&gt;"],
+    "options_hi": ["&lt;u&gt;", "&lt;underline&gt;", "&lt;line&gt;", "&lt;ins&gt;"],
+    "answer_en": "&lt;u&gt;",
+    "answer_hi": "&lt;u&gt;"
+  },
+  {
+    "num": 6,
+    "question_en": "Which tag is used to display preformatted text?",
+    "question_hi": "Preformatted टेक्स्ट के लिए कौन सा टैग है?",
+    "options_en": ["&lt;pre&gt;", "&lt;code&gt;", "&lt;text&gt;", "&lt;format&gt;"],
+    "options_hi": ["&lt;pre&gt;", "&lt;code&gt;", "&lt;text&gt;", "&lt;format&gt;"],
+    "answer_en": "&lt;pre&gt;",
+    "answer_hi": "&lt;pre&gt;"
+  },
+  {
+    "num": 7,
+    "question_en": "Which tag is used to display computer code?",
+    "question_hi": "Computer code दिखाने के लिए कौन सा टैग है?",
+    "options_en": ["&lt;code&gt;", "&lt;pre&gt;", "&lt;kbd&gt;", "&lt;samp&gt;"],
+    "options_hi": ["&lt;code&gt;", "&lt;pre&gt;", "&lt;kbd&gt;", "&lt;samp&gt;"],
+    "answer_en": "&lt;code&gt;",
+    "answer_hi": "&lt;code&gt;"
+  },
+  {
+    "num": 8,
+    "question_en": "Which tag defines keyboard input?",
+    "question_hi": "Keyboard input दिखाने वाला टैग कौन सा है?",
+    "options_en": ["&lt;kbd&gt;", "&lt;code&gt;", "&lt;input&gt;", "&lt;key&gt;"],
+    "options_hi": ["&lt;kbd&gt;", "&lt;code&gt;", "&lt;input&gt;", "&lt;key&gt;"],
+    "answer_en": "&lt;kbd&gt;",
+    "answer_hi": "&lt;kbd&gt;"
+  },
+  {
+    "num": 9,
+    "question_en": "Which tag shows sample output?",
+    "question_hi": "Sample output दिखाने के लिए कौन सा टैग है?",
+    "options_en": ["&lt;samp&gt;", "&lt;code&gt;", "&lt;pre&gt;", "&lt;out&gt;"],
+    "options_hi": ["&lt;samp&gt;", "&lt;code&gt;", "&lt;pre&gt;", "&lt;out&gt;"],
+    "answer_en": "&lt;samp&gt;",
+    "answer_hi": "&lt;samp&gt;"
+  },
+  {
+    "num": 10,
+    "question_en": "Which tag highlights important text semantically?",
+    "question_hi": "Semantic रूप से महत्वपूर्ण टेक्स्ट कौन सा टैग दिखाता है?",
+    "options_en": ["&lt;strong&gt;", "&lt;b&gt;", "&lt;mark&gt;", "&lt;em&gt;"],
+    "options_hi": ["&lt;strong&gt;", "&lt;b&gt;", "&lt;mark&gt;", "&lt;em&gt;"],
+    "answer_en": "&lt;strong&gt;",
+    "answer_hi": "&lt;strong&gt;"
+  },
 
-    {
-      "num": 6,
-      "question_en": "Which tag is used to display preformatted text?",
-      "question_hi": "Preformatted टेक्स्ट के लिए कौन सा टैग है?",
-      "options_en": ["<pre>", "<code>", "<text>", "<format>"],
-      "options_hi": ["<pre>", "<code>", "<text>", "<format>"],
-      "answer_en": "<pre>",
-      "answer_hi": "<pre>"
-    },
-    {
-      "num": 7,
-      "question_en": "Which tag is used to display computer code?",
-      "question_hi": "Computer code दिखाने के लिए कौन सा टैग है?",
-      "options_en": ["<code>", "<pre>", "<kbd>", "<samp>"],
-      "options_hi": ["<code>", "<pre>", "<kbd>", "<samp>"],
-      "answer_en": "<code>",
-      "answer_hi": "<code>"
-    },
-    {
-      "num": 8,
-      "question_en": "Which tag defines keyboard input?",
-      "question_hi": "Keyboard input दिखाने वाला टैग कौन सा है?",
-      "options_en": ["<kbd>", "<code>", "<input>", "<key>"],
-      "options_hi": ["<kbd>", "<code>", "<input>", "<key>"],
-      "answer_en": "<kbd>",
-      "answer_hi": "<kbd>"
-    },
-    {
-      "num": 9,
-      "question_en": "Which tag shows sample output?",
-      "question_hi": "Sample output दिखाने के लिए कौन सा टैग है?",
-      "options_en": ["<samp>", "<code>", "<pre>", "<out>"],
-      "options_hi": ["<samp>", "<code>", "<pre>", "<out>"],
-      "answer_en": "<samp>",
-      "answer_hi": "<samp>"
-    },
-    {
-      "num": 10,
-      "question_en": "Which tag highlights important text semantically?",
-      "question_hi": "Semantic रूप से महत्वपूर्ण टेक्स्ट कौन सा टैग दिखाता है?",
-      "options_en": ["<strong>", "<b>", "<mark>", "<em>"],
-      "options_hi": ["<strong>", "<b>", "<mark>", "<em>"],
-      "answer_en": "<strong>",
-      "answer_hi": "<strong>"
-    },
+  {
+    "num": 11,
+    "question_en": "Which tag highlights text visually?",
+    "question_hi": "टेक्स्ट को highlight करने वाला टैग कौन सा है?",
+    "options_en": ["&lt;mark&gt;", "&lt;highlight&gt;", "&lt;b&gt;", "&lt;bg&gt;"],
+    "options_hi": ["&lt;mark&gt;", "&lt;highlight&gt;", "&lt;b&gt;", "&lt;bg&gt;"],
+    "answer_en": "&lt;mark&gt;",
+    "answer_hi": "&lt;mark&gt;"
+  },
+  {
+    "num": 12,
+    "question_en": "Which tag is used to define abbreviation?",
+    "question_hi": "Abbreviation के लिए कौन सा टैग है?",
+    "options_en": ["&lt;abbr&gt;", "&lt;short&gt;", "&lt;acronym&gt;", "&lt;abbrv&gt;"],
+    "options_hi": ["&lt;abbr&gt;", "&lt;short&gt;", "&lt;acronym&gt;", "&lt;abbrv&gt;"],
+    "answer_en": "&lt;abbr&gt;",
+    "answer_hi": "&lt;abbr&gt;"
+  },
+  {
+    "num": 13,
+    "question_en": "Which tag shows deleted text?",
+    "question_hi": "Deleted text दिखाने वाला टैग कौन सा है?",
+    "options_en": ["&lt;del&gt;", "&lt;remove&gt;", "&lt;strike&gt;", "&lt;cut&gt;"],
+    "options_hi": ["&lt;del&gt;", "&lt;remove&gt;", "&lt;strike&gt;", "&lt;cut&gt;"],
+    "answer_en": "&lt;del&gt;",
+    "answer_hi": "&lt;del&gt;"
+  },
+  {
+    "num": 14,
+    "question_en": "Which tag shows inserted text?",
+    "question_hi": "Inserted text दिखाने वाला टैग कौन सा है?",
+    "options_en": ["&lt;ins&gt;", "&lt;add&gt;", "&lt;new&gt;", "&lt;u&gt;"],
+    "options_hi": ["&lt;ins&gt;", "&lt;add&gt;", "&lt;new&gt;", "&lt;u&gt;"],
+    "answer_en": "&lt;ins&gt;",
+    "answer_hi": "&lt;ins&gt;"
+  },
+  {
+    "num": 15,
+    "question_en": "Which tag is used for short quotation?",
+    "question_hi": "Short quotation के लिए कौन सा टैग है?",
+    "options_en": ["&lt;q&gt;", "&lt;blockquote&gt;", "&lt;quote&gt;", "&lt;abbr&gt;"],
+    "options_hi": ["&lt;q&gt;", "&lt;blockquote&gt;", "&lt;quote&gt;", "&lt;abbr&gt;"],
+    "answer_en": "&lt;q&gt;",
+    "answer_hi": "&lt;q&gt;"
+  },
 
-    {
-      "num": 11,
-      "question_en": "Which tag highlights text visually?",
-      "question_hi": "टेक्स्ट को highlight करने वाला टैग कौन सा है?",
-      "options_en": ["<mark>", "<highlight>", "<b>", "<bg>"],
-      "options_hi": ["<mark>", "<highlight>", "<b>", "<bg>"],
-      "answer_en": "<mark>",
-      "answer_hi": "<mark>"
-    },
-    {
-      "num": 12,
-      "question_en": "Which tag is used to define abbreviation?",
-      "question_hi": "Abbreviation के लिए कौन सा टैग है?",
-      "options_en": ["<abbr>", "<short>", "<acronym>", "<abbrv>"],
-      "options_hi": ["<abbr>", "<short>", "<acronym>", "<abbrv>"],
-      "answer_en": "<abbr>",
-      "answer_hi": "<abbr>"
-    },
-    {
-      "num": 13,
-      "question_en": "Which tag shows deleted text?",
-      "question_hi": "Deleted text दिखाने वाला टैग कौन सा है?",
-      "options_en": ["<del>", "<remove>", "<strike>", "<cut>"],
-      "options_hi": ["<del>", "<remove>", "<strike>", "<cut>"],
-      "answer_en": "<del>",
-      "answer_hi": "<del>"
-    },
-    {
-      "num": 14,
-      "question_en": "Which tag shows inserted text?",
-      "question_hi": "Inserted text दिखाने वाला टैग कौन सा है?",
-      "options_en": ["<ins>", "<add>", "<new>", "<u>"],
-      "options_hi": ["<ins>", "<add>", "<new>", "<u>"],
-      "answer_en": "<ins>",
-      "answer_hi": "<ins>"
-    },
-    {
-      "num": 15,
-      "question_en": "Which tag is used for short quotation?",
-      "question_hi": "Short quotation के लिए कौन सा टैग है?",
-      "options_en": ["<q>", "<blockquote>", "<quote>", "<abbr>"],
-      "options_hi": ["<q>", "<blockquote>", "<quote>", "<abbr>"],
-      "answer_en": "<q>",
-      "answer_hi": "<q>"
-    },
+  {
+    "num": 16,
+    "question_en": "Which tag is used for long quotation?",
+    "question_hi": "Long quotation के लिए कौन सा टैग है?",
+    "options_en": ["&lt;blockquote&gt;", "&lt;q&gt;", "&lt;quote&gt;", "&lt;long&gt;"],
+    "options_hi": ["&lt;blockquote&gt;", "&lt;q&gt;", "&lt;quote&gt;", "&lt;long&gt;"],
+    "answer_en": "&lt;blockquote&gt;",
+    "answer_hi": "&lt;blockquote&gt;"
+  },
+  {
+    "num": 17,
+    "question_en": "Which tag defines address information?",
+    "question_hi": "Address जानकारी किस टैग से दी जाती है?",
+    "options_en": ["&lt;address&gt;", "&lt;location&gt;", "&lt;contact&gt;", "&lt;info&gt;"],
+    "options_hi": ["&lt;address&gt;", "&lt;location&gt;", "&lt;contact&gt;", "&lt;info&gt;"],
+    "answer_en": "&lt;address&gt;",
+    "answer_hi": "&lt;address&gt;"
+  },
+  {
+    "num": 18,
+    "question_en": "Which tag is used to define citation?",
+    "question_hi": "Citation (संदर्भ) के लिए कौन सा टैग है?",
+    "options_en": ["&lt;cite&gt;", "&lt;ref&gt;", "&lt;quote&gt;", "&lt;src&gt;"],
+    "options_hi": ["&lt;cite&gt;", "&lt;ref&gt;", "&lt;quote&gt;", "&lt;src&gt;"],
+    "answer_en": "&lt;cite&gt;",
+    "answer_hi": "&lt;cite&gt;"
+  },
+  {
+    "num": 19,
+    "question_en": "Which tag is used to create dropdown list?",
+    "question_hi": "Dropdown list बनाने वाला टैग कौन सा है?",
+    "options_en": ["&lt;select&gt;", "&lt;option&gt;", "&lt;list&gt;", "&lt;dropdown&gt;"],
+    "options_hi": ["&lt;select&gt;", "&lt;option&gt;", "&lt;list&gt;", "&lt;dropdown&gt;"],
+    "answer_en": "&lt;select&gt;",
+    "answer_hi": "&lt;select&gt;"
+  },
+  {
+    "num": 20,
+    "question_en": "Which tag defines dropdown options?",
+    "question_hi": "Dropdown के विकल्प किस टैग से बनते हैं?",
+    "options_en": ["&lt;option&gt;", "&lt;select&gt;", "&lt;list&gt;", "&lt;value&gt;"],
+    "options_hi": ["&lt;option&gt;", "&lt;select&gt;", "&lt;list&gt;", "&lt;value&gt;"],
+    "answer_en": "&lt;option&gt;",
+    "answer_hi": "&lt;option&gt;"
+  },
 
-    {
-      "num": 16,
-      "question_en": "Which tag is used for long quotation?",
-      "question_hi": "Long quotation के लिए कौन सा टैग है?",
-      "options_en": ["<blockquote>", "<q>", "<quote>", "<long>"],
-      "options_hi": ["<blockquote>", "<q>", "<quote>", "<long>"],
-      "answer_en": "<blockquote>",
-      "answer_hi": "<blockquote>"
-    },
-    {
-      "num": 17,
-      "question_en": "Which tag defines address information?",
-      "question_hi": "Address जानकारी किस टैग से दी जाती है?",
-      "options_en": ["<address>", "<location>", "<contact>", "<info>"],
-      "options_hi": ["<address>", "<location>", "<contact>", "<info>"],
-      "answer_en": "<address>",
-      "answer_hi": "<address>"
-    },
-    {
-      "num": 18,
-      "question_en": "Which tag is used to define citation?",
-      "question_hi": "Citation (संदर्भ) के लिए कौन सा टैग है?",
-      "options_en": ["<cite>", "<ref>", "<quote>", "<src>"],
-      "options_hi": ["<cite>", "<ref>", "<quote>", "<src>"],
-      "answer_en": "<cite>",
-      "answer_hi": "<cite>"
-    },
-    {
-      "num": 19,
-      "question_en": "Which tag is used to create dropdown list?",
-      "question_hi": "Dropdown list बनाने वाला टैग कौन सा है?",
-      "options_en": ["<select>", "<option>", "<list>", "<dropdown>"],
-      "options_hi": ["<select>", "<option>", "<list>", "<dropdown>"],
-      "answer_en": "<select>",
-      "answer_hi": "<select>"
-    },
-    {
-      "num": 20,
-      "question_en": "Which tag defines dropdown options?",
-      "question_hi": "Dropdown के विकल्प किस टैग से बनते हैं?",
-      "options_en": ["<option>", "<select>", "<list>", "<value>"],
-      "options_hi": ["<option>", "<select>", "<list>", "<value>"],
-      "answer_en": "<option>",
-      "answer_hi": "<option>"
-    },
-
-    {
-      "num": 21,
-      "question_en": "Which tag groups related options?",
-      "question_hi": "Related options को group करने वाला टैग कौन सा है?",
-      "options_en": ["<optgroup>", "<group>", "<option>", "<select>"],
-      "options_hi": ["<optgroup>", "<group>", "<option>", "<select>"],
-      "answer_en": "<optgroup>",
-      "answer_hi": "<optgroup>"
-    },
-    {
-      "num": 22,
-      "question_en": "Which input type creates radio button?",
-      "question_hi": "Radio button के लिए कौन सा input type है?",
-      "options_en": ["radio", "checkbox", "button", "select"],
-      "options_hi": ["radio", "checkbox", "button", "select"],
-      "answer_en": "radio",
-      "answer_hi": "radio"
-    },
-    {
-      "num": 23,
-      "question_en": "Which input type creates checkbox?",
-      "question_hi": "Checkbox बनाने वाला input type कौन सा है?",
-      "options_en": ["checkbox", "radio", "tick", "select"],
-      "options_hi": ["checkbox", "radio", "tick", "select"],
-      "answer_en": "checkbox",
-      "answer_hi": "checkbox"
-    },
-    {
-      "num": 24,
-      "question_en": "Which tag is used to submit form?",
-      "question_hi": "Form submit करने के लिए कौन सा टैग है?",
-      "options_en": ["<input type='submit'>", "<button>", "Both A and B", "<submit>"],
-      "options_hi": ["<input type='submit'>", "<button>", "Both A and B", "<submit>"],
-      "answer_en": "Both A and B",
-      "answer_hi": "Both A and B"
-    },
-    {
-      "num": 25,
-      "question_en": "Which attribute is used to make input mandatory?",
-      "question_hi": "इनपुट को अनिवार्य बनाने वाला attribute कौन सा है?",
-      "options_en": ["required", "validate", "must", "compulsory"],
-      "options_hi": ["required", "validate", "must", "compulsory"],
-      "answer_en": "required",
-      "answer_hi": "required"
-    },
-
-    {
-      "num": 26,
-      "question_en": "Which attribute gives placeholder text?",
-      "question_hi": "Placeholder टेक्स्ट कौन सा attribute देता है?",
-      "options_en": ["placeholder", "value", "hint", "text"],
-      "options_hi": ["placeholder", "value", "hint", "text"],
-      "answer_en": "placeholder",
-      "answer_hi": "placeholder"
-    },
-    {
-      "num": 27,
-      "question_en": "Which tag is deprecated in HTML5?",
-      "question_hi": "HTML5 में कौन सा टैग deprecated है?",
-      "options_en": ["<font>", "<section>", "<article>", "<nav>"],
-      "options_hi": ["<font>", "<section>", "<article>", "<nav>"],
-      "answer_en": "<font>",
-      "answer_hi": "<font>"
-    },
-    {
-      "num": 28,
-      "question_en": "Which tag defines progress bar?",
-      "question_hi": "Progress bar के लिए कौन सा टैग है?",
-      "options_en": ["<progress>", "<meter>", "<range>", "<bar>"],
-      "options_hi": ["<progress>", "<meter>", "<range>", "<bar>"],
-      "answer_en": "<progress>",
-      "answer_hi": "<progress>"
-    },
-    {
-      "num": 29,
-      "question_en": "Which tag defines measurement value?",
-      "question_hi": "Measurement value दिखाने वाला टैग कौन सा है?",
-      "options_en": ["<meter>", "<progress>", "<scale>", "<value>"],
-      "options_hi": ["<meter>", "<progress>", "<scale>", "<value>"],
-      "answer_en": "<meter>",
-      "answer_hi": "<meter>"
-    },
-    {
-      "num": 30,
-      "question_en": "Which tag defines time/date?",
-      "question_hi": "Date और time दिखाने वाला टैग कौन सा है?",
-      "options_en": ["<time>", "<date>", "<clock>", "<datetime>"],
-      "options_hi": ["<time>", "<date>", "<clock>", "<datetime>"],
-      "answer_en": "<time>",
-      "answer_hi": "<time>"
-    },
-
-    {
-      "num": 31,
-      "question_en": "Which tag loads external JavaScript file?",
-      "question_hi": "External JavaScript फाइल कौन सा टैग लोड करता है?",
-      "options_en": ["<script>", "<js>", "<link>", "<code>"],
-      "options_hi": ["<script>", "<js>", "<link>", "<code>"],
-      "answer_en": "<script>",
-      "answer_hi": "<script>"
-    },
-    {
-      "num": 32,
-      "question_en": "Which attribute specifies JS file path?",
-      "question_hi": "JS फाइल का path कौन सा attribute बताता है?",
-      "options_en": ["src", "href", "path", "file"],
-      "options_hi": ["src", "href", "path", "file"],
-      "answer_en": "src",
-      "answer_hi": "src"
-    },
-    {
-      "num": 33,
-      "question_en": "Which attribute specifies CSS relationship?",
-      "question_hi": "CSS relationship बताने वाला attribute कौन सा है?",
-      "options_en": ["rel", "href", "type", "media"],
-      "options_hi": ["rel", "href", "type", "media"],
-      "answer_en": "rel",
-      "answer_hi": "rel"
-    },
-    {
-      "num": 34,
-      "question_en": "Which tag is used to display page footer?",
-      "question_hi": "पेज का footer किस टैग से बनता है?",
-      "options_en": ["<footer>", "<bottom>", "<end>", "<section>"],
-      "options_hi": ["<footer>", "<bottom>", "<end>", "<section>"],
-      "answer_en": "<footer>",
-      "answer_hi": "<footer>"
-    },
-    {
-      "num": 35,
-      "question_en": "Which tag represents independent content?",
-      "question_hi": "Independent content के लिए कौन सा टैग है?",
-      "options_en": ["<article>", "<section>", "<div>", "<main>"],
-      "options_hi": ["<article>", "<section>", "<div>", "<main>"],
-      "answer_en": "<article>",
-      "answer_hi": "<article>"
-    },
-
-    {
-      "num": 36,
-      "question_en": "Which tag defines sidebar content?",
-      "question_hi": "Sidebar content के लिए कौन सा टैग है?",
-      "options_en": ["<aside>", "<nav>", "<section>", "<footer>"],
-      "options_hi": ["<aside>", "<nav>", "<section>", "<footer>"],
-      "answer_en": "<aside>",
-      "answer_hi": "<aside>"
-    },
-    {
-      "num": 37,
-      "question_en": "Which tag defines navigation links?",
-      "question_hi": "Navigation links किस टैग से बनते हैं?",
-      "options_en": ["<nav>", "<menu>", "<ul>", "<header>"],
-      "options_hi": ["<nav>", "<menu>", "<ul>", "<header>"],
-      "answer_en": "<nav>",
-      "answer_hi": "<nav>"
-    },
-    {
-      "num": 38,
-      "question_en": "Which tag defines document header?",
-      "question_hi": "डॉक्यूमेंट का header कौन सा टैग बताता है?",
-      "options_en": ["<header>", "<head>", "<top>", "<nav>"],
-      "options_hi": ["<header>", "<head>", "<top>", "<nav>"],
-      "answer_en": "<header>",
-      "answer_hi": "<header>"
-    },
-    {
-      "num": 39,
-      "question_en": "Which tag defines main content area?",
-      "question_hi": "मुख्य कंटेंट एरिया कौन सा टैग दिखाता है?",
-      "options_en": ["<main>", "<section>", "<article>", "<body>"],
-      "options_hi": ["<main>", "<section>", "<article>", "<body>"],
-      "answer_en": "<main>",
-      "answer_hi": "<main>"
-    },
-    {
-      "num": 40,
-      "question_en": "Which tag embeds another webpage?",
-      "question_hi": "दूसरा वेबपेज एम्बेड करने का टैग कौन सा है?",
-      "options_en": ["<iframe>", "<frame>", "<object>", "<embed>"],
-      "options_hi": ["<iframe>", "<frame>", "<object>", "<embed>"],
-      "answer_en": "<iframe>",
-      "answer_hi": "<iframe>"
-    },
-
-    {
-      "num": 41,
-      "question_en": "Which tag defines image caption?",
-      "question_hi": "Image caption के लिए कौन सा टैग है?",
-      "options_en": ["<figcaption>", "<caption>", "<title>", "<alt>"],
-      "options_hi": ["<figcaption>", "<caption>", "<title>", "<alt>"],
-      "answer_en": "<figcaption>",
-      "answer_hi": "<figcaption>"
-    },
-    {
-      "num": 42,
-      "question_en": "Which tag groups image with caption?",
-      "question_hi": "Image और caption को group करने वाला टैग कौन सा है?",
-      "options_en": ["<figure>", "<img>", "<div>", "<picture>"],
-      "options_hi": ["<figure>", "<img>", "<div>", "<picture>"],
-      "answer_en": "<figure>",
-      "answer_hi": "<figure>"
-    },
-    {
-      "num": 43,
-      "question_en": "Which tag defines responsive images?",
-      "question_hi": "Responsive images के लिए कौन सा टैग है?",
-      "options_en": ["<picture>", "<img>", "<srcset>", "<media>"],
-      "options_hi": ["<picture>", "<img>", "<srcset>", "<media>"],
-      "answer_en": "<picture>",
-      "answer_hi": "<picture>"
-    },
-    {
-      "num": 44,
-      "question_en": "Which attribute supports responsive images?",
-      "question_hi": "Responsive images के लिए कौन सा attribute होता है?",
-      "options_en": ["srcset", "sizes", "Both A and B", "media"],
-      "options_hi": ["srcset", "sizes", "Both A and B", "media"],
-      "answer_en": "Both A and B",
-      "answer_hi": "Both A and B"
-    },
-    {
-      "num": 45,
-      "question_en": "Which tag is used for drawing graphics?",
-      "question_hi": "Graphics draw करने वाला टैग कौन सा है?",
-      "options_en": ["<canvas>", "<svg>", "<img>", "<draw>"],
-      "options_hi": ["<canvas>", "<svg>", "<img>", "<draw>"],
-      "answer_en": "<canvas>",
-      "answer_hi": "<canvas>"
-    },
-
-    {
-      "num": 46,
-      "question_en": "Which HTML tag is used for vector graphics?",
-      "question_hi": "Vector graphics के लिए कौन सा टैग है?",
-      "options_en": ["<svg>", "<canvas>", "<img>", "<graphic>"],
-      "options_hi": ["<svg>", "<canvas>", "<img>", "<graphic>"],
-      "answer_en": "<svg>",
-      "answer_hi": "<svg>"
-    },
-    {
-      "num": 47,
-      "question_en": "Which attribute opens link in a new tab?",
-      "question_hi": "लिंक को नई tab में खोलने वाला attribute कौन सा है?",
-      "options_en": ["target=\"_blank\"", "newtab", "open", "href"],
-      "options_hi": ["target=\"_blank\"", "newtab", "open", "href"],
-      "answer_en": "target=\"_blank\"",
-      "answer_hi": "target=\"_blank\""
-    },
-    {
-      "num": 48,
-      "question_en": "Which tag is used to add favicon?",
-      "question_hi": "Favicon जोड़ने वाला टैग कौन सा है?",
-      "options_en": ["<link>", "<meta>", "<icon>", "<style>"],
-      "options_hi": ["<link>", "<meta>", "<icon>", "<style>"],
-      "answer_en": "<link>",
-      "answer_hi": "<link>"
-    },
+   {
+    "num": 21,
+    "question_en": "Which tag groups related options?",
+    "question_hi": "Related options को group करने वाला टैग कौन सा है?",
+    "options_en": ["&lt;optgroup&gt;", "&lt;group&gt;", "&lt;option&gt;", "&lt;select&gt;"],
+    "options_hi": ["&lt;optgroup&gt;", "&lt;group&gt;", "&lt;option&gt;", "&lt;select&gt;"],
+    "answer_en": "&lt;optgroup&gt;",
+    "answer_hi": "&lt;optgroup&gt;"
+  },
+  {
+    "num": 22,
+    "question_en": "Which input type creates radio button?",
+    "question_hi": "Radio button के लिए कौन सा input type है?",
+    "options_en": ["radio", "checkbox", "button", "select"],
+    "options_hi": ["radio", "checkbox", "button", "select"],
+    "answer_en": "radio",
+    "answer_hi": "radio"
+  },
+  {
+    "num": 23,
+    "question_en": "Which input type creates checkbox?",
+    "question_hi": "Checkbox बनाने वाला input type कौन सा है?",
+    "options_en": ["checkbox", "radio", "tick", "select"],
+    "options_hi": ["checkbox", "radio", "tick", "select"],
+    "answer_en": "checkbox",
+    "answer_hi": "checkbox"
+  },
+  {
+    "num": 24,
+    "question_en": "Which tag is used to submit form?",
+    "question_hi": "Form submit करने के लिए कौन सा टैग है?",
+    "options_en": ["&lt;input type='submit'&gt;", "&lt;button&gt;", "Both A and B", "&lt;submit&gt;"],
+    "options_hi": ["&lt;input type='submit'&gt;", "&lt;button&gt;", "Both A and B", "&lt;submit&gt;"],
+    "answer_en": "Both A and B",
+    "answer_hi": "Both A and B"
+  },
+  {
+    "num": 25,
+    "question_en": "Which attribute is used to make input mandatory?",
+    "question_hi": "इनपुट को अनिवार्य बनाने वाला attribute कौन सा है?",
+    "options_en": ["required", "validate", "must", "compulsory"],
+    "options_hi": ["required", "validate", "must", "compulsory"],
+    "answer_en": "required",
+    "answer_hi": "required"
+  },
+  {
+    "num": 26,
+    "question_en": "Which attribute gives placeholder text?",
+    "question_hi": "Placeholder टेक्स्ट कौन सा attribute देता है?",
+    "options_en": ["placeholder", "value", "hint", "text"],
+    "options_hi": ["placeholder", "value", "hint", "text"],
+    "answer_en": "placeholder",
+    "answer_hi": "placeholder"
+  },
+  {
+    "num": 27,
+    "question_en": "Which tag is deprecated in HTML5?",
+    "question_hi": "HTML5 में कौन सा टैग deprecated है?",
+    "options_en": ["&lt;font&gt;", "&lt;section&gt;", "&lt;article&gt;", "&lt;nav&gt;"],
+    "options_hi": ["&lt;font&gt;", "&lt;section&gt;", "&lt;article&gt;", "&lt;nav&gt;"],
+    "answer_en": "&lt;font&gt;",
+    "answer_hi": "&lt;font&gt;"
+  },
+  {
+    "num": 28,
+    "question_en": "Which tag defines progress bar?",
+    "question_hi": "Progress bar के लिए कौन सा टैग है?",
+    "options_en": ["&lt;progress&gt;", "&lt;meter&gt;", "&lt;range&gt;", "&lt;bar&gt;"],
+    "options_hi": ["&lt;progress&gt;", "&lt;meter&gt;", "&lt;range&gt;", "&lt;bar&gt;"],
+    "answer_en": "&lt;progress&gt;",
+    "answer_hi": "&lt;progress&gt;"
+  },
+  {
+    "num": 29,
+    "question_en": "Which tag defines measurement value?",
+    "question_hi": "Measurement value दिखाने वाला टैग कौन सा है?",
+    "options_en": ["&lt;meter&gt;", "&lt;progress&gt;", "&lt;scale&gt;", "&lt;value&gt;"],
+    "options_hi": ["&lt;meter&gt;", "&lt;progress&gt;", "&lt;scale&gt;", "&lt;value&gt;"],
+    "answer_en": "&lt;meter&gt;",
+    "answer_hi": "&lt;meter&gt;"
+  },
+  {
+    "num": 30,
+    "question_en": "Which tag defines time/date?",
+    "question_hi": "Date और time दिखाने वाला टैग कौन सा है?",
+    "options_en": ["&lt;time&gt;", "&lt;date&gt;", "&lt;clock&gt;", "&lt;datetime&gt;"],
+    "options_hi": ["&lt;time&gt;", "&lt;date&gt;", "&lt;clock&gt;", "&lt;datetime&gt;"],
+    "answer_en": "&lt;time&gt;",
+    "answer_hi": "&lt;time&gt;"
+  },
+  {
+    "num": 31,
+    "question_en": "Which tag loads external JavaScript file?",
+    "question_hi": "External JavaScript फाइल कौन सा टैग लोड करता है?",
+    "options_en": ["&lt;script&gt;", "&lt;js&gt;", "&lt;link&gt;", "&lt;code&gt;"],
+    "options_hi": ["&lt;script&gt;", "&lt;js&gt;", "&lt;link&gt;", "&lt;code&gt;"],
+    "answer_en": "&lt;script&gt;",
+    "answer_hi": "&lt;script&gt;"
+  },
+  {
+    "num": 34,
+    "question_en": "Which tag is used to display page footer?",
+    "question_hi": "पेज का footer किस टैग से बनता है?",
+    "options_en": ["&lt;footer&gt;", "&lt;bottom&gt;", "&lt;end&gt;", "&lt;section&gt;"],
+    "options_hi": ["&lt;footer&gt;", "&lt;bottom&gt;", "&lt;end&gt;", "&lt;section&gt;"],
+    "answer_en": "&lt;footer&gt;",
+    "answer_hi": "&lt;footer&gt;"
+  },
+  {
+    "num": 35,
+    "question_en": "Which tag represents independent content?",
+    "question_hi": "Independent content के लिए कौन सा टैग है?",
+    "options_en": ["&lt;article&gt;", "&lt;section&gt;", "&lt;div&gt;", "&lt;main&gt;"],
+    "options_hi": ["&lt;article&gt;", "&lt;section&gt;", "&lt;div&gt;", "&lt;main&gt;"],
+    "answer_en": "&lt;article&gt;",
+    "answer_hi": "&lt;article&gt;"
+  },
+  {
+    "num": 36,
+    "question_en": "Which tag defines sidebar content?",
+    "question_hi": "Sidebar content के लिए कौन सा टैग है?",
+    "options_en": ["&lt;aside&gt;", "&lt;nav&gt;", "&lt;section&gt;", "&lt;footer&gt;"],
+    "options_hi": ["&lt;aside&gt;", "&lt;nav&gt;", "&lt;section&gt;", "&lt;footer&gt;"],
+    "answer_en": "&lt;aside&gt;",
+    "answer_hi": "&lt;aside&gt;"
+  },
+  {
+    "num": 37,
+    "question_en": "Which tag defines navigation links?",
+    "question_hi": "Navigation links किस टैग से बनते हैं?",
+    "options_en": ["&lt;nav&gt;", "&lt;menu&gt;", "&lt;ul&gt;", "&lt;header&gt;"],
+    "options_hi": ["&lt;nav&gt;", "&lt;menu&gt;", "&lt;ul&gt;", "&lt;header&gt;"],
+    "answer_en": "&lt;nav&gt;",
+    "answer_hi": "&lt;nav&gt;"
+  },
+  {
+    "num": 38,
+    "question_en": "Which tag defines document header?",
+    "question_hi": "डॉक्यूमेंट का header कौन सा टैग बताता है?",
+    "options_en": ["&lt;header&gt;", "&lt;head&gt;", "&lt;top&gt;", "&lt;nav&gt;"],
+    "options_hi": ["&lt;header&gt;", "&lt;head&gt;", "&lt;top&gt;", "&lt;nav&gt;"],
+    "answer_en": "&lt;header&gt;",
+    "answer_hi": "&lt;header&gt;"
+  },
+  {
+    "num": 39,
+    "question_en": "Which tag defines main content area?",
+    "question_hi": "मुख्य कंटेंट एरिया कौन सा टैग दिखाता है?",
+    "options_en": ["&lt;main&gt;", "&lt;section&gt;", "&lt;article&gt;", "&lt;body&gt;"],
+    "options_hi": ["&lt;main&gt;", "&lt;section&gt;", "&lt;article&gt;", "&lt;body&gt;"],
+    "answer_en": "&lt;main&gt;",
+    "answer_hi": "&lt;main&gt;"
+  },
+  {
+    "num": 40,
+    "question_en": "Which tag embeds another webpage?",
+    "question_hi": "दूसरा वेबपेज एम्बेड करने का टैग कौन सा है?",
+    "options_en": ["&lt;iframe&gt;", "&lt;frame&gt;", "&lt;object&gt;", "&lt;embed&gt;"],
+    "options_hi": ["&lt;iframe&gt;", "&lt;frame&gt;", "&lt;object&gt;", "&lt;embed&gt;"],
+    "answer_en": "&lt;iframe&gt;",
+    "answer_hi": "&lt;iframe&gt;"
+  },
+  {
+    "num": 41,
+    "question_en": "Which tag defines image caption?",
+    "question_hi": "Image caption के लिए कौन सा टैग है?",
+    "options_en": ["&lt;figcaption&gt;", "&lt;caption&gt;", "&lt;title&gt;", "&lt;alt&gt;"],
+    "options_hi": ["&lt;figcaption&gt;", "&lt;caption&gt;", "&lt;title&gt;", "&lt;alt&gt;"],
+    "answer_en": "&lt;figcaption&gt;",
+    "answer_hi": "&lt;figcaption&gt;"
+  },
+  {
+    "num": 42,
+    "question_en": "Which tag groups image with caption?",
+    "question_hi": "Image और caption को group करने वाला टैग कौन सा है?",
+    "options_en": ["&lt;figure&gt;", "&lt;img&gt;", "&lt;div&gt;", "&lt;picture&gt;"],
+    "options_hi": ["&lt;figure&gt;", "&lt;img&gt;", "&lt;div&gt;", "&lt;picture&gt;"],
+    "answer_en": "&lt;figure&gt;",
+    "answer_hi": "&lt;figure&gt;"
+  },
+  {
+    "num": 43,
+    "question_en": "Which tag defines responsive images?",
+    "question_hi": "Responsive images के लिए कौन सा टैग है?",
+    "options_en": ["&lt;picture&gt;", "&lt;img&gt;", "&lt;srcset&gt;", "&lt;media&gt;"],
+    "options_hi": ["&lt;picture&gt;", "&lt;img&gt;", "&lt;srcset&gt;", "&lt;media&gt;"],
+    "answer_en": "&lt;picture&gt;",
+    "answer_hi": "&lt;picture&gt;"
+  },
+  {
+    "num": 44,
+    "question_en": "Which attribute supports responsive images?",
+    "question_hi": "Responsive images के लिए कौन सा attribute होता है?",
+    "options_en": ["srcset", "sizes", "Both A and B", "media"],
+    "options_hi": ["srcset", "sizes", "Both A and B", "media"],
+    "answer_en": "Both A and B",
+    "answer_hi": "Both A and B"
+  },
+  {
+    "num": 45,
+    "question_en": "Which tag is used for drawing graphics?",
+    "question_hi": "Graphics draw करने वाला टैग कौन सा है?",
+    "options_en": ["&lt;canvas&gt;", "&lt;svg&gt;", "&lt;img&gt;", "&lt;draw&gt;"],
+    "options_hi": ["&lt;canvas&gt;", "&lt;svg&gt;", "&lt;img&gt;", "&lt;draw&gt;"],
+    "answer_en": "&lt;canvas&gt;",
+    "answer_hi": "&lt;canvas&gt;"
+  },
+  {
+    "num": 46,
+    "question_en": "Which HTML tag is used for vector graphics?",
+    "question_hi": "Vector graphics के लिए कौन सा टैग है?",
+    "options_en": ["&lt;svg&gt;", "&lt;canvas&gt;", "&lt;img&gt;", "&lt;graphic&gt;"],
+    "options_hi": ["&lt;svg&gt;", "&lt;canvas&gt;", "&lt;img&gt;", "&lt;graphic&gt;"],
+    "answer_en": "&lt;svg&gt;",
+    "answer_hi": "&lt;svg&gt;"
+  },
+  {
+    "num": 48,
+    "question_en": "Which tag is used to add favicon?",
+    "question_hi": "Favicon जोड़ने वाला टैग कौन सा है?",
+    "options_en": ["&lt;link&gt;", "&lt;meta&gt;", "&lt;icon&gt;", "&lt;style&gt;"],
+    "options_hi": ["&lt;link&gt;", "&lt;meta&gt;", "&lt;icon&gt;", "&lt;style&gt;"],
+    "answer_en": "&lt;link&gt;",
+    "answer_hi": "&lt;link&gt;"
+  },
     {
       "num": 49,
       "question_en": "Which attribute improves form accessibility?",

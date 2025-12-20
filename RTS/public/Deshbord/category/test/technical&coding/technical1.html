@@ -1163,6 +1163,46 @@
         });
       });
     });
+
+    // SEARCH BAR FUNCTIONALITY
+  // ==========================
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+  const searchInputs = [
+    document.getElementById("searchInput"),          // desktop
+    document.getElementById("mobileSearchInput"),    // navbar mobile
+    document.getElementById("mainMobileSearchInput") // page mobile
+  ].filter(Boolean);
+
+  const testItems = document.querySelectorAll(".test-item");
+
+  function normalize(text) {
+    return text.toLowerCase().replace(/\s|:/g, "");
+  }
+
+  function filterTests(value) {
+    const searchValue = normalize(value);
+
+    testItems.forEach(item => {
+      const title = item.querySelector("h3").innerText;
+      const normalizedTitle = normalize(title);
+
+      if (normalizedTitle.includes(searchValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  searchInputs.forEach(input => {
+    input.addEventListener("input", function () {
+      filterTests(this.value);
+    });
+  });
+
+});
   </script>
 </body>
 

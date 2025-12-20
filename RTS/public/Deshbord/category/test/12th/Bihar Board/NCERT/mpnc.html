@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,22 +7,11 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
-  <link rel="stylesheet" href="/RTS/public/css/navbar.css">
-  <style>
-     .course-card {
-      width: 280px;
-     
-    }
-    img{
-      background-size: cover;
-     
-    }
-  </style>
+<link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+<link rel="stylesheet" href="/RTS/public/css/footer.css">
 </head>
 
 <body>
-
   <header class="main-header">
     <!-- Top Info Bar -->
     <div class="header-info">
@@ -50,34 +36,34 @@
         <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
       </div>
 
-      <button class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-      </button>
-
-      <button class="menu-toggle" id="menuToggle">
+      <!-- Menu Toggle Button for Mobile -->
+      <button class="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
 
       <div class="nav-menu" id="navMenu">
         <!-- Search Box -->
         <div class="search-box">
-          <input type="text" placeholder="Search Anything...">
+          <input type="text" placeholder="Search Anything..." id="searchInput">
           <i class="fas fa-search"></i>
         </div>
 
         <!-- Certificate and Profile Buttons -->
         <div class="nav-buttons">
-          <a href="#" class="btn"><i class="fas fa-award"></i> Certificate</a>
-          <a href="#" class="btn"><i class="fas fa-user"></i> Profile</a>
+          <a href="/Certificate-Verification/verify.html" class="btn">
+            <i class="fas fa-award"></i> Certificate
+          </a>
+
+          <a href="/RTS/public/profile.html" class="btn"><i class="fas fa-user"></i> Profile</a>
         </div>
 
         <!-- Mobile Navigation -->
         <ul class="mobile-nav" id="mobileNav">
           <!-- Mobile Search Box -->
-          <li class="mobile-search-box">
-            <input type="text" placeholder="Search Anything...">
+          <div class="mobile-search-box">
+            <input type="text" placeholder="Search Anything..." id="mobileSearchInput">
             <i class="fas fa-search"></i>
-          </li>
+          </div>
 
           <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
@@ -113,93 +99,12 @@
     </ul>
   </header>
 
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // ========== MOBILE MENU TOGGLE ==========
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      const mobileNav = document.getElementById('mobileNav');
-
-      // Initialize menu state
-      let isMenuOpen = false;
-
-      // Toggle mobile menu
-      function toggleMobileMenu() {
-        isMenuOpen = !isMenuOpen;
-
-        // Toggle active class on mobile elements
-        navMenu.classList.toggle('active', isMenuOpen);
-        mobileNav.classList.toggle('active', isMenuOpen);
-
-        // Update icon
-        const icon = menuToggle.querySelector('i');
-        icon.classList.toggle('fa-bars', !isMenuOpen);
-        icon.classList.toggle('fa-times', isMenuOpen);
-
-        // Toggle body scroll
-        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-      }
-
-      // Close mobile menu
-      function closeMobileMenu() {
-        if (!isMenuOpen) return;
-        isMenuOpen = false;
-        navMenu.classList.remove('active');
-        mobileNav.classList.remove('active');
-        menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-        document.body.style.overflow = '';
-      }
-
-      // ========== THEME TOGGLE ==========
-      const themeToggle = document.getElementById('themeToggle');
-      themeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-
-        // Update icon
-        const icon = themeToggle.querySelector('i');
-        if (document.body.classList.contains('dark-mode')) {
-          icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-          icon.classList.replace('fa-sun', 'fa-moon');
-        }
-      });
-
-      // ========== EVENT LISTENERS ==========
-      menuToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        toggleMobileMenu();
-      });
-
-      document.addEventListener('click', function (e) {
-        if (isMenuOpen && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-          closeMobileMenu();
-        }
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && isMenuOpen) {
-          closeMobileMenu();
-        }
-      });
-
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 992) {
-          closeMobileMenu();
-        }
-      });
-    });
-  </script>
-
-
   <!----side bar wala contain suru -->
-
-
-  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+  <button class="sidebar-toggle">☰</button>
   <aside class="sidebar">
     <h2 class="mainu">Main Menu</h2>
     <ul class="menu">
-      <li><i class="fas fa-home home-icon"></i><a href="/dasborde_main/Deshbord.html">Home</a></li>
+      <li><i class="fas fa-home home-icon"></i><a href="/RTS/public/Deshbord.html">Home</a></li>
       <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
       <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a>
       </li>
@@ -213,170 +118,263 @@
           href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
       <li><i class="fas fa-file-contract terms-icon"></i><a
           href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
-      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="#">Rate Us</a></li>
+      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a>
+      </li>
       <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="#">Logout</a></li>
     </ul>
   </aside><br>
+
   <main>
+    <!-- Mobile Search Container - NEW -->
+    <div class="mobile-search-container">
+      <div class="search-box">
+        <input type="text" placeholder="Search Anything..." id="mainMobileSearchInput">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
 
     <section class="courses">
-
       <div class="courses">
-        
+        <!-- Chemistry Card -->
+        <div class="course-card">
+          <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/cs1.jpg" alt="Chemistry Course">
+          <div class="course-content">
+            <h3>Chemistry</h3>
+            <div class="marquee">
+              <p>Beginner Basic</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Chemistry/purchase.html" class="btn btn-light">More Details</a>
+            </div>
+          </div>
+        </div>
 
-                  <div class="course-card">
-                        <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/cs1.jpg" alt="Course Image">
-                        <h3>Chemistry</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Chemistry/purchase.html" class="btn btn-light">More Details</a>
-                    </div>
-                    <div class="course-card">
-                        <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/NCERT/mm.jpg" alt="Course Image">
-                        <h3>Maths</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Maths/purchase.html" class="btn btn-light">More Details</a>
-                    </div>
-                    <div class="course-card">
-                        <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/NCERT/p.jpg" alt="Course Image">
-                        <h3>Physic</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Physic/purchase.html" class="btn btn-light">More Details</a>
-                    </div>
-                 
-                    <div class="course-card">
-                    <img src="/RTS/public/images/image/hindiup.jpeg" alt="Course Image">
-                      <h3>Hindi</h3>
-                      <p>Beginner Basic</p>
-                      <p>7:37</p>
-                      <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Hindi/purchase.html" class="btn btn-light">More Details</a>
-                  </div>
-                     <div class="course-card">
-                    <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/e.jpg" alt="Course Image">
-                    <h3>English</h3>
-                    <p>Beginner Basic</p>
-                    <p>7:37</p>
-                    <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/English/purchase.html" class="btn btn-light">More Details</a>
-                  </div>
+        <!-- Maths Card -->
+        <div class="course-card">
+          <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/NCERT/mm.jpg" alt="Maths Course">
+          <div class="course-content">
+            <h3>Maths</h3>
+            <div class="marquee">
+              <p>Beginner Basic</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Maths/purchase.html" class="btn btn-light">More Details</a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Physics Card -->
+        <div class="course-card">
+          <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/NCERT/p.jpg" alt="Physics Course">
+          <div class="course-content">
+            <h3>Physics</h3>
+            <div class="marquee">
+              <p>Beginner Basic</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Physic/purchase.html" class="btn btn-light">More Details</a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Hindi Card -->
+        <div class="course-card">
+          <img src="/RTS/public/images/image/hindiup.jpeg" alt="Hindi Course">
+          <div class="course-content">
+            <h3>Hindi</h3>
+            <div class="marquee">
+              <p>Beginner Basic</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Hindi/purchase.html" class="btn btn-light">More Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- English Card -->
+        <div class="course-card">
+          <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/e.jpg" alt="English Course">
+          <div class="course-content">
+            <h3>English</h3>
+            <div class="marquee">
+              <p>Beginner Basic</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/English/purchase.html" class="btn btn-light">More Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-  </div>
+
+  <!----------------------------------------------------------Footer parts in desbord---------------------------------------------------------------->
+  <section class="footer">
+    <footer>
+      <div class="left">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
+        <p>
+          Mig, 72, Rajiv Nagar, A Sector, Aayodhya Bypass Bhopal,
+          Madhya Pradesh, India (462022)
+        </p>
+        <div>
+          <a href="mailto:ridorg.in@gmail.com">
+            <i class="fas fa-envelope"></i> ridorg.in@gmail.com | Email
+          </a>
+          <a href="tel:+91 9202707903">
+            <i class="fas fa-phone"></i> +91 9202707903 | Mobile
+          </a>
+        </div>
+      </div>
+
+      <div class="links-head">
+        <h3>Research Topics</h3>
+        <hr>
+        <div class="links">
+          <div class="links-1">
+            <a href="#">Computers</a>
+            <a href="#">Tech National Affairs</a>
+            <a href="#">AI: Artificial Intelligence</a>
+            <a href="#">Race & Ethnicity</a>
+            <a href="#">Religion</a>
+            <a href="#">Age & Generations</a>
+            <a href="#">Gender & Equality</a>
+          </div>
+          <div class="links-2">
+            <a href="#">Space Engineering</a>
+            <a href="#">Economy & Work</a>
+            <a href="#">Science</a>
+            <a href="#">Internet & Technology</a>
+            <a href="#">News Habits & Media</a>
+            <a href="#">Methodological Research</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="links-social">
+        <h3>Social Links</h3>
+        <hr>
+        <div class="links">
+          <div class="links-1">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+            <a href="https://www.linkedin.com/in/rid-bharat-9a4517324">
+              <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+            </a>
+            <a href="https://youtube.com/@ridbharat">
+              <ion-icon name="logo-youtube"></ion-icon> YouTube
+            </a>
+          </div>
+          <div class="links-2">
+            <a href="https://www.instagram.com/ridbharat">
+              <ion-icon name="logo-instagram"></ion-icon> Instagram
+            </a>
+            <a href="mailto:ridorg.in@gmail.com">
+              <ion-icon name="mail-outline"></ion-icon> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <p class="about-text">
+      <strong>ABOUT RESEARCH INNOVATION & DISCOVERY:</strong> RID Organization i.e. Research,
+      Innovation and Discovery Organization is an organization which is run by TWF (TWKSAA WELFARE FOUNDATION) NGO. The
+      main objective of which is that in the coming times, the discovery, publication and use of NEW (RID, PMS & TLR)
+      should be done first in Indian culture, civilization and language from this holy land of India.
+    </p>
+
+    <section class="copyrightsection">
+      <p>Copyright ©2024, RID | TWF (TWKSAA Welfare Foundation). All Rights Reserved.</p>
+      <div class="link">
+        <a href="#">About</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Feedback</a>
+      </div>
+    </section>
+  </section>
+
+  <!-- JavaScript Files -->
   <script>
-    function toggleSidebar() {
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sidebar toggle functionality
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
       const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.toggle('open');
 
-      // Optional: Prevent scrolling when sidebar is open
-      document.body.classList.toggle('no-scroll');
-    }
+      if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
 
-    // Close sidebar when clicking on a link (for mobile)
-    document.querySelectorAll('.menu a').forEach(link => {
-      link.addEventListener('click', function () {
-        if (window.innerWidth <= 992) {
-          document.querySelector('.sidebar').classList.remove('open');
-          document.body.classList.remove('no-scroll');
-        }
+      // Navbar toggle functionality
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.getElementById('navMenu');
+      const mobileNav = document.getElementById('mobileNav');
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+        });
+      }
+
+      // Close mobile nav when a link is clicked
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          mobileNav.classList.remove('active');
+        });
+      });
+
+      // Close sidebar when a link is clicked (on mobile)
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 992) {
+            sidebar.classList.remove('open');
+          }
+        });
       });
     });
 
-    // Close sidebar when clicking outside (for mobile)
-    document.addEventListener('click', function (event) {
-      const sidebar = document.querySelector('.sidebar');
-      const toggleBtn = document.querySelector('.sidebar-toggle');
+    // ==========================
+  // SEARCH BAR FUNCTIONALITY
+  // ==========================
 
-      if (window.innerWidth <= 992 &&
-        !sidebar.contains(event.target) &&
-        event.target !== toggleBtn &&
-        !toggleBtn.contains(event.target)) {
-        sidebar.classList.remove('open');
-        document.body.classList.remove('no-scroll');
+  const searchInput = document.getElementById("searchInput");
+  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+  const courseCards = document.querySelectorAll(".course-card");
+
+  function filterCourses(value) {
+    value = value.toLowerCase().trim();
+
+    courseCards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
       }
     });
+  }
 
-    // Banner slider functionality
-    const banners = [
-      "images/main_5/b1 (1).jpg",
-      "images/main_5/b1 (2).jpg",
-      "images/main_5/b1 (3).jpg",
-      "images/main_5/b1 (4).jpg",
-      "images/main_5/b1 (5).jpg",
-      "images/main_5/b1 (6).jpg",
-      "images/main_5/b1 (7).jpg"
-    ];
+  // Desktop Search
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
 
-    let currentBanner = 0;
-
-    function changeBanner(index) {
-      currentBanner = index;
-      document.getElementById('bannerImage').src = banners[index];
-
-      // Update active dot
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, i) => {
-        if (i === index) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-    }
-
-    // Auto slide banners
-    setInterval(() => {
-      currentBanner = (currentBanner + 1) % banners.length;
-      changeBanner(currentBanner);
-    }, 3000);
+  // Mobile Search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
   </script>
-
 </body>
 
 </html>
-
-
-
-
-
-
-
-<!-- 
-                  <div class="course-card">
-                        <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/cs1.jpg" alt="Course Image">
-                        <h3>Chemistry</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Chemistry/purchase.html" class="btn btn-light">More Details</a>
-                    </div>
-                    <div class="course-card">
-                        <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/NCERT/mm.jpg" alt="Course Image">
-                        <h3>Maths</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Maths/purchase.html" class="btn btn-light">More Details</a>
-                    </div>
-                    <div class="course-card">
-                        <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/NCERT/p.jpg" alt="Course Image">
-                        <h3>Physic</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Physic/purchase.html" class="btn btn-light">More Details</a>
-                    </div>
-                 
-                    <div class="course-card">
-                    <img src="/RTS/public/images/image/hindiup.jpeg" alt="Course Image">
-                      <h3>Hindi</h3>
-                      <p>Beginner Basic</p>
-                      <p>7:37</p>
-                      <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/Hindi/purchase.html" class="btn btn-light">More Details</a>
-                  </div>
-                     <div class="course-card">
-                    <img src="/RTS/public/Deshbord/category/test/12th/Punbjab Board/e.jpg" alt="Course Image">
-                    <h3>English</h3>
-                    <p>Beginner Basic</p>
-                    <p>7:37</p>
-                    <a href="/RTS/public/Deshbord/category/test/12th/Bihar Board/NCERT/Mathamatics/English/purchase.html" class="btn btn-light">More Details</a>
-                  </div> -->
