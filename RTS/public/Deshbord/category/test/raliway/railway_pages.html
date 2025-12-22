@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>relwe</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 <style>
@@ -1288,46 +1288,44 @@
         });
       });
     });
+    
+  // ==========================
+  // SEARCH BAR FUNCTIONALITY
+  // ==========================
+
+  const searchInput = document.getElementById("searchInput");
+  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+  const courseCards = document.querySelectorAll(".course-card");
+
+  function filterCourses(value) {
+    value = value.toLowerCase().trim();
+
+    courseCards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // Desktop Search
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
+  // Mobile Search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
   </script>
 </body>
 
 </html>
-
-<!-- 
-
-<div class="course-card">
-                        <img src="/rts/images/dashbord/mppsc.png" alt="Course Image">
-                        <h3>RRB ALP</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/rts/Deshbord/category/test/raliway/RRB ALP/CBAT/CARD.HTML" class="btn btn-light">More Details</a>
-                    </div>
-                    <div class="course-card">
-                        <img src="/rts/images/dashbord/mppsc.png" alt="Course Image">
-                        <h3>RRB GROUP D</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/rts/Deshbord/category/test/raliway/RRB GROUP D/CBT1/CARD1.HTML" class="btn btn-light">More Details</a>
-                    </div>
-                    <div class="course-card">
-                        <img src="/rts/images/dashbord/mppsc.png" alt="Course Image">
-                        <h3>RRB JE</h3>
-                        <p>Beginner Basic</p>
-                        <p>7:37</p>
-                        <a href="/rts/Deshbord/category/test/raliway/RRB JE/CARD2.HTML" class="btn btn-light">More Details</a>
-                    </div>
-                 
-                    <div class="course-card">
-                      <img src="/rts/images/dashbord/mppsc.png" alt="Course Image">
-                      <h3>RRB NTPC</h3>
-                      <p>Beginner Basic</p>
-                      <p>7:37</p>
-                      <a href="/rts/Deshbord/category/test/raliway/RRB NTPC/CBT2/CARD3.HTML" class="btn btn-light">More Details</a>
-                  </div>
-                  <div class="course-card">
-                    <img src="/rts/images/dashbord/mppsc.png" alt="Course Image">
-                    <h3>RRB paramedical & MINISTERIAL CATEGORIES </h3>
-                    <p>Beginner Basic</p>
-                    <p>7:37</p>
-                    <a href="/rts/Deshbord/category/test/raliway/RRB paramedical & ministerial categories/CBT1/CARD4.HTML" class="btn btn-light">More Details</a>
-                </div> -->

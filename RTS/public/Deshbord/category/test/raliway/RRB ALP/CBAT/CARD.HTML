@@ -1272,6 +1272,43 @@
         });
       });
     });
+    
+  // ==========================
+  // SEARCH BAR FUNCTIONALITY
+  // ==========================
+
+  const searchInput = document.getElementById("searchInput");
+  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+  const courseCards = document.querySelectorAll(".course-card");
+
+  function filterCourses(value) {
+    value = value.toLowerCase().trim();
+
+    courseCards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // Desktop Search
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
+  // Mobile Search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
   </script>
 </body>
 
