@@ -188,16 +188,16 @@
             touch-action: none;
         }
 
-        /* Mobile Navigation Controls - Updated for Auto-Hide */
+        /* Mobile Navigation Controls - FIXED LAYOUT */
         .navigation-controls {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
             background: rgba(0, 0, 0, 0.95);
-            padding: 0.5rem;
+            padding: 0.75rem 1rem;
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
             align-items: center;
             backdrop-filter: blur(20px);
             z-index: 100;
@@ -219,7 +219,24 @@
             pointer-events: all !important;
         }
 
-        .control-btn {
+        /* Fixed Button Layout */
+        .nav-buttons-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        .page-navigation {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-btn {
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.25);
             color: white;
@@ -233,38 +250,83 @@
             font-size: 0.8rem;
             min-height: 44px;
             min-width: 44px;
-            flex: 1;
             backdrop-filter: blur(10px);
         }
 
-        .control-btn:active {
+        .nav-btn:active {
             background: rgba(255, 255, 255, 0.25);
             transform: scale(0.95);
         }
 
-        .control-btn:disabled {
+        .nav-btn:disabled {
             opacity: 0.4;
             cursor: not-allowed;
             transform: none;
         }
 
-        .control-btn span {
+        .nav-btn span {
             display: none;
+        }
+
+        /* Page info styling */
+        .page-info-container {
+            display: flex;
+            align-items: center;
+            min-width: 120px;
+            justify-content: center;
         }
 
         .page-info {
             color: white;
             font-weight: 600;
             text-align: center;
-            font-size: 0.8rem;
-            padding: 0 0.5rem;
-            min-width: 80px;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            min-width: 100px;
         }
 
-        /* Mobile Zoom Controls - Updated for Auto-Hide */
+        /* Back button */
+        .back-btn-container {
+            flex-shrink: 0;
+        }
+
+        .back-btn {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+            min-height: 44px;
+            min-width: 44px;
+            backdrop-filter: blur(10px);
+            gap: 0.5rem;
+        }
+
+        .back-btn:active {
+            background: rgba(239, 68, 68, 0.3);
+            transform: scale(0.95);
+        }
+
+        .back-btn i {
+            font-size: 0.9rem;
+        }
+
+        .back-btn span {
+            display: none;
+        }
+
+        /* Mobile Zoom Controls */
         .zoom-controls {
             position: fixed;
-            bottom: 60px;
+            bottom: 70px;
             right: 10px;
             background: rgba(0, 0, 0, 0.95);
             padding: 0.5rem;
@@ -372,7 +434,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Mobile Gesture Hints - Updated */
+        /* Mobile Gesture Hints */
         .gesture-hint {
             position: fixed;
             bottom: 120px;
@@ -411,6 +473,79 @@
             backdrop-filter: blur(10px);
         }
 
+        /* Keyboard Feedback Animation */
+        .keyboard-feedback {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 1000;
+            animation: pulse-fade 0.5s ease-out;
+        }
+
+        @keyframes pulse-fade {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50%) scale(1);
+            }
+        }
+
+        /* Keyboard shortcuts hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            z-index: 90;
+            display: none;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            animation: slide-up 0.3s ease;
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-family: monospace;
+            font-size: 0.7rem;
+            margin: 0 0.2rem;
+        }
+
         /* Mobile Scrollbar */
         .pdf-container::-webkit-scrollbar {
             width: 6px;
@@ -427,19 +562,106 @@
             border-radius: 3px;
         }
 
-        /* Print Protection */
+        /* Enhanced Print Protection */
         @media print {
             body * {
-                visibility: hidden;
+                visibility: hidden !important;
+                display: none !important;
+                opacity: 0 !important;
             }
+            
             .security-overlay {
                 display: block !important;
-                background: white;
+                background: white !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                z-index: 999999 !important;
             }
+            
             .watermark {
                 display: block !important;
                 color: black !important;
-                opacity: 1 !important;
+                opacity: 0.3 !important;
+                font-size: 48px !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) rotate(-45deg) !important;
+                white-space: nowrap !important;
+                z-index: 1000000 !important;
+                width: auto !important;
+            }
+            
+            /* Prevent any content from printing */
+            body:before {
+                content: "PRINTING NOT ALLOWED - ReadVault Protected Document" !important;
+                display: block !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                font-size: 24px !important;
+                color: red !important;
+                z-index: 1000001 !important;
+            }
+            
+            /* Force print dialog to close */
+            @page {
+                size: auto !important;
+                margin: 0 !important;
+            }
+            
+            html, body {
+                height: 100% !important;
+                overflow: hidden !important;
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+            }
+        }
+
+        /* Print detection warning */
+        .print-warning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 999999;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .print-warning-content {
+            background: rgba(239, 68, 68, 0.9);
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* For desktop users - show keyboard hints */
+        @media (min-width: 768px) {
+            .keyboard-hint {
+                display: block;
+            }
+            
+            .nav-btn span {
+                display: inline;
+                margin-left: 0.5rem;
+            }
+            
+            .back-btn span {
+                display: inline;
             }
         }
 
@@ -476,6 +698,7 @@
                 width: auto;
                 border-radius: 25px;
                 border-top: none;
+                max-width: 600px;
             }
             
             .navigation-hidden {
@@ -486,14 +709,19 @@
                 transform: translateX(-50%) translateY(0) !important;
             }
             
-            .control-btn span {
-                display: inline;
-                margin-left: 0.25rem;
-            }
-            
             .canvas-container {
                 padding: 15px;
                 gap: 15px;
+            }
+            
+            .page-info {
+                font-size: 1rem;
+                padding: 0.5rem 1.5rem;
+            }
+            
+            .zoom-controls {
+                bottom: 80px;
+                right: 20px;
             }
         }
 
@@ -518,17 +746,32 @@
             }
             
             .navigation-controls {
-                padding: 0.25rem;
+                padding: 0.5rem;
+                gap: 0.75rem;
             }
             
-            .control-btn {
+            .nav-buttons-container {
+                gap: 1rem;
+            }
+            
+            .nav-btn {
                 min-height: 36px;
                 min-width: 36px;
                 padding: 0.4rem;
             }
             
+            .page-info {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 80px;
+            }
+            
+            .back-btn {
+                padding: 0.5rem;
+            }
+            
             .zoom-controls {
-                bottom: 50px;
+                bottom: 60px;
                 right: 5px;
             }
         }
@@ -549,21 +792,34 @@
                 font-size: 0.75rem;
             }
             
+            .navigation-controls {
+                padding: 0.5rem;
+                gap: 0.5rem;
+            }
+            
+            .nav-buttons-container {
+                gap: 0.75rem;
+            }
+            
+            .page-navigation {
+                gap: 0.25rem;
+            }
+            
             .page-info {
                 font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
                 min-width: 70px;
             }
             
-            .navigation-controls {
-                padding: 0.25rem;
-                gap: 0.25rem;
+            .back-btn {
+                padding: 0.5rem;
             }
         }
 
-        /* High DPI Mobile Screens */
+        /* High DPI Mobile Screens - HD Optimization */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .page-canvas {
-                image-rendering: -webkit-optimize-contrast;
+                image-rendering: pixelated;
             }
         }
 
@@ -575,12 +831,42 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Button hover effects for desktop */
+        @media (hover: hover) {
+            .nav-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            
+            .back-btn:hover {
+                background: rgba(239, 68, 68, 0.3);
+            }
+            
+            .zoom-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Security Overlay -->
     <div class="security-overlay" id="securityOverlay">
         <div class="watermark" id="watermark">READVAULT MOBILE</div>
+    </div>
+
+    <!-- Print Warning Modal -->
+    <div class="print-warning" id="printWarning">
+        <div class="print-warning-content">
+            <i class="fas fa-ban" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+            <h2 style="margin-bottom: 1rem;">Printing Restricted</h2>
+            <p>Printing is not allowed for protected documents.</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem; color: rgba(255, 255, 255, 0.8);">
+                This action has been logged for security purposes.
+            </p>
+            <button onclick="closePrintWarning()" class="nav-btn" style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.2);">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
     </div>
 
     <!-- Security Warning -->
@@ -591,6 +877,15 @@
     <!-- Gesture Hints -->
     <div class="gesture-hint" id="gestureHint">
         <i class="fas fa-hand-pointer"></i> Tap screen to show/hide controls
+    </div>
+
+    <!-- Keyboard Shortcuts Hint -->
+    <div class="keyboard-hint" id="keyboardHint">
+        <i class="fas fa-keyboard"></i> 
+        Navigate: 
+        <kbd>←</kbd>/<kbd>→</kbd> or 
+        <kbd>Space</kbd> • 
+        Zoom: <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>
     </div>
 
     <!-- Mobile Header -->
@@ -640,38 +935,47 @@
 
         <!-- Zoom Controls -->
         <div class="zoom-controls zoom-visible" id="zoomControls">
-            <button class="zoom-btn" id="zoomIn" title="Zoom In">
+            <button class="zoom-btn" id="zoomIn" title="Zoom In (Ctrl + +)">
                 <i class="fas fa-search-plus"></i>
             </button>
-            <button class="zoom-btn" id="zoomOut" title="Zoom Out">
+            <button class="zoom-btn" id="zoomOut" title="Zoom Out (Ctrl + -)">
                 <i class="fas fa-search-minus"></i>
             </button>
-            <button class="zoom-btn" id="zoomReset" title="Reset Zoom">
+            <button class="zoom-btn" id="zoomReset" title="Reset Zoom (Ctrl + 0)">
                 <i class="fas fa-expand"></i>
             </button>
             <div class="zoom-level" id="zoomLevel">100%</div>
         </div>
 
-        <!-- Navigation Controls -->
+        <!-- Navigation Controls - FIXED LAYOUT -->
         <div class="navigation-controls navigation-visible" id="mainNavigation">
-            <button class="control-btn" id="prevPage" disabled>
-                <i class="fas fa-chevron-left"></i>
-                <span>Prev</span>
-            </button>
-            
-            <div class="page-info">
-                <span id="currentPage">1</span>/<span id="totalPages">0</span>
+            <div class="nav-buttons-container">
+                <div class="page-navigation">
+                    <button class="nav-btn" id="prevPage" title="Previous Page (Left Arrow)">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Prev</span>
+                    </button>
+                    
+                    <div class="page-info-container">
+                        <div class="page-info">
+                            <span id="currentPage">1</span>/<span id="totalPages">0</span>
+                        </div>
+                    </div>
+                    
+                    <button class="nav-btn" id="nextPage" title="Next Page (Right Arrow or Space)">
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Next</span>
+                    </button>
+                </div>
+                
+                <!-- Back Button -->
+                <div class="back-btn-container">
+                    <button class="back-btn" id="backButton" title="Go Back (Esc)">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                </div>
             </div>
-            
-            <button class="control-btn" id="nextPage" disabled>
-                <i class="fas fa-chevron-right"></i>
-                <span>Next</span>
-            </button>
-            
-            <button class="control-btn" id="backButton">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back</span>
-            </button>
         </div>
     </div>
 
@@ -707,6 +1011,13 @@
         const MOBILE_MIN_SCALE = 0.5;
         const MOBILE_MAX_SCALE = 3.0;
 
+        // HD Rendering Configuration
+        const HD_CONFIG = {
+            pixelRatio: Math.min(2.0, window.devicePixelRatio || 1),
+            imageSmoothing: true,
+            renderQuality: 'high'
+        };
+
         // Calculate mobile-optimized initial scale
         function calculateMobileScale() {
             const screenWidth = window.innerWidth;
@@ -716,6 +1027,71 @@
             if (screenWidth < 414) return 0.7;  // Small phones
             if (screenWidth < 768) return 0.8;  // Medium phones
             return 1.0; // Tablets and larger
+        }
+
+        // Enhanced Print Protection
+        function setupPrintProtection() {
+            console.log('🛡️ Enhanced print protection initialized');
+            
+            // Before print event
+            window.addEventListener('beforeprint', (event) => {
+                event.preventDefault();
+                showPrintWarning();
+                logSecurityEvent('PRINT_ATTEMPT_BLOCKED', {
+                    method: 'beforeprint',
+                    timestamp: new Date().toISOString()
+                });
+                return false;
+            });
+            
+            // After print event
+            window.addEventListener('afterprint', (event) => {
+                event.preventDefault();
+                closePrintWarning();
+                logSecurityEvent('PRINT_DIALOG_CLOSED');
+                return false;
+            });
+            
+            // Override print function
+            window.print = function() {
+                showPrintWarning();
+                logSecurityEvent('PRINT_FUNCTION_OVERRIDE');
+                return false;
+            };
+            
+            // Catch print key combinations
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P')) {
+                    e.preventDefault();
+                    showPrintWarning();
+                    logSecurityEvent('PRINT_SHORTCUT_BLOCKED', { key: e.key });
+                    return false;
+                }
+            });
+            
+            // Monitor for print media queries
+            const printMediaQuery = window.matchMedia('print');
+            printMediaQuery.addListener((mq) => {
+                if (mq.matches) {
+                    showPrintWarning();
+                    logSecurityEvent('PRINT_MEDIA_QUERY_DETECTED');
+                }
+            });
+        }
+
+        function showPrintWarning() {
+            const warning = document.getElementById('printWarning');
+            warning.style.display = 'flex';
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                closePrintWarning();
+            }, 5000);
+        }
+
+        function closePrintWarning() {
+            const warning = document.getElementById('printWarning');
+            warning.style.display = 'none';
         }
 
         // Auto-Hide Navigation Functions
@@ -779,6 +1155,17 @@
         function resetHideTimeout() {
             clearTimeout(hideControlsTimeout);
             lastActivityTime = Date.now();
+            
+            // Show keyboard hint briefly
+            if (window.innerWidth >= 768) {
+                const hint = document.getElementById('keyboardHint');
+                if (hint) {
+                    hint.style.display = 'block';
+                    setTimeout(() => {
+                        hint.style.display = 'none';
+                    }, 3000);
+                }
+            }
             
             hideControlsTimeout = setTimeout(() => {
                 if (isControlsVisible) {
@@ -847,7 +1234,7 @@
             
             pdfContainer.addEventListener('touchend', (e) => {
                 // Prevent default to avoid highlighting
-                if (!e.target.closest('.control-btn') && !e.target.closest('.zoom-btn')) {
+                if (!e.target.closest('.nav-btn') && !e.target.closest('.zoom-btn') && !e.target.closest('.back-btn')) {
                     e.preventDefault();
                 }
             });
@@ -878,7 +1265,7 @@
             });
             
             // Never hide when interacting with buttons
-            document.querySelectorAll('.control-btn, .zoom-btn').forEach(btn => {
+            document.querySelectorAll('.nav-btn, .zoom-btn, .back-btn').forEach(btn => {
                 btn.addEventListener('touchstart', (e) => {
                     e.stopPropagation();
                     resetHideTimeout();
@@ -893,12 +1280,180 @@
             console.log('✅ Auto-hide navigation initialized');
         }
 
+        // Mobile Keyboard Navigation
+        function setupKeyboardNavigation() {
+            console.log('⌨️ Keyboard navigation initialized');
+            
+            document.addEventListener('keydown', (e) => {
+                // Don't trigger if user is typing in an input field
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                    return;
+                }
+                
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case 'Right':
+                    case ' ':
+                    case 'Spacebar':
+                        // Spacebar or Right Arrow for next page
+                        e.preventDefault();
+                        showKeyPressFeedback('ArrowRight');
+                        goToNextPage();
+                        break;
+                        
+                    case 'ArrowLeft':
+                    case 'Left':
+                        // Left Arrow for previous page
+                        e.preventDefault();
+                        showKeyPressFeedback('ArrowLeft');
+                        goToPreviousPage();
+                        break;
+                        
+                    case '+':
+                    case '=':
+                        // Plus or Equals for zoom in
+                        e.preventDefault();
+                        if (e.ctrlKey || e.metaKey) {
+                            zoomIn();
+                        }
+                        break;
+                        
+                    case '-':
+                        // Minus for zoom out
+                        e.preventDefault();
+                        if (e.ctrlKey || e.metaKey) {
+                            zoomOut();
+                        }
+                        break;
+                        
+                    case '0':
+                        // Zero for reset zoom
+                        e.preventDefault();
+                        if (e.ctrlKey || e.metaKey) {
+                            zoomReset();
+                        }
+                        break;
+                        
+                    case 'Escape':
+                        // Escape to toggle controls
+                        e.preventDefault();
+                        toggleControls();
+                        break;
+                        
+                    case 'Home':
+                        // Home for first page
+                        e.preventDefault();
+                        goToPage(1);
+                        break;
+                        
+                    case 'End':
+                        // End for last page
+                        e.preventDefault();
+                        goToPage(totalPages);
+                        break;
+                }
+            });
+        }
+
+        // Go to specific page function
+        async function goToPage(pageNum) {
+            if (pageNum >= 1 && pageNum <= totalPages && pageNum !== currentPage) {
+                currentPage = pageNum;
+                await renderPage(currentPage);
+                document.getElementById('currentPage').textContent = currentPage;
+                updateNavigation();
+                showControlsTemporarily();
+                logSecurityEvent('MOBILE_PAGE_JUMP', { page: pageNum });
+            }
+        }
+
+        // Visual feedback for keyboard navigation
+        function showKeyPressFeedback(key) {
+            // Remove any existing feedback
+            const existingFeedback = document.querySelector('.keyboard-feedback');
+            if (existingFeedback) {
+                existingFeedback.remove();
+            }
+            
+            const feedback = document.createElement('div');
+            feedback.className = 'keyboard-feedback';
+            const arrowType = key.toLowerCase().replace('arrow', '');
+            feedback.innerHTML = `<i class="fas fa-arrow-${arrowType}"></i>`;
+            feedback.style.cssText = `
+                position: fixed;
+                top: 50%;
+                ${key === 'ArrowLeft' ? 'left: 20px' : 'right: 20px'};
+                transform: translateY(-50%);
+                background: rgba(37, 99, 235, 0.9);
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                z-index: 1000;
+                animation: pulse-fade 0.5s ease-out;
+            `;
+            
+            document.body.appendChild(feedback);
+            
+            setTimeout(() => {
+                if (feedback.parentNode) {
+                    feedback.parentNode.removeChild(feedback);
+                }
+            }, 500);
+        }
+
+        // Focus management for keyboard users
+        function setupFocusManagement() {
+            const focusableElements = document.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        // Shift + Tab
+                        if (document.activeElement === firstFocusable) {
+                            e.preventDefault();
+                            lastFocusable.focus();
+                        }
+                    } else {
+                        // Tab
+                        if (document.activeElement === lastFocusable) {
+                            e.preventDefault();
+                            firstFocusable.focus();
+                        }
+                    }
+                    showControlsTemporarily();
+                }
+            });
+        }
+
+        // Update button tooltips
+        function updateButtonTooltips() {
+            document.getElementById('prevPage').title = 'Previous Page (Left Arrow)';
+            document.getElementById('nextPage').title = 'Next Page (Right Arrow or Space)';
+            document.getElementById('zoomIn').title = 'Zoom In (Ctrl + +)';
+            document.getElementById('zoomOut').title = 'Zoom Out (Ctrl + -)';
+            document.getElementById('zoomReset').title = 'Reset Zoom (Ctrl + 0)';
+            document.getElementById('backButton').title = 'Go Back (Esc)';
+        }
+
         // Mobile Security System
         function initializeMobileSecurity() {
             console.log('📱 Initializing mobile security...');
 
             // Set mobile-optimized scale
             currentScale = calculateMobileScale();
+
+            // Enhanced print protection
+            setupPrintProtection();
 
             // Mobile-optimized security events
             document.addEventListener('contextmenu', (e) => {
@@ -911,12 +1466,22 @@
                 e.preventDefault();
             });
 
+            // Prevent screenshot on some mobile devices
+            document.body.style.webkitUserSelect = 'none';
+            document.body.style.webkitTouchCallout = 'none';
+
             // Handle mobile-specific security
             document.addEventListener('touchmove', (e) => {
                 if (e.scale !== 1) {
                     e.preventDefault();
                 }
             }, { passive: false });
+
+            // Prevent drag and drop
+            document.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+                return false;
+            });
 
             console.log('✅ Mobile security initialized');
         }
@@ -957,16 +1522,19 @@
             });
         }
 
-        // Mobile-optimized PDF loading
+        // HD-optimized PDF loading
         async function loadPDF() {
             try {
-                console.log('📥 Loading PDF for mobile...');
+                console.log('📥 Loading PDF in HD...');
 
                 const streamingUrl = '<%= basePath %>/api/stream-pdf?token=<%= sessionToken %>';
                 
                 const loadingTask = pdfjsLib.getDocument({
                     url: streamingUrl,
-                    withCredentials: false
+                    withCredentials: false,
+                    cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/cmaps/',
+                    cMapPacked: true,
+                    enableXfa: true
                 });
 
                 pdfDoc = await loadingTask.promise;
@@ -985,12 +1553,14 @@
                     resetHideTimeout(); // Start auto-hide timer
                 }, 1000);
                 
-                // Render first page
+                // Render first page in HD
                 await renderPage(currentPage);
                 
                 logSecurityEvent('MOBILE_PDF_LOADED', {
                     pageCount: totalPages,
-                    screenSize: `${window.innerWidth}x${window.innerHeight}`
+                    screenSize: `${window.innerWidth}x${window.innerHeight}`,
+                    hdEnabled: true,
+                    pixelRatio: HD_CONFIG.pixelRatio
                 });
                 
             } catch (error) {
@@ -1002,7 +1572,7 @@
                         <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
                         <div>Failed to load</div>
                         <div style="font-size: 0.7rem; margin-top: 0.5rem;">${error.message}</div>
-                        <button onclick="goBack()" class="control-btn" style="margin-top: 1rem;">
+                        <button onclick="goBack()" class="nav-btn" style="margin-top: 1rem;">
                             <i class="fas fa-arrow-left"></i>
                             Go Back
                         </button>
@@ -1011,7 +1581,7 @@
             }
         }
 
-        // Mobile-optimized page rendering
+        // HD-optimized page rendering
         async function renderPage(pageNum) {
             try {
                 const page = await pdfDoc.getPage(pageNum);
@@ -1020,32 +1590,39 @@
                 // Clear container
                 container.innerHTML = '';
                 
-                // Create mobile-optimized canvas
+                // Create HD-optimized canvas
                 const canvas = document.createElement('canvas');
                 canvas.className = 'page-canvas';
                 canvas.id = `page-${pageNum}`;
                 
-                // Mobile security attributes
+                // Enhanced security attributes
                 canvas.setAttribute('draggable', 'false');
+                canvas.setAttribute('ondragstart', 'return false');
+                canvas.setAttribute('onselectstart', 'return false');
                 canvas.style.userSelect = 'none';
                 canvas.style.webkitUserSelect = 'none';
+                canvas.style.MozUserSelect = 'none';
+                canvas.style.msUserSelect = 'none';
                 
-                const ctx = canvas.getContext('2d', { alpha: false });
+                const ctx = canvas.getContext('2d', { 
+                    alpha: false,
+                    desynchronized: true // Better performance
+                });
                 
-                // Mobile-optimized viewport
+                // HD-optimized viewport
                 const viewport = page.getViewport({ scale: currentScale });
                 
-                // Set canvas dimensions for mobile
-                const pixelRatio = Math.min(1.5, window.devicePixelRatio || 1);
+                // HD quality settings based on device
+                const pixelRatio = HD_CONFIG.pixelRatio;
                 canvas.width = Math.floor(viewport.width * pixelRatio);
                 canvas.height = Math.floor(viewport.height * pixelRatio);
                 canvas.style.width = `${viewport.width}px`;
                 canvas.style.height = `${viewport.height}px`;
                 
-                // Scale context for mobile
+                // Scale context for HD rendering
                 ctx.scale(pixelRatio, pixelRatio);
-                ctx.imageSmoothingEnabled = true;
-                ctx.imageSmoothingQuality = 'medium';
+                ctx.imageSmoothingEnabled = HD_CONFIG.imageSmoothing;
+                ctx.imageSmoothingQuality = HD_CONFIG.renderQuality;
                 
                 // Add mobile touch events
                 setupMobileTouchEvents(canvas);
@@ -1053,18 +1630,21 @@
                 // Add to container
                 container.appendChild(canvas);
                 
-                // Render with mobile optimizations
+                // HD Render with optimizations
                 const renderContext = {
                     canvasContext: ctx,
-                    viewport: viewport
+                    viewport: viewport,
+                    enableWebGL: true, // Use hardware acceleration
+                    transform: undefined,
+                    background: 'white'
                 };
 
                 await page.render(renderContext).promise;
                 
-                console.log(`✅ Mobile page ${pageNum} rendered`);
+                console.log(`✅ Page ${pageNum} rendered in HD (${canvas.width}x${canvas.height})`);
 
             } catch (error) {
-                console.error(`❌ Mobile render error:`, error);
+                console.error(`❌ HD render error:`, error);
             }
         }
 
@@ -1139,14 +1719,17 @@
             return Math.sqrt(dx * dx + dy * dy);
         }
 
-        // Mobile-optimized zoom functions
+        // HD-optimized zoom functions
         async function zoomIn() {
             if (currentScale < MOBILE_MAX_SCALE) {
                 currentScale = Math.min(currentScale + MOBILE_SCALE_FACTOR, MOBILE_MAX_SCALE);
                 await renderPage(currentPage);
                 updateZoomLevel();
                 showControlsTemporarily();
-                logSecurityEvent('MOBILE_ZOOM_IN', { scale: currentScale });
+                logSecurityEvent('MOBILE_ZOOM_IN', { 
+                    scale: currentScale,
+                    hd: true 
+                });
             }
         }
 
@@ -1156,7 +1739,10 @@
                 await renderPage(currentPage);
                 updateZoomLevel();
                 showControlsTemporarily();
-                logSecurityEvent('MOBILE_ZOOM_OUT', { scale: currentScale });
+                logSecurityEvent('MOBILE_ZOOM_OUT', { 
+                    scale: currentScale,
+                    hd: true 
+                });
             }
         }
 
@@ -1182,6 +1768,18 @@
             
             prevBtn.disabled = currentPage <= 1;
             nextBtn.disabled = currentPage >= totalPages;
+            
+            // Update page info styling based on state
+            const pageInfo = document.querySelector('.page-info');
+            if (pageInfo) {
+                if (currentPage === 1) {
+                    pageInfo.style.background = 'rgba(59, 130, 246, 0.2)';
+                } else if (currentPage === totalPages) {
+                    pageInfo.style.background = 'rgba(239, 68, 68, 0.2)';
+                } else {
+                    pageInfo.style.background = 'rgba(255, 255, 255, 0.1)';
+                }
+            }
         }
 
         async function goToPreviousPage() {
@@ -1227,7 +1825,7 @@
 
         // Back button functionality
         document.getElementById('backButton').addEventListener('click', function() {
-            console.log('Back button clicked via event listener');
+            console.log('Back button clicked');
             window.location.href = '/ebook/';
         });
 
@@ -1247,7 +1845,7 @@
         document.getElementById('zoomReset').addEventListener('click', zoomReset);
 
         // Mobile-optimized touch events for buttons
-        document.querySelectorAll('.control-btn, .zoom-btn').forEach(btn => {
+        document.querySelectorAll('.nav-btn, .zoom-btn, .back-btn').forEach(btn => {
             btn.addEventListener('touchstart', (e) => {
                 e.currentTarget.style.transform = 'scale(0.95)';
             });
@@ -1260,14 +1858,17 @@
         // Mobile initialization
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                console.log('📱 Mobile Reader Initializing...');
+                console.log('📱 HD Mobile Reader Initializing...');
                 
                 initializeMobileSecurity();
+                setupKeyboardNavigation();
+                setupFocusManagement();
                 await loadPDF();
                 updateNavigation();
                 updateZoomLevel();
+                updateButtonTooltips();
                 
-                console.log('✅ Mobile Reader Ready!');
+                console.log('✅ HD Mobile Reader Ready!');
                 
             } catch (error) {
                 console.error('❌ Mobile init error:', error);
@@ -1275,7 +1876,7 @@
             }
         });
 
-        // Mobile resize handling
+        // Mobile resize handling with HD optimization
         let mobileResizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(mobileResizeTimeout);
@@ -1293,7 +1894,23 @@
                 pdfDoc.destroy().catch(() => {});
             }
             clearTimeout(hideControlsTimeout);
+            
+            // Log user exit
+            logSecurityEvent('USER_EXIT', {
+                lastPage: currentPage,
+                sessionDuration: Date.now() - lastActivityTime
+            });
         });
+
+        // Offline detection
+        window.addEventListener('offline', () => {
+            showSecurityWarning('You are offline');
+        });
+
+        // Go back function for error handling
+        window.goBack = function() {
+            window.location.href = '/ebook/';
+        };
     </script>
 </body>
 </html>

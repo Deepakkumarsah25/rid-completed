@@ -35,6 +35,14 @@
             --radius-lg: 24px;
             --radius-xl: 32px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* ✅ FIXED: Default desktop values */
+            --book-card-height: 300px;
+            --book-card-width: 220px;
+            --book-cover-height: 170px;
+            --book-content-height: 130px;
+            --book-content-padding: 0.75rem;
+            --book-title-font: 0.9rem;
         }
 
         * {
@@ -58,6 +66,7 @@
             flex-direction: column;
         }
 
+        /* ✅ FIXED: Header with mobile controls */
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(40px);
@@ -85,6 +94,12 @@
             gap: 0.75rem;
             text-decoration: none;
             flex-shrink: 0;
+        }
+
+        .logo img {
+            max-height: 50px;
+            width: auto;
+            object-fit: contain;
         }
 
         .logo-icon {
@@ -115,6 +130,7 @@
             background-clip: text;
         }
 
+        /* ✅ FIXED: Nav actions with mobile toggle */
         .nav-actions {
             display: flex;
             gap: 0.75rem;
@@ -122,6 +138,57 @@
             flex-wrap: wrap;
         }
 
+        /* ✅ NEW: Mobile Library Toggle Button (Hidden on Desktop) */
+        .mobile-library-toggle {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-library-toggle {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .mobile-library-toggle-btn {
+                background: var(--gradient-accent);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 25px;
+                font-weight: 600;
+                font-size: 0.85rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                cursor: pointer;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                white-space: nowrap;
+            }
+            
+            .mobile-library-toggle-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .mobile-library-toggle-btn i {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-library-toggle-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .mobile-library-toggle-btn i {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* ✅ FIXED: Main content with books on top priority */
         .main-content {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -133,25 +200,26 @@
             flex: 1;
         }
 
-        @media (max-width: 1200px) {
-            .main-content {
-                grid-template-columns: 300px 1fr;
-                gap: 1.5rem;
-            }
-        }
-
+        /* ✅ FIXED: Mobile layout - Books first, sidebar later */
         @media (max-width: 1024px) {
             .main-content {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 0;
+                padding: 1rem;
             }
             
             .left-sidebar {
                 order: 2;
+                margin-top: 2rem;
             }
             
             .books-column {
                 order: 1;
+            }
+            
+            /* Hide the standalone toggle button */
+            .mobile-sidebar-toggle {
+                display: none !important;
             }
         }
 
@@ -167,13 +235,28 @@
             gap: 1rem;
         }
 
-        /* ✅ FIXED: Compact Header with Proper Alignment */
+        /* ✅ FIXED: Compact header for mobile */
         .compact-header-row {
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 1rem;
             align-items: center;
             margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .compact-header-row {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .search-section {
+                order: 1;
+            }
+            
+            .filter-section {
+                order: 2;
+            }
         }
 
         .filter-section {
@@ -380,12 +463,15 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
+        /* ✅ FIXED: Books grid with priority on mobile */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 1.25rem;
+            align-items: start;
         }
 
+        /* ✅ FIXED: Now using direct CSS instead of variables for better compatibility */
         .book-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             backdrop-filter: blur(20px);
@@ -395,10 +481,406 @@
             transition: var(--transition);
             position: relative;
             box-shadow: var(--shadow);
+            
+            /* ✅ DEFAULT DESKTOP SIZE */
             width: 100%;
-            min-height: 380px;
+            height: 300px;
+            min-height: 300px;
+            max-height: 300px;
+            
             display: flex;
             flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .book-cover-container {
+            position: relative;
+            width: 100%;
+            height: 170px; /* ✅ DEFAULT */
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-content {
+            flex: 1;
+            height: 130px; /* ✅ DEFAULT */
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .book-title {
+            font-size: 0.9rem; /* ✅ DEFAULT */
+            font-weight: 800;
+            color: #f7fafc;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.4em;
+            max-height: 2.6em;
+            flex-shrink: 0;
+            
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-word;
+            hyphens: auto;
+            padding: 0 0.25rem;
+        }
+
+        /* ✅ FIXED: RESPONSIVE SIZES - Using direct media queries instead of CSS variables */
+        
+        /* Large Desktop (1400px+) */
+        @media (min-width: 1400px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .book-card {
+                height: 320px;
+                min-height: 320px;
+                max-height: 320px;
+            }
+            
+            .book-cover-container {
+                height: 190px;
+            }
+            
+            .book-content {
+                height: 130px;
+            }
+        }
+
+        /* Desktop (1200px - 1399px) */
+        @media (max-width: 1399px) and (min-width: 1200px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .book-card {
+                height: 300px;
+                min-height: 300px;
+                max-height: 300px;
+            }
+            
+            .book-cover-container {
+                height: 180px;
+            }
+            
+            .book-content {
+                height: 120px;
+            }
+        }
+
+        /* Laptop (1024px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 1024px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.25rem;
+            }
+            
+            .book-card {
+                height: 280px;
+                min-height: 280px;
+                max-height: 280px;
+            }
+            
+            .book-cover-container {
+                height: 160px;
+            }
+            
+            .book-content {
+                height: 120px;
+            }
+        }
+
+        /* TABLET (768px - 1023px) */
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 1rem;
+            }
+            
+            .book-card {
+                height: 260px;
+                min-height: 260px;
+                max-height: 260px;
+            }
+            
+            .book-cover-container {
+                height: 150px;
+            }
+            
+            .book-content {
+                height: 110px;
+                padding: 0.625rem;
+            }
+            
+            .book-title {
+                font-size: 0.85rem;
+                min-height: 2.2em;
+                max-height: 2.4em;
+            }
+            
+            .book-author {
+                font-size: 0.7rem;
+                padding: 0.2rem 0;
+                gap: 0.375rem;
+            }
+            
+            .book-actions .btn {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+            }
+            
+            .book-badges {
+                top: 0.4rem;
+                left: 0.4rem;
+                right: 0.4rem;
+            }
+            
+            .category-badge {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.55rem;
+            }
+            
+            .rating-badge {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.6rem;
+            }
+        }
+
+        /* MOBILE (576px - 767px) */
+        @media (max-width: 767px) and (min-width: 576px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 0.875rem;
+            }
+            
+            .book-card {
+                height: 240px;
+                min-height: 240px;
+                max-height: 240px;
+            }
+            
+            .book-cover-container {
+                height: 140px;
+            }
+            
+            .book-content {
+                height: 100px;
+                padding: 0.625rem;
+            }
+            
+            .book-title {
+                font-size: 0.8rem;
+                min-height: 2.2em;
+                max-height: 2.4em;
+                margin-bottom: 0.4rem;
+            }
+            
+            .book-author {
+                font-size: 0.65rem;
+                margin-bottom: 0.5rem;
+                gap: 0.25rem;
+            }
+            
+            .book-actions .btn {
+                padding: 0.45rem 0.65rem;
+                font-size: 0.7rem;
+            }
+            
+            .book-badges {
+                top: 0.3rem;
+                left: 0.3rem;
+                right: 0.3rem;
+            }
+            
+            .category-badge {
+                padding: 0.15rem 0.3rem;
+                font-size: 0.5rem;
+            }
+            
+            .rating-badge {
+                padding: 0.15rem 0.3rem;
+                font-size: 0.55rem;
+            }
+        }
+
+        /* SMALL MOBILE (480px - 575px) */
+        @media (max-width: 575px) and (min-width: 480px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 0.75rem;
+            }
+            
+            .book-card {
+                height: 220px;
+                min-height: 220px;
+                max-height: 220px;
+            }
+            
+            .book-cover-container {
+                height: 130px;
+            }
+            
+            .book-content {
+                height: 90px;
+                padding: 0.5rem;
+            }
+            
+            .book-title {
+                font-size: 0.75rem;
+                min-height: 2em;
+                max-height: 2.2em;
+                margin-bottom: 0.3rem;
+            }
+            
+            .book-author {
+                font-size: 0.6rem;
+                gap: 0.2rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .book-actions .btn {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.65rem;
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        /* EXTRA SMALL MOBILE (360px - 479px) */
+        @media (max-width: 479px) and (min-width: 360px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.625rem;
+            }
+            
+            .book-card {
+                height: 200px;
+                min-height: 200px;
+                max-height: 200px;
+            }
+            
+            .book-cover-container {
+                height: 120px;
+            }
+            
+            .book-content {
+                height: 80px;
+                padding: 0.5rem;
+            }
+            
+            .book-title {
+                font-size: 0.7rem;
+                min-height: 1.8em;
+                max-height: 2em;
+                margin-bottom: 0.2rem;
+            }
+            
+            .book-author {
+                font-size: 0.55rem;
+                padding: 0.15rem 0;
+                margin-bottom: 0.3rem;
+            }
+            
+            .book-actions .btn {
+                padding: 0.35rem 0.5rem;
+                font-size: 0.6rem;
+                margin-bottom: 0.2rem;
+            }
+            
+            .book-cover-placeholder {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* TINY MOBILE (below 360px) */
+        @media (max-width: 359px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .book-card {
+                height: 180px;
+                min-height: 180px;
+                max-height: 180px;
+            }
+            
+            .book-cover-container {
+                height: 110px;
+            }
+            
+            .book-content {
+                height: 70px;
+                padding: 0.4rem;
+            }
+            
+            .book-title {
+                font-size: 0.65rem;
+                min-height: 1.8em;
+                max-height: 2em;
+                margin-bottom: 0.2rem;
+            }
+            
+            .book-author {
+                font-size: 0.5rem;
+                gap: 0.15rem;
+                margin-bottom: 0.2rem;
+            }
+            
+            .book-actions .btn {
+                padding: 0.3rem 0.45rem;
+                font-size: 0.55rem;
+                margin-bottom: 0.2rem;
+            }
+            
+            .book-cover-placeholder {
+                font-size: 1.25rem;
+            }
+            
+            .book-badges {
+                top: 0.2rem;
+                left: 0.2rem;
+                right: 0.2rem;
+            }
+            
+            .category-badge {
+                padding: 0.1rem 0.2rem;
+                font-size: 0.45rem;
+            }
+            
+            .rating-badge {
+                padding: 0.1rem 0.2rem;
+                font-size: 0.5rem;
+            }
+        }
+
+        /* ✅ FIXED: Books grid for mobile in general */
+        @media (max-width: 1024px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.75rem;
+            }
         }
 
         .book-card::before {
@@ -424,23 +906,18 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .book-cover-container {
-            position: relative;
-            height: 160px;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            flex-shrink: 0;
-        }
-
         .book-cover {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+            display: block;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .book-card:hover .book-cover {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .book-cover-placeholder {
@@ -454,6 +931,18 @@
             font-size: 2rem;
         }
 
+        .book-cover.error {
+            display: none !important;
+        }
+
+        .book-cover-placeholder.hidden {
+            display: none !important;
+        }
+
+        .book-cover-placeholder:not(.hidden) {
+            display: flex !important;
+        }
+
         .book-badges {
             position: absolute;
             top: 0.5rem;
@@ -462,6 +951,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            z-index: 2;
         }
 
         .category-badge {
@@ -503,6 +993,17 @@
             box-shadow: var(--shadow);
         }
 
+        /* ✅ MOBILE पर Category Badge Hide करें (767px और नीचे) */
+        @media (max-width: 767px) {
+            .book-card .category-badge {
+                display: none !important;
+            }
+            
+            .book-badges {
+                justify-content: flex-end;
+            }
+        }
+
         .book-overlay {
             position: absolute;
             top: 0;
@@ -522,6 +1023,7 @@
             align-items: flex-end;
             justify-content: center;
             padding: 1rem;
+            z-index: 1;
         }
 
         .book-card:hover .book-overlay {
@@ -566,70 +1068,46 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .book-content {
-            padding: 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .book-title {
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #f7fafc;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 2.4em;
-        }
-
-        .book-description {
-            color: #e2e8f0;
-            font-size: 0.75rem;
-            line-height: 1.4;
-            margin-bottom: 1rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            flex: 1;
-            min-height: 2.8em;
-        }
-
-        .book-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding: 0.5rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            flex-shrink: 0;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            color: #cbd5e0;
-            font-size: 0.7rem;
-            font-weight: 500;
-        }
-
         .book-actions {
             display: grid;
             grid-template-columns: 1fr;
             gap: 0.5rem;
             flex-shrink: 0;
+            margin-bottom: 0.75rem;
+            order: 1;
         }
 
         .book-actions .btn {
             padding: 0.6rem 1rem;
             font-size: 0.8rem;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .book-author {
+            color: #d1d5db;
+            font-size: 0.75rem;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-style: italic;
+            padding: 0.25rem 0;
+            flex-shrink: 0;
+            order: 2;
+            text-align: center;
+        }
+
+        .book-author i {
+            color: #34d399;
+            font-size: 0.7rem;
+        }
+
+        .book-author span {
+            color: #fbbf24;
             font-weight: 600;
         }
 
@@ -686,16 +1164,16 @@
 
         .latest-book-cover {
             width: 50px;
-            height: 60px;
-            border-radius: 8px;
+            height: 70px;
+            border-radius: 6px;
             object-fit: cover;
             flex-shrink: 0;
         }
 
         .latest-book-cover-placeholder {
             width: 50px;
-            height: 60px;
-            border-radius: 8px;
+            height: 70px;
+            border-radius: 6px;
             background: var(--gradient-header);
             display: flex;
             align-items: center;
@@ -1025,7 +1503,6 @@
         }
 
         /* ✅ FIXED: Responsive Filter Tab Alignment */
-        /* Desktop (1024px+) */
         @media (min-width: 1024px) {
             .compact-header-row {
                 grid-template-columns: 1fr auto;
@@ -1061,7 +1538,6 @@
             }
         }
 
-        /* Tablet (768px - 1023px) */
         @media (max-width: 1023px) and (min-width: 769px) {
             .compact-header-row {
                 grid-template-columns: 1fr 1fr;
@@ -1118,7 +1594,6 @@
             }
         }
 
-        /* Mobile (768px और नीचे) */
         @media (max-width: 768px) {
             .compact-header-row {
                 grid-template-columns: 1fr;
@@ -1180,7 +1655,6 @@
             }
         }
 
-        /* Small Mobile (480px और नीचे) */
         @media (max-width: 480px) {
             .compact-header-row {
                 gap: 0.5rem;
@@ -1234,7 +1708,6 @@
             }
         }
 
-        /* Extra Small Mobile (360px और नीचे) */
         @media (max-width: 360px) {
             .filter-tab {
                 min-height: 55px;
@@ -1264,417 +1737,12 @@
             }
         }
 
-        @media (max-width: 1200px) {
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-            
-            .book-card {
-                min-height: 360px;
-            }
-            
-            .book-cover-container {
-                height: 150px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .main-content {
-                padding: 1rem;
-            }
-            
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-                gap: 1rem;
-            }
-            
-            .book-card {
-                min-height: 340px;
-            }
-            
-            .book-cover-container {
-                height: 140px;
-            }
-            
-            .book-content {
-                padding: 0.75rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .logo {
-                justify-content: center;
-            }
-            
-            .section-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 0.875rem;
-            }
-            
-            .book-card {
-                min-height: 320px;
-            }
-            
-            .book-cover-container {
-                height: 130px;
-            }
-            
-            .book-title {
-                font-size: 0.9rem;
-                min-height: 2.2em;
-            }
-            
-            .book-description {
-                -webkit-line-clamp: 2;
-                min-height: 2.6em;
-            }
-            
-            .sidebar-section {
-                border-radius: var(--radius);
-                padding: 1.25rem;
-                margin-bottom: 0;
-            }
-            
-            .sidebar-title {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .latest-book-item {
-                padding: 0.75rem;
-                gap: 0.75rem;
-            }
-            
-            .latest-book-cover,
-            .latest-book-cover-placeholder {
-                width: 45px;
-                height: 55px;
-                border-radius: 6px;
-            }
-            
-            .latest-book-title {
-                font-size: 0.85rem;
-            }
-            
-            .latest-book-meta {
-                font-size: 0.7rem;
-                gap: 0.5rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
-            }
-            
-            .stat-card {
-                padding: 1rem;
-            }
-            
-            .stat-number {
-                font-size: 1.25rem;
-            }
-            
-            .stat-label {
-                font-size: 0.7rem;
-            }
-            
-            .top-rated-item {
-                padding: 0.75rem;
-                gap: 0.75rem;
-            }
-            
-            .top-rated-rank {
-                width: 25px;
-                height: 25px;
-                font-size: 0.7rem;
-            }
-            
-            .top-rated-title {
-                font-size: 0.85rem;
-            }
-            
-            .top-rated-rating {
-                font-size: 0.7rem;
-            }
-            
-            .pagination {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .pagination-btn, .pagination-info {
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .main-content {
-                padding: 0.75rem;
-            }
-            
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 0.75rem;
-            }
-            
-            .book-card {
-                min-height: 300px;
-            }
-            
-            .book-cover-container {
-                height: 120px;
-            }
-            
-            .book-content {
-                padding: 0.625rem;
-            }
-            
-            .book-title {
-                font-size: 0.85rem;
-            }
-            
-            .book-description {
-                font-size: 0.7rem;
-            }
-            
-            .section-title {
-                font-size: 1.25rem;
-            }
-            
-            .results-info {
-                font-size: 0.8rem;
-                padding: 0.375rem 0.75rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-content {
-                padding: 0.5rem;
-            }
-            
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 0.625rem;
-            }
-            
-            .book-card {
-                min-height: 280px;
-                max-width: 160px;
-                margin: 0 auto;
-            }
-            
-            .book-cover-container {
-                height: 110px;
-            }
-            
-            .book-content {
-                padding: 0.5rem;
-            }
-            
-            .book-title {
-                font-size: 0.8rem;
-                min-height: 2em;
-            }
-            
-            .book-description {
-                font-size: 0.65rem;
-                min-height: 2.4em;
-            }
-            
-            .left-sidebar {
-                gap: 0.75rem;
-            }
-            
-            .sidebar-section {
-                padding: 1rem;
-                border-radius: 12px;
-            }
-            
-            .sidebar-title {
-                font-size: 1rem;
-                margin-bottom: 0.75rem;
-            }
-            
-            .latest-book-item {
-                padding: 0.5rem;
-                gap: 0.5rem;
-            }
-            
-            .latest-book-cover,
-            .latest-book-cover-placeholder {
-                width: 40px;
-                height: 50px;
-            }
-            
-            .latest-book-title {
-                font-size: 0.8rem;
-                margin-bottom: 0.125rem;
-            }
-            
-            .stats-grid {
-                gap: 0.5rem;
-            }
-            
-            .stat-card {
-                padding: 0.75rem;
-            }
-            
-            .stat-number {
-                font-size: 1.1rem;
-                margin-bottom: 0.25rem;
-            }
-            
-            .empty-state {
-                padding: 3rem 1rem;
-            }
-            
-            .empty-title {
-                font-size: 1.5rem;
-            }
-            
-            .empty-description {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            }
-            
-            .book-card {
-                min-height: 260px;
-                max-width: 140px;
-            }
-            
-            .book-cover-container {
-                height: 100px;
-            }
-            
-            .book-title {
-                font-size: 0.75rem;
-            }
-            
-            .book-description {
-                font-size: 0.6rem;
-            }
-            
-            .book-actions .btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.7rem;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .book-card {
-            animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        }
-
-        @media (min-width: 1400px) {
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            }
-        }
-
-        @media (min-width: 1600px) {
-            .books-grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            }
-            
-            .book-card {
-                min-height: 400px;
-            }
-            
-            .book-cover-container {
-                height: 180px;
-            }
-        }
-
-        .books-grid {
-            align-items: start;
-        }
-
-        .book-card {
-            height: fit-content;
-        }
-
-        .book-content {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-        }
-
-        .book-title {
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .book-description {
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ✅ FIXED: Mobile Sidebar Toggle */
+        /* ✅ FIXED: Mobile sidebar toggle in navbar */
         .mobile-sidebar-toggle {
             display: none;
         }
 
         @media (max-width: 1024px) {
-            .mobile-sidebar-toggle {
-                display: flex;
-                justify-content: center;
-                margin: 1rem 0;
-                z-index: 100;
-                position: relative;
-            }
-            
-            .toggle-sidebar-btn {
-                background: var(--gradient-header);
-                color: white;
-                border: none;
-                padding: 0.75rem 1.5rem;
-                border-radius: 25px;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                cursor: pointer;
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-                z-index: 1001;
-                position: relative;
-            }
-            
-            .toggle-sidebar-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: var(--shadow-lg);
-            }
-            
             .left-sidebar {
                 position: fixed;
                 top: 0;
@@ -1761,14 +1829,8 @@
                 width: 90%;
                 padding: 1rem;
             }
-            
-            .toggle-sidebar-btn {
-                padding: 0.75rem 1.25rem;
-                font-size: 0.9rem;
-            }
         }
 
-        /* ✅ DESKTOP: Always show sidebar normally */
         @media (min-width: 1025px) {
             .left-sidebar {
                 position: static;
@@ -1781,7 +1843,7 @@
                 visibility: visible;
             }
             
-            .mobile-sidebar-toggle {
+            .mobile-library-toggle {
                 display: none !important;
             }
             
@@ -1794,7 +1856,6 @@
             }
         }
 
-        /* Enhanced search styles */
         .search-container {
             position: relative;
             width: 100%;
@@ -1843,13 +1904,11 @@
             transform: translateY(-50%) scale(1.1);
         }
 
-        /* Enhanced search focus states */
         .search-input[data-focused="true"] {
             border-color: #2563eb;
             background: var(--pure-white);
         }
 
-        /* Loading animation for search */
         @keyframes spin {
             0% { transform: translateY(-50%) rotate(0deg); }
             100% { transform: translateY(-50%) rotate(360deg); }
@@ -1859,23 +1918,19 @@
             animation: spin 1s linear infinite;
         }
 
-        /* Continuous search mode indicator */
-        .search-container.active-search::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border: 2px solid #2563eb;
-            border-radius: 50px;
-            animation: pulse 2s infinite;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 0.3; }
-            100% { opacity: 0.7; }
+        .book-card {
+            animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
     </style>
 </head>
@@ -1884,9 +1939,17 @@
         <header class="header">
             <nav class="nav">
                 <a href="<%= typeof basePath !== 'undefined' ? basePath : '/ebook' %>" class="logo">
-                   <img src="../assets/final_logo.svg" alt="RID Bharat Logo" onerror="this.src='https:/via.placeholder.com/260x70/083d5d/FFFFFF?text=RID+Bharat+Logo'" style="max-width: 100%; height: auto;">
+                   <img src="../assets/final_logo.svg" alt="RID Bharat Logo" onerror="this.src='https://via.placeholder.com/260x70/083d5d/FFFFFF?text=RID+Bharat+Logo'" style="max-width: 100%; height: auto;">
                 </a>
                 <div class="nav-actions">
+                    <!-- ✅ NEW: Mobile Library Toggle in Navbar -->
+                    <div class="mobile-library-toggle">
+                        <button class="mobile-library-toggle-btn" id="mobileToggleSidebar">
+                            <i class="fas fa-info-circle"></i>
+                            Library Info
+                        </button>
+                    </div>
+                    
                     <% if (typeof user !== 'undefined' && user) { %>
                         <a href="<%= typeof basePath !== 'undefined' ? basePath + '/upload' : '/ebook/upload' %>" class="btn btn-primary">
                             <i class="fas fa-plus"></i>
@@ -1903,24 +1966,13 @@
         </header>
 
         <div class="main-content">
-            <!-- ✅ FIXED: Mobile Sidebar Toggle Button -->
-            <div class="mobile-sidebar-toggle">
-                <button class="toggle-sidebar-btn" id="toggleSidebar">
-                    <i class="fas fa-bars"></i>
-                    Show Library Info
-                </button>
-            </div>
-
-            <!-- ✅ FIXED: Overlay for sidebar -->
             <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-            <!-- ✅ FIXED: Sidebar with better structure -->
             <div class="left-sidebar collapsed" id="leftSidebar">
                 <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
                     <i class="fas fa-times"></i>
                 </button>
                 
-                <!-- Latest Books Section -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">
                         <i class="fas fa-clock"></i>
@@ -1944,7 +1996,8 @@
                                         <img src="<%= typeof basePath !== 'undefined' ? basePath + '/uploads/covers/' + book.coverImage : '/ebook/uploads/covers/' + book.coverImage %>" 
                                              alt="<%= book.title %>" 
                                              class="latest-book-cover"
-                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                             loading="lazy">
                                         <div class="latest-book-cover-placeholder" style="display: none;">
                                             <i class="fas fa-book"></i>
                                         </div>
@@ -1969,7 +2022,6 @@
                     </div>
                 </div>
 
-                <!-- Library Stats Section -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">
                         <i class="fas fa-chart-bar"></i>
@@ -1995,7 +2047,6 @@
                     </div>
                 </div>
 
-                <!-- Top Rated Section -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">
                         <i class="fas fa-trophy"></i>
@@ -2030,9 +2081,8 @@
                 </div>
             </div>
 
-            <!-- Main Books Column -->
+            <!-- ✅ FIXED: Books column with direct sizes -->
             <div class="books-column">
-                <!-- ✅ FIXED: Filter & Search with Proper Alignment -->
                 <div class="compact-header-row">
                     <section class="filter-section">
                         <div class="filter-tabs">
@@ -2112,6 +2162,7 @@
                         </div>
                     </div>
 
+                    <!-- ✅ BOOKS WITH FIXED SIZES -->
                     <div class="books-grid" id="booksGrid">
                         <% if (pdfs.length === 0) { %>
                             <div class="empty-state">
@@ -2150,8 +2201,11 @@
                                             <img src="<%= typeof basePath !== 'undefined' ? basePath + '/uploads/covers/' + pdf.coverImage : '/ebook/uploads/covers/' + pdf.coverImage %>" 
                                                  alt="<%= pdf.title %>" 
                                                  class="book-cover"
-                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                            <div class="book-cover-placeholder" style="display: none;">
+                                                 onerror="this.classList.add('error'); this.nextElementSibling.classList.remove('hidden');"
+                                                 loading="lazy"
+                                                 data-book-id="<%= pdf._id %>"
+                                                 style="object-fit: cover !important; object-position: center !important; width: 100% !important; height: 100% !important;">
+                                            <div class="book-cover-placeholder hidden">
                                                 <i class="fas fa-book"></i>
                                             </div>
                                         <% } else { %>
@@ -2165,7 +2219,7 @@
                                                 <% if (pdf.category === 'technical') { %>
                                                     <i class="fas fa-laptop-code"></i> TECH
                                                 <% } else if (pdf.category === 'non-technical') { %>
-                                                    <i class="fas fa-pen-fancy"></i> non-Tech
+                                                    <i class="fas fa-pen-fancy"></i> NON-TECH
                                                 <% } else { %>
                                                     <i class="fas fa-book"></i> OTHER
                                                 <% } %>
@@ -2186,32 +2240,18 @@
                                     </div>
                                     
                                     <div class="book-content">
-                                        <h3 class="book-title"><%= pdf.title %></h3>
-                                        
-                                        <p class="book-description">
-                                            <%= pdf.description && pdf.description.length > 120 ? 
-                                                pdf.description.substring(0, 120) + '...' : 
-                                                (pdf.description || 'No description available for this book.') %>
-                                        </p>
-                                        
-                                        <div class="book-meta">
-                                            <div class="meta-item">
-                                                <i class="fas fa-calendar"></i>
-                                                <span><%= new Date(pdf.uploadDate).toLocaleDateString() %></span>
-                                            </div>
-                                            <% if (pdf.viewCount > 0) { %>
-                                            <div class="meta-item">
-                                                <i class="fas fa-eye"></i>
-                                                <span><%= pdf.viewCount %></span>
-                                            </div>
-                                            <% } %>
-                                        </div>
-                                        
                                         <div class="book-actions">
                                             <a href="<%= typeof basePath !== 'undefined' ? basePath + '/secure-viewer/' + pdf._id : '/ebook/secure-viewer/' + pdf._id %>" class="btn btn-success btn-sm btn-full">
                                                 <i class="fas fa-shield-alt"></i>
                                                  Read
                                             </a>
+                                        </div>
+                                        
+                                        <h3 class="book-title"><%= pdf.title %></h3>
+                                        
+                                        <div class="book-author">
+                                            <i class="fas fa-pen-nib"></i>
+                                            Written by <span>Er. Rajesh Prasad</span>
                                         </div>
                                     </div>
                                 </div>
@@ -2272,14 +2312,231 @@
     </div>
 
     <script>
-        // ✅ FIXED: Mobile sidebar functionality
+        // ✅ FIXED: Force card sizes on page load
+        function forceCardSizes() {
+            const cards = document.querySelectorAll('.book-card');
+            const coverContainers = document.querySelectorAll('.book-cover-container');
+            const bookContents = document.querySelectorAll('.book-content');
+            const bookTitles = document.querySelectorAll('.book-title');
+            
+            // Remove any CSS variable dependencies
+            cards.forEach(card => {
+                card.style.setProperty('height', '', 'important');
+                card.style.setProperty('min-height', '', 'important');
+                card.style.setProperty('max-height', '', 'important');
+            });
+            
+            // Apply default desktop sizes
+            cards.forEach(card => {
+                card.style.height = '300px';
+                card.style.minHeight = '300px';
+                card.style.maxHeight = '300px';
+            });
+            
+            coverContainers.forEach(container => {
+                container.style.height = '170px';
+            });
+            
+            bookContents.forEach(content => {
+                content.style.height = '130px';
+                content.style.padding = '0.75rem';
+            });
+            
+            bookTitles.forEach(title => {
+                title.style.fontSize = '0.9rem';
+            });
+            
+            // Now apply responsive sizes based on screen width
+            updateCardSizes();
+        }
+        
+        function updateCardSizes() {
+            const width = window.innerWidth;
+            const cards = document.querySelectorAll('.book-card');
+            const coverContainers = document.querySelectorAll('.book-cover-container');
+            const bookContents = document.querySelectorAll('.book-content');
+            const bookTitles = document.querySelectorAll('.book-title');
+            
+            if (width >= 1400) {
+                // Large Desktop
+                cards.forEach(card => {
+                    card.style.height = '320px';
+                    card.style.minHeight = '320px';
+                    card.style.maxHeight = '320px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '190px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '130px';
+                });
+            } else if (width >= 1200) {
+                // Desktop
+                cards.forEach(card => {
+                    card.style.height = '300px';
+                    card.style.minHeight = '300px';
+                    card.style.maxHeight = '300px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '180px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '120px';
+                });
+            } else if (width >= 1024) {
+                // Laptop
+                cards.forEach(card => {
+                    card.style.height = '280px';
+                    card.style.minHeight = '280px';
+                    card.style.maxHeight = '280px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '160px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '120px';
+                });
+            } else if (width >= 768) {
+                // Tablet
+                cards.forEach(card => {
+                    card.style.height = '260px';
+                    card.style.minHeight = '260px';
+                    card.style.maxHeight = '260px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '150px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '110px';
+                    content.style.padding = '0.625rem';
+                });
+                bookTitles.forEach(title => {
+                    title.style.fontSize = '0.85rem';
+                });
+            } else if (width >= 576) {
+                // Mobile Large
+                cards.forEach(card => {
+                    card.style.height = '240px';
+                    card.style.minHeight = '240px';
+                    card.style.maxHeight = '240px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '140px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '100px';
+                    content.style.padding = '0.625rem';
+                });
+                bookTitles.forEach(title => {
+                    title.style.fontSize = '0.8rem';
+                });
+            } else if (width >= 480) {
+                // Mobile Medium
+                cards.forEach(card => {
+                    card.style.height = '220px';
+                    card.style.minHeight = '220px';
+                    card.style.maxHeight = '220px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '130px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '90px';
+                    content.style.padding = '0.5rem';
+                });
+                bookTitles.forEach(title => {
+                    title.style.fontSize = '0.75rem';
+                });
+            } else if (width >= 360) {
+                // Mobile Small
+                cards.forEach(card => {
+                    card.style.height = '200px';
+                    card.style.minHeight = '200px';
+                    card.style.maxHeight = '200px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '120px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '80px';
+                    content.style.padding = '0.5rem';
+                });
+                bookTitles.forEach(title => {
+                    title.style.fontSize = '0.7rem';
+                });
+            } else {
+                // Mobile Tiny
+                cards.forEach(card => {
+                    card.style.height = '180px';
+                    card.style.minHeight = '180px';
+                    card.style.maxHeight = '180px';
+                });
+                coverContainers.forEach(container => {
+                    container.style.height = '110px';
+                });
+                bookContents.forEach(content => {
+                    content.style.height = '70px';
+                    content.style.padding = '0.4rem';
+                });
+                bookTitles.forEach(title => {
+                    title.style.fontSize = '0.65rem';
+                });
+            }
+        }
+
+        function handleImageError(img) {
+            img.classList.add('error');
+            const placeholder = img.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('book-cover-placeholder')) {
+                placeholder.classList.remove('hidden');
+            }
+        }
+
+        function forceBookImageCover() {
+            const bookImages = document.querySelectorAll('.book-cover');
+            bookImages.forEach(img => {
+                img.style.objectFit = 'cover';
+                img.style.objectPosition = 'center center';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.maxWidth = 'none';
+                img.style.maxHeight = 'none';
+                img.style.minWidth = '100%';
+                img.style.minHeight = '100%';
+                
+                img.addEventListener('error', function() {
+                    handleImageError(this);
+                });
+            });
+        }
+
+        function equalizeCardHeights() {
+            const cards = document.querySelectorAll('.book-card');
+            if (cards.length === 0) return;
+            
+            // Don't equalize, use fixed sizes
+            updateCardSizes();
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         function initializeMobileSidebar() {
-            const toggleBtn = document.getElementById('toggleSidebar');
+            const mobileToggleBtn = document.getElementById('mobileToggleSidebar');
             const leftSidebar = document.getElementById('leftSidebar');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
             const sidebarClose = document.getElementById('sidebarClose');
             
-            if (!toggleBtn || !leftSidebar || !sidebarOverlay || !sidebarClose) {
+            if (!mobileToggleBtn || !leftSidebar || !sidebarOverlay || !sidebarClose) {
                 console.error('❌ Mobile sidebar elements not found!');
                 return;
             }
@@ -2298,7 +2555,7 @@
                 setTimeout(() => {
                     leftSidebar.classList.remove('collapsed');
                     leftSidebar.classList.add('expanded');
-                    toggleBtn.innerHTML = '<i class="fas fa-times"></i> Hide Library Info';
+                    mobileToggleBtn.innerHTML = '<i class="fas fa-times"></i> Close Info';
                     sidebarExpanded = true;
                     isAnimating = false;
                 }, 50);
@@ -2315,14 +2572,14 @@
                 setTimeout(() => {
                     sidebarOverlay.classList.remove('active');
                     document.body.classList.remove('sidebar-open');
-                    toggleBtn.innerHTML = '<i class="fas fa-bars"></i> Show Library Info';
+                    mobileToggleBtn.innerHTML = '<i class="fas fa-info-circle"></i> Library Info';
                     sidebarExpanded = false;
                     isAnimating = false;
                 }, 300);
             }
             
             try {
-                toggleBtn.addEventListener('click', function(e) {
+                mobileToggleBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
                     if (sidebarExpanded) {
                         closeSidebar();
@@ -2360,7 +2617,6 @@
             }
         }
 
-        // ✅ FIXED: Search functionality with CONTINUOUS typing
         let searchTimeout;
         let currentSearchQuery = '';
 
@@ -2371,14 +2627,11 @@
             
             if (!searchInput || !searchForm) return;
 
-            // Store current filter and sort values
             const currentFilter = '<%= currentFilter %>';
             const currentSort = '<%= sort %>';
             
-            // Clear any existing timeout on page load
             clearTimeout(searchTimeout);
             
-            // Add click event to search icon for immediate search
             if (searchIcon) {
                 searchIcon.style.cursor = 'pointer';
                 searchIcon.addEventListener('click', function(e) {
@@ -2387,19 +2640,16 @@
                 });
             }
             
-            // Input event with debounce - IMPROVED for continuous typing
             searchInput.addEventListener('input', function(e) {
                 clearTimeout(searchTimeout);
                 
-                // Update search icon to show loading state
                 if (searchIcon) {
                     searchIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
                 }
                 
                 const query = this.value.trim();
-                const cursorPosition = this.selectionStart; // Save cursor position
+                const cursorPosition = this.selectionStart;
                 
-                // If empty query, perform immediate search to show all results
                 if (query === '') {
                     performImmediateSearch('', currentFilter, currentSort, searchInput);
                     return;
@@ -2407,16 +2657,14 @@
                 
                 searchTimeout = setTimeout(() => {
                     performSearch(query, currentFilter, currentSort, searchInput, cursorPosition);
-                }, 400); // Reduced debounce time for better responsiveness
+                }, 400);
             });
 
-            // Form submit event - trigger immediate search
             searchForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 performImmediateSearch(searchInput.value, currentFilter, currentSort, searchInput);
             });
             
-            // Add Enter key support
             searchInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
@@ -2424,19 +2672,6 @@
                 }
             });
             
-            // NEW: Keep cursor in search box after search
-            searchInput.addEventListener('blur', function() {
-                // If we have a search query, maintain focus for continuous typing
-                if (this.value.trim() !== '') {
-                    setTimeout(() => {
-                        this.focus();
-                        // Place cursor at the end of text
-                        this.setSelectionRange(this.value.length, this.value.length);
-                    }, 10);
-                }
-            });
-            
-            // Auto-focus search input when page loads if there's a search query
             if (searchInput.value.trim() !== '') {
                 setTimeout(() => {
                     searchInput.focus();
@@ -2445,7 +2680,6 @@
             }
         };
 
-        // Immediate search without debounce
         function performImmediateSearch(searchQuery, filter, sort, searchInput) {
             clearTimeout(searchTimeout);
             performSearch(searchQuery, filter, sort, searchInput, searchInput.value.length);
@@ -2455,12 +2689,10 @@
             try {
                 const searchIcon = document.querySelector('.search-icon');
                 
-                // Show loading state
                 if (searchIcon) {
                     searchIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
                 }
 
-                // Update URL parameters for the form
                 updateFormHiddenFields(searchQuery, filter, sort);
                 
                 const params = new URLSearchParams({
@@ -2482,12 +2714,10 @@
                     updateURL(searchQuery, filter, sort);
                     currentSearchQuery = searchQuery;
                     
-                    // ✅ IMPORTANT: Keep cursor in search box and restore position
                     if (searchInput) {
                         setTimeout(() => {
                             searchInput.focus();
                             
-                            // Restore cursor to original position or end of text
                             const newCursorPosition = Math.min(cursorPosition, searchInput.value.length);
                             searchInput.setSelectionRange(newCursorPosition, newCursorPosition);
                         }, 50);
@@ -2498,7 +2728,6 @@
                 
             } catch (error) {
                 console.error('Search error:', error);
-                // Fallback to form submission
                 fallbackSearch(searchQuery, filter, sort);
             } finally {
                 const searchIcon = document.querySelector('.search-icon');
@@ -2508,7 +2737,6 @@
             }
         }
 
-        // Update hidden form fields
         function updateFormHiddenFields(searchQuery, filter, sort) {
             const form = document.getElementById('searchForm');
             if (!form) return;
@@ -2575,8 +2803,11 @@
                             <img src="<%= typeof basePath !== 'undefined' ? basePath + '/uploads/covers/' : '/ebook/uploads/covers/' %>${book.coverImage}" 
                                  alt="${book.title}" 
                                  class="book-cover"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="book-cover-placeholder" style="display: none;">
+                                 onerror="this.classList.add('error'); this.nextElementSibling.classList.remove('hidden');"
+                                 loading="lazy"
+                                 data-book-id="${book._id}"
+                                 style="object-fit: cover !important; object-position: center !important; width: 100% !important; height: 100% !important;">
+                            <div class="book-cover-placeholder hidden">
                                 <i class="fas fa-book"></i>
                             </div>
                         ` : `
@@ -2590,7 +2821,7 @@
                                 ${book.category === 'technical' ? 
                                     '<i class="fas fa-laptop-code"></i> TECH' : 
                                     book.category === 'non-technical' ? 
-                                    '<i class="fas fa-pen-fancy"></i> FICTION' : 
+                                    '<i class="fas fa-pen-fancy"></i> NON-TECH' : 
                                     '<i class="fas fa-book"></i> OTHER'}
                             </div>
                             <div class="rating-badge">
@@ -2609,32 +2840,18 @@
                     </div>
                     
                     <div class="book-content">
-                        <h3 class="book-title">${book.title}</h3>
-                        
-                        <p class="book-description">
-                            ${book.description && book.description.length > 120 ? 
-                                book.description.substring(0, 120) + '...' : 
-                                (book.description || 'No description available for this book.')}
-                        </p>
-                        
-                        <div class="book-meta">
-                            <div class="meta-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>${new Date(book.uploadDate).toLocaleDateString()}</span>
-                            </div>
-                            ${book.viewCount > 0 ? `
-                            <div class="meta-item">
-                                <i class="fas fa-eye"></i>
-                                <span>${book.viewCount}</span>
-                            </div>
-                            ` : ''}
-                        </div>
-                        
                         <div class="book-actions">
                             <a href="<%= typeof basePath !== 'undefined' ? basePath + '/secure-viewer/' : '/ebook/secure-viewer/' %>${book._id}" class="btn btn-success btn-sm btn-full">
                                 <i class="fas fa-shield-alt"></i>
-                                Secure Read
+                                Read
                             </a>
+                        </div>
+                        
+                        <h3 class="book-title">${book.title}</h3>
+                        
+                        <div class="book-author">
+                            <i class="fas fa-pen-nib"></i>
+                            Written by <span>Er. Rajesh Prasad</span>
                         </div>
                     </div>
                 </div>
@@ -2642,7 +2859,11 @@
 
             booksGrid.innerHTML = booksHTML;
             
-            initializeBookAnimations();
+            setTimeout(() => {
+                forceBookImageCover();
+                forceCardSizes(); // ✅ Use the fixed size function
+                initializeBookAnimations();
+            }, 100);
         }
 
         function updateResultsInfo(total, currentPage, totalPages) {
@@ -2703,24 +2924,12 @@
             });
         }
 
-        // Enhanced search experience with continuous typing
         function enhanceSearchExperience() {
             const searchInput = document.getElementById('searchInput');
             
             if (!searchInput) return;
             
-            // Add continuous search mode
-            searchInput.addEventListener('focus', function() {
-                this.setAttribute('data-focused', 'true');
-            });
-            
-            searchInput.addEventListener('blur', function() {
-                this.removeAttribute('data-focused');
-            });
-            
-            // Quick search shortcuts
             document.addEventListener('keydown', function(e) {
-                // Ctrl+F or Cmd+F for search
                 if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
                     e.preventDefault();
                     const searchInput = document.getElementById('searchInput');
@@ -2730,7 +2939,6 @@
                     }
                 }
                 
-                // Escape to clear search and blur
                 if (e.key === 'Escape' && document.activeElement === searchInput) {
                     if (searchInput.value.trim() !== '') {
                         searchInput.value = '';
@@ -2742,21 +2950,31 @@
             });
         }
 
-        // ✅ FIXED: Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             initializeMobileSidebar();
             initializeSearch();
             initializeBookAnimations();
             enhanceSearchExperience();
+            
+            // ✅ CRITICAL: Force card sizes immediately
+            setTimeout(() => {
+                forceBookImageCover();
+                forceCardSizes(); // ✅ This will fix the inspect mode issue
+            }, 50);
+            
+            document.querySelectorAll('.book-cover').forEach(img => {
+                img.addEventListener('error', function() {
+                    handleImageError(this);
+                });
+            });
         });
 
-        // ✅ FIXED: Handle window resize
         let resizeTimeout;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(function() {
                 const leftSidebar = document.getElementById('leftSidebar');
-                const toggleBtn = document.getElementById('toggleSidebar');
+                const mobileToggleBtn = document.getElementById('mobileToggleSidebar');
                 const sidebarOverlay = document.getElementById('sidebarOverlay');
                 
                 if (window.innerWidth > 1024) {
@@ -2770,8 +2988,8 @@
                         leftSidebar.style.visibility = 'visible';
                     }
                     
-                    if (toggleBtn) {
-                        toggleBtn.style.display = 'none';
+                    if (mobileToggleBtn) {
+                        mobileToggleBtn.style.display = 'none';
                     }
                     
                     if (sidebarOverlay) {
@@ -2781,8 +2999,8 @@
                     document.body.classList.remove('sidebar-open');
                     
                 } else {
-                    if (toggleBtn) {
-                        toggleBtn.style.display = 'flex';
+                    if (mobileToggleBtn && mobileToggleBtn.parentElement) {
+                        mobileToggleBtn.parentElement.style.display = 'flex';
                     }
                     
                     if (leftSidebar) {
@@ -2798,6 +3016,9 @@
                         }
                     }
                 }
+                
+                // ✅ Update card sizes on resize
+                updateCardSizes();
             }, 250);
         });
 

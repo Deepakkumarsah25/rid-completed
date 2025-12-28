@@ -4,102 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RID Dashboard</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/RTS/public/favicon.ico">
-  
-  <!-- External Libraries -->
+  <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-  
-  <!-- CSS Files (Fixed Paths - Use Base Tag) -->
-  <base href="/RTS/public/">
-  <link rel="stylesheet" href="css/Deshbord.css">
-  <link rel="stylesheet" href="css/footer.css">
-  
-  <!-- Ionicons for Social Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  
-  <style>
-  /* Additional CSS for improved search functionality */
-    .search-container {
-      margin: 20px auto;
-      max-width: 800px;
-      padding: 0 15px;
-    }
-    
-    .search-box {
-      position: relative;
-      width: 100%;
-    }
-    
-    .search-box input {
-      width: 100%;
-      padding: 12px 45px 12px 15px;
-      border: 2px solid #ddd;
-      border-radius: 30px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-    
-    .search-box input:focus {
-      border-color: #007bff;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-    }
-    
-    .search-box i {
-      position: absolute;
-      right: 15px;
-      top: 35%;
-      transform: translateY(-50%);
-      color: #666;
-    }
-    
-    /* Mobile search container - visible only on mobile */
-    .mobile-search-container {
-      display: none;
-      padding: 15px;
-      background: #f8f9fa;
-      border-bottom: 1px solid #eee;
-    }
-    
-    @media (max-width: 768px) {
-      .mobile-search-container {
-        display: block;
-      }
-      
-      .nav-container .search-box {
-        display: none;
-      }
-      
-      .search-container {
-        display: none;
-      }
-    }
-    
-    /* Desktop search in nav */
-    @media (min-width: 769px) {
-      .mobile-search-container {
-        display: none;
-      }
-      
-      .search-container {
-        display: block;
-      }
-    }
-    
-    /* Search results counter */
-    .search-results {
-      text-align: center;
-      margin: 10px 0 20px;
-      color: #666;
-      font-size: 14px;
-    }
-    
-  </style>
+<link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+<link rel="stylesheet" href="/RTS/public/css/footer.css">
 </head>
 
 <body>
@@ -112,53 +21,48 @@
         <p><strong>Email:</strong> <span>supportrid5@gmail.com</span></p>
       </div>
       <div class="header-links">
-        <a href="#" title="Main Content">Main Content</a>
-        <a href="#" title="Increase Font Size" class="font-size-btn">+A</a>
-        <a href="#" title="Normal Font Size" class="font-size-btn">A</a>
-        <a href="#" title="Decrease Font Size" class="font-size-btn">A-</a>
-        <a href="#" title="Give Feedback">Feedback</a>
-        <a href="#" title="Get Support">Support</a>
+        <a href="#">Main Content</a>
+        <a href="#">+A</a>
+        <a href="#">A</a>
+        <a href="#">A-</a>
+        <a href="#">Feedback</a>
+        <a href="#">Support</a>
       </div>
     </div>
 
     <!-- Main Navigation -->
     <div class="nav-container">
       <div class="logo">
-        <img src="Deshbord/logo.svg" alt="RID Bharat Logo">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
       </div>
 
       <!-- Menu Toggle Button for Mobile -->
-      <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+      <button class="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
 
       <div class="nav-menu" id="navMenu">
-        <!-- Desktop Search Box (Visible on desktop) -->
+        <!-- Search Box -->
         <div class="search-box">
-          <input type="text" placeholder="Search Courses..." id="searchInput" aria-label="Search Courses">
-          <button type="button" class="search-btn" aria-label="Search">
-            <i class="fas fa-search"></i>
-          </button>
+          <input type="text" placeholder="Search Anything..." id="searchInput">
+          <i class="fas fa-search"></i>
         </div>
 
         <!-- Certificate and Profile Buttons -->
         <div class="nav-buttons">
-          <a href="/Certificate-Verification/verify.html" class="btn" title="Verify Certificate">
+          <a href="/Certificate-Verification/verify.html" class="btn">
             <i class="fas fa-award"></i> Certificate
           </a>
-          <a href="profile.html" class="btn" title="View Profile">
-            <i class="fas fa-user"></i> Profile
-          </a>
+
+          <a href="/RTS/public/profile.html" class="btn"><i class="fas fa-user"></i> Profile</a>
         </div>
 
         <!-- Mobile Navigation -->
         <ul class="mobile-nav" id="mobileNav">
-          <!-- Mobile Search Box (Inside mobile menu) -->
+          <!-- Mobile Search Box -->
           <div class="mobile-search-box">
-            <input type="text" placeholder="Search Courses..." id="mobileSearchInput" aria-label="Search Courses">
-            <button type="button" class="search-btn" aria-label="Search">
-              <i class="fas fa-search"></i>
-            </button>
+            <input type="text" placeholder="Search Anything..." id="mobileSearchInput">
+            <i class="fas fa-search"></i>
           </div>
 
           <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -182,6 +86,7 @@
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
       <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+
       <li>
         <a href="#"><i class="fas fa-building"></i> Center <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
@@ -194,35 +99,37 @@
     </ul>
   </header>
 
-  <!-- Sidebar Toggle Button -->
-  <button class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
-  
-  <!-- Sidebar -->
+  <!----side bar wala contain suru -->
+  <button class="sidebar-toggle">☰</button>
   <aside class="sidebar">
     <h2 class="mainu">Main Menu</h2>
     <ul class="menu">
-      <li><i class="fas fa-home home-icon"></i><a href="Deshbord.html">Home</a></li>
-      <li><i class="fas fa-user profile-icon"></i><a href="#">My Profile</a></li>
-      <li><i class="fas fa-star category-icon"></i><a href="Deshbord/category/category.html">Category</a></li>
-      <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My Purchase</a></li>
-      <li><i class="fas fa-comment-dots feedback-icon"></i><a href="Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
-      <li><i class="fas fa-dollar-sign refund-icon"></i><a href="Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
-      <li><i class="fas fa-shield-alt privacy-icon"></i><a href="Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
-      <li><i class="fas fa-file-contract terms-icon"></i><a href="Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
-      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="Deshbord/reating/reating.html">Rate Us</a></li>
+      <li><i class="fas fa-home home-icon"></i><a href="/RTS/public/Deshbord.html">Home</a></li>
+      <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
+      <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a>
+      </li>
+      <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My
+          Purchase</a></li>
+      <li><i class="fas fa-comment-dots feedback-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
+      <li><i class="fas fa-dollar-sign refund-icon"></i><a
+          href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
+      <li><i class="fas fa-shield-alt privacy-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
+      <li><i class="fas fa-file-contract terms-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
+      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a>
+      </li>
       <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="#">Logout</a></li>
     </ul>
-  </aside>
+  </aside><br>
 
-  <!-- Main Content -->
   <main>
-    <!-- Mobile Search Container (Visible only on mobile) -->
+    <!-- Mobile Search Container - NEW -->
     <div class="mobile-search-container">
       <div class="search-box">
-        <input type="text" placeholder="Search Courses..." id="mainMobileSearchInput" aria-label="Search Courses">
-        <button type="button" class="search-btn" aria-label="Search">
-          <i class="fas fa-search"></i>
-        </button>
+        <input type="text" placeholder="Search Anything..." id="mainMobileSearchInput">
+        <i class="fas fa-search"></i>
       </div>
     </div>
 
@@ -230,53 +137,53 @@
       <div class="courses">
         <!-- Course Cards -->
         <div class="course-card">
-          <img src="images/image/groupb_pree.png" alt="PREE Course" loading="lazy">
+          <img src="\RTS\public\images\image\groupb_pree.png" alt="PREE Course" loading="lazy">
           <div class="course-content">
             <h3>PREE</h3>
             <div class="marquee">
               <p>Beginner Basics</p>
             </div>
             <div class="btn-container">
-              <a href="Deshbord/category/test/SSC/GroupB/PREE/purches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupB/PREE/purches.html" class="btn btn-light" id="drow">More Details</a>
             </div>
           </div>
         </div>
         
         <div class="course-card">
-          <img src="images/image/cpomains.png" alt="CPO MAINS Course" loading="lazy">
+          <img src="/RTS/public/images/image/cpomains.png" alt="CPO MAINS Course" loading="lazy">
           <div class="course-content">
             <h3>CPO</h3>
             <div class="marquee">
               <p>MAINS</p>
             </div>
             <div class="btn-container">
-              <a href="Deshbord/category/test/SSC/GroupB/CPOmains/purches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupB/CPOmains/purches.html" class="btn btn-light" id="drow">More Details</a>
             </div>
           </div>
         </div>
         
         <div class="course-card">
-          <img src="images/image/cgl.png" alt="CGL Course" loading="lazy">
+          <img src="/RTS/public/images/image/cgl.png" alt="CGL Course" loading="lazy">
           <div class="course-content">
             <h3>CGL</h3>
             <div class="marquee">
               <p>DISTRUCTIVE</p>
             </div>
             <div class="btn-container">
-              <a href="Deshbord/category/test/SSC/GroupB/CGL/purches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupB/CGL/purches.html" class="btn btn-light" id="drow">More Details</a>
             </div>
           </div>
         </div>
         
         <div class="course-card">
-          <img src="images/image/cpo.png" alt="CPO Skill Test Course" loading="lazy">
+          <img src="/RTS/public/images/image/cpo.png" alt="CPO Skill Test Course" loading="lazy">
           <div class="course-content">
             <h3>CPO</h3>
             <div class="marquee">
               <p>Skill Test</p>
             </div>
             <div class="btn-container">
-              <a href="Deshbord/category/test/SSC/GroupB/CPO/purches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupB/CPO/purches.html" class="btn btn-light" id="drow">More Details</a>
             </div>
           </div>
         </div>
@@ -284,11 +191,11 @@
     </section>
   </main>
 
-  <!----------------------------------------------------------Footer---------------------------------------------------------------->
+  <!----------------------------------------------------------Footer parts in desbord---------------------------------------------------------------->
   <section class="footer">
     <footer>
       <div class="left">
-        <img src="Deshbord/logo.svg" alt="RID Bharat Logo">
+        <img src="/RTS/public/Deshbord/logo.svg" alt="RID Bharat Logo">
         <p>
           Mig, 72, Rajiv Nagar, A Sector, Aayodhya Bypass Bhopal,
           Madhya Pradesh, India (462022)
@@ -333,15 +240,15 @@
         <div class="links">
           <div class="links-1">
             <a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a>
-            <a href="https://www.linkedin.com/in/rid-bharat-9a4517324" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/in/rid-bharat-9a4517324">
               <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
             </a>
-            <a href="https://youtube.com/@ridbharat" target="_blank" rel="noopener">
+            <a href="https://youtube.com/@ridbharat">
               <ion-icon name="logo-youtube"></ion-icon> YouTube
             </a>
           </div>
           <div class="links-2">
-            <a href="https://www.instagram.com/ridbharat" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/ridbharat">
               <ion-icon name="logo-instagram"></ion-icon> Instagram
             </a>
             <a href="mailto:ridorg.in@gmail.com">
@@ -370,172 +277,87 @@
     </section>
   </section>
 
-  <!-- JavaScript -->
+  <!-- JavaScript Files -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      console.log('DOM loaded - Initializing RID Dashboard');
-      
-      // Initialize all UI components
-      initializeUI();
-      
-      // Initialize search functionality
-      initializeSearch();
-    });
-
-    function initializeUI() {
-      // Sidebar toggle
+      // Sidebar toggle functionality
       const sidebarToggle = document.querySelector('.sidebar-toggle');
       const sidebar = document.querySelector('.sidebar');
-      
+
       if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', function() {
           sidebar.classList.toggle('open');
-          this.setAttribute('aria-expanded', sidebar.classList.contains('open'));
         });
       }
 
-      // Navbar toggle
+      // Navbar toggle functionality
       const menuToggle = document.querySelector('.menu-toggle');
       const navMenu = document.getElementById('navMenu');
       const mobileNav = document.getElementById('mobileNav');
-      
+
       if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
-          const isActive = !navMenu.classList.contains('active');
           navMenu.classList.toggle('active');
           mobileNav.classList.toggle('active');
-          this.setAttribute('aria-expanded', isActive);
         });
       }
 
-      // Close mobile nav when clicking links
-      document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu?.classList.remove('active');
-          mobileNav?.classList.remove('active');
-          menuToggle?.setAttribute('aria-expanded', 'false');
+      // Close mobile nav when a link is clicked
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          mobileNav.classList.remove('active');
         });
       });
 
-      // Close sidebar on mobile when clicking links
-      document.querySelectorAll('.sidebar a').forEach(link => {
-        link.addEventListener('click', () => {
+      // Close sidebar when a link is clicked (on mobile)
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
           if (window.innerWidth <= 992) {
-            sidebar?.classList.remove('open');
-            sidebarToggle?.setAttribute('aria-expanded', 'false');
+            sidebar.classList.remove('open');
           }
         });
       });
+    });
 
-      // Font size controls
-      document.querySelectorAll('.font-size-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          const currentSize = parseInt(getComputedStyle(document.body).fontSize);
-          let newSize = currentSize;
-          
-          if (this.textContent === '+A') newSize += 2;
-          else if (this.textContent === 'A-') newSize -= 2;
-          else newSize = 16; // Reset to default
-          
-          document.body.style.fontSize = newSize + 'px';
-          localStorage.setItem('fontSize', newSize);
-        });
-      });
+    // ==========================
+  // SEARCH BAR FUNCTIONALITY
+  // ==========================
 
-      // Restore font size from localStorage
-      const savedFontSize = localStorage.getItem('fontSize');
-      if (savedFontSize) {
-        document.body.style.fontSize = savedFontSize + 'px';
-      }
-    }
+  const searchInput = document.getElementById("searchInput");
+  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+  const courseCards = document.querySelectorAll(".course-card");
 
-    function initializeSearch() {
-      const searchInput = document.getElementById("searchInput");
-      const mobileSearchInput = document.getElementById("mobileSearchInput");
-      const mainMobileSearchInput = document.getElementById("mainMobileSearchInput");
-      
-      // Get all course cards
-      const courseCards = document.querySelectorAll(".course-card");
-      
-      if (!courseCards.length) {
-        console.warn('No course cards found for search functionality');
-        return;
+  function filterCourses(value) {
+    value = value.toLowerCase().trim();
+
+    courseCards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
       }
-      
-      // Function to filter courses
-      function filterCourses(searchTerm) {
-        searchTerm = searchTerm.toLowerCase().trim();
-        let visibleCount = 0;
-        
-        courseCards.forEach(card => {
-          const titleElement = card.querySelector("h3");
-          if (!titleElement) {
-            card.style.display = "none";
-            return;
-          }
-          
-          const title = titleElement.textContent.toLowerCase();
-          const description = card.querySelector(".marquee p")?.textContent.toLowerCase() || "";
-          
-          if (searchTerm === "" || title.includes(searchTerm) || description.includes(searchTerm)) {
-            card.style.display = "block";
-            visibleCount++;
-          } else {
-            card.style.display = "none";
-          }
-        });
-        
-        // Show message if no results
-        const coursesSection = document.querySelector(".courses .courses");
-        let noResultsMsg = coursesSection.querySelector(".no-results");
-        
-        if (visibleCount === 0 && searchTerm !== "") {
-          if (!noResultsMsg) {
-            noResultsMsg = document.createElement("div");
-            noResultsMsg.className = "no-results";
-            noResultsMsg.innerHTML = `<p>No courses found for "<strong>${searchTerm}</strong>"</p>`;
-            noResultsMsg.style.cssText = "text-align: center; padding: 40px; grid-column: 1/-1; color: #666;";
-            coursesSection.appendChild(noResultsMsg);
-          }
-        } else if (noResultsMsg) {
-          noResultsMsg.remove();
-        }
-      }
-      
-      // Attach event listeners to all search inputs
-      const searchInputs = [searchInput, mobileSearchInput, mainMobileSearchInput]
-        .filter(input => input !== null);
-      
-      searchInputs.forEach(input => {
-        input.addEventListener("keyup", function() {
-          filterCourses(this.value);
-        });
-        
-        // Clear button functionality (optional)
-        const clearBtn = document.createElement("button");
-        clearBtn.innerHTML = '<i class="fas fa-times"></i>';
-        clearBtn.className = "search-clear";
-        clearBtn.style.cssText = "position: absolute; right: 40px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #999; cursor: pointer; display: none;";
-        
-        input.parentNode.style.position = "relative";
-        input.parentNode.appendChild(clearBtn);
-        
-        input.addEventListener("input", function() {
-          clearBtn.style.display = this.value ? "block" : "none";
-        });
-        
-        clearBtn.addEventListener("click", function() {
-          input.value = "";
-          filterCourses("");
-          clearBtn.style.display = "none";
-          input.focus();
-        });
-      });
-      
-      // Initial filter (show all courses)
-      filterCourses("");
-    }
+    });
+  }
+
+  // Desktop Search
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
+  // Mobile Search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
   </script>
 </body>
+
 </html>
