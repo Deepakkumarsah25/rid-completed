@@ -7,87 +7,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
-  <link rel="stylesheet" href="/RTS/public/css/footer.css">
-  <style>
-    /* Additional CSS for improved search functionality */
-    .search-container {
-      margin: 20px auto;
-      max-width: 800px;
-      padding: 0 15px;
-    }
-    
-    .search-box {
-      position: relative;
-      width: 100%;
-    }
-    
-    .search-box input {
-      width: 100%;
-      padding: 12px 45px 12px 15px;
-      border: 2px solid #ddd;
-      border-radius: 30px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-    
-    .search-box input:focus {
-      border-color: #007bff;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-    }
-    
-    .search-box i {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #666;
-    }
-    
-    /* Mobile search container - visible only on mobile */
-    .mobile-search-container {
-      display: none;
-      padding: 15px;
-      background: #f8f9fa;
-      border-bottom: 1px solid #eee;
-    }
-    
-    @media (max-width: 768px) {
-      .mobile-search-container {
-        display: block;
-      }
-      
-      .nav-container .search-box {
-        display: none;
-      }
-      
-      .search-container {
-        display: none;
-      }
-    }
-    
-    /* Desktop search in nav */
-    @media (min-width: 769px) {
-      .mobile-search-container {
-        display: none;
-      }
-      
-      .search-container {
-        display: block;
-      }
-    }
-    
-    /* Search results counter */
-    .search-results {
-      text-align: center;
-      margin: 10px 0 20px;
-      color: #666;
-      font-size: 14px;
-    }
-    
-    
-  </style>
+<link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+<link rel="stylesheet" href="/RTS/public/css/footer.css">
 </head>
 
 <body>
@@ -116,14 +37,14 @@
       </div>
 
       <!-- Menu Toggle Button for Mobile -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
 
       <div class="nav-menu" id="navMenu">
-        <!-- Search Box for Desktop -->
+        <!-- Search Box -->
         <div class="search-box">
-          <input type="text" placeholder="Search courses..." id="searchInput" aria-label="Search courses">
+          <input type="text" placeholder="Search Anything..." id="searchInput">
           <i class="fas fa-search"></i>
         </div>
 
@@ -132,14 +53,15 @@
           <a href="/Certificate-Verification/verify.html" class="btn">
             <i class="fas fa-award"></i> Certificate
           </a>
+
           <a href="/RTS/public/profile.html" class="btn"><i class="fas fa-user"></i> Profile</a>
         </div>
 
         <!-- Mobile Navigation -->
         <ul class="mobile-nav" id="mobileNav">
-          <!-- Mobile Search Box in Menu -->
+          <!-- Mobile Search Box -->
           <div class="mobile-search-box">
-            <input type="text" placeholder="Search courses..." id="mobileMenuSearchInput" aria-label="Search courses">
+            <input type="text" placeholder="Search Anything..." id="mobileSearchInput">
             <i class="fas fa-search"></i>
           </div>
 
@@ -164,6 +86,7 @@
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="#"><i class="fas fa-file-alt"></i> Research Papers</a></li>
       <li><a href="#" id="about-link"><i class="fas fa-users"></i> About Us</a></li>
+
       <li>
         <a href="#"><i class="fas fa-building"></i> Center <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
@@ -176,92 +99,92 @@
     </ul>
   </header>
 
-  <!----sidebar start -->
-  <button class="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+  <!----side bar wala contain suru -->
+  <button class="sidebar-toggle">☰</button>
   <aside class="sidebar">
     <h2 class="mainu">Main Menu</h2>
     <ul class="menu">
       <li><i class="fas fa-home home-icon"></i><a href="/RTS/public/Deshbord.html">Home</a></li>
       <li><i class="fas fa-user profile-icon"></i><a href="">My Profile</a></li>
-      <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a></li>
-      <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My Purchase</a></li>
-      <li><i class="fas fa-comment-dots feedback-icon"></i><a href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
-      <li><i class="fas fa-dollar-sign refund-icon"></i><a href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
-      <li><i class="fas fa-shield-alt privacy-icon"></i><a href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
-      <li><i class="fas fa-file-contract terms-icon"></i><a href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
-      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a></li>
+      <li><i class="fas fa-star category-icon"></i><a href="/RTS/public/Deshbord/category/category.html">Category</a>
+      </li>
+      <li><i class="fas fa-shopping-cart purchase-icon"></i><a href="/dasborde_main/my purchase/my_purchase.html">My
+          Purchase</a></li>
+      <li><i class="fas fa-comment-dots feedback-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/feedback/feedback.html">Feedback</a></li>
+      <li><i class="fas fa-dollar-sign refund-icon"></i><a
+          href="/RTS/public/Deshbord/Refund_A_Can_P/refund.html">Refund/Cancellation Policy</a></li>
+      <li><i class="fas fa-shield-alt privacy-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/Privacy Policy/PrivacyPolicy.html">Privacy Policy</a></li>
+      <li><i class="fas fa-file-contract terms-icon"></i><a
+          href="/RTS/public/Deshbord/category/test/teamCon/tc.html">Terms and Conditions</a></li>
+      <li><i class="fas fa-star-half-alt rate-icon"></i><a href="/RTS/public/Deshbord/reating/reating.html">Rate Us</a>
+      </li>
       <li><i class="fas fa-sign-out-alt logout-icon"></i><a href="#">Logout</a></li>
     </ul>
   </aside><br>
 
   <main>
-    <!-- Mobile Search Container - Visible only on mobile -->
+    <!-- Mobile Search Container - NEW -->
     <div class="mobile-search-container">
       <div class="search-box">
-        <input type="text" placeholder="Search courses..." id="mobileSearchInput" aria-label="Search courses">
+        <input type="text" placeholder="Search Anything..." id="mainMobileSearchInput">
         <i class="fas fa-search"></i>
       </div>
-      <div class="search-results" id="searchResults">Showing all courses</div>
-    </div>
-
-    <!-- Desktop Search Container - Centered -->
-    <div class="search-container" id="desktopSearchContainer">
-      <div class="search-box">
-        <input type="text" placeholder="Search courses..." id="desktopSearchInput" aria-label="Search courses">
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="search-results" id="desktopSearchResults">Showing all courses</div>
     </div>
 
     <section class="courses">
-      <div class="course-card" data-course="PREE">
-        <img src="/RTS/public/images/image/groupb_pree.png" alt="PREE Course">
-        <div class="course-content">
-          <h3>PREE</h3>
-          <div class="marquee">
-            <p>Beginner Basics</p>
-          </div>
-          <div class="btn-container">
-            <a href="/RTS/public/Deshbord/category/test/SSC/GroupC/PREE/purches.html" class="btn btn-light" id="drow">More Details</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="course-card" data-course="CPO MAINS">
-        <img src="/RTS/public/images/image/cpomains.png" alt="CPO Mains Course">
-        <div class="course-content">
-          <h3>CPO</h3>
-          <div class="marquee">
-            <p>MAINS</p>
-          </div>
-          <div class="btn-container">
-            <a href="/RTS/public/Deshbord/category/test/SSC/GroupC/CPOmains/purches.html" class="btn btn-light" id="drow">More Details</a>
+      <div class="courses">
+        <!-- Course Cards -->
+        <div class="course-card">
+          <img src="\RTS\public\images\image\groupb_pree.png" alt="PREE Course" loading="lazy">
+          <div class="course-content">
+            <h3>PREE</h3>
+            <div class="marquee">
+              <p>Beginner Basics</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupC/PREE/purches.html" class="btn btn-light" id="drow">More Details</a>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="course-card" data-course="CGL">
-        <img src="/RTS/public/images/image/cgl.png" alt="CGL Course">
-        <div class="course-content">
-          <h3>CGL</h3>
-          <div class="marquee">
-            <p>DISTRUCTIVE</p>
-          </div>
-          <div class="btn-container">
-            <a href="/RTS/public/Deshbord/category/test/SSC/GroupC/CGL/purches.html" class="btn">More Details</a>
+        
+        <div class="course-card">
+          <img src="/RTS/public/images/image/cpomains.png" alt="CPO MAINS Course" loading="lazy">
+          <div class="course-content">
+            <h3>CPO</h3>
+            <div class="marquee">
+              <p>MAINS</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupC/CPOmains/purches.html" class="btn btn-light" id="drow">More Details</a>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="course-card" data-course="CPO SKILL">
-        <img src="/RTS/public/images/image/cpo.png" alt="CPO Skill Test Course">
-        <div class="course-content">
-          <h3>CPO</h3>
-          <div class="marquee">
-            <p>Skill Test</p>
+        
+        <div class="course-card">
+          <img src="/RTS/public/images/image/cgl.png" alt="CGL Course" loading="lazy">
+          <div class="course-content">
+            <h3>CGL</h3>
+            <div class="marquee">
+              <p>DISTRUCTIVE</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupC/CGL/purches.html" class="btn btn-light" id="drow">More Details</a>
+            </div>
           </div>
-          <div class="btn-container">
-            <a href="/RTS/public/Deshbord/category/test/SSC/GroupC/CPO/purches.html" class="btn btn-light" id="drow">More Details</a>
+        </div>
+        
+        <div class="course-card">
+          <img src="/RTS/public/images/image/cpo.png" alt="CPO Skill Test Course" loading="lazy">
+          <div class="course-content">
+            <h3>CPO</h3>
+            <div class="marquee">
+              <p>Skill Test</p>
+            </div>
+            <div class="btn-container">
+              <a href="/RTS/public/Deshbord/category/test/ssc/GroupC/CPO/purches.html" class="btn btn-light" id="drow">More Details</a>
+            </div>
           </div>
         </div>
       </div>
@@ -357,22 +280,21 @@
   <!-- JavaScript Files -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // ==========================
-      // TOGGLE FUNCTIONALITY
-      // ==========================
-      // Sidebar toggle
+      // Sidebar toggle functionality
       const sidebarToggle = document.querySelector('.sidebar-toggle');
       const sidebar = document.querySelector('.sidebar');
+
       if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', function() {
           sidebar.classList.toggle('open');
         });
       }
 
-      // Navbar toggle
+      // Navbar toggle functionality
       const menuToggle = document.querySelector('.menu-toggle');
       const navMenu = document.getElementById('navMenu');
       const mobileNav = document.getElementById('mobileNav');
+
       if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
           navMenu.classList.toggle('active');
@@ -398,145 +320,44 @@
           }
         });
       });
+    });
 
-      // ==========================
-      // ENHANCED SEARCH FUNCTIONALITY
-      // ==========================
-      // All search inputs
-      const searchInput = document.getElementById("searchInput");
-      const mobileSearchInput = document.getElementById("mobileSearchInput");
-      const desktopSearchInput = document.getElementById("desktopSearchInput");
-      const mobileMenuSearchInput = document.getElementById("mobileMenuSearchInput");
-      
-      const courseCards = document.querySelectorAll(".course-card");
-      const mobileSearchResults = document.getElementById("searchResults");
-      const desktopSearchResults = document.getElementById("desktopSearchResults");
+    // ==========================
+  // SEARCH BAR FUNCTIONALITY
+  // ==========================
 
-      // Function to update search results counter
-      function updateResultsCounter(searchTerm, visibleCount) {
-        const totalCount = courseCards.length;
-        const resultsText = searchTerm ? 
-          `Showing ${visibleCount} of ${totalCount} courses for "${searchTerm}"` : 
-          `Showing all ${totalCount} courses`;
-        
-        if (mobileSearchResults) mobileSearchResults.textContent = resultsText;
-        if (desktopSearchResults) desktopSearchResults.textContent = resultsText;
-      }
+  const searchInput = document.getElementById("searchInput");
+  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+  const courseCards = document.querySelectorAll(".course-card");
 
-      // Function to filter courses
-      function filterCourses(searchTerm) {
-        searchTerm = searchTerm.toLowerCase().trim();
-        let visibleCount = 0;
+  function filterCourses(value) {
+    value = value.toLowerCase().trim();
 
-        courseCards.forEach(card => {
-          const title = card.querySelector("h3").innerText.toLowerCase();
-          const description = card.querySelector(".marquee p").innerText.toLowerCase();
-          const courseData = card.getAttribute('data-course') || '';
-          
-          // Search in title, description, and data-course attribute
-          if (title.includes(searchTerm) || 
-              description.includes(searchTerm) || 
-              courseData.toLowerCase().includes(searchTerm)) {
-            card.classList.remove('hidden');
-            visibleCount++;
-          } else {
-            card.classList.add('hidden');
-          }
-        });
+    courseCards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
 
-        updateResultsCounter(searchTerm, visibleCount);
-      }
-
-      // Function to clear search
-      function clearSearch() {
-        courseCards.forEach(card => {
-          card.classList.remove('hidden');
-        });
-        updateResultsCounter('', courseCards.length);
-      }
-
-      // Event listeners for all search inputs
-      function setupSearchInput(inputElement) {
-        if (inputElement) {
-          inputElement.addEventListener("keyup", function() {
-            filterCourses(this.value);
-          });
-          
-          // Clear search on 'Escape' key
-          inputElement.addEventListener("keydown", function(e) {
-            if (e.key === 'Escape') {
-              this.value = '';
-              clearSearch();
-            }
-          });
-        }
-      }
-
-      // Setup all search inputs
-      setupSearchInput(searchInput);
-      setupSearchInput(mobileSearchInput);
-      setupSearchInput(desktopSearchInput);
-      setupSearchInput(mobileMenuSearchInput);
-
-      // Initialize results counter
-      updateResultsCounter('', courseCards.length);
-
-      // ==========================
-      // RESPONSIVE SEARCH BEHAVIOR
-      // ==========================
-      function handleResponsiveSearch() {
-        const desktopSearchContainer = document.getElementById('desktopSearchContainer');
-        
-        if (window.innerWidth <= 768) {
-          // Mobile: Show only mobile search container
-          if (desktopSearchContainer) desktopSearchContainer.style.display = 'none';
-        } else {
-          // Desktop: Show only desktop search container
-          if (desktopSearchContainer) desktopSearchContainer.style.display = 'block';
-        }
-      }
-
-      // Initial call
-      handleResponsiveSearch();
-      
-      // Update on resize
-      window.addEventListener('resize', handleResponsiveSearch);
-      
-      // ==========================
-      // DROPDOWN FUNCTIONALITY
-      // ==========================
-      // Mobile dropdown
-      const mobileDropdownItems = document.querySelectorAll('.has-dropdown');
-      mobileDropdownItems.forEach(item => {
-        const link = item.querySelector('a');
-        link.addEventListener('click', function(e) {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdown = item.querySelector('.mobile-dropdown');
-            dropdown.classList.toggle('show');
-          }
-        });
-      });
-      
-      // Desktop dropdown
-      const desktopDropdown = document.querySelector('.main-nav li:has(.dropdown-menu)');
-      if (desktopDropdown) {
-        const desktopLink = desktopDropdown.querySelector('a');
-        const dropdownMenu = desktopDropdown.querySelector('.dropdown-menu');
-        
-        desktopDropdown.addEventListener('mouseenter', function() {
-          if (window.innerWidth > 768) {
-            dropdownMenu.style.display = 'block';
-          }
-        });
-        
-        desktopDropdown.addEventListener('mouseleave', function() {
-          if (window.innerWidth > 768) {
-            dropdownMenu.style.display = 'none';
-          }
-        });
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
       }
     });
+  }
+
+  // Desktop Search
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
+
+  // Mobile Search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("keyup", function () {
+      filterCourses(this.value);
+    });
+  }
   </script>
 </body>
+
 </html>

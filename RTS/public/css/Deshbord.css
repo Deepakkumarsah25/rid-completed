@@ -35,6 +35,13 @@
       width: 100%;
       z-index: 999;
     }
+    /* ================= HIDE BANNER ON PHONE ================= */
+@media (max-width: 768px) {
+  .banner-main {
+    display: none !important;
+  }
+}
+
 
     body.dark-mode .main-header {
       background: rgba(18, 18, 18, 0.9);
