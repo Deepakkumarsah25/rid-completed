@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAILWAY TEST</title>
+    <link rel="stylesheet" href="/rts/css/jee/jee.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="quiz-container">
+            <div class="question-header">
+                <h2>RRB NTPC/CBT-2/ Test 23</h2>
+                <div class="timer"> <span id="timer"></span> </div>
+            </div>
+
+            <select id="languageSelect" onchange="changeLanguage()" class="language-select">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+            </select>
+
+            <p id="questionCounter"></p>
+            <div id="question"></div>
+            <ul class="options" id="options"></ul>
+
+           <div class="buttons">
+                <button class="btn" onclick="prevQuestion()">Previous</button>
+                <button class="btn btn-next" onclick="nextQuestion()">Next</button>
+            </div>
+            <button class="btn btn-service" onclick="backToTestService()">Back to Test Service</button>
+        </div>
+        
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="status-indicator">
+                    <p class="answered"><span></span> Answered</p>
+                    <p class="not-attempted"><span></span> Not Attempted</p>
+                    <p class="marked"><span></span> Marked</p>
+                    <p class="visited"><span></span> Visited</p>
+                    <div class="circles-container" id="circleContainer"></div>
+                    <button class="btn submit-btn" onclick="submitQuiz()">Submit Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+      
+        function backToTestService() {
+            alert('Redirecting to Test Service...');
+            // In a real implementation, this would redirect to the test service page
+            window.location.href = '/RTS/public/Deshbord/category/test/raliway/RRB NTPC/CBT1/purches.html';
+        }
+      
+    </script>
+   
+    
+    <!-- <script src="/RTS/public/js/railway/RRB JE/CBT1/test1.js"></script> -->
+     <script src="/RTS/public/js/railway/RRB NTPC/CBT2/test23.js"></script>
+</body>
+
+</html>

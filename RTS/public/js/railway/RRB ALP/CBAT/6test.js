@@ -601,6 +601,7 @@ selected: ""
 
 
 // --------------------------- GLOBAL VARS -----------------------------
+// --------------------------- GLOBAL VARS -----------------------------
 let currentQuestion = 0;
 let language = "en";
 let timeLeft = 60 * 60; 

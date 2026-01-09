@@ -598,6 +598,8 @@ answer_hi: "56",
 attempted: false,
 selected: ""
 }];
+
+// --------------------------- GLOBAL VARS -----------------------------
 // --------------------------- GLOBAL VARS -----------------------------
 let currentQuestion = 0;
 let language = "en";

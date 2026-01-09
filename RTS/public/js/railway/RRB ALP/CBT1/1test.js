@@ -550,7 +550,7 @@ const questions = [
     "selected": ""
   }];
 
-
+// --------------------------- GLOBAL VARS -----------------------------
 // --------------------------- GLOBAL VARS -----------------------------
 let currentQuestion = 0;
 let language = "en";
