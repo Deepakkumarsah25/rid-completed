@@ -20,6 +20,10 @@ const app = express();
 const port = process.env.PORT || 9191;
 
 
+const http = require("http");
+const server = http.createServer(app);
+
+
 const mongoUrl = process.env.MONGODB_URI;
 
 console.log('🔗 Attempting MongoDB Atlas connection...');
@@ -185,6 +189,33 @@ const configureRoutes = () => {
       }
       next();
   });
+
+
+// Socket.IO
+const { Server } = require("socket.io");
+const io = new Server(server, {
+  cors: { origin: "*" }
+});
+
+// socket logic
+let onlineTestUsers = 0;
+io.on("connection", (socket) => {
+  onlineTestUsers++;
+  io.emit("onlineUsers", onlineTestUsers);
+
+  socket.on("disconnect", () => {
+    onlineTestUsers--;
+    io.emit("onlineUsers", onlineTestUsers);
+  });
+});
+
+// 🔥 IMPORTANT PART
+app.listen = function () {
+  return server.listen.apply(server, arguments);
+};
+
+
+
 
   // ========== RTS INTEGRATION ==========
   app.use("/RTS/public", express.static(path.join(__dirname, "RTS", "public")));

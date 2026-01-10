@@ -7,8 +7,160 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-<link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
-<link rel="stylesheet" href="/RTS/public/css/footer.css">
+  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+  <link rel="stylesheet" href="/RTS/public/css/footer.css">
+  <style>
+    /* Visit Count Styling with Update Badge */
+    .visit-count {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    .visit-count i {
+      color: #4CAF50;
+      font-size: 14px;
+    }
+
+    .visit-count .count {
+      font-weight: bold;
+      color: #FFD700;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .visit-count .count.updated {
+      animation: pulse 1s ease-in-out;
+      color: #00FF00;
+    }
+
+    /* Update Badge Styling */
+    .update-badge {
+      background: linear-gradient(135deg, #ff4081, #f50057);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-right: 4px;
+      animation: blink 2s infinite;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .new-badge {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-right: 4px;
+      box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-transform: uppercase;
+    }
+
+    .hot-badge {
+      background: linear-gradient(135deg, #FF9800, #F57C00);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-right: 4px;
+      animation: glow 1.5s infinite alternate;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-transform: uppercase;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 5px rgba(255, 152, 0, 0.5); }
+      to { box-shadow: 0 0 10px rgba(255, 152, 0, 0.8); }
+    }
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-card:hover .visit-count {
+      background: linear-gradient(135deg, rgba(33, 150, 243, 0.9), rgba(0, 0, 0, 0.9));
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .visit-count {
+        padding: 4px 8px;
+        font-size: 10px;
+        gap: 4px;
+      }
+      
+      .visit-count i {
+        font-size: 12px;
+      }
+      
+      .visit-count .count {
+        font-size: 12px;
+      }
+
+      .update-badge,
+      .new-badge,
+      .hot-badge {
+        padding: 1px 6px;
+        font-size: 9px;
+        margin-right: 3px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .visit-count {
+        top: 8px;
+        right: 8px;
+        padding: 3px 6px;
+        font-size: 9px;
+      }
+
+      .update-badge,
+      .new-badge,
+      .hot-badge {
+        padding: 1px 4px;
+        font-size: 8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -166,7 +318,13 @@
 
    <section class="courses">
       <div class="courses">
-        <div class="course-card">
+        <!-- Course 1: TECHNICAL & CODING -->
+        <div class="course-card" data-course-id="technical_coding" data-course-name="TECHNICAL & CODING">
+          <div class="visit-count">
+            <span class="update-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/dashbord/tecnical.jpg" alt="Course Image">
           <div class="course-content">
             <h3>TECHNICAL & CODING</h3>
@@ -174,39 +332,56 @@
               <p>All Test <span>Service</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/technical.html" class="btn">Open Now</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/technical.html" class="btn track-visit">Open Now</a>
             </div>
           </div>
         </div>
-        <div class="course-card">
+
+        <!-- Course 2: 10th & (Bihar Board) -->
+        <div class="course-card" data-course-id="10th_bihar" data-course-name="10th & (Bihar Board)">
+          <div class="visit-count">
+            <span class="new-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/Deshbord/category/test/10th/bihar/img_book/bihar.png" alt="Course Image">
           <div class="course-content">
-            <h3>10th & (Bihar Board )</h3>
+            <h3>10th & (Bihar Board)</h3>
             <div class="marquee">
               <p>All Test <span>Service</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/Allsubcon.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/10th/Bihar/ncert/Allsubcon.html" class="btn track-visit">Open Now</a>
             </div>
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- Course 3: 12th & (Bihar Board) -->
+        <div class="course-card" data-course-id="12th_bihar" data-course-name="12th & (Bihar Board)">
+          <div class="visit-count">
+            <span class="update-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/Deshbord/category/test/10th/bihar/img_book/bihar.png" alt="Course Image">
           <div class="course-content">
-            <h3>12th & ( Bihar Board) </h3>
+            <h3>12th & (Bihar Board)</h3>
             <div class="marquee">
               <p>All Test <span>Service</span></p>
             </div>
             <div class="btn-container">
-              <!-- <a href="/RTS/public/Deshbord/category/test/12th/all-board.html" class="btn"> Open Now </a> -->
-               <a href="/RTS/public/Deshbord/category/test/12th/Bihar%20Board/NCERT/BRANCH12%20bhi.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/12th/Bihar%20Board/NCERT/BRANCH12%20bhi.html" class="btn track-visit">Open Now</a>
             </div>
           </div>
         </div>
 
-
-        <div class="course-card">
+        <!-- Course 4: JEE -->
+        <div class="course-card" data-course-id="jee" data-course-name="JEE">
+          <div class="visit-count">
+            <span class="hot-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/dashbord/jee.jpg" alt="Course Image">
           <div class="course-content">
             <h3>JEE</h3>
@@ -214,13 +389,18 @@
               <p>All Test <span>Serice</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/jee/JEE_card.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/jee/JEE_card.html" class="btn track-visit">Open Now</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- Course 5: NEET -->
+        <div class="course-card" data-course-id="neet" data-course-name="NEET">
+          <div class="visit-count">
+            <span class="hot-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/dashbord/neet.jpg" alt="Course Image">
           <div class="course-content">
             <h3>NEET</h3>
@@ -228,13 +408,18 @@
               <p>All Test <span>Serice</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/neet/neetsub.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/neet/neetsub.html" class="btn track-visit">Open Now</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- Course 6: SSC -->
+        <div class="course-card" data-course-id="ssc" data-course-name="SSC">
+          <div class="visit-count">
+            <span class="update-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/dashbord/ssc.png" alt="Course Image">
           <div class="course-content">
             <h3>SSC</h3>
@@ -242,12 +427,18 @@
               <p>All Test <span>Serice</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/ssc/group-all.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/ssc/group-all.html" class="btn track-visit">Open Now</a>
             </div>
-
           </div>
         </div>
-        <div class="course-card">
+
+        <!-- Course 7: MPPSC -->
+        <div class="course-card" data-course-id="mppsc" data-course-name="MPPSC">
+          <div class="visit-count">
+            <span class="new-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/dashbord/mppsc.png" alt="Course Image">
           <div class="course-content">
             <h3>MPPSC</h3>
@@ -255,13 +446,18 @@
               <p>All Test <span>Serice</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/mppsc/group-all.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/mppsc/group-all.html" class="btn track-visit">Open Now</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- Course 8: RAILWAY -->
+        <div class="course-card" data-course-id="railway" data-course-name="RAILWAY">
+          <div class="visit-count">
+            <span class="update-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/dashbord/raliway.png" alt="Course Image">
           <div class="course-content">
             <h3>RAILWAY</h3>
@@ -269,12 +465,18 @@
               <p>All Test <span>Serice</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/raliway/1test.html" class="btn"> Open Now</a>
+              <a href="/RTS/public/Deshbord/category/test/raliway/1test.html" class="btn track-visit">Open Now</a>
             </div>
-
           </div>
         </div>
-        <div class="course-card">
+
+        <!-- Course 9: 10th CBSE -->
+        <div class="course-card" data-course-id="10th_cbse" data-course-name="10th CBSE">
+          <div class="visit-count">
+            <span class="new-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/image copy.png" alt="Course Image">
           <div class="course-content">
             <h3>10th CBSE</h3>
@@ -282,11 +484,18 @@
               <p>All Test <span>Service</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/10th/CBSE/allsub-test.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/10th/CBSE/allsub-test.html" class="btn track-visit">Open Now</a>
             </div>
           </div>
         </div>
-        <div class="course-card">
+
+        <!-- Course 10: 12th CBSE -->
+        <div class="course-card" data-course-id="12th_cbse" data-course-name="12th CBSE">
+          <div class="visit-count">
+            <span class="update-badge">Updated</span>
+            <i class="fas fa-eye"></i>
+            <span class="count">0</span> visits
+          </div>
           <img src="/RTS/public/images/image copy.png" alt="Course Image">
           <div class="course-content">
             <h3>12th CBSE</h3>
@@ -294,7 +503,7 @@
               <p>All Test <span>Service</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/12th/CBSE/BRANCH12 bhi.html" class="btn"> Open Now </a>
+              <a href="/RTS/public/Deshbord/category/test/12th/CBSE/BRANCH12 bhi.html" class="btn track-visit">Open Now</a>
             </div>
           </div>
         </div>
@@ -390,8 +599,168 @@
 
   <!-- JavaScript Files -->
   <script>
+    // ==================== CONFIGURATION ====================
+    const API_BASE_URL = "http://localhost:9191/api/course";
+
+    // ==================== VISIT COUNT SYSTEM ====================
+    async function loadAllVisitCounts() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/visits`);
+        if (!response.ok) throw new Error('Failed to fetch visit counts');
+        
+        const data = await response.json();
+        console.log('Loaded visit counts:', data);
+        
+        data.forEach(course => {
+          updateCount(course.courseId, course.visitCount);
+        });
+      } catch (error) {
+        console.error('Error loading visit counts:', error);
+        loadFromLocalStorage();
+      }
+    }
+
+    function updateCount(courseId, newCount) {
+      const card = document.querySelector(`.course-card[data-course-id="${courseId}"]`);
+      if (!card) return;
+      
+      const countElement = card.querySelector('.visit-count .count');
+      if (!countElement) return;
+      
+      const oldCount = parseInt(countElement.textContent) || 0;
+      countElement.textContent = newCount;
+      
+      if (newCount > oldCount) {
+        countElement.classList.add('updated');
+        setTimeout(() => countElement.classList.remove('updated'), 1000);
+      }
+      
+      saveToLocalStorage(courseId, newCount);
+    }
+
+    async function trackVisit(courseId, courseName) {
+      try {
+        console.log('Tracking visit for:', courseId, courseName);
+        
+        const response = await fetch(`${API_BASE_URL}/visit`, {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ 
+            courseId: courseId, 
+            courseName: courseName
+          })
+        });
+        
+        if (!response.ok) throw new Error('Failed to track visit');
+        
+        const data = await response.json();
+        console.log('Visit tracked:', data);
+        
+        if (data.visitCount !== undefined) {
+          updateCount(courseId, data.visitCount);
+        }
+        
+      } catch (error) {
+        console.error('Error tracking visit:', error);
+        incrementLocalCount(courseId);
+      }
+    }
+
+    // ==================== LOCAL STORAGE HELPERS ====================
+    function saveToLocalStorage(courseId, count) {
+      const counts = JSON.parse(localStorage.getItem('visitCounts') || '{}');
+      counts[courseId] = count;
+      localStorage.setItem('visitCounts', JSON.stringify(counts));
+    }
+
+    function loadFromLocalStorage() {
+      const counts = JSON.parse(localStorage.getItem('visitCounts') || '{}');
+      Object.keys(counts).forEach(courseId => {
+        updateCount(courseId, counts[courseId]);
+      });
+    }
+
+    function incrementLocalCount(courseId) {
+      const counts = JSON.parse(localStorage.getItem('visitCounts') || '{}');
+      const currentCount = counts[courseId] || 0;
+      counts[courseId] = currentCount + 1;
+      localStorage.setItem('visitCounts', JSON.stringify(counts));
+      updateCount(courseId, counts[courseId]);
+    }
+
+    // ==================== BADGE MANAGEMENT SYSTEM ====================
+    function initializeBadges() {
+      const badgeConfig = {
+        'technical_coding': 'Updated',
+        '10th_bihar': 'Updated',
+        '12th_bihar': 'Updated',
+        'jee': 'Updated',
+        'neet': 'Updated',
+        'ssc': 'Updated',
+        'mppsc': 'Updated',
+        'railway': 'Updated',
+        '10th_cbse': 'Updated',
+        '12th_cbse': 'Updated'
+      };
+
+      document.querySelectorAll('.course-card').forEach(card => {
+        const courseId = card.dataset.courseId;
+        const badgeType = badgeConfig[courseId];
+        
+        const visitCount = card.querySelector('.visit-count');
+        const oldBadge = visitCount.querySelector('.update-badge, .new-badge, .hot-badge');
+        if (oldBadge) oldBadge.remove();
+        
+        let badgeElement = null;
+        switch(badgeType) {
+          case 'Updated':
+            badgeElement = document.createElement('span');
+            badgeElement.className = 'update-badge';
+            badgeElement.textContent = 'Update';
+            break;
+          case 'Updated':
+            badgeElement = document.createElement('span');
+            badgeElement.className = 'new-badge';
+            badgeElement.textContent = 'New';
+            break;
+          case 'Updated':
+            badgeElement = document.createElement('span');
+            badgeElement.className = 'hot-badge';
+            badgeElement.textContent = 'Hot';
+            break;
+        }
+        
+        if (badgeElement) {
+          visitCount.insertBefore(badgeElement, visitCount.firstChild);
+        }
+      });
+    }
+
+    // ==================== MAIN INITIALIZATION ====================
     document.addEventListener('DOMContentLoaded', function () {
-      // Banner functionality
+      initializeBadges();
+      loadAllVisitCounts();
+      setInterval(loadAllVisitCounts, 30000);
+
+      // Track visit on button click
+      document.querySelectorAll(".track-visit").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+          e.preventDefault();
+          
+          const card = this.closest(".course-card");
+          const courseId = card.dataset.courseId;
+          const courseName = card.dataset.courseName;
+          const href = this.getAttribute("href");
+          
+          trackVisit(courseId, courseName).finally(() => {
+            window.location.href = href;
+          });
+        });
+      });
+
+      // ==================== BANNER FUNCTIONALITY ====================
       const bannerTrack = document.querySelector('.banner-track');
       const slides = document.querySelectorAll('.banner-slide');
       const dots = document.querySelectorAll('.banner-dot');
@@ -403,14 +772,13 @@
       let slideInterval;
       const intervalTime = 3000;
 
-      // Initialize slider
       function initBanner() {
+        if (slides.length === 0) return;
         updateBannerPosition();
         setupEventListeners();
         startAutoSlide();
       }
 
-      // Update banner position
       function updateBannerPosition() {
         const slideWidth = slides[0].clientWidth;
         bannerTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
@@ -420,7 +788,6 @@
         });
       }
 
-      // Go to specific slide
       function goToSlide(index) {
         currentIndex = (index < 0) ? slideCount - 1 :
           (index >= slideCount) ? 0 : index;
@@ -428,7 +795,6 @@
         resetInterval();
       }
 
-      // Handle click on slide
       function handleSlideClick() {
         const link = slides[currentIndex].getAttribute('data-link');
         if (link) {
@@ -436,9 +802,7 @@
         }
       }
 
-      // Event listeners
       function setupEventListeners() {
-        // Navigation arrows
         prevArrow.addEventListener('click', (e) => {
           e.stopPropagation();
           goToSlide(currentIndex - 1);
@@ -449,7 +813,6 @@
           goToSlide(currentIndex + 1);
         });
 
-        // Dot navigation
         dots.forEach((dot, index) => {
           dot.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -457,22 +820,18 @@
           });
         });
 
-        // Click on slide
         bannerTrack.addEventListener('click', handleSlideClick);
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
           if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
         });
 
-        // Pause on hover
         const banner = document.querySelector('.banner-main');
         banner.addEventListener('mouseenter', pauseSlider);
         banner.addEventListener('mouseleave', startAutoSlide);
       }
 
-      // Auto slide functions
       function startAutoSlide() {
         slideInterval = setInterval(() => goToSlide(currentIndex + 1), intervalTime);
       }
@@ -488,7 +847,7 @@
 
       initBanner();
 
-      // Sidebar toggle functionality
+      // ==================== SIDEBAR TOGGLE ====================
       const sidebarToggle = document.querySelector('.sidebar-toggle');
       const sidebar = document.querySelector('.sidebar');
 
@@ -498,7 +857,7 @@
         });
       }
 
-      // Navbar toggle functionality
+      // ==================== NAVBAR TOGGLE ====================
       const menuToggle = document.querySelector('.menu-toggle');
       const navMenu = document.getElementById('navMenu');
       const mobileNav = document.getElementById('mobileNav');
@@ -510,7 +869,39 @@
         });
       }
 
-      // Close mobile nav when a link is clicked
+      // ==================== SEARCH FUNCTIONALITY ====================
+      const searchInput = document.getElementById("searchInput");
+      const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+      const courseCards = document.querySelectorAll(".course-card");
+
+      function filterCourses(value) {
+        value = value.toLowerCase().trim();
+
+        courseCards.forEach(card => {
+          const title = card.querySelector("h3").innerText.toLowerCase();
+          const courseName = card.getAttribute('data-course-name').toLowerCase();
+
+          if (title.includes(value) || courseName.includes(value)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("keyup", function () {
+          filterCourses(this.value);
+        });
+      }
+
+      if (mobileSearchInput) {
+        mobileSearchInput.addEventListener("keyup", function () {
+          filterCourses(this.value);
+        });
+      }
+
+      // Close mobile nav when link clicked
       const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -519,7 +910,7 @@
         });
       });
 
-      // Close sidebar when a link is clicked (on mobile)
+      // Close sidebar on mobile when link clicked
       const sidebarLinks = document.querySelectorAll('.sidebar a');
       sidebarLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -529,46 +920,6 @@
         });
       });
     });
-
-   
-  // ==========================
-  // SEARCH BAR FUNCTIONALITY
-  // ==========================
-
-  const searchInput = document.getElementById("searchInput");
-  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
-  const courseCards = document.querySelectorAll(".course-card");
-
-  function filterCourses(value) {
-    value = value.toLowerCase().trim();
-
-    courseCards.forEach(card => {
-      const title = card.querySelector("h3").innerText.toLowerCase();
-
-      if (title.includes(value)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  }
-
-  // Desktop Search
-  if (searchInput) {
-    searchInput.addEventListener("keyup", function () {
-      filterCourses(this.value);
-    });
-  }
-
-  // Mobile Search
-  if (mobileSearchInput) {
-    mobileSearchInput.addEventListener("keyup", function () {
-      filterCourses(this.value);
-    });
-  }
-
-
   </script>
 </body>
-
 </html>

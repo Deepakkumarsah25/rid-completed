@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Application JEE</title>
     <title>CSS TEST</title>
+
+    <!-- Quiz CSS -->
     <link rel="stylesheet" href="/RTS/public/css/jee/jee.css">
-    <!-- <link rel="stylesheet" href="/RTS/public/css/purchase.css"> -->
+
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
+
 <body>
     <div class="main-container">
         <div class="quiz-container">
+
+            <!-- HEADER -->
             <div class="question-header">
                 <h2>HTML-1</h2>
-                <div class="timer"> <span id="timer"></span> </div>
+                <div class="timer">
+                    <span id="timer"></span>
+                </div>
             </div>
+
+            <!-- LIVE ONLINE USERS -->
+            <div class="online-users" style="margin:8px 0;font-weight:bold;color:rgb(155, 34, 17);">
+                👥 Online Test Takers: <span id="onlineUsersCount">0</span>
+            </div>
+
+            <!-- LANGUAGE SELECT -->
             <select id="languageSelect" onchange="changeLanguage()" class="language-select">
                 <option value="en">English</option>
                 <option value="hi">Hindi</option>
             </select>
+
+            <!-- QUESTION -->
             <p id="questionCounter"></p>
             <div id="question"></div>
+
+            <!-- OPTIONS -->
             <ul class="options" id="options"></ul>
 
+            <!-- NAV BUTTONS -->
             <div class="buttons">
                 <button class="btn" onclick="prevQuestion()">Previous</button>
                 <button class="btn btn-next" onclick="nextQuestion()">Next</button>
             </div>
-              <button class="btn btn-service" onclick="backToTestService()">Back to Test Service</button>
+
+            <button class="btn btn-service" onclick="backToTestService()">
+                Back to Test Service
+            </button>
         </div>
+
+        <!-- SIDEBAR -->
         <div class="sidebar">
             <div class="sidebar-content">
                 <div class="status-indicator">
@@ -36,23 +62,39 @@
                     <p class="not-attempted"><span></span> Not Attempted</p>
                     <p class="marked"><span></span> Marked</p>
                     <p class="visited"><span></span> Visited</p>
+
                     <div class="circles-container" id="circleContainer"></div>
-                    <button class="btn submit-btn" onclick="submitQuiz()">Submit Test</button>
+
+                    <button class="btn submit-btn" onclick="submitQuiz()">
+                        Submit Test
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-   <script>
-   
-      
+
+    <!-- BACK BUTTON SCRIPT -->
+    <script>
         function backToTestService() {
             alert('Redirecting to Test Service...');
-            // In a real implementation, this would redirect to the test service page
-            window.location.href = '/RTS/public/Deshbord/category/test/technical&coding/technical1.html';
+            window.location.href =
+                '/RTS/public/Deshbord/category/test/technical&coding/technical1.html';
         }
-      
     </script>
-    
+
+    <!-- QUIZ QUESTIONS SCRIPT -->
     <script src="/RTS/public/Deshbord/category/test/technical&coding/html/htmlQ1.js"></script>
+
+    <!-- SOCKET.IO – LIVE USER COUNT -->
+    <script>
+        const socket = io("http://localhost:9191");
+
+        socket.on("onlineUsers", (count) => {
+            const el = document.getElementById("onlineUsersCount");
+            if (el) {
+                el.innerText = count;
+            }
+        });
+    </script>
 </body>
 </html>

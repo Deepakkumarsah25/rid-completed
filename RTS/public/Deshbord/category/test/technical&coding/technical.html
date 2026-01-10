@@ -4,11 +4,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Technical & Coding Courses</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-<link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
-<link rel="stylesheet" href="/RTS/public/css/footer.css">
+  <link rel="stylesheet" href="/RTS/public/css/Deshbord.css">
+  <link rel="stylesheet" href="/RTS/public/css/footer.css">
+  
+  <style>
+    /* Visit Count Styling for Technical Courses */
+    .visit-count {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95));
+      color: white;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: 600;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+
+    /* Viewers text styling */
+    .visit-count .views-text {
+      color: #ccc;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .visit-count .count {
+      font-weight: bold;
+      color: #FFD700;
+      font-size: 12px;
+      transition: all 0.3s ease;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .visit-count .count.updated {
+      animation: pulse 0.8s ease-in-out;
+      color: #00FF00;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-card:hover .visit-count {
+      background: linear-gradient(135deg, rgba(33, 150, 243, 0.9), rgba(0, 0, 0, 0.9));
+      transform: scale(1.03);
+    }
+
+    .course-card:hover .visit-count .views-text {
+      color: #fff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .visit-count {
+        padding: 4px 8px;
+        font-size: 10px;
+      }
+      
+      .visit-count .views-text {
+        font-size: 9px;
+      }
+      
+      .visit-count .count {
+        font-size: 10px;
+        min-width: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .visit-count {
+        padding: 3px 6px;
+        gap: 3px;
+      }
+      
+      .visit-count .views-text {
+        font-size: 8px;
+      }
+      
+      .visit-count .count {
+        font-size: 9px;
+        min-width: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -135,7 +240,12 @@
 
     <section class="courses">
       <div class="courses">
-        <div class="course-card">
+        <!-- HTML Course -->
+        <div class="course-card" data-course-id="html_course" data-course-name="HTML">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/image.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>HTML</h3>
@@ -143,11 +253,17 @@
               <p>Basics to Advanced</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/technical1.html" class="btn btn-light" id="drow" >More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/technical1.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
           </div>
         </div>
-        <div class="course-card">
+        
+        <!-- CSS Course -->
+        <div class="course-card" data-course-id="css_course" data-course-name="CSS">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/image copy 5.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>CSS</h3>
@@ -155,26 +271,35 @@
               <p>Basics to Advanced</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/css/parches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/css/parches.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
           </div>
         </div>
 
-        <div class="course-card">
-         <img src="/RTS/public/Deshbord/category/test/technical&coding/img/image copy 6.png" alt="Course Image" id="image">
+        <!-- JavaScript Course -->
+        <div class="course-card" data-course-id="javascript_course" data-course-name="JAVA SCRIPT">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
+          <img src="/RTS/public/Deshbord/category/test/technical&coding/img/image copy 6.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>JAVA SCRIPT </h3>
             <div class="marquee">
               <p>Basics to Advanced</span></p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/jsQ/parches.html" class="btn"> More Details </a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/jsQ/parches.html" class="btn track-visit"> More Details </a>
             </div>
           </div>
         </div>
 
-
-        <div class="course-card">
+        <!-- Node.js Course -->
+        <div class="course-card" data-course-id="nodejs_course" data-course-name="NODE.JS">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/image copy 7.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>NODE.JS</h3>
@@ -182,27 +307,35 @@
              <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/node.js/parches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/node.js/parches.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
-           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/python img.webp" alt="Course Image" id="image">
+        <!-- Python Course -->
+        <div class="course-card" data-course-id="python_course" data-course-name="PYTHON">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
+          <img src="/RTS/public/Deshbord/category/test/technical&coding/img/python img.webp" alt="Course Image" id="image">
           <div class="course-content">
             <h3>PYTHON</h3>
             <div class="marquee">
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/python/parches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/python/parches.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- PHP Course -->
+        <div class="course-card" data-course-id="php_course" data-course-name="PHP">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/PHP.webp" alt="Course Image" id="image">
           <div class="course-content">
             <h3>PHP</h3>
@@ -210,12 +343,17 @@
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/PHP/parches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/PHP/parches.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
-        <div class="course-card">
+        
+        <!-- MySQL Course -->
+        <div class="course-card" data-course-id="mysql_course" data-course-name="MYSQL">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/mysql.webp" alt="Course Image" id="image">
           <div class="course-content">
             <h3>MYSQL</h3>
@@ -223,13 +361,17 @@
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/mysql/parches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/mysql/parches.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- MongoDB Course -->
+        <div class="course-card" data-course-id="mongodb_course" data-course-name="MONGODB">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/mogonDB.webp" alt="Course Image" id="image">
           <div class="course-content">
             <h3>MONGODB</h3>
@@ -237,12 +379,17 @@
                <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/mongodb/parches.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/mongodb/parches.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
-        <div class="course-card">
+        
+        <!-- Go Course -->
+        <div class="course-card" data-course-id="go_course" data-course-name="GO">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/GO.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>GO</h3>
@@ -250,12 +397,17 @@
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/GO/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/GO/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
-        <div class="course-card">
+        
+        <!-- Rust Course -->
+        <div class="course-card" data-course-id="rust_course" data-course-name="RUST">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/rust.png"alt="Course Image" id="image">
           <div class="course-content">
             <h3>RUST</h3>
@@ -263,13 +415,17 @@
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/Rust/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- Swift Course -->
+        <div class="course-card" data-course-id="swift_course" data-course-name="SWIFT">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/swift.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>SWIFT</h3>
@@ -277,12 +433,17 @@
                <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/Swift/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/Swift/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
-         <div class="course-card">
+        
+        <!-- TypeScript Course -->
+        <div class="course-card" data-course-id="typescript_course" data-course-name="TYPE_SCRIPT">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/typescript.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>TYPE_SCRIPT</h3>
@@ -290,12 +451,17 @@
                <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/type_script/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/type_script/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
-         <div class="course-card">
+        
+        <!-- C Course -->
+        <div class="course-card" data-course-id="c_course" data-course-name="C">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/C LOGO.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>C</h3>
@@ -303,12 +469,17 @@
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/C/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/C/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
-        <div class="course-card">
+        
+        <!-- C++ Course -->
+        <div class="course-card" data-course-id="cpp_course" data-course-name="C++">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/C++ LOGO.png"alt="Course Image" id="image">
           <div class="course-content">
             <h3>C++</h3>
@@ -316,13 +487,17 @@
               <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/C++/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/C++/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
 
-        <div class="course-card">
+        <!-- Java Course -->
+        <div class="course-card" data-course-id="java_course" data-course-name="JAVA">
+          <div class="visit-count">
+            <span class="views-text">Viewers:</span>
+            <span class="count">0</span>
+          </div>
           <img src="/RTS/public/Deshbord/category/test/technical&coding/img/JAVA LOGO.png" alt="Course Image" id="image">
           <div class="course-content">
             <h3>JAVA</h3>
@@ -330,9 +505,8 @@
                <p>Beginner Basic</p>
             </div>
             <div class="btn-container">
-              <a href="/RTS/public/Deshbord/category/test/technical&coding/Java/purchase-test.html" class="btn btn-light" id="drow">More Details</a>
+              <a href="/RTS/public/Deshbord/category/test/technical&coding/Java/purchase-test.html" class="btn btn-light track-visit" id="drow">More Details</a>
             </div>
-
           </div>
         </div>
       </div>
@@ -427,7 +601,141 @@
 
   <!-- JavaScript Files -->
   <script>
+    // ==================== CONFIGURATION ====================
+    const API_BASE_URL = "http://localhost:9191/api/course";
+
+    // ==================== VISIT COUNT SYSTEM ====================
+    // Load all visit counts on page load
     document.addEventListener('DOMContentLoaded', function () {
+      loadAllVisitCounts();
+      
+      // Set up periodic refresh (every 30 seconds)
+      setInterval(loadAllVisitCounts, 30000);
+      
+      // Setup click tracking for all "More Details" buttons
+      setupVisitTracking();
+      
+      // Setup other event listeners
+      setupEventListeners();
+    });
+
+    // Load visit counts from API
+    async function loadAllVisitCounts() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/visits`);
+        if (!response.ok) throw new Error('Failed to fetch visit counts');
+        
+        const data = await response.json();
+        console.log('Loaded technical course visit counts:', data);
+        
+        // Update each course card with its visit count
+        data.forEach(course => {
+          updateCount(course.courseId, course.visitCount);
+        });
+      } catch (error) {
+        console.error('Error loading visit counts:', error);
+        // Fallback: Load from localStorage if available
+        loadFromLocalStorage();
+      }
+    }
+
+    // Update UI with count for a specific course
+    function updateCount(courseId, newCount) {
+      const card = document.querySelector(`.course-card[data-course-id="${courseId}"]`);
+      if (!card) return;
+      
+      const countElement = card.querySelector('.visit-count .count');
+      if (!countElement) return;
+      
+      const oldCount = parseInt(countElement.textContent) || 0;
+      countElement.textContent = newCount;
+      
+      // Add animation if count increased
+      if (newCount > oldCount) {
+        countElement.classList.add('updated');
+        setTimeout(() => countElement.classList.remove('updated'), 800);
+      }
+      
+      // Save to localStorage
+      saveToLocalStorage(courseId, newCount);
+    }
+
+    // Setup click tracking for all course buttons
+    function setupVisitTracking() {
+      document.querySelectorAll(".track-visit").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+          e.preventDefault();
+          
+          const card = this.closest(".course-card");
+          const courseId = card.dataset.courseId;
+          const courseName = card.dataset.courseName;
+          const href = this.getAttribute("href");
+          
+          // Track visit and then navigate
+          trackVisit(courseId, courseName).finally(() => {
+            window.location.href = href;
+          });
+        });
+      });
+    }
+
+    // Track visit to API
+    async function trackVisit(courseId, courseName) {
+      try {
+        console.log('Tracking visit for technical course:', courseId, courseName);
+        
+        const response = await fetch(`${API_BASE_URL}/visit`, {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ 
+            courseId: courseId, 
+            courseName: courseName
+          })
+        });
+        
+        if (!response.ok) throw new Error('Failed to track visit');
+        
+        const data = await response.json();
+        console.log('Technical course visit tracked:', data);
+        
+        // Immediately update the count
+        if (data.visitCount !== undefined) {
+          updateCount(courseId, data.visitCount);
+        }
+        
+      } catch (error) {
+        console.error('Error tracking technical course visit:', error);
+        // Fallback: Increment locally
+        incrementLocalCount(courseId);
+      }
+    }
+
+    // ==================== LOCAL STORAGE HELPERS ====================
+    function saveToLocalStorage(courseId, count) {
+      const counts = JSON.parse(localStorage.getItem('technicalVisitCounts') || '{}');
+      counts[courseId] = count;
+      localStorage.setItem('technicalVisitCounts', JSON.stringify(counts));
+    }
+
+    function loadFromLocalStorage() {
+      const counts = JSON.parse(localStorage.getItem('technicalVisitCounts') || '{}');
+      Object.keys(counts).forEach(courseId => {
+        updateCount(courseId, counts[courseId]);
+      });
+    }
+
+    function incrementLocalCount(courseId) {
+      const counts = JSON.parse(localStorage.getItem('technicalVisitCounts') || '{}');
+      const currentCount = counts[courseId] || 0;
+      counts[courseId] = currentCount + 1;
+      localStorage.setItem('technicalVisitCounts', JSON.stringify(counts));
+      updateCount(courseId, counts[courseId]);
+    }
+
+    // ==================== OTHER EVENT LISTENERS ====================
+    function setupEventListeners() {
       // Sidebar toggle functionality
       const sidebarToggle = document.querySelector('.sidebar-toggle');
       const sidebar = document.querySelector('.sidebar');
@@ -468,44 +776,46 @@
           }
         });
       });
-    });
 
-    // ==========================
-  // SEARCH BAR FUNCTIONALITY
-  // ==========================
+      // Setup search functionality
+      setupSearch();
+    }
 
-  const searchInput = document.getElementById("searchInput");
-  const mobileSearchInput = document.getElementById("mainMobileSearchInput");
-  const courseCards = document.querySelectorAll(".course-card");
+    // ==================== SEARCH FUNCTIONALITY ====================
+    function setupSearch() {
+      const searchInput = document.getElementById("searchInput");
+      const mobileSearchInput = document.getElementById("mainMobileSearchInput");
+      const courseCards = document.querySelectorAll(".course-card");
 
-  function filterCourses(value) {
-    value = value.toLowerCase().trim();
+      function filterCourses(value) {
+        value = value.toLowerCase().trim();
 
-    courseCards.forEach(card => {
-      const title = card.querySelector("h3").innerText.toLowerCase();
+        courseCards.forEach(card => {
+          const title = card.querySelector("h3").innerText.toLowerCase();
+          const courseName = card.getAttribute('data-course-name').toLowerCase();
 
-      if (title.includes(value)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
+          if (title.includes(value) || courseName.includes(value)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
       }
-    });
-  }
 
-  // Desktop Search
-  if (searchInput) {
-    searchInput.addEventListener("keyup", function () {
-      filterCourses(this.value);
-    });
-  }
+      // Desktop Search
+      if (searchInput) {
+        searchInput.addEventListener("keyup", function () {
+          filterCourses(this.value);
+        });
+      }
 
-  // Mobile Search
-  if (mobileSearchInput) {
-    mobileSearchInput.addEventListener("keyup", function () {
-      filterCourses(this.value);
-    });
-  }
+      // Mobile Search
+      if (mobileSearchInput) {
+        mobileSearchInput.addEventListener("keyup", function () {
+          filterCourses(this.value);
+        });
+      }
+    }
   </script>
 </body>
-
 </html>
